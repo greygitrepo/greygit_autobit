@@ -1,0 +1,163 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Autobit: check-connection",
+      "type": "python",
+      "request": "launch",
+      "module": "autobit",
+      "args": ["check-connection"],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Autobit: run-stoch (auto)",
+      "type": "python",
+      "request": "launch",
+      "module": "autobit",
+      "args": [
+        "run-stoch",
+        "--category", "linear",
+        "--interval", "1",
+        "--leverage", "10"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Autobit: backtest (auto 2d, debug+csv)",
+      "type": "python",
+      "request": "launch",
+      "module": "autobit",
+      "args": [
+        "backtest",
+        "--category", "linear",
+        "--days", "2",
+        "--debug",
+        "--slippage-ticks", "1",
+        "--stop-fill-next-open",
+        "--csv", "bt.csv"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Autobit: backtest StochRSI (auto 2d)",
+      "type": "python",
+      "request": "launch",
+      "module": "autobit",
+      "args": [
+        "backtest",
+        "--category", "linear",
+        "--strategy", "stoch",
+        "--days", "2",
+        "--slippage-ticks", "1",
+        "--stop-fill-next-open"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Autobit: backtest (auto 1d)",
+      "type": "python",
+      "request": "launch",
+      "module": "autobit",
+      "args": [
+        "backtest",
+        "--category", "linear",
+        "--leverage", "10",
+        "--slippage-ticks", "1",
+        "--stop-fill-next-open"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Autobit: account (USDT)",
+      "type": "python",
+      "request": "launch",
+      "module": "autobit",
+      "args": ["account", "--coin", "USDT", "--account-type", "UNIFIED", "--category", "linear"],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Autobit: run strategy (auto)",
+      "type": "python",
+      "request": "launch",
+      "module": "autobit",
+      "args": ["run", "--category", "linear", "--interval", "1", "--leverage", "10"],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Autobit: run (prompt)",
+      "type": "python",
+      "request": "launch",
+      "module": "autobit",
+      "args": [
+        "${input:subcommand}",
+        "--coin", "${input:coin}",
+        "--account-type", "${input:accountType}",
+        "--category", "${input:category}"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal"
+    }
+  ]
+  ,
+  "inputs": [
+    {
+      "id": "subcommand",
+      "type": "pickString",
+      "description": "실행할 명령",
+      "options": ["check-connection", "account"],
+      "default": "account"
+    },
+    {
+      "id": "coin",
+      "type": "pickString",
+      "description": "잔고/정산 코인",
+      "options": ["USDT", "USDC", "BTC", "ETH"],
+      "default": "USDT"
+    },
+    {
+      "id": "accountType",
+      "type": "pickString",
+      "description": "계정 타입",
+      "options": ["UNIFIED", "CONTRACT"],
+      "default": "UNIFIED"
+    },
+    {
+      "id": "category",
+      "type": "pickString",
+      "description": "포지션 카테고리",
+      "options": ["linear", "inverse", "option"],
+      "default": "linear"
+    }
+  ]
+}
