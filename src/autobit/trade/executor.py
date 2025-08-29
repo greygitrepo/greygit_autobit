@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from decimal import Decimal, ROUND_DOWN, ROUND_HALF_UP, getcontext
 
 from ..exchange.bybit_client import BybitClient
+from ..utils import to_float, select_active_position
 
 
 def compute_usdt_available_ex_collateral(client: BybitClient, category: str = "linear") -> float:
@@ -17,7 +18,9 @@ def compute_usdt_available_ex_collateral(client: BybitClient, category: str = "l
         acc = (bal.get("result", {}).get("list") or [])[0]
         coins = acc.get("coin", []) or []
         usdt = next((c for c in coins if c.get("coin") == "USDT"), None)
-        wb = float(usdt.get("walletBalance", usdt.get("equity", 0.0))) if usdt else 0.0
+        wb = to_float(usdt.get("walletBalance")) if usdt else 0.0
+        if wb == 0.0 and usdt:
+            wb = to_float(usdt.get("equity"))
     except Exception:
         wb = 0.0
 
@@ -26,8 +29,8 @@ def compute_usdt_available_ex_collateral(client: BybitClient, category: str = "l
     sum_order_im = 0.0
     try:
         for p in pos.get("result", {}).get("list", []) or []:
-            sum_pos_im += float(p.get("positionIM", 0.0) or 0.0)
-            sum_order_im += float(p.get("orderIM", 0.0) or 0.0)
+            sum_pos_im += to_float(p.get("positionIM", 0.0))
+            sum_order_im += to_float(p.get("orderIM", 0.0))
     except Exception:
         pass
 
@@ -140,20 +143,17 @@ class OrderExecutor:
     def close_position_market(self, symbol: str) -> Tuple[bool, str]:
         # 현재 포지션 사이즈를 확인 후 반대 방향 reduceOnly 시장가 주문
         pos = self.client.get_positions(category=self.category, symbol=symbol)
-        if not pos or pos.get("retCode") != 0:
+        if not pos or str(pos.get("retCode")) != "0":
             return False, f"pos query fail: {pos}"
         lst = pos.get("result", {}).get("list", []) or []
         if not lst:
             return True, "no position"
-        p = lst[0]
-        size = p.get("size") or p.get("qty") or "0"
-        side = p.get("side")
-        try:
-            size_f = float(size)
-        except Exception:
-            size_f = 0.0
-        if size_f <= 0:
+        # pick latest/most relevant active position
+        p = select_active_position(lst)
+        if p is None:
             return True, "no position"
+        size_f = to_float(p.get("size") or p.get("qty"))
+        side = p.get("side")
         close_side = "Sell" if side == "Buy" else "Buy"
         res = self.client.create_order(
             category=self.category,
@@ -163,7 +163,7 @@ class OrderExecutor:
             qty=str(int(size_f)),
             reduce_only=True,
         )
-        ok = bool(res and res.get("retCode") == 0)
+        ok = bool(res and str(res.get("retCode")) == "0")
         return ok, res.get("retMsg") if isinstance(res, dict) else str(res)
 
     def open_market_with_tp_sl(
@@ -187,7 +187,7 @@ class OrderExecutor:
             reduce_only=False,
             position_idx=pos_idx,
         )
-        if not order or order.get("retCode") != 0:
+        if not order or str(order.get("retCode")) != "0":
             return order
 
         # 체결 반영 대기 후 포지션 평균가로 TP/SL 재계산

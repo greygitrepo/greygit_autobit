@@ -8,6 +8,7 @@ from .exchange.bybit_client import BybitClient
 from .exchange.bybit_client import V5  # typing only; endpoint constants
 from .strategy.ema_rsi_bb import EmaRsiBbStrategy
 from .strategy.stoch_rsi_snap import StochRsiSnapStrategy
+from .strategy.smbc import SmartMoneyBreakoutChannels
 
 
 @dataclass
@@ -104,7 +105,12 @@ def backtest_one_day(
 
     atr_seq = _compute_atr(highs, lows, closes, atr_period)
     # pick strategy
-    strat = EmaRsiBbStrategy() if strategy == "ema" else StochRsiSnapStrategy()
+    if strategy == "ema":
+        strat = EmaRsiBbStrategy()
+    elif strategy == "stoch":
+        strat = StochRsiSnapStrategy()
+    else:  # smbc
+        strat = SmartMoneyBreakoutChannels()
 
     # instruments meta for rounding and constraints
     def get_meta(sym: str):
@@ -221,9 +227,21 @@ def backtest_one_day(
             return qty
         return (qty // step) * step
 
-    # SL percent per live logic: base 0.25% + fee buffer, cap 0.4%; leverage applied with 2% cap
-    base_sl_pct = min(0.004, 0.0025 + 2 * fee)
-    sl_pct_eff = min(base_sl_pct * leverage, 0.02)
+    # TP/SL per strategy
+    tp_pct_eff: Optional[float] = None
+    tp_base = None  # could be passed in future API
+    sl_base = None
+    if strategy == "stoch":
+        # StochRSI: base TP/SL before leverage/fees
+        base_tp = 0.005  # 0.5%
+        base_sl = 0.003  # 0.3%
+        # Effective price move targets: base/leverage + round-trip fees
+        tp_pct_eff = (base_tp / max(1, leverage)) + (2 * fee)
+        sl_pct_eff = (base_sl / max(1, leverage)) + (2 * fee)
+    else:
+        # default SL: base 0.25% + fee buffer, cap 0.4%; leverage applied with 2% cap
+        base_sl_pct = min(0.004, 0.0025 + 2 * fee)
+        sl_pct_eff = min(base_sl_pct * leverage, 0.02)
 
     # CSV logging
     csv_f = None
@@ -231,7 +249,7 @@ def backtest_one_day(
         import csv
         csv_f = open(write_csv, "w", newline="")
         writer = csv.writer(csv_f)
-        writer.writerow(["ts", "symbol", "action", "side", "qty", "price", "wallet", "pnl"])
+        writer.writerow(["ts", "symbol", "event", "side", "qty", "price", "wallet", "pnl", "left", "im", "fee_est", "retCode", "reason"])
 
     # dynamic warmup based on strategy and ATR needs
     def _warmup() -> int:
@@ -245,11 +263,17 @@ def backtest_one_day(
     first_sig_logged = False
     # symbol reselection timer (10 bars ~ 10 minutes)
     select_i = warmup
+    tp_price: Optional[float] = None
     for i in range(warmup, len(closes) - 1):
         curr_close = closes[i]
         next_open = opens[i + 1]
 
-        sig = strat.generate(closes[: i + 1], pos_side)
+        if strategy == "smbc":
+            sig = strat.generate(
+                opens[: i + 1], highs[: i + 1], lows[: i + 1], closes[: i + 1], pos_side
+            )
+        else:
+            sig = strat.generate(closes[: i + 1], pos_side)
         if debug and not first_sig_logged and sig.action in ("long", "short", "reverse_long", "reverse_short"):
             ts = int(rows[i][0])
             print(f"[BT] first_signal ts={ts} action={sig.action}")
@@ -284,20 +308,29 @@ def backtest_one_day(
                         if stop_price is None or new_sl < stop_price:
                             stop_price = new_sl
 
-        # simulate stop hit within bar i+1 using next bar extremes
+        # simulate stop/TP hit within bar i+1 using next bar extremes
         if pos_side and stop_price is not None:
             # use next bar high/low to check SL trigger
             n_high = highs[i + 1]
             n_low = lows[i + 1]
             stopped = False
+            takeprof = False
             exit_price = None
+            # check TP first (assume favorable trigger priority)
+            if tp_pct_eff is not None and tp_price is not None:
+                if pos_side == "Buy" and n_high >= tp_price:
+                    exit_price = tp_price
+                    takeprof = True
+                if pos_side == "Sell" and n_low <= tp_price:
+                    exit_price = tp_price
+                    takeprof = True
             if pos_side == "Buy" and n_low <= stop_price:
                 exit_price = next_open if stop_fill_next_open else stop_price
                 stopped = True
             if pos_side == "Sell" and n_high >= stop_price:
                 exit_price = next_open if stop_fill_next_open else stop_price
                 stopped = True
-            if stopped and entry_price is not None and pos_qty > 0:
+            if (stopped or takeprof) and entry_price is not None and pos_qty > 0:
                 # realize PnL and fees
                 notional = pos_qty * exit_price
                 fee_cost = notional * fee
@@ -305,12 +338,15 @@ def backtest_one_day(
                 wallet += pnl - fee_cost
                 if csv_f:
                     import csv
-                    csv.writer(csv_f).writerow([rows[i+1][0], symbol, "stop", pos_side, pos_qty, exit_price, wallet, pnl])
+                    evt = "tp" if takeprof and not stopped else "stop"
+                    reason = "take_profit" if evt == "tp" else "stop_hit"
+                    csv.writer(csv_f).writerow([rows[i+1][0], symbol, evt, pos_side, pos_qty, exit_price, wallet, pnl, wallet, None, fee_cost, "OK", reason])
                 pos_side = None
                 pos_qty = 0
                 entry_price = None
                 be_locked = False
                 stop_price = None
+                tp_price = None
                 extreme = None
                 trades += 1
                 if pnl > 0:
@@ -340,7 +376,7 @@ def backtest_one_day(
                     losses += 1
                 if csv_f:
                     import csv
-                    csv.writer(csv_f).writerow([rows[i+1][0], symbol, "reverse_close", pos_side, pos_qty, next_open, wallet, pnl])
+                    csv.writer(csv_f).writerow([rows[i+1][0], symbol, "reverse_close", pos_side, pos_qty, next_open, wallet, pnl, wallet, None, fee_cost, "OK", "reverse_close"])
                 pos_side = None
                 pos_qty = 0
                 entry_price = None
@@ -373,7 +409,13 @@ def backtest_one_day(
                                 j = im[keys[kpos]]
                         if j is not None and j >= 30:
                             c3 = [float(r[4]) for r in cand_rows[best_sym][: j + 1]]
-                            tmp_sig = strat.generate(c3, None)
+                            if strategy == "smbc":
+                                o3 = [float(r[1]) for r in cand_rows[best_sym][: j + 1]]
+                                h3 = [float(r[2]) for r in cand_rows[best_sym][: j + 1]]
+                                l3 = [float(r[3]) for r in cand_rows[best_sym][: j + 1]]
+                                tmp_sig = strat.generate(o3, h3, l3, c3, None)
+                            else:
+                                tmp_sig = strat.generate(c3, None)
                             desired = "Buy" if target_dir == "Buy" else "Sell"
                             if (tmp_sig.action == "long" and desired == "Buy") or (tmp_sig.action == "short" and desired == "Sell"):
                                 # switch
@@ -417,17 +459,24 @@ def backtest_one_day(
                     continue
 
                 qty = float(qty_dec)
-                # entry fees
-                wallet -= float((qty_dec * px_eff) * Decimal(str(fee)))
+                # entry fees/IM estimates
+                entry_notional = float(qty_dec * px_eff)
+                fee_cost = entry_notional * fee
+                im_est = entry_notional / leverage
+                wallet -= fee_cost
                 pos_side = desired_side
                 pos_qty = qty
                 entry_price = float(px_eff)
                 be_locked = False
                 stop_price = (entry_price * (1 - sl_pct_eff)) if pos_side == "Buy" else (entry_price * (1 + sl_pct_eff))
+                if tp_pct_eff is not None:
+                    tp_price = (entry_price * (1 + tp_pct_eff)) if pos_side == "Buy" else (entry_price * (1 - tp_pct_eff))
+                else:
+                    tp_price = None
                 extreme = None
                 if csv_f:
                     import csv
-                    csv.writer(csv_f).writerow([rows[i+1][0], symbol, "open", pos_side, pos_qty, entry_price, wallet, 0.0])
+                    csv.writer(csv_f).writerow([rows[i+1][0], symbol, "open", pos_side, pos_qty, entry_price, wallet, 0.0, wallet, im_est, fee_cost, "OK", "open"])
                 select_i = i
 
         update_drawdown(wallet)
@@ -444,7 +493,13 @@ def backtest_one_day(
                 if jj is None or jj < warmup:
                     continue
                 c3 = [float(r[4]) for r in kr[: jj + 1]]
-                tmp = strat.generate(c3, None)
+                if strategy == "smbc":
+                    o3 = [float(r[1]) for r in kr[: jj + 1]]
+                    h3 = [float(r[2]) for r in kr[: jj + 1]]
+                    l3 = [float(r[3]) for r in kr[: jj + 1]]
+                    tmp = strat.generate(o3, h3, l3, c3, None)
+                else:
+                    tmp = strat.generate(c3, None)
                 if tmp.action in ("long", "short"):
                     v = vol_map.get(s2, 0.0)
                     if v > bestv:

@@ -14,6 +14,42 @@
       "console": "integratedTerminal"
     },
     {
+      "name": "Autobit: run-SMBC (auto)",
+      "type": "python",
+      "request": "launch",
+      "module": "autobit",
+      "args": [
+        "run-smbc",
+        "--category", "linear",
+        "--interval", "1",
+        "--leverage", "10"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Autobit: backtest SMBC (auto 2d)",
+      "type": "python",
+      "request": "launch",
+      "module": "autobit",
+      "args": [
+        "backtest",
+        "--category", "linear",
+        "--strategy", "smbc",
+        "--days", "2",
+        "--slippage-ticks", "1",
+        "--stop-fill-next-open"
+      ],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal"
+    }
+    {
       "name": "Autobit: run-stoch (auto)",
       "type": "python",
       "request": "launch",
