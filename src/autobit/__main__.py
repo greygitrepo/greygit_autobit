@@ -413,6 +413,19 @@ def main() -> int:
             import time
             from decimal import Decimal
             import csv
+            # CSV writer setup (optional)
+            csv_f = None
+            writer = None
+            try:
+                if getattr(args, "csv", None):
+                    csv_f = open(args.csv, "a", newline="", encoding="utf-8")
+                    writer = csv.writer(csv_f)
+                    if csv_f.tell() == 0:
+                        writer.writerow(["bar_start","event","symbol","side","qty","last_price","usdt_left","im_est","fee_est","retCode","reason"])
+            except Exception as e:
+                log.error("CSV 열기 실패: %s", e)
+                csv_f = None
+                writer = None
 
             last_bar_start: int | None = None  # 최근에 처리한 캔들의 시작시간(ms)
             # 포지션 상태
@@ -947,6 +960,19 @@ def main() -> int:
             import time
             from decimal import Decimal
             import csv
+            # CSV writer setup (optional)
+            csv_f = None
+            writer = None
+            try:
+                if getattr(args, "csv", None):
+                    csv_f = open(args.csv, "a", newline="", encoding="utf-8")
+                    writer = csv.writer(csv_f)
+                    if csv_f.tell() == 0:
+                        writer.writerow(["bar_start","event","symbol","side","qty","last_price","usdt_left","im_est","fee_est","retCode","reason"])
+            except Exception as e:
+                log.error("CSV 열기 실패: %s", e)
+                csv_f = None
+                writer = None
 
             last_bar_start: int | None = None
             be_locked = False
@@ -1312,6 +1338,19 @@ def main() -> int:
             import time
             from decimal import Decimal
             import csv
+            # CSV writer setup (optional)
+            csv_f = None
+            writer = None
+            try:
+                if getattr(args, "csv", None):
+                    csv_f = open(args.csv, "a", newline="", encoding="utf-8")
+                    writer = csv.writer(csv_f)
+                    if csv_f.tell() == 0:
+                        writer.writerow(["bar_start","event","symbol","side","qty","last_price","usdt_left","im_est","fee_est","retCode","reason"])
+            except Exception as e:
+                log.error("CSV 열기 실패: %s", e)
+                csv_f = None
+                writer = None
 
             last_bar_start: int | None = None
             be_locked = False
