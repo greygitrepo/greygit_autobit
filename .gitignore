@@ -10,3 +10,6 @@ runtime/
 __pycache__/
 .pytest_cache/
 .venv/
+
+# large market data — regenerate with scripts/fetch_history.py; hashes in data/processed/manifest.json
+data/processed/*.parquet
