@@ -3,7 +3,7 @@
 Usage:
   .venv/bin/python scripts/run_experiment.py --strategy strategies.baseline.donchian:DonchianSmoke \
       --split validation [--params '{"n": 30}'] [--symbols BTCUSDT ETHUSDT] \
-      [--stress spread=2,impact=2,latency=1000,fee=2] [--team A] [--note "..."]
+      [--stress spread=2,impact=2,latency=1000,fee=2,stopfill=1] [--team A] [--note "..."]
 
 Writes experiments/results/<id>/{summary.json,trades.csv,equity.csv,events.json} and appends a row to
 experiments/registry.csv. The test split refuses to run unless --final is given (frozen protocol).
@@ -79,7 +79,8 @@ def run(strategy_spec, split, params=None, symbols=None, stress=None, team="", n
     costs = load_cost_model()
     st = parse_stress(stress)
     if st:
-        costs = costs.stressed(st.get("spread", 1), st.get("impact", 1), st.get("latency"), st.get("fee", 1))
+        costs = costs.stressed(st.get("spread", 1), st.get("impact", 1), st.get("latency"), st.get("fee", 1),
+                               st.get("stopfill"))
     risk = RiskConfig.from_yaml(load_risk())
     from engine.strategy import TF_MS
     need_days = int(strat.warmup_bars * TF_MS[strat.timeframe] / 86_400_000) + 5

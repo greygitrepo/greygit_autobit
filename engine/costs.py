@@ -28,6 +28,7 @@ class CostModel:
     latency_ms: float = 250.0
     spread_mult: float = 1.0         # stress multipliers
     impact_mult: float = 1.0
+    stop_fill_worst: bool = False    # stress: stops fill at the 1m bar extreme instead of the trigger
     symbols: dict[str, SymbolCost] = field(default_factory=dict)
     source: str = "defaults(assumption)"
 
@@ -46,12 +47,15 @@ class CostModel:
         lat = sigma_1m * 1e4 * math.sqrt(self.latency_ms / 60000.0) if sigma_1m > 0 else 0.0
         return half_spread + impact + lat
 
-    def stressed(self, spread_mult=1.0, impact_mult=1.0, latency_ms=None, fee_mult=1.0) -> "CostModel":
+    def stressed(self, spread_mult=1.0, impact_mult=1.0, latency_ms=None, fee_mult=1.0,
+                 stop_fill_worst=None) -> "CostModel":
         return CostModel(
             maker_fee=self.maker_fee * fee_mult, taker_fee=self.taker_fee * fee_mult,
             latency_ms=self.latency_ms if latency_ms is None else latency_ms,
             spread_mult=self.spread_mult * spread_mult, impact_mult=self.impact_mult * impact_mult,
-            symbols=self.symbols, source=self.source + f"|stress(s{spread_mult},i{impact_mult},l{latency_ms},f{fee_mult})",
+            stop_fill_worst=self.stop_fill_worst if stop_fill_worst is None else bool(stop_fill_worst),
+            symbols=self.symbols,
+            source=self.source + f"|stress(s{spread_mult},i{impact_mult},l{latency_ms},f{fee_mult},sw{stop_fill_worst})",
         )
 
 

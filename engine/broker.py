@@ -246,10 +246,10 @@ class Broker:
             trig = od.price
             if od.side < 0:      # sell stop (protects long)
                 hit = l <= trig
-                base = min(o_, trig)
+                base = l if self.costs.stop_fill_worst else min(o_, trig)
             else:                # buy stop (protects short)
                 hit = h >= trig
-                base = max(o_, trig)
+                base = h if self.costs.stop_fill_worst else max(o_, trig)
             if hit:
                 slip = self.costs.taker_slip_bps(symbol, od.remaining * base, sigma_1m) * 1e-4
                 self._apply_fill(ts, od, od.remaining, base * (1 + od.side * slip), "taker")

@@ -343,3 +343,12 @@ def test_fast_forward_matches_minute_by_minute():
     assert a.final_equity == pytest.approx(b.final_equity, abs=1e-9)
     assert [e["ts"] for e in a.events] == [e["ts"] for e in b.events]
     assert (a.fills.tag == "tp").any() and (a.fills.tag == "stop").any()
+
+
+def test_stop_fill_worst_stress_fills_at_bar_extreme():
+    c = zero_cost(taker=0.0).stressed(stop_fill_worst=True)
+    b = broker(costs=c)
+    b.submit("a", S, +1, 1.0, "market", tag="entry", stop_loss=95.0)
+    bar(b, 0, 100.0)
+    bar(b, 60_000, 97.0, h=97.0, l=93.0, c=96.0)
+    assert b.positions[S].qty == 0 and b.fills[-1].price == pytest.approx(93.0)
