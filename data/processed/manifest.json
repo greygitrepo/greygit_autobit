@@ -1,0 +1,60 @@
+{
+  "generated_utc": "2026-10-09T08:44:58Z",
+  "source": "https://data.binance.vision (USD-M futures archive, sha256 verified) + fapi.binance.com public REST",
+  "period_utc": {
+    "start": "2021-10-01T00:00:00Z",
+    "end_exclusive": "2026-10-09T00:00:00Z"
+  },
+  "pyarrow_version": "25.0.1",
+  "pandas_version": "2.3.3",
+  "files": {
+    "data/processed/BTCUSDT_1m.parquet": {
+      "sha256": "e8a30d5e7cbb891094e596a04cf582b4218de33ed94d717a238654dac6f59a5f",
+      "content_sha256": "378140dab4655e7e00c69de2f1c8148726d6cb742d914b918c370058361ce9f0",
+      "rows": 2640960,
+      "first_open_time": "2021-10-01 00:00:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 109092104
+    },
+    "data/processed/BTCUSDT_mark_1m.parquet": {
+      "sha256": "a297827ecd183eb22471056851801bc013733c4332a2312f50c147a5c4a5e04d",
+      "content_sha256": "b109274cc063a02c3e90744398d45e6bbbf2637b8c4e9a7f9ee9774ac1a53128",
+      "rows": 2640960,
+      "first_open_time": "2021-10-01 00:00:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 74265308
+    },
+    "data/processed/BTCUSDT_funding.parquet": {
+      "sha256": "67005024aaf91378480db46321128ee5ed7662ba08f1da64a1fe8cf50ffd9455",
+      "content_sha256": "79aefa2365328315aa30c7ba0d465aef52d7db016ac96a5c71ece79942d37eac",
+      "rows": 5502,
+      "first_funding_time": "2021-10-01 00:00:00",
+      "last_funding_time": "2026-10-08 16:00:00",
+      "bytes": 84238
+    },
+    "data/processed/ETHUSDT_1m.parquet": {
+      "sha256": "44ece71b1bfada108d6a67cda4600289028528f9166dfd1d6680aab540990959",
+      "content_sha256": "65cbad2f92a27cf2329b3ffe48e3a91da25ad478d7f71290cfbbd299cdf73362",
+      "rows": 2640960,
+      "first_open_time": "2021-10-01 00:00:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 113500565
+    },
+    "data/processed/ETHUSDT_mark_1m.parquet": {
+      "sha256": "10d9dcfccc61044212dafc82787b99b69e4259912aec433994e50ec44b1d5870",
+      "content_sha256": "cf4a5176e5fa1cad87c262e54423f98c7fe92e430e853e23c0b5a058cc7ac290",
+      "rows": 2640949,
+      "first_open_time": "2021-10-01 00:00:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 73124613
+    },
+    "data/processed/ETHUSDT_funding.parquet": {
+      "sha256": "4910e11637a802f7e81bc58133758899a8aa497d410243b3d31ad81fb6e4fc9a",
+      "content_sha256": "0f0419040026790b6ed1abe03ccfb60741b729746af7725100c2cd267fecba61",
+      "rows": 5502,
+      "first_funding_time": "2021-10-01 00:00:00",
+      "last_funding_time": "2026-10-08 16:00:00",
+      "bytes": 85382
+    }
+  }
+}
