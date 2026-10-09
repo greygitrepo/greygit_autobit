@@ -23,3 +23,21 @@
     selected as primary under the tie rule. Highly correlated with the primary (same signal) - not a diversifier.
   train_result_ids: [20261009-180712-a2_tsmom-train]
   validation_result_ids: [20261009-180802-a2_tsmom-validation, 20261009-180832-a2_tsmom-validation]
+# --- Round 2 (R2, 2026-10-09 19:10 KST): selected by the pre-declared rule in strategies/team_a/DECLARATIONS.md.
+# Does NOT beat A2-L180-m2 on validation (return/MDD 1.50 < 1.66; fee2+exec3 stress +3.51% < +4.56%). Submitted as an
+# alternative of the same family (daily-return corr with A2-m2 0.81 on validation) — not a diversifier.
+- id: A3-ens5-e0.6-m2.5-vs
+  strategy: 'strategies.team_a.a3_ensemble:A3TrendEnsemble'
+  params: {lookbacks: [60, 120, 180, 240, 360], entry_thr: 0.6, exit_score: 0.0, size_mode: none, size_floor: 0.0,
+           vol_scale: true, vol_short: 42, vol_long: 360, tstat_min: 0.0, atr_n: 14, stop_mult: 2.5, trail: true,
+           funding_max: null, funding_n: 3, funding_sym: false}
+  timeframe: 4h
+  rationale: >-
+    R2-V2. 4h multi-lookback (10/20/30/40/60-day) momentum ensemble; enter when >=4 of 5 lookback signs agree, exit
+    when the majority turns or the 2.5xATR chandelier stop is hit; size scaled down by min(1, RV60d/RV7d) (own
+    assumption). Train +15.85% / MDD 2.87% / 206 trades / PF 1.84; validation +4.17% / MDD 2.78% / 92 trades / PF 1.49;
+    stress fee2+exec3 +3.51%, +stopfill +2.60% (A2-m2 same stress +3.10%). BTC +160 / ETH +260 USDT on validation
+    (A2-m2 BTC +55). Still concentrated: 2025Q3 +324 of +420 USDT; long +285 / short +136. All numbers own assumptions.
+  train_result_ids: [20261009-190138-a3_ens-train-221907]
+  validation_result_ids: [20261009-190716-a3_ens-validation-235683, 20261009-190715-a3_ens-validation-235684,
+                          20261009-190715-a3_ens-validation-235685]

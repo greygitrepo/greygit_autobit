@@ -24,7 +24,7 @@
   "key": "A",
   "name": "전략 A",
   "role": "추세·돌파 (A1: 1h 돌파 + 4h 추세 필터)",
-  "status": "R2 진행 중 – 추세 계열 견고화 (다중 lookback 앙상블, 변동성 크기, 1d)",
+  "status": "R2 완료 – A3 앙상블 후보 추가 (val +4.17%, MDD 2.78%; A2-m2 못 넘음, 상관 0.81)",
   "members": "subagent"
  },
  {
