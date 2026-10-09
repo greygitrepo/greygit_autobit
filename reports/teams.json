@@ -24,7 +24,7 @@
   "key": "A",
   "name": "전략 A",
   "role": "추세·돌파 (A1: 1h 돌파 + 4h 추세 필터)",
-  "status": "개발·실험 중",
+  "status": "완료 – A1 폐기, 후보 2개 제출 (A2 4h 시계열 모멘텀, validation +5.06%)",
   "members": "subagent"
  },
  {

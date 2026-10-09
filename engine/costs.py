@@ -46,12 +46,12 @@ class CostModel:
         lat = sigma_1m * 1e4 * math.sqrt(self.latency_ms / 60000.0) if sigma_1m > 0 else 0.0
         return half_spread + impact + lat
 
-    def stressed(self, spread_mult=1.0, impact_mult=1.0, latency_ms=None) -> "CostModel":
+    def stressed(self, spread_mult=1.0, impact_mult=1.0, latency_ms=None, fee_mult=1.0) -> "CostModel":
         return CostModel(
-            maker_fee=self.maker_fee, taker_fee=self.taker_fee,
+            maker_fee=self.maker_fee * fee_mult, taker_fee=self.taker_fee * fee_mult,
             latency_ms=self.latency_ms if latency_ms is None else latency_ms,
             spread_mult=self.spread_mult * spread_mult, impact_mult=self.impact_mult * impact_mult,
-            symbols=self.symbols, source=self.source + f"|stress(s{spread_mult},i{impact_mult},l{latency_ms})",
+            symbols=self.symbols, source=self.source + f"|stress(s{spread_mult},i{impact_mult},l{latency_ms},f{fee_mult})",
         )
 
 

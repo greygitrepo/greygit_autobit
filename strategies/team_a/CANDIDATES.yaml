@@ -1,0 +1,25 @@
+# Team A candidates. Selection by the pre-declared rule in strategies/team_a/SPEC.md (validation return/MDD,
+# ties within 20% → pre-declared default). test split NOT used.
+- id: A2-tsmom-L180-m3
+  strategy: 'strategies.team_a.a2_tsmom:A2TSMom'
+  params: {lookback: 180, atr_n: 14, stop_mult: 3.0}
+  timeframe: 4h
+  rationale: >-
+    Pre-declared A2 (C03 'CTA/momentum' label, P3/P4/P5; all numbers are own assumptions). 4h sign of 30-day
+    return, 3xATR chandelier stop. Train +18.4% / MDD 3.5% / 488 trades; validation +5.06% / MDD 3.14% / 173 trades,
+    PF 1.40; cost stress (spread x3, impact x3, 1000ms) +4.96%. Neighbours L90/L360/m2 all positive on validation.
+    Caveats: BTC-only validation +0.29% (PF 0.95), ETH carries; 2025Q3 is 408 of ~451 USDT net; long side dominant.
+    Exploratory: 1-year validation sample.
+  train_result_ids: [20261009-180633-a2_tsmom-train]
+  validation_result_ids: [20261009-180751-a2_tsmom-validation, 20261009-180822-a2_tsmom-validation,
+                          20261009-180825-a2_tsmom-validation, 20261009-180828-a2_tsmom-validation]
+- id: A2-tsmom-L180-m2
+  strategy: 'strategies.team_a.a2_tsmom:A2TSMom'
+  params: {lookback: 180, atr_n: 14, stop_mult: 2.0}
+  timeframe: 4h
+  rationale: >-
+    Pre-declared validation variant V4 (tighter 2xATR stop). Train +19.4% / MDD 3.4% / 555 trades; validation
+    +6.30% / MDD 3.79% / 191 trades, PF 1.40; cost stress +6.14%. Return/MDD within 3% of the primary, so not
+    selected as primary under the tie rule. Highly correlated with the primary (same signal) - not a diversifier.
+  train_result_ids: [20261009-180712-a2_tsmom-train]
+  validation_result_ids: [20261009-180802-a2_tsmom-validation, 20261009-180832-a2_tsmom-validation]

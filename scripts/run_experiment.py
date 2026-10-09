@@ -3,7 +3,7 @@
 Usage:
   .venv/bin/python scripts/run_experiment.py --strategy strategies.baseline.donchian:DonchianSmoke \
       --split validation [--params '{"n": 30}'] [--symbols BTCUSDT ETHUSDT] \
-      [--stress spread=2,impact=2,latency=1000] [--team A] [--note "..."]
+      [--stress spread=2,impact=2,latency=1000,fee=2] [--team A] [--note "..."]
 
 Writes experiments/results/<id>/{summary.json,trades.csv,equity.csv,events.json} and appends a row to
 experiments/registry.csv. The test split refuses to run unless --final is given (frozen protocol).
@@ -36,7 +36,9 @@ def code_version() -> str:
     try:
         h = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, text=True).strip()
         dirty = subprocess.call(["git", "diff", "--quiet", "HEAD", "--", "engine", "strategies"], cwd=ROOT)
-        return h + ("-dirty" if dirty else "")
+        untracked = subprocess.check_output(["git", "ls-files", "--others", "--exclude-standard", "engine", "strategies"],
+                                            cwd=ROOT, text=True).strip()
+        return h + ("-dirty" if dirty or untracked else "")
     except Exception:
         return "unknown"
 
@@ -75,7 +77,7 @@ def run(strategy_spec, split, params=None, symbols=None, stress=None, team="", n
     costs = load_cost_model()
     st = parse_stress(stress)
     if st:
-        costs = costs.stressed(st.get("spread", 1), st.get("impact", 1), st.get("latency"))
+        costs = costs.stressed(st.get("spread", 1), st.get("impact", 1), st.get("latency"), st.get("fee", 1))
     risk = RiskConfig.from_yaml(load_risk())
     warm = start - warmup_days * 86_400_000          # indicator warm-up history (no trading)
     markets, signals = {}, {}
