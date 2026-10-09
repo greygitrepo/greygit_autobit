@@ -1,0 +1,7 @@
+# 임시 연구 설정 (CLAUDE.md). 안전성·수익을 보장하는 수치가 아님. 모든 팀 동일 적용.
+initial_capital_usdt: 10000
+max_leverage: 3.0
+risk_per_trade_frac: 0.0025      # 초기자본 대비 거래당 위험 (손절까지 손실)
+daily_loss_limit_frac: 0.02      # 일일(UTC) 손실 2% 도달 시 당일 신규 진입 중지
+max_drawdown_halt_frac: 0.10     # 고점 대비 10% 낙폭 시 전략 중단(전량 청산, 이후 거래 없음)
+stale_data_halt_sec: 10          # 실시간: 최신 데이터가 이보다 오래되면 신규 진입 중지

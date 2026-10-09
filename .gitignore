@@ -1,0 +1,12 @@
+# secrets — never commit
+API_config.txt
+*.key
+.env
+# runtime data / logs
+data/raw/
+data/cache/
+runtime/
+*.log
+__pycache__/
+.pytest_cache/
+.venv/
