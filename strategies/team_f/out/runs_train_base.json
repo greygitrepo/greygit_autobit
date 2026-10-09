@@ -1,0 +1,11 @@
+{
+ "A2m2": "20261009-192830-a2_tsmom-train-271849-7b5309",
+ "A2m3": "20261009-192831-a2_tsmom-train-271850-474903",
+ "A3": "20261009-192827-a3_ens-train-271851-fefb80",
+ "E1": "20261009-192829-e1_composite-train-271852-c499c7",
+ "C3V1": "20261009-192833-c3_regime_trend-train-271851-621088",
+ "C3V2": "20261009-192833-c3_regime_trend-train-271852-856b80",
+ "D1": "20261009-192836-d1_relmom-train-271849-7040ed",
+ "B3abs": "20261009-192832-b3_funding_crowd-train-271850-1156f5",
+ "B3short": "20261009-192834-b3_funding_crowd-train-271850-adf3db"
+}
