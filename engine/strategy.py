@@ -82,8 +82,9 @@ def check_causality(strategy: Strategy, bars: pd.DataFrame, funding=None, cuts: 
         if funding is not None:
             f = funding[funding.index <= t + TF_MS[strategy.timeframe]]
         part = strategy.compute(bars.iloc[: i + 1], f)
-        a = full.loc[t, ["target", "stop"]].astype(float).values
-        b = part.loc[t, ["target", "stop"]].astype(float).values
+        cols = [c for c in ("target", "stop", "tp", "size_mult") if c in full.columns]
+        a = full.loc[t, cols].astype(float).values
+        b = part.loc[t, cols].astype(float).values
         if not np.allclose(np.nan_to_num(a, nan=-9e9), np.nan_to_num(b, nan=-9e9), rtol=1e-9, atol=1e-9):
             problems.append(f"{strategy.name}: signal at {t} differs full={a} truncated={b}")
     return problems

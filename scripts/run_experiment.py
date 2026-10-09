@@ -108,6 +108,7 @@ def run(strategy_spec, split, params=None, symbols=None, stress=None, team="", n
         return summ, res
     now = datetime.now(KST)
     rid = f"{now:%Y%m%d-%H%M%S}-{strat.name}-{split}-{os.getpid()}"
+    summ["id"] = rid
     out = ROOT / "experiments" / "results" / rid
     out.mkdir(parents=True, exist_ok=True)
     (out / "summary.json").write_text(json.dumps(summ, indent=2, default=float))

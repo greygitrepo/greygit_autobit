@@ -1,0 +1,18 @@
+{
+ "BTCUSDT": {
+  "minutes": 42,
+  "ws_minutes": 37,
+  "backfilled": 0,
+  "ws_uptime": 0.8809523809523809,
+  "recv_lag_ms_median": 124.0,
+  "recv_lag_ms_p99": 517.28
+ },
+ "ETHUSDT": {
+  "minutes": 42,
+  "ws_minutes": 37,
+  "backfilled": 0,
+  "ws_uptime": 0.8809523809523809,
+  "recv_lag_ms_median": 175.0,
+  "recv_lag_ms_p99": 1179.04
+ }
+}
