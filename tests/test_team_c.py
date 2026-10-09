@@ -147,3 +147,132 @@ def test_c2_filters_change_entries():
     f = pd.DataFrame({"funding_rate": [0.01]}, index=pd.Index([0]))          # longs pay 1%: block longs
     ff = C2Squeeze(comp_pct=0.5, use_volume=False).entries(bars, f)
     assert not (ff["dir"] > 0).any() and ((ff["dir"] < 0) == (novol["dir"] < 0)).all()
+
+
+# ---------------------------------------------------------------- round 2: C3 (4h regime-gated slow breakout)
+from strategies.team_c.c3_regime_trend import C3RegimeTrend, adx_simple, efficiency_ratio, simulate_c3
+
+C3_VARIANTS = [
+    {"n": 60},                                                                      # R2 V1
+    {"n": 60, "er_min": 0.2},                                                       # R2 V2
+    {"n": 30, "er_min": 0.2, "vol_pow": 1, "dd_r": 3, "vol_hi": 0.9, "fund_max": 0.0003},   # R2 V3
+    {"n": 60, "entry_mode": "level", "cooldown": 6, "er_min": 0.2, "vol_pow": 1, "dd_r": 3,
+     "vol_hi": 0.9, "fund_max": 0.0003},                                            # R2 V4
+    {"n": 30, "er_min": 0.2, "vol_pow": 1, "dd_r": 0.5, "dd_cut": 0.3, "vov_hi": 0.8, "vol_k": 1.0,
+     "flow_min": 0.005, "tsm_n": 180, "adx_min": 15, "exit_n": 30},                 # every switch on
+]
+
+
+@pytest.fixture(scope="module")
+def m1_hist():
+    from engine.data import load_funding, load_m1, to_ms
+    out = {}
+    lo, hi = to_ms("2021-06-01"), to_ms("2025-10-01")        # train + validation only (no test data)
+    for sym in ("BTCUSDT", "ETHUSDT"):
+        try:
+            m1 = load_m1(sym)
+            f = load_funding(sym)
+        except Exception as e:
+            pytest.skip(f"no data: {e}")
+        out[sym] = (m1[(m1.index >= lo) & (m1.index < hi)], f[f.index < hi])
+    return out
+
+
+@pytest.mark.parametrize("params", C3_VARIANTS)
+def test_c3_causality_real_data(m1_hist, params):
+    for sym, (m1, f) in m1_hist.items():
+        bars = resample(m1, "4h")
+        s = C3RegimeTrend(**params)
+        assert check_causality(s, bars, f, cuts=8, seed=11) == [], sym
+        full = s.compute(bars, f)
+        for i in (len(bars) - 500, len(bars) - 37):                # size_mult must survive truncation too
+            t = bars.index[i]
+            part = s.compute(bars.iloc[: i + 1], f[f.index <= t + TF_MS["4h"]])
+            for col in [c for c in ("target", "stop", "size_mult") if c in full]:
+                a, b = full.loc[t, col], part.loc[t, col]
+                assert (np.isnan(a) and np.isnan(b)) or np.isclose(a, b), (sym, col, t)
+
+
+@pytest.mark.parametrize("params", C3_VARIANTS[:4])
+def test_c3_start_point_truncation_150d(m1_hist, params):
+    """Live paper trading recomputes on a ~150-day 1m window: its last row must equal full history."""
+    rng = np.random.default_rng(5)
+    held = 0
+    for sym, (m1, f) in m1_hist.items():
+        bars = resample(m1, "4h")
+        s = C3RegimeTrend(**params)
+        full = s.compute(bars, f)
+        cols = [c for c in ("target", "stop", "size_mult") if c in full]
+        ends = rng.integers(len(bars) // 2, len(bars) - 1, size=12)
+        for i in ends:
+            t = bars.index[i]
+            close_t = t + TF_MS["4h"]
+            win = m1[(m1.index >= close_t - 150 * 86_400_000) & (m1.index < close_t)]
+            wb = resample(win, "4h")
+            part = s.compute(wb, f[f.index <= close_t])
+            a = full.loc[t, cols].astype(float).values
+            b = part.loc[t, cols].astype(float).values
+            assert np.allclose(np.nan_to_num(a, nan=-9e9), np.nan_to_num(b, nan=-9e9)), (sym, t, a, b)
+            held += int(np.nan_to_num(a[0]) != 0)
+    assert held > 0                                            # the check covered in-position rows
+
+
+def test_c3_signal_frame_and_size_mult_bounds(m1_hist):
+    m1, f = m1_hist["ETHUSDT"]
+    bars = resample(m1, "4h")
+    sig = C3RegimeTrend(**C3_VARIANTS[2]).compute(bars, f)
+    assert sig.index.equals(bars.index)
+    assert set(sig["target"].dropna().unique()) <= {-1.0, 0.0, 1.0}
+    live = sig[sig["target"].fillna(0) != 0]
+    assert live["stop"].notna().all()
+    assert ((live["stop"] - bars.loc[live.index, "close"]) * live["target"] < 0).all()
+    assert ((sig["size_mult"] >= 0) & (sig["size_mult"] <= 1)).all()
+    assert (sig["size_mult"] < 1).any()                        # the overlay actually scales down sometimes
+    assert "size_mult" not in C3RegimeTrend(n=60).compute(bars, f)   # no overlay -> engine default size
+
+
+def test_er_and_adx_basic():
+    c = pd.Series(np.arange(50, dtype=float))
+    assert np.allclose(efficiency_ratio(c, 10).dropna(), 1.0)        # straight line: ER = 1
+    z = pd.Series(np.tile([1.0, 2.0], 25))
+    assert np.allclose(efficiency_ratio(z, 10).dropna(), 0.0)        # pure chop: ER = 0
+    up = pd.DataFrame({"close": np.arange(100.0)}); up["high"] = up["close"] + 0.5; up["low"] = up["close"] - 0.5
+    assert adx_simple(up, 14).dropna().iloc[-1] > 90                 # one-way trend -> ADX near 100
+
+
+def test_c3_regime_gate_blocks_choppy_entries():
+    rng = np.random.default_rng(4)
+    n = 1500
+    c = 100 + np.cumsum(rng.normal(0, 0.5, n))
+    idx = np.arange(n, dtype=np.int64) * TF_MS["4h"]
+    bars = pd.DataFrame({"open": np.r_[c[0], c[:-1]], "close": c}, index=idx)
+    bars["high"] = bars[["open", "close"]].max(axis=1) + 0.2
+    bars["low"] = bars[["open", "close"]].min(axis=1) - 0.2
+    bars["volume"] = 1.0
+    s = C3RegimeTrend(n=30, er_min=0.3)
+    f = s.features(bars)
+    sig = s.compute(bars)
+    new = (sig["target"].fillna(0) != 0) & (sig["target"].shift(1).fillna(0) == 0)
+    assert (f.loc[new, "er"] >= 0.3).all()
+
+
+def test_simulate_c3_drawdown_sizing():
+    """After closed losses summing to <= -dd_r R inside the lookback, the next entry gets dd_cut."""
+    n = 40
+    o = np.full(n, 100.0); c = o.copy(); h = o + 0.5; l = o - 0.5
+    a = np.ones(n)
+    ed = np.zeros(n); es = np.full(n, np.nan)
+    for t in (1, 5, 9, 13):                                    # long entries, stop at 99 ...
+        ed[t], es[t] = 1, 99.0
+    for t in (3, 7, 11):                                       # ... each stopped out (-1R + costs)
+        l[t] = 98.0
+    vm = np.ones(n)
+    z = np.zeros(n, dtype=bool)
+    tgt, stp, sm = simulate_c3(o, h, l, c, a, ed, es, z, z, vm, trail_mult=0, max_hold=10**6, cooldown=0,
+                               cost_frac=0.0006, dd_lookback=20, dd_r=2.5, dd_cut=0.5)
+    assert tgt[3] == 0 and tgt[7] == 0 and tgt[11] == 0
+    assert sm[1] == 1.0 and sm[9] == 1.0                       # after 2 losses (~-2.1R): not yet
+    assert sm[13] == 0.5                                       # after 3 losses (~-3.2R): cut
+    tgt2, _, sm2 = simulate_c3(o, h, l, c, a, ed, es, z, z, vm, trail_mult=0, max_hold=10**6, cooldown=0,
+                               cost_frac=0.0006, dd_lookback=3, dd_r=2.5, dd_cut=0.5)
+    assert sm2[13] == 1.0                                      # losses outside the lookback are forgotten

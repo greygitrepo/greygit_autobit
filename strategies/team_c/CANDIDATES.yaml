@@ -1,30 +1,60 @@
+# Team C candidates. Round 2 entries are active (max 3 per round brief).
+# Round 1 entries are archived below as comments (evaluation 2026-10-09 judged both 폐기; the C1/C2 classes are
+# unchanged and remain in live paper trading as configured by the coordinator, not via this file).
 # Team C candidates (2026-10-09 KST). Chosen only among pre-declared validation variants (SPEC.md).
 # HONEST NOTE: no Team C variant beat cash (0%) after costs on validation; both candidates lost money
 # and hit (or nearly hit) the common 10% drawdown halt. Submitted as best-available, not as recommended.
-- id: C2-V4-trail
-  strategy: strategies.team_c.c2_squeeze:C2Squeeze
-  params: {exit_mode: trail}          # comp_pct 0.20, range 1.5xATR14, volume 2x median20, funding |f|>0.05% filter, 2.5xATR trail, 48-bar max hold
-  timeframe: 1h
+# - id: C2-V4-trail
+#   strategy: strategies.team_c.c2_squeeze:C2Squeeze
+#   params: {exit_mode: trail}          # comp_pct 0.20, range 1.5xATR14, volume 2x median20, funding |f|>0.05% filter, 2.5xATR trail, 48-bar max hold
+#   timeframe: 1h
+#   rationale: >
+#     Volatility compression -> volume-confirmed breakout (C2, evidence (e)-C; all numbers self-assumed).
+#     Trail-only exit was the only train variant with positive net return (+6.2%, mean net +0.05R, PF 1.08)
+#     and the best pre-declared validation net_return/max_dd (-4.71% / 9.77% = -0.48, 72 trades, halted 2025-01-26).
+#     Not robust: validation loss concentrated in ETH (ETH-only -9.7%, BTC-only +1.9% diagnostic, post-hoc, not selected);
+#     comp_pct 15/30 also negative; cost stress -4.76%. Volume-filter ablation inconclusive; funding filter never bound.
+#   train_result_ids: [20261009-180922-c2_squeeze-train]
+#   validation_result_ids: [20261009-181334-c2_squeeze-validation, 20261009-181441-c2_squeeze-validation,
+#                           20261009-181448-c2_squeeze-validation, 20261009-181456-c2_squeeze-validation,
+#                           20261009-181444-c2_squeeze-validation, 20261009-181451-c2_squeeze-validation,
+#                           20261009-181338-c2_squeeze-validation, 20261009-181341-c2_squeeze-validation]
+# - id: C1-V5-gate-rel
+#   strategy: strategies.team_c.c1_regime:C1Regime
+#   params: {}                          # 1h 20-bar breakout, 2xATR stop, 3xATR trail; gate RV24 pct90d > 0.95; size_mult = min(1, median RV / RV)
+#   timeframe: 1h
+#   rationale: >
+#     Regime gate + vol-scaled size overlay (C1) on Team C's own declared trend entry. Train: -3.84% vs ungated -5.09%;
+#     on the common pre-halt window (to 2023-01-05) MDD 8.57% vs 9.34% (-8% relative, below the -20% target), Sharpe -0.11 vs -0.20.
+#     Validation: -6.13% (MDD 9.87%, 414 trades) vs ungated -6.30% (10.0%): overlay effect ~ nil; hypothesis not supported.
+#     Cost stress -6.52%. The underlying trend entry has no edge after costs, so the overlay cannot create one.
+#   train_result_ids: [20261009-181102-c1_regime-train, 20261009-181001-c1_regime-train]
+#   validation_result_ids: [20261009-181349-c1_regime-validation, 20261009-181359-c1_regime-validation,
+#                           20261009-181509-c1_regime-validation]
+# ---- Round 2 (R2, 2026-10-09 KST). Selected by the rule fixed in DECLARATIONS.md (R2) before validation.
+# HONEST NOTE: both R2 candidates are positive but tiny on validation (+0.46% / +1.31%) and far below
+# A2-tsmom-L180-m2 (+6.30%) and buy&hold BTC (+68.9%). The regime-gate hypothesis was NOT supported on
+# validation: the ungated control (V1) beat the gated variant (V2), and the vol/drawdown overlay variants (V3, V4) and
+# tighter-stop variant (V5) were <= 0 after costs/stress. Submitted as best-available, not recommended over A2.
+- id: C3-R2-V2-er20
+  strategy: strategies.team_c.c3_regime_trend:C3RegimeTrend
+  params: {n: 60, er_min: 0.2}        # 4h: close beyond prior 60-bar channel (first cross), only if ER60 >= 0.20; 3xATR20 stop, 4xATR chandelier trail
+  timeframe: 4h
   rationale: >
-    Volatility compression -> volume-confirmed breakout (C2, evidence (e)-C; all numbers self-assumed).
-    Trail-only exit was the only train variant with positive net return (+6.2%, mean net +0.05R, PF 1.08)
-    and the best pre-declared validation net_return/max_dd (-4.71% / 9.77% = -0.48, 72 trades, halted 2025-01-26).
-    Not robust: validation loss concentrated in ETH (ETH-only -9.7%, BTC-only +1.9% diagnostic, post-hoc, not selected);
-    comp_pct 15/30 also negative; cost stress -4.76%. Volume-filter ablation inconclusive; funding filter never bound.
-  train_result_ids: [20261009-180922-c2_squeeze-train]
-  validation_result_ids: [20261009-181334-c2_squeeze-validation, 20261009-181441-c2_squeeze-validation,
-                          20261009-181448-c2_squeeze-validation, 20261009-181456-c2_squeeze-validation,
-                          20261009-181444-c2_squeeze-validation, 20261009-181451-c2_squeeze-validation,
-                          20261009-181338-c2_squeeze-validation, 20261009-181341-c2_squeeze-validation]
-- id: C1-V5-gate-rel
-  strategy: strategies.team_c.c1_regime:C1Regime
-  params: {}                          # 1h 20-bar breakout, 2xATR stop, 3xATR trail; gate RV24 pct90d > 0.95; size_mult = min(1, median RV / RV)
-  timeframe: 1h
+    Only gated variant eligible under the declared rule (val net>0, MDD<10%, trades>=30, combined stress>0).
+    Train +15.11% / MDD 3.60% / 85 trades (Sharpe 1.40, every train year >= 0). Validation +0.46% / 2.56% / 38 trades
+    (PF 1.09); combined stress +0.21%; stopfill stress -0.11%. Longs +263, shorts -217 USDT on validation.
+  train_result_ids: [20261009-190553-c3_regime_trend-train-231383]
+  validation_result_ids: [20261009-190818-c3_regime_trend-validation-239973, 20261009-190818-c3_regime_trend-validation-239971,
+                          20261009-190818-c3_regime_trend-validation-239972]
+- id: C3-R2-V1-control
+  strategy: strategies.team_c.c3_regime_trend:C3RegimeTrend
+  params: {n: 60}                     # same entry/exit, no regime gate, no overlays
+  timeframe: 4h
   rationale: >
-    Regime gate + vol-scaled size overlay (C1) on Team C's own declared trend entry. Train: -3.84% vs ungated -5.09%;
-    on the common pre-halt window (to 2023-01-05) MDD 8.57% vs 9.34% (-8% relative, below the -20% target), Sharpe -0.11 vs -0.20.
-    Validation: -6.13% (MDD 9.87%, 414 trades) vs ungated -6.30% (10.0%): overlay effect ~ nil; hypothesis not supported.
-    Cost stress -6.52%. The underlying trend entry has no edge after costs, so the overlay cannot create one.
-  train_result_ids: [20261009-181102-c1_regime-train, 20261009-181001-c1_regime-train]
-  validation_result_ids: [20261009-181349-c1_regime-validation, 20261009-181359-c1_regime-validation,
-                          20261009-181509-c1_regime-validation]
+    Declared control; promoted by rule 4 (eligible and val net/MDD 0.44 vs V2 0.18, >= 20% better).
+    Train +13.31% / 4.14% / 158 trades. Validation +1.31% / 3.01% / 64 trades (PF 1.18); combined stress +0.89%;
+    stopfill +0.58%. Validation profit is ETH-long; BTC -58, shorts -358 USDT.
+  train_result_ids: [20261009-190105-c3_regime_trend-train-220744]
+  validation_result_ids: [20261009-190817-c3_regime_trend-validation-239971, 20261009-190817-c3_regime_trend-validation-239972,
+                          20261009-190817-c3_regime_trend-validation-239973]
