@@ -1,0 +1,15 @@
+# Team B (평균회귀, 자체 연구 가설) 제출 후보. 2026-10-09 KST.
+# 정직한 결론: 비용 차감 후 현금(0%)을 이기는 변형 없음. 아래는 사전 선언된 5개 validation 슬롯 중 최선을
+# 규정대로 제출하는 것이며 채택 권고가 아니다 (권고: 보류/폐기).
+- id: B2-tp
+  strategy: strategies.team_b.b1_zscore:B2ZScore1h
+  params: {tp_frac: 1.0}          # 나머지는 기본값: n 72, z_entry 2.5, rsi_lo 25, adx_max 20 (4h, 확정봉), max_hold 24, stop_atr 2.0, funding_max 0.0005, cost_mult 3, rt_cost 0.0011
+  timeframe: 1h
+  rationale: >-
+    자체 연구 가설(우승자 근거 없음). 1h 종가의 72봉 z ≤ −2.5 & RSI14 ≤ 25(숏 대칭), 4h ADX14 < 20 국면,
+    평균(SMA72) 지정가 메이커 익절, z 0 교차 또는 24h 시간 손절, 손절 = 신호 종가 ∓ 2.0×ATR14(1h).
+    train 13개 실행 중 최선(+0.28%, MDD 3.2%, 165거래)이나 사실상 손익분기(gross ≈ 수수료).
+    validation −1.11% / MDD 1.70% / 42거래, BTC −0.12% / ETH −0.99%, 비용 스트레스 −1.20%.
+    현금을 이기지 못함 — 기준 동결 경합용 참고 후보로만 제출. B1(15m 원안)은 train·validation 모두 10% 낙폭 중단으로 폐기.
+  train_result_ids: [20261009-180651-b2_zscore_1h-train, 20261009-180732-b2_zscore_1h-train, 20261009-180734-b2_zscore_1h-train]
+  validation_result_ids: [20261009-180752-b2_zscore_1h-validation, 20261009-180803-b2_zscore_1h-validation, 20261009-180804-b2_zscore_1h-validation, 20261009-180807-b2_zscore_1h-validation]

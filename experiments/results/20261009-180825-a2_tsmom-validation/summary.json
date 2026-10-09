@@ -1,0 +1,33 @@
+{
+  "net_return": 0.047715752152187374,
+  "final_equity": 10477.157521521873,
+  "max_dd": 0.019461594238183166,
+  "ret_over_dd": 2.4517905146008157,
+  "sharpe_daily": 1.7475373625164907,
+  "sortino_daily": 3.7601399244868463,
+  "trades": 87,
+  "win_rate": 0.2988505747126437,
+  "payoff": 4.307544540651788,
+  "profit_factor": 1.8360025910974835,
+  "turnover": 7.3589758756556405,
+  "exposure": 0.46661339421613396,
+  "fees": 36.7948793782782,
+  "funding": -10.480754643713404,
+  "slippage_est": NaN,
+  "liquidations": 0,
+  "rejects": 0,
+  "partial_fills": 0,
+  "halted": false,
+  "daily_blocks": 0,
+  "risk_violations": 0,
+  "days": 365.0,
+  "elapsed_s": 0.3,
+  "cost_model": "configs/costs.yaml",
+  "split": "validation",
+  "symbols": [
+    "ETHUSDT"
+  ],
+  "strategy": "a2_tsmom({'lookback': 180, 'atr_n': 14, 'stop_mult': 3.0})",
+  "events": 0,
+  "halted_at": null
+}

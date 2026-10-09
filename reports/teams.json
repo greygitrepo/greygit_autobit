@@ -1,10 +1,58 @@
 [
-  {"key": "lead", "name": "총괄", "role": "일정·기준 동결·통합·최종 보고서", "status": "진행 중", "members": "메인 세션"},
-  {"key": "research", "name": "근거 조사", "role": "대회·우승자 검증, 공통 원칙", "status": "완료 (검증 9건)", "members": "subagent"},
-  {"key": "engine", "name": "공통 엔진", "role": "데이터·체결·비용·모의거래·리스크", "status": "가동 중 (백테스트+실시간 모의거래)", "members": "총괄 + subagent 2"},
-  {"key": "A", "name": "전략 A", "role": "추세·돌파 (A1: 1h 돌파 + 4h 추세 필터)", "status": "개발·실험 중", "members": "subagent"},
-  {"key": "B", "name": "전략 B", "role": "평균회귀 (B1: 비추세 국면 z-score 역추세, 자체 가설)", "status": "개발·실험 중", "members": "subagent"},
-  {"key": "C", "name": "전략 C", "role": "변동성·거래량·국면 (C1 게이트, C2 압축 돌파)", "status": "개발·실험 중", "members": "subagent"},
-  {"key": "eval", "name": "독립 평가", "role": "누수·과최적화·체결 가정 감사, 동일 조건 경합", "status": "대기 (전략 제출 후 시작)", "members": "subagent"},
-  {"key": "baseline", "name": "기준선", "role": "파이프라인 점검용·현금/보유 기준 전략", "status": "운영", "members": "총괄"}
+ {
+  "key": "lead",
+  "name": "총괄",
+  "role": "일정·기준 동결·통합·최종 보고서",
+  "status": "진행 중",
+  "members": "메인 세션"
+ },
+ {
+  "key": "research",
+  "name": "근거 조사",
+  "role": "대회·우승자 검증, 공통 원칙",
+  "status": "완료 (검증 9건)",
+  "members": "subagent"
+ },
+ {
+  "key": "engine",
+  "name": "공통 엔진",
+  "role": "데이터·체결·비용·모의거래·리스크",
+  "status": "가동 중 (백테스트+실시간 모의거래)",
+  "members": "총괄 + subagent 2"
+ },
+ {
+  "key": "A",
+  "name": "전략 A",
+  "role": "추세·돌파 (A1: 1h 돌파 + 4h 추세 필터)",
+  "status": "개발·실험 중",
+  "members": "subagent"
+ },
+ {
+  "key": "B",
+  "name": "전략 B",
+  "role": "평균회귀 (B1: 비추세 국면 z-score 역추세, 자체 가설)",
+  "status": "완료 – 결과 음성 (비용 차감 후 현금보다 못함). 참고용 후보 B2-tp 1개, 보류/폐기 권고",
+  "members": "subagent"
+ },
+ {
+  "key": "C",
+  "name": "전략 C",
+  "role": "변동성·거래량·국면 (C1 게이트, C2 압축 돌파)",
+  "status": "개발·실험 중",
+  "members": "subagent"
+ },
+ {
+  "key": "eval",
+  "name": "독립 평가",
+  "role": "누수·과최적화·체결 가정 감사, 동일 조건 경합",
+  "status": "대기 (전략 제출 후 시작)",
+  "members": "subagent"
+ },
+ {
+  "key": "baseline",
+  "name": "기준선",
+  "role": "파이프라인 점검용·현금/보유 기준 전략",
+  "status": "운영",
+  "members": "총괄"
+ }
 ]
