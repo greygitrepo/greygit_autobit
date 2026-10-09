@@ -14,6 +14,7 @@ import argparse
 import csv
 import importlib
 import json
+import os
 import subprocess
 import sys
 import time
@@ -63,6 +64,13 @@ def run(strategy_spec, split, params=None, symbols=None, stress=None, team="", n
     lo, hi = exp["splits"][split]
     start, end = to_ms(lo), to_ms(hi) + 86_400_000
     strat = load_strategy(strategy_spec, params or {})
+    run_dir = ROOT / "experiments" / "running"
+    run_dir.mkdir(parents=True, exist_ok=True)
+    marker = run_dir / f"{os.getpid()}-{int(time.time() * 1000)}.json"
+    marker.write_text(json.dumps({"pid": os.getpid(), "strategy": strat.describe(), "name": strat.name,
+                                  "team": team or strat.team, "split": split, "stress": stress or "base",
+                                  "symbols": symbols or exp["symbols"],
+                                  "started": datetime.now(KST).isoformat(timespec="seconds")}))
     specs = load_specs(symbols)
     costs = load_cost_model()
     st = parse_stress(stress)
@@ -82,7 +90,10 @@ def run(strategy_spec, split, params=None, symbols=None, stress=None, team="", n
         signals[s] = sig[sig.index >= start - 0]       # decisions only inside the split
         markets[s] = prepare_market(s, m1, mk, f, start, end)
     t0 = time.time()
-    res = run_backtest(strat, markets, specs, costs, risk, signals=signals)
+    try:
+        res = run_backtest(strat, markets, specs, costs, risk, signals=signals)
+    finally:
+        marker.unlink(missing_ok=True)
     summ = summarize(res, risk.initial_capital_usdt)
     summ.update({"elapsed_s": round(time.time() - t0, 1), "cost_model": costs.source, "split": split,
                  "symbols": symbols, "strategy": strat.describe(), "events": len(res.events),

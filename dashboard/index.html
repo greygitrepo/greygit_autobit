@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전략 연구 대시보드</title>
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --ink:#1b1f24; --muted:#636c76; --line:#e2e5e9;
+  --accent:#2f6fde; --pos:#1a7f45; --neg:#c43b3b; --warn:#b7791f; --chip:#eef1f5;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0f1216; --panel:#171b21; --ink:#e6e9ed; --muted:#9aa4af; --line:#2a3038;
+         --accent:#6aa0ff; --pos:#4cc47f; --neg:#ff6b6b; --warn:#e0a84a; --chip:#222831; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--panel);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+header h1{font-size:17px;margin:0;font-weight:650}
+.kpis{display:flex;gap:18px;flex-wrap:wrap;margin-left:auto;font-variant-numeric:tabular-nums}
+.kpi b{font-size:15px}.kpi span{color:var(--muted);font-size:12px;margin-right:6px}
+nav{display:flex;gap:4px;padding:10px 20px 0;flex-wrap:wrap}
+nav button{border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:7px 14px;border-radius:8px 8px 0 0;cursor:pointer;font-size:13px}
+nav button.on{border-bottom-color:var(--panel);font-weight:650;color:var(--accent)}
+main{padding:0 20px 40px}
+section{display:none;background:var(--panel);border:1px solid var(--line);border-radius:0 10px 10px 10px;padding:18px}
+section.on{display:block}
+h2{font-size:15px;margin:4px 0 12px}
+h3{font-size:13px;margin:18px 0 8px;color:var(--muted);font-weight:600;text-transform:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--panel)}
+.card .t{font-weight:650;display:flex;justify-content:space-between;gap:8px}
+.card .r{color:var(--muted);font-size:12.5px;margin:4px 0 8px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:2px 9px;font-size:12px;margin:2px 4px 2px 0}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.ok{background:var(--pos)}.bad{background:var(--neg)}.idle{background:var(--muted)}
+.tbl{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:13px}
+.tbl th{position:sticky;top:0;background:var(--panel);text-align:left;color:var(--muted);font-weight:600;border-bottom:1px solid var(--line);padding:7px 8px;white-space:nowrap;cursor:pointer}
+.tbl td{border-bottom:1px solid var(--line);padding:6px 8px;white-space:nowrap}
+.tbl tr.click:hover td{background:var(--chip);cursor:pointer}
+.scroll{overflow:auto;max-height:560px;border:1px solid var(--line);border-radius:8px}
+.num{text-align:right}
+.pos{color:var(--pos)}.neg{color:var(--neg)}.muted{color:var(--muted)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+select,input{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px 8px}
+svg.chart{width:100%;height:220px;display:block}
+pre{white-space:pre-wrap;background:var(--chip);border-radius:8px;padding:12px;font-size:12.5px;max-height:520px;overflow:auto}
+.note{color:var(--muted);font-size:12.5px}
+.banner{border-left:3px solid var(--warn);background:var(--chip);padding:8px 12px;border-radius:6px;margin-bottom:12px;font-size:13px}
+@media (max-width:640px){header,nav,main{padding-left:12px;padding-right:12px}.kpis{margin-left:0}}
+</style>
+</head>
+<body>
+<header>
+  <h1>암호화폐 선물 전략 연구 · 대시보드</h1>
+  <div class="kpis">
+    <div class="kpi"><span>현재(KST)</span><b id="k-now">–</b></div>
+    <div class="kpi"><span>보고서 마감까지</span><b id="k-left">–</b></div>
+    <div class="kpi"><span>활동 팀</span><b id="k-teams">–</b></div>
+    <div class="kpi"><span>진행 중 실험</span><b id="k-run">–</b></div>
+    <div class="kpi"><span>누적 실험</span><b id="k-total">–</b></div>
+    <div class="kpi"><span>실시간 모의거래</span><b id="k-live">–</b></div>
+  </div>
+</header>
+<nav id="tabs">
+  <button data-t="teams" class="on">팀 현황</button>
+  <button data-t="live">실시간 모의거래</button>
+  <button data-t="running">진행 중 테스트</button>
+  <button data-t="history">지난 테스트 결과</button>
+  <button data-t="board">경합 결과</button>
+  <button data-t="status">STATUS.md</button>
+</nav>
+<main>
+  <section id="teams" class="on">
+    <h2>팀 구성과 진행 상태</h2>
+    <div class="grid" id="team-cards"></div>
+    <p class="note">팀 정의: <code>reports/teams.json</code> · 실험 수는 <code>experiments/registry.csv</code> 기준 · 후보 제출 여부는 <code>strategies/team_*/CANDIDATES.yaml</code> 존재 여부.</p>
+  </section>
+
+  <section id="live">
+    <div class="banner">실제 주문 없음. Binance USDⓈ-M 공개 시세(WebSocket)로 각 전략이 독립 모의계좌(10,000 USDT)를 운용합니다. 단기 결과는 장기 수익성의 증거가 아닙니다.</div>
+    <h2>모의거래 프로세스</h2>
+    <div id="live-proc" class="grid"></div>
+    <h3>전략별 모의계좌</h3>
+    <div class="scroll"><table class="tbl" id="live-tbl"></table></div>
+    <h3 id="live-chart-title">자산 추이 (행을 클릭하세요)</h3>
+    <svg class="chart" id="live-chart"></svg>
+    <h3>최근 체결</h3>
+    <div class="scroll" style="max-height:260px"><table class="tbl" id="live-fills"></table></div>
+    <h3>프로세스 로그 (최근)</h3>
+    <pre id="live-log"></pre>
+  </section>
+
+  <section id="running">
+    <h2>지금 실행 중인 백테스트</h2>
+    <div class="scroll"><table class="tbl" id="run-tbl"></table></div>
+    <p class="note">각 팀이 <code>scripts/run_experiment.py</code>를 실행하는 동안 표시됩니다. 실행은 보통 수 초~수십 초.</p>
+  </section>
+
+  <section id="history">
+    <h2>지난 테스트 결과 (전체 실험 레지스트리)</h2>
+    <div class="filters">
+      <select id="f-team"><option value="">모든 팀</option></select>
+      <select id="f-split"><option value="">모든 구간</option><option>train</option><option>validation</option><option>test</option></select>
+      <select id="f-stress"><option value="">모든 비용조건</option><option value="base">기본 비용</option><option value="stress">스트레스</option></select>
+      <input id="f-q" placeholder="전략/메모 검색">
+    </div>
+    <div class="scroll"><table class="tbl" id="hist-tbl"></table></div>
+    <h3 id="exp-title">실험 상세 (행을 클릭하세요)</h3>
+    <svg class="chart" id="exp-chart"></svg>
+    <div id="exp-sum" class="grid"></div>
+  </section>
+
+  <section id="board">
+    <h2>경합 결과 (동일 조건 비교표)</h2>
+    <div id="board-note" class="banner"></div>
+    <div class="scroll"><table class="tbl" id="board-tbl"></table></div>
+    <p class="note">순위 규칙(결과 전 동결): validation 구간 비용 차감 수익률/최대낙폭 우선, 거래 30건 미만·위험 위반·회계 오류·누수는 제외. 출처 <code>reports/leaderboard.csv</code>.</p>
+  </section>
+
+  <section id="status">
+    <h2>STATUS.md</h2>
+    <pre id="status-md"></pre>
+  </section>
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const pct = (x, d=2) => (x===null||x===undefined||x===''||isNaN(+x)) ? '–' : ((+x)*100).toFixed(d)+'%';
+const num = (x, d=2) => (x===null||x===undefined||x===''||isNaN(+x)) ? '–' : (+x).toLocaleString(undefined,{minimumFractionDigits:d,maximumFractionDigits:d});
+const cls = x => (+x>0?'pos':(+x<0?'neg':''));
+const kst = ms => new Date(+ms + 9*3600e3).toISOString().replace('T',' ').slice(0,16);
+const esc = s => String(s??'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let DATA = null, selLive = null, selExp = null;
+
+document.querySelectorAll('#tabs button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('#tabs button').forEach(x => x.classList.toggle('on', x===b));
+  document.querySelectorAll('main section').forEach(s => s.classList.toggle('on', s.id===b.dataset.t));
+  try { localStorage.setItem('tab', b.dataset.t); } catch(e) {}
+});
+try { const t = localStorage.getItem('tab'); if (t) document.querySelector(`#tabs button[data-t="${t}"]`)?.click(); } catch(e) {}
+
+function chart(svg, pts, base=10000){
+  svg.innerHTML = '';
+  if (!pts || pts.length < 2){ svg.innerHTML = '<text x="12" y="24" fill="currentColor" opacity=".6">데이터가 아직 부족합니다</text>'; return; }
+  const W = svg.clientWidth || 800, H = svg.clientHeight || 220, pl=64, pr=12, pt=12, pb=26;
+  const xs = pts.map(p=>p[0]), ys = pts.map(p=>p[1]);
+  let y0 = Math.min(...ys, base), y1 = Math.max(...ys, base); if (y1-y0 < 1){ y0 -= 1; y1 += 1; }
+  const X = x => pl + (x - xs[0]) / (xs[xs.length-1]-xs[0] || 1) * (W-pl-pr);
+  const Y = y => pt + (1 - (y - y0)/(y1 - y0)) * (H-pt-pb);
+  const css = getComputedStyle(document.documentElement);
+  const line = css.getPropertyValue('--accent'), grid = css.getPropertyValue('--line'), mute = css.getPropertyValue('--muted');
+  let g = '';
+  for (let i=0;i<=4;i++){ const v = y0 + (y1-y0)*i/4, y=Y(v);
+    g += `<line x1="${pl}" x2="${W-pr}" y1="${y}" y2="${y}" stroke="${grid}"/><text x="${pl-6}" y="${y+4}" text-anchor="end" font-size="11" fill="${mute}">${num(v,0)}</text>`; }
+  g += `<line x1="${pl}" x2="${W-pr}" y1="${Y(base)}" y2="${Y(base)}" stroke="${mute}" stroke-dasharray="4 4"/>`;
+  g += `<text x="${pl}" y="${H-6}" font-size="11" fill="${mute}">${kst(xs[0])}</text><text x="${W-pr}" y="${H-6}" text-anchor="end" font-size="11" fill="${mute}">${kst(xs[xs.length-1])}</text>`;
+  const d = pts.map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)).join('');
+  g += `<path d="${d}" fill="none" stroke="${line}" stroke-width="1.8"/>`;
+  svg.innerHTML = g;
+}
+
+function table(el, cols, rows, onclick){
+  el.innerHTML = '<thead><tr>' + cols.map(c=>`<th class="${c.n?'num':''}">${c.h}</th>`).join('') + '</tr></thead><tbody>' +
+    (rows.length ? rows.map((r,i)=>`<tr class="${onclick?'click':''}" data-i="${i}">` + cols.map(c=>{
+      const v = c.f ? c.f(r) : esc(r[c.k]); return `<td class="${c.n?'num':''} ${c.c?c.c(r):''}">${v}</td>`; }).join('') + '</tr>').join('')
+     : `<tr><td colspan="${cols.length}" class="muted">없음</td></tr>`) + '</tbody>';
+  if (onclick) el.querySelectorAll('tbody tr.click').forEach(tr => tr.onclick = () => onclick(rows[+tr.dataset.i]));
+}
+
+function renderTeams(d){
+  $('#team-cards').innerHTML = d.teams.map(t => `
+    <div class="card"><div class="t"><span>${esc(t.name)}</span><span class="chip">${esc(t.key)}</span></div>
+    <div class="r">${esc(t.role)}</div>
+    <div><span class="dot ${t.running? 'ok' : (/대기/.test(t.status)?'idle':'ok')}"></span>${esc(t.status)}</div>
+    <div style="margin-top:8px">
+      <span class="chip">실험 ${t.runs}건</span>
+      ${t.running?`<span class="chip">실행 중 ${t.running}</span>`:''}
+      ${t.candidates_submitted?'<span class="chip">후보 제출됨</span>':''}
+      ${t.last_run?`<span class="chip">최근 ${esc(t.last_run.slice(5,16).replace('T',' '))}</span>`:''}
+    </div></div>`).join('');
+}
+
+function renderLive(d){
+  const L = d.live, st = L.status || {};
+  const feeds = st.feeds || {};
+  $('#live-proc').innerHTML = `
+    <div class="card"><div class="t">프로세스</div><div class="r">PID ${L.pid ?? '–'}</div>
+      <div><span class="dot ${L.alive?'ok':'bad'}"></span>${L.alive?'실행 중':'중지됨'} · 상태 갱신 ${L.status_age_s==null?'–':Math.round(L.status_age_s)+'초 전'}</div>
+      <div class="r">가동 ${st.uptime_min ?? '–'}분 · 시계 오차 ${num(st.clock_offset_ms,0)}ms · 재연결 ${JSON.stringify(st.ws_reconnects||{})}</div></div>` +
+    Object.entries(feeds).map(([s,f]) => `
+    <div class="card"><div class="t">${s}</div>
+      <div><span class="dot ${f.fresh?'ok':'bad'}"></span>${f.fresh?'데이터 정상':'데이터 지연 – 신규 진입 차단'}</div>
+      <div class="r">bid ${num(f.bid)} / ask ${num(f.ask)} · mark ${num(f.mark)}<br>마지막 1m봉 ${esc((f.last_bar||'').slice(0,16))} UTC · 공백 보충 ${f.gaps_filled}회 · 중복 ${f.dup_klines}</div></div>`).join('');
+  const rows = L.runners || [];
+  table($('#live-tbl'), [
+    {h:'전략(러너)', k:'id'},
+    {h:'자산', n:1, f:r=>num(r.equity)},
+    {h:'손익', n:1, f:r=>`<span class="${cls(r.pnl)}">${num(r.pnl)}</span>`},
+    {h:'수익률', n:1, f:r=>`<span class="${cls(r.pnl)}">${pct(r.pnl/10000,3)}</span>`},
+    {h:'포지션', f:r=>Object.entries(r.positions||{}).map(([s,q])=>`${s.replace('USDT','')} ${q==0?'–':(q>0?'롱 ':'숏 ')+Math.abs(q)}`).join(' · ')},
+    {h:'결정', n:1, k:'decisions'}, {h:'놓친 결정', n:1, k:'missed'}, {h:'체결', n:1, k:'n_fills'},
+    {h:'상태', f:r=>r.halted?'<span class="neg">낙폭 중단</span>':'운용'},
+  ], rows, r => { selLive = r.id; loadLive(); });
+  if (!selLive && rows.length) selLive = rows[0].id;
+  $('#live-log').textContent = (L.log_tail||[]).join('\n');
+}
+
+async function loadLive(){
+  if (!selLive) return;
+  const j = await fetch('/api/live_equity?id='+encodeURIComponent(selLive)).then(r=>r.json());
+  $('#live-chart-title').textContent = `자산 추이 – ${selLive}`;
+  chart($('#live-chart'), j.equity);
+  table($('#live-fills'), [
+    {h:'시각(KST)', f:r=>kst(r.ts)}, {h:'종목', k:'symbol'}, {h:'방향', f:r=>r.side>0?'매수':'매도'},
+    {h:'수량', n:1, k:'qty'}, {h:'가격', n:1, f:r=>num(r.price)}, {h:'수수료', n:1, f:r=>num(r.fee,4)},
+    {h:'구분', k:'tag'}, {h:'실현손익', n:1, f:r=>`<span class="${cls(r.realized_pnl)}">${num(r.realized_pnl)}</span>`},
+  ], j.fills || []);
+}
+
+function renderRunning(d){
+  table($('#run-tbl'), [
+    {h:'팀', k:'team'}, {h:'전략', k:'strategy'}, {h:'구간', k:'split'}, {h:'비용조건', k:'stress'},
+    {h:'종목', f:r=>(r.symbols||[]).join(', ')}, {h:'시작', f:r=>esc((r.started||'').slice(11,19))}, {h:'PID', k:'pid'},
+  ], d.running);
+}
+
+function renderHistory(d){
+  const teams = [...new Set(d.registry.map(r=>r.team))].sort();
+  const sel = $('#f-team'); const cur = sel.value;
+  sel.innerHTML = '<option value="">모든 팀</option>' + teams.map(t=>`<option ${t===cur?'selected':''}>${esc(t)}</option>`).join('');
+  const ft = $('#f-team').value, fs = $('#f-split').value, fx = $('#f-stress').value, q = $('#f-q').value.toLowerCase();
+  const rows = d.registry.filter(r => (!ft||r.team===ft) && (!fs||r.split===fs) &&
+     (!fx || (fx==='base' ? r.variant==='base' : r.variant!=='base')) &&
+     (!q || (r.strategy+' '+r.notes+' '+r.params).toLowerCase().includes(q)));
+  table($('#hist-tbl'), [
+    {h:'시각', f:r=>esc((r.timestamp_kst||'').slice(5,16).replace('T',' '))}, {h:'팀', k:'team'}, {h:'전략', k:'strategy'},
+    {h:'구간', k:'split'}, {h:'비용', k:'variant'},
+    {h:'순수익률', n:1, f:r=>`<span class="${cls(r.net_return)}">${pct(r.net_return)}</span>`},
+    {h:'최대낙폭', n:1, f:r=>pct(r.max_dd)}, {h:'Sharpe', n:1, f:r=>num(r.sharpe,2)}, {h:'거래', n:1, k:'trades'},
+    {h:'상태', k:'status'}, {h:'파라미터', f:r=>`<span class="muted">${esc(r.params).slice(0,60)}</span>`},
+    {h:'메모', f:r=>`<span class="muted">${esc(r.notes).slice(0,50)}</span>`},
+  ], rows, r => { selExp = r.id; loadExp(); });
+}
+
+async function loadExp(){
+  if (!selExp) return;
+  const j = await fetch('/api/experiment?id='+encodeURIComponent(selExp)).then(r=>r.json());
+  const s = j.summary || {};
+  $('#exp-title').textContent = `실험 상세 – ${selExp}`;
+  chart($('#exp-chart'), j.equity);
+  const items = [['순수익률',pct(s.net_return)],['최대낙폭',pct(s.max_dd)],['수익/낙폭',num(s.ret_over_dd)],['Sharpe(일)',num(s.sharpe_daily)],
+    ['Sortino(일)',num(s.sortino_daily)],['거래 수',s.trades],['승률',pct(s.win_rate,1)],['손익비',num(s.payoff)],['Profit factor',num(s.profit_factor)],
+    ['수수료',num(s.fees)],['펀딩',num(s.funding)],['회전율',num(s.turnover,1)+'x'],['노출',pct(s.exposure,1)],['청산',s.liquidations],
+    ['거절',s.rejects],['부분체결',s.partial_fills],['낙폭중단',s.halted?'예':'아니오'],['일일한도 도달',s.daily_blocks],['비용모형',s.cost_model],['전략',s.strategy]];
+  $('#exp-sum').innerHTML = items.map(([k,v])=>`<div class="card"><div class="r" style="margin:0">${k}</div><div class="t">${esc(v)}</div></div>`).join('');
+}
+
+function renderBoard(d){
+  const rows = d.leaderboard || [];
+  $('#board-note').textContent = rows.length ? '독립 평가팀이 동일 데이터·자본·비용·위험 규칙으로 산출한 비교표입니다.'
+    : '아직 경합표가 없습니다. 전략팀 후보 제출 → 독립 평가팀 동일 조건 평가 후 생성됩니다. 그 전까지는 "지난 테스트 결과"에서 validation 구간 결과를 참고하세요.';
+  if (!rows.length){ $('#board-tbl').innerHTML=''; return; }
+  const cols = Object.keys(rows[0]).map(k => ({h:k, k, n: !isNaN(+rows[0][k]) && rows[0][k]!=='' }));
+  table($('#board-tbl'), cols, rows);
+}
+
+async function refresh(){
+  try{
+    const d = DATA = await fetch('/api/overview').then(r=>r.json());
+    $('#k-now').textContent = d.now_kst.slice(5,16).replace('T',' ');
+    $('#k-left').textContent = d.hours_left > 0 ? d.hours_left + '시간' : '마감';
+    $('#k-teams').textContent = d.teams.filter(t=>!/대기/.test(t.status)).length + ' / ' + d.teams.length;
+    $('#k-run').textContent = d.running.length;
+    $('#k-total').textContent = d.registry_total;
+    $('#k-live').innerHTML = `<span class="dot ${d.live.alive?'ok':'bad'}"></span>${d.live.alive? (d.live.runners||[]).length+'개 전략 운용':'중지'}`;
+    renderTeams(d); renderLive(d); renderRunning(d); renderHistory(d); renderBoard(d);
+    $('#status-md').textContent = d.status_md;
+    loadLive();
+  }catch(e){ $('#k-live').textContent = '서버 연결 실패'; }
+}
+['#f-team','#f-split','#f-stress','#f-q'].forEach(s => $(s).addEventListener('input', () => DATA && renderHistory(DATA)));
+window.addEventListener('resize', () => { loadLive(); loadExp(); });
+refresh(); setInterval(refresh, 10000);
+</script>
+</body>
+</html>
