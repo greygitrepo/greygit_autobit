@@ -123,6 +123,26 @@ def cmd_live():
             "halts": sum(1 for e in ev if e["event"] in ("max_drawdown_halt", "daily_loss_block")),
             "errors": sum(1 for e in ev if e["event"] == "strategy_error"),
         })
+    # portfolios: runners named "<PORTFOLIO>:<sleeve>" are actual-capital sub-accounts → sum their equity
+    groups = {}
+    for d in LIVE.iterdir():
+        if d.is_dir() and ":" in d.name:
+            groups.setdefault(d.name.split(":")[0], []).append(d)
+    for pname, dirs in groups.items():
+        curves = []
+        for d in dirs:
+            e = _read_csv(d / "equity.csv")
+            if not e.empty:
+                curves.append(e[e["ts"] <= cut_ms].set_index("ts")["equity"].groupby(level=0).last())
+        if not curves:
+            continue
+        tot = pd.concat(curves, axis=1).sort_index().ffill().dropna().sum(axis=1)
+        cap = sum(r["capital"] for r in rows if r["runner"].startswith(pname + ":"))
+        rows.append({"runner": f"{pname} (합산)", "start_kst": "", "end_kst": "", "capital": cap,
+                     "hours": round((tot.index[-1] - tot.index[0]) / 3.6e6, 1), "equity": round(float(tot.iloc[-1]), 2),
+                     "net_return": float(tot.iloc[-1]) / cap - 1, "max_dd": float((1 - tot / tot.cummax()).max()),
+                     **{k: sum(r[k] for r in rows if r["runner"].startswith(pname + ":"))
+                        for k in ("fills", "entries", "fees", "funding", "decisions", "missed_decisions", "restarts", "halts", "errors")}})
     # data uptime from kline receipt logs
     up = {}
     for sym in ("BTCUSDT", "ETHUSDT"):

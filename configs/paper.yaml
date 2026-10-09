@@ -64,3 +64,48 @@ runners:                 # 각 러너 = 독립 모의계좌 (동일 자본·비�
     strategy: strategies.team_e.e1_composite:E1Composite
     params: {atr_n: 14, comps: {m180: 1, m360: 1, m90: 1}, decide_every: 6, enter_th: 0.3, exit_th: 0.0,
   max_hold: 0, mode: sign, size: one, stop_mult: 3.0, trail: true}
+  # --- R3 승격 (독립 평가 2026-10-09 R3) ---
+  - id: D4-pair-ens-rsexit
+    team: D
+    strategy: strategies.team_d.d_relmom_r3:D4RelMomX
+    params: {atr_n: 14, ens_thresh: 1.0, exit_rule: rs, leg: auto, lookbacks: [180, 360, 540],
+  mode: pair, reset_days: 30, short_filter: own, short_size: 1.0, sides: both, stop_mult: 3.0,
+  tf: 4h, trail: true, trend_lookback: 90, vol_floor: 0.25, vol_n: 0}
+  # F3-IV5 포트폴리오: 슬리브별 실제 배분 자본으로 독립 하위계좌 운용 (합산은 final_run/대시보드에서 계산)
+  - id: F3:A2-tsmom-L180-m2
+    team: F
+    portfolio: F3-IV5
+    weight: 0.094436
+    capital: 944.36
+    strategy: strategies.team_a.a2_tsmom:A2TSMom
+    params: {atr_n: 14, lookback: 180, stop_mult: 2.0}
+  - id: F3:E1-v3-s3-d
+    team: F
+    portfolio: F3-IV5
+    weight: 0.115457
+    capital: 1154.57
+    strategy: strategies.team_e.e1_composite:E1Composite
+    params: {atr_n: 14, comps: {m180: 1, m360: 1, m90: 1}, decide_every: 6, enter_th: 0.3, exit_th: 0.0,
+  max_hold: 0, mode: sign, size: one, stop_mult: 3.0, trail: true}
+  - id: F3:D1-relmom-rel360-tr90
+    team: F
+    portfolio: F3-IV5
+    weight: 0.190249
+    capital: 1902.49
+    strategy: strategies.team_d.d_relval:D1RelMom
+    params: {atr_n: 14, leg: auto, lookback: 360, max_hold: 0, mode: leader, rel_thresh: 0.0,
+  stop_mult: 3.0, tf: 4h, trail: true, trend_lookback: 90}
+  - id: F3:B3-abs-favg3
+    team: F
+    portfolio: F3-IV5
+    weight: 0.288233
+    capital: 2882.33
+    strategy: strategies.team_b.b3_crowding:B3FundingCrowd
+    params: {f_avg: 3, long_only_funding_max: 0.0, p_lo: 1.0}
+  - id: F3:B3-favg3-short
+    team: F
+    portfolio: F3-IV5
+    weight: 0.311625
+    capital: 3116.25
+    strategy: strategies.team_b.b3_crowding:B3FundingCrowd
+    params: {enable_short: true, f_avg: 3, imb_hi: 1.0}
