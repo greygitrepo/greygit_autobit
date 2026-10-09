@@ -18,6 +18,7 @@ import pandas as pd
 
 from .broker import Broker, SymbolSpec
 from .costs import CostModel
+from .execution import SignalExecutor
 from .strategy import TF_MS, Strategy, resample
 
 DAY_MS = 86_400_000
@@ -128,21 +129,17 @@ def run_backtest(strategy: Strategy, markets: dict[str, MarketData], specs: dict
     day_blocked = False
     halted_at = None
     pending_halt = False
-    locked: dict[str, int] = {s: 0 for s in syms}     # direction blocked after stop/tp exit
-    last_dir = {s: 0 for s in syms}
+    execu = SignalExecutor(risk)
     eq_ts, eq_val = [], []
     events = []
     violations = []
-    seq = 0
 
     def flat_all(i, tag):
-        nonlocal seq
         for s in syms:
             broker.cancel_all(s)
             p = broker.positions[s]
             if p.qty != 0:
-                seq += 1
-                broker.submit(f"{tag}-{s}-{i}-{seq}", s, -p.dir, abs(p.qty), "market", reduce_only=True,
+                broker.submit(execu._id(tag, s, int(grid[i])), s, -p.dir, abs(p.qty), "market", reduce_only=True,
                               tag="halt" if tag == "halt" else "exit", ts=int(grid[i]))
 
     i = 0
@@ -163,59 +160,10 @@ def run_backtest(strategy: Strategy, markets: dict[str, MarketData], specs: dict
             pending_halt = False
         # 3) decisions
         for s, tgt, stop, tp, complete in decisions.get(i, ()):
-            if halted_at is not None or tgt is None or (isinstance(tgt, float) and math.isnan(tgt)):
+            if halted_at is not None:
                 continue
-            tgt = int(tgt)
-            m = markets[s]
-            pos = broker.positions[s]
-            d = pos.dir
-            if d == 0 and last_dir[s] != 0 and broker.last_fill_tag.get(s) in ("stop", "tp", "liquidation"):
-                locked[s] = last_dir[s]       # closed by stop/tp/liq: no re-entry until signal changes
-            last_dir[s] = d
-            if tgt != locked[s]:
-                locked[s] = 0
-            ref = m.c[i - 1] if i > 0 else np.nan
-            if math.isnan(ref):
-                continue                      # stale data: no action
-            if tgt != d:
-                if d != 0:
-                    broker.cancel_all(s)
-                    seq += 1
-                    broker.submit(f"x-{s}-{i}-{seq}", s, -d, abs(pos.qty), "market", reduce_only=True,
-                                  tag="exit", ts=ts)
-                if tgt != 0 and not day_blocked and complete and tgt != locked[s]:
-                    if stop is None or math.isnan(stop) or (stop - ref) * tgt >= 0:
-                        broker.counters["rejects"] += 1
-                        continue
-                    dist = abs(ref - stop)
-                    if dist / ref < risk.min_stop_frac:
-                        broker.counters["rejects"] += 1
-                        continue
-                    qty = risk.risk_per_trade_frac * risk.initial_capital_usdt / dist
-                    other = sum(abs(p.qty) * broker.last_price.get(k, p.entry_price)
-                                for k, p in broker.positions.items() if k != s)
-                    cap_notional = max(risk.max_leverage * broker.equity() - other, 0.0)
-                    qty = min(qty, cap_notional / ref)
-                    seq += 1
-                    broker.submit(f"e-{s}-{i}-{seq}", s, tgt, qty, "market", tag="entry", ts=ts,
-                                  stop_loss=float(stop),
-                                  take_profit=None if tp is None or (isinstance(tp, float) and math.isnan(tp)) else float(tp))
-                    last_dir[s] = tgt
-                else:
-                    last_dir[s] = 0 if d != 0 else last_dir[s]
-            elif d != 0 and stop is not None and not math.isnan(stop):
-                # same direction: move stop (cancel/replace). Already-crossed stop → exit.
-                cur = [o for o in broker.open_orders(s) if o.tag == "stop"]
-                if not cur or abs(cur[0].price - stop) > 1e-12:
-                    for o in cur:
-                        broker.cancel(o.id)
-                    seq += 1
-                    if (ref - stop) * d <= 0:
-                        broker.submit(f"x-{s}-{i}-{seq}", s, -d, abs(pos.qty), "market", reduce_only=True,
-                                      tag="exit", ts=ts)
-                    else:
-                        broker.submit(f"sl-{s}-{i}-{seq}", s, -d, abs(pos.qty), "stop", float(stop),
-                                      reduce_only=True, tag="stop", ts=ts)
+            ref = markets[s].c[i - 1] if i > 0 else np.nan
+            execu.apply(broker, s, tgt, stop, tp, ref, ts, entries_allowed=(not day_blocked) and complete)
         # 4) market
         for s in syms:
             m = markets[s]

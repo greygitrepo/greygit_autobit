@@ -51,6 +51,8 @@ def load_specs(symbols) -> dict[str, SymbolSpec]:
     out = {s: _DEFAULT_SPECS[s] for s in symbols}
     if path.exists():
         raw = yaml.safe_load(path.read_text()) or {}
+        if "primary" in raw:                      # venue-keyed layout: {primary: name, name: {symbols: ...}}
+            raw = raw.get(raw["primary"], {})
         for s in symbols:
             v = (raw.get("symbols") or {}).get(s)
             if not v:
