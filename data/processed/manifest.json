@@ -1,60 +1,60 @@
 {
-  "generated_utc": "2026-10-09T08:44:58Z",
+  "generated_utc": "2026-10-09T10:07:46Z",
   "source": "https://data.binance.vision (USD-M futures archive, sha256 verified) + fapi.binance.com public REST",
   "period_utc": {
-    "start": "2021-10-01T00:00:00Z",
+    "start": "2020-01-01T00:00:00Z",
     "end_exclusive": "2026-10-09T00:00:00Z"
   },
   "pyarrow_version": "25.0.1",
   "pandas_version": "2.3.3",
   "files": {
     "data/processed/BTCUSDT_1m.parquet": {
-      "sha256": "e8a30d5e7cbb891094e596a04cf582b4218de33ed94d717a238654dac6f59a5f",
-      "content_sha256": "378140dab4655e7e00c69de2f1c8148726d6cb742d914b918c370058361ce9f0",
-      "rows": 2640960,
-      "first_open_time": "2021-10-01 00:00:00",
+      "sha256": "39c4bc7dc803e4f0510d1f7da5e13c58249b39177e7f14607d7754ba727a336f",
+      "content_sha256": "9cb2305785764772b9ba658a1da0665ef5c1a82bc8b63825224c5414d4208636",
+      "rows": 3561120,
+      "first_open_time": "2020-01-01 00:00:00",
       "last_open_time": "2026-10-08 23:59:00",
-      "bytes": 109092104
+      "bytes": 149888088
     },
     "data/processed/BTCUSDT_mark_1m.parquet": {
-      "sha256": "a297827ecd183eb22471056851801bc013733c4332a2312f50c147a5c4a5e04d",
-      "content_sha256": "b109274cc063a02c3e90744398d45e6bbbf2637b8c4e9a7f9ee9774ac1a53128",
-      "rows": 2640960,
-      "first_open_time": "2021-10-01 00:00:00",
+      "sha256": "4912c1132c2acfdd6b8acd554716d310c7079028876439cd4fd53207f931efca",
+      "content_sha256": "b613c4d8c4b4f0547ef02cefddaedf0ebb2d38bfb7beae5e8fdc5ddadab885c2",
+      "rows": 3561067,
+      "first_open_time": "2020-01-01 00:00:00",
       "last_open_time": "2026-10-08 23:59:00",
-      "bytes": 74265308
+      "bytes": 103923271
     },
     "data/processed/BTCUSDT_funding.parquet": {
-      "sha256": "67005024aaf91378480db46321128ee5ed7662ba08f1da64a1fe8cf50ffd9455",
-      "content_sha256": "79aefa2365328315aa30c7ba0d465aef52d7db016ac96a5c71ece79942d37eac",
-      "rows": 5502,
-      "first_funding_time": "2021-10-01 00:00:00",
+      "sha256": "a9e4410a7f21994f011fb67e8e3fe3b23c931fe951e0dd843e560f348a4d1c84",
+      "content_sha256": "e209b71052c7d476f9a8fcb880ad78586a4101aaef621635823e022b9a2a999f",
+      "rows": 7419,
+      "first_funding_time": "2020-01-01 00:00:00",
       "last_funding_time": "2026-10-08 16:00:00",
-      "bytes": 84238
+      "bytes": 104794
     },
     "data/processed/ETHUSDT_1m.parquet": {
-      "sha256": "44ece71b1bfada108d6a67cda4600289028528f9166dfd1d6680aab540990959",
-      "content_sha256": "65cbad2f92a27cf2329b3ffe48e3a91da25ad478d7f71290cfbbd299cdf73362",
-      "rows": 2640960,
-      "first_open_time": "2021-10-01 00:00:00",
+      "sha256": "cd8d87467a93e5c6b9860c502e3944543fca510f418ed2e99dc6a754994b75e4",
+      "content_sha256": "0dbd4da3ca2965e5d6c8b6008fc8f3e897a0a324f346273d189795719e91e238",
+      "rows": 3561120,
+      "first_open_time": "2020-01-01 00:00:00",
       "last_open_time": "2026-10-08 23:59:00",
-      "bytes": 113500565
+      "bytes": 150845372
     },
     "data/processed/ETHUSDT_mark_1m.parquet": {
-      "sha256": "10d9dcfccc61044212dafc82787b99b69e4259912aec433994e50ec44b1d5870",
-      "content_sha256": "cf4a5176e5fa1cad87c262e54423f98c7fe92e430e853e23c0b5a058cc7ac290",
-      "rows": 2640949,
-      "first_open_time": "2021-10-01 00:00:00",
+      "sha256": "bbecbce417488dba3e626bdbd3a7526cc253f7ecaccfa9ee73dcf8b1e767041b",
+      "content_sha256": "db9fc5f1057d9d7517615c07ef26b92a345da122f8a46d88ad34720999f55d7b",
+      "rows": 3561056,
+      "first_open_time": "2020-01-01 00:00:00",
       "last_open_time": "2026-10-08 23:59:00",
-      "bytes": 73124613
+      "bytes": 102264453
     },
     "data/processed/ETHUSDT_funding.parquet": {
-      "sha256": "4910e11637a802f7e81bc58133758899a8aa497d410243b3d31ad81fb6e4fc9a",
-      "content_sha256": "0f0419040026790b6ed1abe03ccfb60741b729746af7725100c2cd267fecba61",
-      "rows": 5502,
-      "first_funding_time": "2021-10-01 00:00:00",
+      "sha256": "89ed45fb5ea6b3971f55a3bb171b65d83ab095d8fffd595239cd19cb0633d699",
+      "content_sha256": "2a9fd7bcaf45b78796a87d04d6a5b5ab55cace18c133286402e2073b828ff63f",
+      "rows": 7419,
+      "first_funding_time": "2020-01-01 00:00:00",
       "last_funding_time": "2026-10-08 16:00:00",
-      "bytes": 85382
+      "bytes": 107756
     }
   }
 }
