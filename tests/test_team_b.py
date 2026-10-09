@@ -245,3 +245,89 @@ def test_b3_short_disabled_by_default():
     assert list(st.entry_side(ind)) == [1, 0, 0]
     assert list(B3FundingCrowd(enable_short=True).entry_side(ind)) == [1, -1, 0]
     assert list(B3FundingCrowd(ext_lo=1.0).entry_side(ind)) == [0, 0, 0]
+
+
+# ================================================================ round 3 (R3): B5 funding+extension, B6 cascade
+from strategies.team_b.b5_r3 import B5FundExt, B6Cascade  # noqa: E402
+
+_C = {"k": 4.0, "vmult": 3.0, "imb_max": 0.45, "mode": "continue", "max_hold": 8}
+R3_CASES = [
+    (B5FundExt, {}), (B5FundExt, {"enable_short": True, "p_hi": 0.95, "ext_hi": 2.0}),
+    (B5FundExt, {"p_lo": 0.05, "p_lo2": 0.30, "ext_lo2": 2.0}),
+    (B6Cascade, dict(_C)), (B6Cascade, {**_C, "up": True}), (B6Cascade, {**_C, "stop_atr": 2.0}),
+    (B6Cascade, {}),
+]
+
+
+@pytest.mark.skipif(not DATA_OK, reason="processed data missing")
+@pytest.mark.parametrize("cls,params", R3_CASES)
+@pytest.mark.parametrize("symbol,start", [("BTCUSDT", "2022-05-01"), ("ETHUSDT", "2022-09-01")])
+def test_r3_causality_real_data(cls, params, symbol, start):
+    st = cls(**params)
+    bars, f = real_slice(symbol, start, 420 if st.timeframe == "4h" else 200, st.timeframe)
+    assert check_causality(st, bars, f, cuts=12, seed=3) == []
+    assert (st.compute(bars, f)["target"] != 0).any(), "slice should contain trades"
+
+
+@pytest.mark.skipif(not DATA_OK, reason="processed data missing")
+@pytest.mark.parametrize("cls,params", R3_CASES)
+@pytest.mark.parametrize("symbol", ["BTCUSDT", "ETHUSDT"])
+def test_r3_start_truncation_150d(cls, params, symbol):
+    _start_trunc(cls, params, symbol)
+
+
+def _start_trunc(cls, params, symbol):
+    st = cls(**params)
+    m1 = load_m1(symbol)
+    end = to_ms("2024-09-30")
+    bars = resample(m1[m1.index < end], st.timeframe)
+    f = load_funding(symbol)
+    full = st.compute(bars, f[f.index < end])
+    cand = full.index[full.index >= bars.index[0] + 200 * 86_400_000]
+    active = cand[full.loc[cand, "target"].values != 0]
+    assert len(active) > 0
+    rng = np.random.default_rng(11)
+    pts = list(rng.choice(cand[:-1], 8, replace=False)) + list(active[:: max(1, len(active) // 10)][:10])
+    for t in pts:
+        a = full.loc[t, ["target", "stop"]].astype(float).values
+        b = _window_last_row(st, symbol, int(t))[["target", "stop"]].astype(float).values
+        np.testing.assert_allclose(np.nan_to_num(a, nan=-1), np.nan_to_num(b, nan=-1), rtol=1e-9,
+                                   err_msg=f"{st.describe()} {symbol} t={t}")
+
+
+def test_b5_entry_rules():
+    ind = pd.DataFrame({"fpct": [0.05, 0.25, 0.25, 0.97, 0.97, np.nan], "ext": [0.0, -3.0, -1.0, 3.0, 1.0, -5.0],
+                        "fval": [-1e-4, 1e-4, 1e-4, 5e-4, 5e-4, 0.0]})
+    assert list(B5FundExt().entry_side(ind)) == [1, 0, 0, 0, 0, 0]
+    assert list(B5FundExt(p_lo2=0.30, ext_lo2=2.0).entry_side(ind)) == [1, 1, 0, 0, 0, 0]
+    assert list(B5FundExt(enable_short=True, ext_hi=2.0).entry_side(ind)) == [1, 0, 0, -1, 0, 0]
+    assert list(B5FundExt(f_max=-2e-4).entry_side(ind)) == [0] * 6       # funding level gate
+    assert list(B5FundExt(ext_lo=1.0).entry_side(ind)) == [0] * 6        # extension gate (ext 0 > −1)
+
+
+def _hourly(closes, vol, tb):
+    c = np.asarray(closes, float)
+    idx = pd.Index(np.arange(len(c), dtype=np.int64) * TF_MS["1h"], name="open_time")
+    return pd.DataFrame({"open": c, "high": c * 1.001, "low": c * 0.999, "close": c, "volume": vol,
+                         "taker_buy_base": tb, "complete": True}, index=idx)
+
+
+def test_b6_cascade_event_and_direction():
+    n = 300
+    rng = np.random.default_rng(0)
+    c = 100 * np.exp(np.cumsum(rng.normal(0, 0.002, n)))
+    vol, tb = np.ones(n), np.full(n, 0.5)
+    c[250:] *= 0.95                               # −5% 1h crash at row 250 (≫ 4σ)
+    vol[250], tb[250] = 5.0, 5.0 * 0.3            # volume spike, sellers dominate
+    bars = _hourly(c, vol, tb)
+    p = dict(sig_n=100, vol_n=50, k=4.0, vmult=3.0, imb_max=0.45, max_hold=8)
+    cont = B6Cascade(mode="continue", **p).compute(bars)["target"].values
+    reb = B6Cascade(mode="rebound", **p).compute(bars)["target"].values
+    assert cont[250] == -1 and reb[250] == 1 and (cont[:250] == 0).all()
+    assert (cont[250:258] == -1).all() and cont[258] == 0          # 8h time stop
+    tb2 = tb.copy()
+    tb2[250] = 5.0 * 0.6                                            # buyers dominate → no event
+    assert (B6Cascade(mode="continue", **p).compute(_hourly(c, vol, tb2))["target"].values == 0).all()
+    vol2 = vol.copy()
+    vol2[250] = 2.0                                                 # no volume spike → no event
+    assert (B6Cascade(mode="continue", **p).compute(_hourly(c, vol2, tb))["target"].values == 0).all()

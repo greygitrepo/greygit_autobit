@@ -31,7 +31,7 @@
   "key": "B",
   "name": "전략 B",
   "role": "평균회귀 (B1: 비추세 국면 z-score 역추세, 자체 가설)",
-  "status": "R3 진행 중 – 비추세 분산 슬리브 (펀딩 백분위·가격 확장, 청산 연쇄 반등)",
+  "status": "R3 완료 – 음성 (B5 펀딩 백분위·B6 연쇄청산 모두 validation ≈0 이하). R2 후보 유지",
   "members": "subagent"
  },
  {
