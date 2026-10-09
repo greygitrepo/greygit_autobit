@@ -1,0 +1,6 @@
+[
+ {"tag":"A2p-U2","split":"train","symbols":"U2","params":{"comps":{"m180":1},"enter_th":1.0,"stop_mult":2.0},"note":"R3 G A2 rule U2 ref"},
+ {"tag":"A2p-U10","split":"train","symbols":"U10","params":{"comps":{"m180":1},"enter_th":1.0,"stop_mult":2.0},"note":"R3 G A2 rule U10"},
+ {"tag":"A2p-U10-rs316","split":"train","symbols":"U10","params":{"comps":{"m180":1},"enter_th":1.0,"stop_mult":2.0,"risk_scale":0.316},"note":"R3 G A2 rule U10 1/sqrt10"},
+ {"tag":"A2p-U6","split":"train","symbols":"U6","params":{"comps":{"m180":1},"enter_th":1.0,"stop_mult":2.0},"note":"R3 G A2 rule U6"}
+]

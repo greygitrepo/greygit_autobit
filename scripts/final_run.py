@@ -36,7 +36,7 @@ E0 = 10_000.0
 
 def _job(j):
     from scripts.run_experiment import run
-    summ, _ = run(j["strategy"], "test", j["params"], None, j["stress"], "final", j["note"], final=True)
+    summ, _ = run(j["strategy"], "test", j["params"], j.get("symbols"), j["stress"], "final", j["note"], final=True)
     return {**j, **{k: summ[k] for k in ("id", "net_return", "max_dd", "ret_over_dd", "sharpe_daily", "trades",
                                           "win_rate", "profit_factor", "fees", "funding", "halted")}}
 
@@ -53,6 +53,7 @@ def cmd_test():
     for c in load_candidates():
         for key, st in [("base", None)] + list(STRESS.items()):
             jobs.append({"candidate": c["id"], "team": c["team"], "strategy": c["strategy"], "params": c["params"],
+                         "symbols": c.get("symbols"),
                          "stress": st, "stress_key": key, "note": f"FINAL test {c['id']} {key}"})
     with ProcessPoolExecutor(max_workers=12) as ex:
         rows = list(ex.map(_job, jobs))

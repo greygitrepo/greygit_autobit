@@ -1,0 +1,40 @@
+# Team G (round 3) candidates, selected by the rule pre-declared in strategies/team_g/DECLARATIONS.md
+# (19:56 KST, auto-committed 0ad2f34 before any Team G validation run). test / holdout_pre NOT used.
+# Run with the listed `symbols` (engine --symbols). All numbers are own assumptions (자체 가설), not contest evidence.
+- id: G1-E1-U6-r408-LO
+  strategy: 'strategies.team_g.g1_multitrend:G1MultiTrend'
+  params: {comps: {m90: 1, m180: 1, m360: 1}, enter_th: 0.3, stop_mult: 3.0, decide_every: 6,
+           risk_scale: 0.408, long_only: true}
+  timeframe: 4h
+  symbols: [BTCUSDT, ETHUSDT, SOLUSDT, XRPUSDT, DOGEUSDT, BNBUSDT]
+  rationale: >-
+    Declared V3 (primary by rule 2: val ret/MDD 1.89, no other variant within 20%). E1 slow-trend vote (15/30/60d
+    return signs, daily decisions, 3xATR trail) applied per symbol, long only, risk 1/sqrt(6) per trade, on the
+    a-priori cost-filtered universe U6. Train +8.78% / MDD 2.18% / 408; stress +5.42% / 2.68%. Validation +4.04% /
+    2.14% / 150, PF 1.74; stress +3.20% / 2.33%. Daily-return corr with A2-L180-m2 (val) 0.47. Caveats: long-only in
+    a mostly rising validation year (regime bet, train ratio only 4.0 vs E1-U2 7.9); absolute return below A2-m2
+    (+6.30%); alts +197 / BTC+ETH +209 USDT, XRP alone +156; 2025Q1 -85. Exploratory (1 year, 150 trades).
+  train_result_ids: [20261009-195023-g1_multitrend-train-308680-7146da, 20261009-195318-g1_multitrend-train-312876-4c4722]
+  validation_result_ids: [20261009-195721-g1_multitrend-validation-317497-ba074b, 20261009-195721-g1_multitrend-validation-317496-dc9f4f]
+- id: G1-A2-U10-r316
+  strategy: 'strategies.team_g.g1_multitrend:G1MultiTrend'
+  params: {comps: {m180: 1}, enter_th: 1.0, stop_mult: 2.0, risk_scale: 0.316}
+  timeframe: 4h
+  symbols: [BTCUSDT, ETHUSDT, SOLUSDT, XRPUSDT, DOGEUSDT, BNBUSDT, ADAUSDT, AVAXUSDT, LINKUSDT, BCHUSDT]
+  rationale: >-
+    Declared V5, secondary by rule 4 (val ret/MDD 0.75). NOT recommended: A2 rule on all 10 symbols, risk 1/sqrt(10).
+    Train +4.68% / 4.99% / 2962; val +2.94% / 3.92% / 944 but combined stress -1.32% / 5.60% (fees 192 -> 385).
+    Corr with A2-m2 0.75.
+  train_result_ids: [20261009-194628-g1_multitrend-train-298934-90373a]
+  validation_result_ids: [20261009-195759-g1_multitrend-validation-317498-0dfc2f, 20261009-195759-g1_multitrend-validation-317499-a3ffd2]
+- id: G1-E1-U6-r577
+  strategy: 'strategies.team_g.g1_multitrend:G1MultiTrend'
+  params: {comps: {m90: 1, m180: 1, m360: 1}, enter_th: 0.3, stop_mult: 3.0, decide_every: 6, risk_scale: 0.577}
+  timeframe: 4h
+  symbols: [BTCUSDT, ETHUSDT, SOLUSDT, XRPUSDT, DOGEUSDT, BNBUSDT]
+  rationale: >-
+    Declared V1 (pre-declared default), secondary by rule 4 (val ret/MDD 0.74). Long-short E1 on U6, risk sqrt(2/6).
+    Train +19.26% / 3.77% / 812, stress +10.78% / 4.39%; val +2.77% / 3.72% / 284, stress +0.84% / 4.82%.
+    Alts net +9 USDT on validation; shorts -318. Corr with A2-m2 0.57. Weak; listed for completeness.
+  train_result_ids: [20261009-195055-g1_multitrend-train-308682-6b3b9b, 20261009-195350-g1_multitrend-train-312874-8a90a9]
+  validation_result_ids: [20261009-195712-g1_multitrend-validation-317496-d024ad, 20261009-195712-g1_multitrend-validation-317497-536b9e]

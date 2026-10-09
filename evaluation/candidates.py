@@ -7,7 +7,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-TEAM_DIRS = {"A": "team_a", "B": "team_b", "C": "team_c", "D": "team_d", "E": "team_e"}
+TEAM_DIRS = {"A": "team_a", "B": "team_b", "C": "team_c", "D": "team_d", "E": "team_e", "G": "team_g"}
 
 STRESS = {
     "fee2": "fee=2",
@@ -28,8 +28,10 @@ def load_candidates() -> list[dict]:
                 if c["id"] in seen:
                     continue
                 seen.add(c["id"])
+                if c.get("kind") == "portfolio" or "strategy" not in c:
+                    continue
                 out.append({"id": c["id"], "team": team, "strategy": c["strategy"].strip(),
-                            "params": dict(c.get("params") or {})})
+                            "params": dict(c.get("params") or {}), "symbols": c.get("symbols")})
     return out
 
 
