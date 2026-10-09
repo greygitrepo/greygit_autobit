@@ -17,7 +17,7 @@
   "key": "engine",
   "name": "공통 엔진",
   "role": "데이터·체결·비용·모의거래·리스크",
-  "status": "가동 중 (백테스트+실시간 모의거래)",
+  "status": "가동 중 + R3 유니버스 확장 (SOL·BNB·XRP 등 추가 종목 데이터·명세)",
   "members": "총괄 + subagent 2"
  },
  {
@@ -31,7 +31,7 @@
   "key": "B",
   "name": "전략 B",
   "role": "평균회귀 (B1: 비추세 국면 z-score 역추세, 자체 가설)",
-  "status": "R2 완료 – B3 펀딩 군집 롱 (val +2.01%, 35건; 탐색적·보류 권고). 다일 반전·불균형 실패",
+  "status": "R3 진행 중 – 비추세 분산 슬리브 (펀딩 백분위·가격 확장, 청산 연쇄 반등)",
   "members": "subagent"
  },
  {
@@ -45,7 +45,7 @@
   "key": "D",
   "name": "전략 D (신규)",
   "role": "상대가치·교차자산 (ETH/BTC 모멘텀·회귀, 선행-후행)",
-  "status": "R2 완료 – D1 상대강도 후보 (val +4.03%, MDD 1.66%, 수익/MDD 2.43, A2와 상관 0.39). D2 회귀·D3 선행후행 실패",
+  "status": "R3 진행 중 – D1 견고화 (lookback 앙상블, 시장중립 페어)",
   "members": "subagent"
  },
  {
@@ -56,10 +56,17 @@
   "members": "subagent"
  },
  {
+  "key": "F",
+  "name": "전략 F (신규)",
+  "role": "포트폴리오 구성 – 상관 낮은 슬리브 간 자본 배분",
+  "status": "R3 진행 중",
+  "members": "subagent"
+ },
+ {
   "key": "eval",
   "name": "독립 평가",
   "role": "누수·과최적화·체결 가정 감사, 동일 조건 경합",
-  "status": "R2 완료 – 9/12 승격(holdout_pre 포함), 3 폐기, 감사 실패 0. 추세 후보끼리 상관 0.72~0.94",
+  "status": "R2 완료 (9/12 승격). R3 후보 대기",
   "members": "subagent"
  },
  {
