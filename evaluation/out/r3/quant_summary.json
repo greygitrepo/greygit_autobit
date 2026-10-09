@@ -1,0 +1,296 @@
+{
+ "A2m2_804|validation|base": {
+  "net_return": 0.06295740879992007,
+  "max_dd": 0.03978854168090151,
+  "trades": 160,
+  "rejects": 238,
+  "final_equity": 854.7134228419278
+ },
+ "A2m2_804|holdout_pre|base": {
+  "net_return": 0.11368509070967359,
+  "max_dd": 0.03432280809336696,
+  "trades": 198,
+  "rejects": 438,
+  "final_equity": 895.5030445887414
+ },
+ "A2m2_944|validation|base": {
+  "net_return": 0.07391470265646616,
+  "max_dd": 0.03377316433112276,
+  "trades": 170,
+  "rejects": 141,
+  "final_equity": 1014.1620886006604
+ },
+ "A2m2_944|holdout_pre|base": {
+  "net_return": 0.12416146584560295,
+  "max_dd": 0.03668327596159515,
+  "trades": 205,
+  "rejects": 312,
+  "final_equity": 1061.6131218859537
+ },
+ "A2m2_1667|validation|base": {
+  "net_return": 0.06289366627885706,
+  "max_dd": 0.0361022797977395,
+  "trades": 190,
+  "rejects": 22,
+  "final_equity": 1771.4929867769827
+ },
+ "A2m2_1667|holdout_pre|base": {
+  "net_return": 0.10985426439066948,
+  "max_dd": 0.03533456058760853,
+  "trades": 232,
+  "rejects": 82,
+  "final_equity": 1849.7608068319973
+ },
+ "A2m2_3333|validation|base": {
+  "net_return": 0.06624622119945967,
+  "max_dd": 0.035568250373071875,
+  "trades": 191,
+  "rejects": 0,
+  "final_equity": 3554.150516510795
+ },
+ "A2m2_3333|holdout_pre|base": {
+  "net_return": 0.10543165877502325,
+  "max_dd": 0.035643652563777994,
+  "trades": 238,
+  "rejects": 0,
+  "final_equity": 3684.768511144548
+ },
+ "B3abs_1667|validation|base": {
+  "net_return": 0.013287153955149122,
+  "max_dd": 0.012841838425856289,
+  "trades": 33,
+  "rejects": 47,
+  "final_equity": 1688.8153008824286
+ },
+ "B3abs_1667|holdout_pre|base": {
+  "net_return": 0.02483775749488415,
+  "max_dd": 0.011510717879151589,
+  "trades": 25,
+  "rejects": 148,
+  "final_equity": 1708.0663452839985
+ },
+ "B3abs_2882|validation|base": {
+  "net_return": 0.01727958477156344,
+  "max_dd": 0.01261636782545128,
+  "trades": 34,
+  "rejects": 19,
+  "final_equity": 2932.1354655746204
+ },
+ "B3abs_2882|holdout_pre|base": {
+  "net_return": 0.0212147918085841,
+  "max_dd": 0.010784736691566765,
+  "trades": 29,
+  "rejects": 79,
+  "final_equity": 2943.4780308736363
+ },
+ "B3abs_3044|validation|base": {
+  "net_return": 0.018697182035665838,
+  "max_dd": 0.013080079236121311,
+  "trades": 34,
+  "rejects": 19,
+  "final_equity": 3101.331887961201
+ },
+ "B3abs_3044|holdout_pre|base": {
+  "net_return": 0.02148112969781124,
+  "max_dd": 0.01051121981880998,
+  "trades": 29,
+  "rejects": 58,
+  "final_equity": 3109.8073660633136
+ },
+ "B3short_1667|validation|base": {
+  "net_return": 0.008945148097327715,
+  "max_dd": 0.01956281772184354,
+  "trades": 48,
+  "rejects": 132,
+  "final_equity": 1681.5786099793734
+ },
+ "B3short_1667|holdout_pre|base": {
+  "net_return": 0.02413592567583689,
+  "max_dd": 0.01081843620503753,
+  "trades": 30,
+  "rejects": 191,
+  "final_equity": 1706.896623246147
+ },
+ "B3short_3116|validation|base": {
+  "net_return": 0.009072727116699042,
+  "max_dd": 0.01882675885172924,
+  "trades": 53,
+  "rejects": 19,
+  "final_equity": 3144.522885877413
+ },
+ "B3short_3116|holdout_pre|base": {
+  "net_return": 0.025165062068018385,
+  "max_dd": 0.010768646564727202,
+  "trades": 35,
+  "rejects": 76,
+  "final_equity": 3194.670624669462
+ },
+ "B3short_3455|validation|base": {
+  "net_return": 0.010410563722486499,
+  "max_dd": 0.01833557879701464,
+  "trades": 53,
+  "rejects": 18,
+  "final_equity": 3491.0493305062882
+ },
+ "B3short_3455|holdout_pre|base": {
+  "net_return": 0.027133916898859578,
+  "max_dd": 0.01083456010369932,
+  "trades": 36,
+  "rejects": 57,
+  "final_equity": 3548.8298535989115
+ },
+ "D1_1717|validation|base": {
+  "net_return": 0.03280842577045551,
+  "max_dd": 0.016283210037891127,
+  "trades": 130,
+  "rejects": 52,
+  "final_equity": 1773.6315814913455
+ },
+ "D1_1717|holdout_pre|base": {
+  "net_return": 0.0077498887344185086,
+  "max_dd": 0.020727201732193334,
+  "trades": 148,
+  "rejects": 131,
+  "final_equity": 1730.5988064247294
+ },
+ "D1_1902|validation|base": {
+  "net_return": 0.03204092652274704,
+  "max_dd": 0.013982349364685231,
+  "trades": 130,
+  "rejects": 30,
+  "final_equity": 1963.447542300261
+ },
+ "D1_1902|holdout_pre|base": {
+  "net_return": 0.0027755529483093344,
+  "max_dd": 0.019711406596380265,
+  "trades": 153,
+  "rejects": 92,
+  "final_equity": 1907.770461728629
+ },
+ "D1_3333|validation|base": {
+  "net_return": 0.03299418390161102,
+  "max_dd": 0.016352725066310803,
+  "trades": 135,
+  "rejects": 1,
+  "final_equity": 3443.310503024757
+ },
+ "D1_3333|holdout_pre|base": {
+  "net_return": 0.0019820777809393952,
+  "max_dd": 0.020663841694717244,
+  "trades": 158,
+  "rejects": 19,
+  "final_equity": 3339.9369193295383
+ },
+ "E1_979|validation|base": {
+  "net_return": 0.03563495495627045,
+  "max_dd": 0.03057352216236975,
+  "trades": 92,
+  "rejects": 340,
+  "final_equity": 1014.0212534463332
+ },
+ "E1_979|holdout_pre|base": {
+  "net_return": 0.08585196990687627,
+  "max_dd": 0.03138495020249532,
+  "trades": 99,
+  "rejects": 529,
+  "final_equity": 1063.1902392949198
+ },
+ "E1_1155|validation|base": {
+  "net_return": 0.04956886031804353,
+  "max_dd": 0.020969707958548356,
+  "trades": 95,
+  "rejects": 204,
+  "final_equity": 1211.8007190574035
+ },
+ "E1_1155|holdout_pre|base": {
+  "net_return": 0.08484352946471874,
+  "max_dd": 0.02818796668952983,
+  "trades": 102,
+  "rejects": 408,
+  "final_equity": 1252.5277938140803
+ },
+ "E1_1667|validation|base": {
+  "net_return": 0.04042144847050766,
+  "max_dd": 0.026443755175615813,
+  "trades": 97,
+  "rejects": 69,
+  "final_equity": 1734.0392155223412
+ },
+ "E1_1667|holdout_pre|base": {
+  "net_return": 0.06644238405176828,
+  "max_dd": 0.03020165304757283,
+  "trades": 108,
+  "rejects": 207,
+  "final_equity": 1777.4075282275608
+ },
+ "A2m2_944|holdout_pre|allsf": {
+  "net_return": 0.0635440799223046,
+  "max_dd": 0.05174880464217302,
+  "trades": 205,
+  "rejects": 312,
+  "final_equity": 1004.3684873154276
+ },
+ "E1_1155|holdout_pre|allsf": {
+  "net_return": 0.06093202336604975,
+  "max_dd": 0.03278300091002795,
+  "trades": 102,
+  "rejects": 408,
+  "final_equity": 1224.9202862177399
+ },
+ "D1_1902|holdout_pre|allsf": {
+  "net_return": -0.012271739819272987,
+  "max_dd": 0.03062406115839278,
+  "trades": 153,
+  "rejects": 92,
+  "final_equity": 1879.1431377112312
+ },
+ "B3abs_2882|holdout_pre|allsf": {
+  "net_return": 0.019334746742032838,
+  "max_dd": 0.011091002582889087,
+  "trades": 29,
+  "rejects": 79,
+  "final_equity": 2938.0591205769633
+ },
+ "B3short_3116|holdout_pre|allsf": {
+  "net_return": 0.02349568461759821,
+  "max_dd": 0.011168034150996875,
+  "trades": 35,
+  "rejects": 76,
+  "final_equity": 3189.4684271895903
+ },
+ "A2m2_944|validation|allsf": {
+  "net_return": 0.043176925917635334,
+  "max_dd": 0.042702152348977784,
+  "trades": 170,
+  "rejects": 141,
+  "final_equity": 985.1345617595782
+ },
+ "E1_1155|validation|allsf": {
+  "net_return": 0.03083343787435755,
+  "max_dd": 0.02562390258883185,
+  "trades": 95,
+  "rejects": 204,
+  "final_equity": 1190.169362366597
+ },
+ "D1_1902|validation|allsf": {
+  "net_return": 0.020380044828678612,
+  "max_dd": 0.01854182690314321,
+  "trades": 130,
+  "rejects": 30,
+  "final_equity": 1941.2628314861126
+ },
+ "B3abs_2882|validation|allsf": {
+  "net_return": 0.013585491730751631,
+  "max_dd": 0.014143803369930708,
+  "trades": 34,
+  "rejects": 19,
+  "final_equity": 2921.4878703802974
+ },
+ "B3short_3116|validation|allsf": {
+  "net_return": 0.003731377066692909,
+  "max_dd": 0.02095031826099003,
+  "trades": 53,
+  "rejects": 19,
+  "final_equity": 3127.877903784082
+ }
+}

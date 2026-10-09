@@ -1,0 +1,2090 @@
+{
+ "hand_example": {
+  "monthly": [
+   10000.0,
+   10000.0,
+   10500.0,
+   11025.0
+  ],
+  "none": [
+   10000.0,
+   10000.0,
+   10500.0,
+   11100.000000000002
+  ],
+  "expected_monthly": [
+   10000,
+   10000,
+   10500,
+   11025
+  ],
+  "expected_none": [
+   10000,
+   10000,
+   10500,
+   11100
+  ],
+  "ok": true,
+  "ref_ok": true,
+  "net_return": 0.10250000000000004,
+  "net_expected": 0.1025,
+  "max_dd": 0.0
+ },
+ "declared_weights_check": {
+  "F3-IV5": {
+   "rebalance_ok": true,
+   "max_abs_weight_diff": 4.907232688897145e-05,
+   "sum": 0.9999999999999999,
+   "keys_ok": true
+  },
+  "F4-ERC5": {
+   "rebalance_ok": true,
+   "max_abs_weight_diff": 4.1376186965202955e-05,
+   "sum": 1.0,
+   "keys_ok": true
+  },
+  "F1-EW3-A2": {
+   "rebalance_ok": true,
+   "max_abs_weight_diff": 0.0,
+   "sum": 0.9999999999999999,
+   "keys_ok": true
+  },
+  "F2-EW3-A2E1": {
+   "rebalance_ok": true,
+   "max_abs_weight_diff": 0.0,
+   "sum": 0.9999999999999999,
+   "keys_ok": true
+  },
+  "F5-EW3-A2E1-BH": {
+   "rebalance_ok": true,
+   "max_abs_weight_diff": 0.0,
+   "sum": 0.9999999999999999,
+   "keys_ok": true
+  }
+ },
+ "sleeve_result_ids": {
+  "train|base": {
+   "A2m2": "20261009-191559-a2_tsmom-train-254398-808dab",
+   "E1": "20261009-191639-e1_composite-train-254394-4d06fe",
+   "D1": "20261009-191634-d1_relmom-train-254399-3b94c9",
+   "B3abs": "20261009-191602-b3_funding_crowd-train-254398-f0c56a",
+   "B3short": "20261009-191603-b3_funding_crowd-train-254399-113382"
+  },
+  "validation|base": {
+   "A2m2": "20261009-191553-a2_tsmom-validation-254396-b5b824",
+   "E1": "20261009-191634-e1_composite-validation-254396-d177dc",
+   "D1": "20261009-191630-d1_relmom-validation-254398-8482ed",
+   "B3abs": "20261009-191600-b3_funding_crowd-validation-254396-140e70",
+   "B3short": "20261009-191602-b3_funding_crowd-validation-254397-85093a"
+  },
+  "validation|fee2": {
+   "A2m2": "20261009-191554-a2_tsmom-validation-254395-d6a586",
+   "E1": "20261009-191635-e1_composite-validation-254398-05acd1",
+   "D1": "20261009-191631-d1_relmom-validation-254398-b19f3c",
+   "B3abs": "20261009-191601-b3_funding_crowd-validation-254399-8827de",
+   "B3short": "20261009-191602-b3_funding_crowd-validation-254394-0bb4d8"
+  },
+  "validation|exec3": {
+   "A2m2": "20261009-191554-a2_tsmom-validation-254396-169aff",
+   "E1": "20261009-191635-e1_composite-validation-254399-44cbdd",
+   "D1": "20261009-191632-d1_relmom-validation-254398-f3243f",
+   "B3abs": "20261009-191601-b3_funding_crowd-validation-254396-ec998e",
+   "B3short": "20261009-191602-b3_funding_crowd-validation-254398-e205ac"
+  },
+  "validation|all": {
+   "A2m2": "20261009-191554-a2_tsmom-validation-254397-6283d9",
+   "E1": "20261009-191635-e1_composite-validation-254396-d21b1c",
+   "D1": "20261009-191633-d1_relmom-validation-254394-58732d",
+   "B3abs": "20261009-191601-b3_funding_crowd-validation-254399-14870e",
+   "B3short": "20261009-191602-b3_funding_crowd-validation-254397-83c583"
+  },
+  "validation|stopfill": {
+   "A2m2": "20261009-191555-a2_tsmom-validation-254395-704385",
+   "E1": "20261009-191636-e1_composite-validation-254397-617b58",
+   "D1": "20261009-191633-d1_relmom-validation-254397-959061",
+   "B3abs": "20261009-191601-b3_funding_crowd-validation-254397-0f3f79",
+   "B3short": "20261009-191602-b3_funding_crowd-validation-254396-2b1cec"
+  },
+  "validation|allsf": {
+   "A2m2": "20261009-191555-a2_tsmom-validation-254396-04425e",
+   "E1": "20261009-191636-e1_composite-validation-254398-c3c3eb",
+   "D1": "20261009-191633-d1_relmom-validation-254396-c62541",
+   "B3abs": "20261009-191601-b3_funding_crowd-validation-254396-d1c167",
+   "B3short": "20261009-191602-b3_funding_crowd-validation-254394-5ea5a8"
+  },
+  "holdout_pre|base": {
+   "A2m2": "20261009-194316-a2_tsmom-holdout_pre-299271-ec1d2f",
+   "E1": "20261009-194316-e1_composite-holdout_pre-299269-a13f47",
+   "D1": "20261009-194318-d1_relmom-holdout_pre-299269-fb8321",
+   "B3abs": "20261009-194317-b3_funding_crowd-holdout_pre-299272-fe284d",
+   "B3short": "20261009-194318-b3_funding_crowd-holdout_pre-299272-b0edb5"
+  },
+  "holdout_pre|allsf": {
+   "A2m2": "20261009-194316-a2_tsmom-holdout_pre-299272-763d75",
+   "E1": "20261009-194317-e1_composite-holdout_pre-299270-991c7f",
+   "D1": "20261009-194318-d1_relmom-holdout_pre-299271-7a2ed0",
+   "B3abs": "20261009-194317-b3_funding_crowd-holdout_pre-299268-cb9967",
+   "B3short": "20261009-194318-b3_funding_crowd-holdout_pre-299270-913cd6"
+  }
+ },
+ "conds": {
+  "train|base": {
+   "sleeves": {
+    "A2m2": {
+     "net_return": 0.19334550224143499,
+     "final_equity": 11933.45502241435,
+     "max_dd": 0.03406940512095091,
+     "ret_over_dd": 5.675047790092981,
+     "sharpe_daily": 1.1885470703051613,
+     "sortino_daily": 2.581903598839765,
+     "vol_daily_ann": 0.050805159175931,
+     "days": 1088.0,
+     "trades": 561,
+     "halted": false,
+     "engine_net": 0.19334550224143499,
+     "engine_mdd": 0.03406940512095091
+    },
+    "E1": {
+     "net_return": 0.2213036912154609,
+     "final_equity": 12213.036912154608,
+     "max_dd": 0.02789140105438137,
+     "ret_over_dd": 7.934477396240266,
+     "sharpe_daily": 1.6320181422965379,
+     "sortino_daily": 3.687961974982431,
+     "vol_daily_ann": 0.041555217386747716,
+     "days": 1088.0,
+     "trades": 263,
+     "halted": false,
+     "engine_net": 0.2213036912154609,
+     "engine_mdd": 0.02789140105438115
+    },
+    "D1": {
+     "net_return": 0.08063203967280708,
+     "final_equity": 10806.320396728072,
+     "max_dd": 0.023528432469835603,
+     "ret_over_dd": 3.42700431812364,
+     "sharpe_daily": 1.0404928423720143,
+     "sortino_daily": 2.062687934474334,
+     "vol_daily_ann": 0.025218639509423334,
+     "days": 1088.0,
+     "trades": 416,
+     "halted": false,
+     "engine_net": 0.0806320396728073,
+     "engine_mdd": 0.023528432469835603
+    },
+    "B3abs": {
+     "net_return": 0.08873108453699241,
+     "final_equity": 10887.310845369924,
+     "max_dd": 0.016151329845085494,
+     "ret_over_dd": 5.493732428725762,
+     "sharpe_daily": 1.721730983030926,
+     "sortino_daily": 3.226206151515443,
+     "vol_daily_ann": 0.016645615519451817,
+     "days": 1088.0,
+     "trades": 130,
+     "halted": false,
+     "engine_net": 0.08873108453699241,
+     "engine_mdd": 0.016151329845085494
+    },
+    "B3short": {
+     "net_return": 0.08297578959170315,
+     "final_equity": 10829.757895917031,
+     "max_dd": 0.013999883633396215,
+     "ret_over_dd": 5.926891377423125,
+     "sharpe_daily": 1.7446604516531716,
+     "sortino_daily": 3.43566048308581,
+     "vol_daily_ann": 0.015396132407489332,
+     "days": 1088.0,
+     "trades": 120,
+     "halted": false,
+     "engine_net": 0.08297578959170315,
+     "engine_mdd": 0.013999883633395993
+    }
+   },
+   "portfolios": {
+    "F1-EW3-A2": {
+     "net_return": 0.12005086158230616,
+     "final_equity": 11200.508615823062,
+     "max_dd": 0.014531021069763894,
+     "ret_over_dd": 8.261694825569252,
+     "sharpe_daily": 1.6961829172759926,
+     "sortino_daily": 3.8668093871594302,
+     "vol_daily_ann": 0.02251598199294484,
+     "days": 1088.0,
+     "trades": 1227,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 1.6370904631912708e-11,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F2-EW3-A2E1": {
+     "net_return": 0.12441776913120606,
+     "final_equity": 11244.177691312061,
+     "max_dd": 0.013738386343868036,
+     "ret_over_dd": 9.056214173707412,
+     "sharpe_daily": 1.912804155963797,
+     "sortino_daily": 4.501359669869293,
+     "vol_daily_ann": 0.02063517273199072,
+     "days": 1088.0,
+     "trades": 1490,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 1.6370904631912708e-11,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F3-IV5": {
+     "net_return": 0.11065012350440839,
+     "final_equity": 11106.501235044083,
+     "max_dd": 0.00853110053506334,
+     "ret_over_dd": 12.970205080766505,
+     "sharpe_daily": 2.459500397895474,
+     "sortino_daily": 5.741013521035342,
+     "vol_daily_ann": 0.01433688226667949,
+     "days": 1088.0,
+     "trades": 1490,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 9.094947017729282e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.07790629888451978
+    },
+    "F4-ERC5": {
+     "net_return": 0.10685109836932472,
+     "final_equity": 11068.510983693246,
+     "max_dd": 0.007549105343756302,
+     "ret_over_dd": 14.154140590672629,
+     "sharpe_daily": 2.544994036424045,
+     "sortino_daily": 5.861798319893668,
+     "vol_daily_ann": 0.013401035644821608,
+     "days": 1088.0,
+     "trades": 1490,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 2.1827872842550278e-11,
+     "max_per_trade_risk_pct_of_portfolio": 0.08637705812388435
+    },
+    "F5-EW3-A2E1-BH": {
+     "net_return": 0.12460335782186771,
+     "final_equity": 11246.033578218678,
+     "max_dd": 0.013711426458344222,
+     "ret_over_dd": 9.08755614891105,
+     "sharpe_daily": 1.892995551158534,
+     "sortino_daily": 4.442990627496247,
+     "vol_daily_ann": 0.02088305929699788,
+     "days": 1088.0,
+     "trades": 1490,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 3.637978807091713e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    }
+   }
+  },
+  "validation|base": {
+   "sleeves": {
+    "A2m2": {
+     "net_return": 0.06299452418653528,
+     "final_equity": 10629.945241865353,
+     "max_dd": 0.037923808068871856,
+     "ret_over_dd": 1.6610811886858392,
+     "sharpe_daily": 1.306599339666275,
+     "sortino_daily": 2.710830411291737,
+     "vol_daily_ann": 0.04691103929359807,
+     "days": 365.0,
+     "trades": 191,
+     "halted": false,
+     "engine_net": 0.06299452418653528,
+     "engine_mdd": 0.037923808068871856
+    },
+    "E1": {
+     "net_return": 0.04660699610336949,
+     "final_equity": 10466.069961033696,
+     "max_dd": 0.02204944087301386,
+     "ret_over_dd": 2.113749567246915,
+     "sharpe_daily": 1.4140609224343172,
+     "sortino_daily": 2.7884698924383886,
+     "vol_daily_ann": 0.03259022500214401,
+     "days": 365.0,
+     "trades": 98,
+     "halted": false,
+     "engine_net": 0.04660699610336949,
+     "engine_mdd": 0.022049440873013637
+    },
+    "D1": {
+     "net_return": 0.040332871563565575,
+     "final_equity": 10403.328715635656,
+     "max_dd": 0.01656930250463129,
+     "ret_over_dd": 2.4341924804796173,
+     "sharpe_daily": 1.7601879444208277,
+     "sortino_daily": 3.0859730826663765,
+     "vol_daily_ann": 0.022609826181389715,
+     "days": 365.0,
+     "trades": 136,
+     "halted": false,
+     "engine_net": 0.04033287156356535,
+     "engine_mdd": 0.016569302504631067
+    },
+    "B3abs": {
+     "net_return": 0.020054156976260007,
+     "final_equity": 10200.5415697626,
+     "max_dd": 0.01315517469020977,
+     "ret_over_dd": 1.524431065988393,
+     "sharpe_daily": 1.1040402817655643,
+     "sortino_daily": 2.1390428181771455,
+     "vol_daily_ann": 0.01813316694648494,
+     "days": 365.0,
+     "trades": 35,
+     "halted": false,
+     "engine_net": 0.02005415697626023,
+     "engine_mdd": 0.01315517469020977
+    },
+    "B3short": {
+     "net_return": 0.00946777960189693,
+     "final_equity": 10094.677796018968,
+     "max_dd": 0.01962875423420052,
+     "ret_over_dd": 0.4823423579984802,
+     "sharpe_daily": 0.4732874599610157,
+     "sortino_daily": 0.7606259375622434,
+     "vol_daily_ann": 0.02034595439187138,
+     "days": 365.0,
+     "trades": 54,
+     "halted": false,
+     "engine_net": 0.00946777960189693,
+     "engine_mdd": 0.01962875423420063
+    }
+   },
+   "portfolios": {
+    "F1-EW3-A2": {
+     "net_return": 0.03969734990868967,
+     "final_equity": 10396.973499086896,
+     "max_dd": 0.013826986605163238,
+     "ret_over_dd": 2.8710051613028966,
+     "sharpe_daily": 1.9247989871001872,
+     "sortino_daily": 4.243901072728588,
+     "vol_daily_ann": 0.020176922858478604,
+     "days": 365.0,
+     "trades": 416,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F2-EW3-A2E1": {
+     "net_return": 0.03689722071912738,
+     "final_equity": 10368.972207191275,
+     "max_dd": 0.012314514891437978,
+     "ret_over_dd": 2.996238263902806,
+     "sharpe_daily": 1.9991269011144859,
+     "sortino_daily": 4.473943155093373,
+     "vol_daily_ann": 0.01813257886216771,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 9.094947017729282e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F3-IV5": {
+     "net_return": 0.02795103709004443,
+     "final_equity": 10279.510370900443,
+     "max_dd": 0.008408936396967825,
+     "ret_over_dd": 3.3239681893804405,
+     "sharpe_daily": 1.9249927567900955,
+     "sortino_daily": 4.829432895256075,
+     "vol_daily_ann": 0.014330618708537659,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 5.4569682106375694e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.07790629888451978
+    },
+    "F4-ERC5": {
+     "net_return": 0.026131808458176753,
+     "final_equity": 10261.318084581768,
+     "max_dd": 0.008450259934989601,
+     "ret_over_dd": 3.0924265832313607,
+     "sharpe_daily": 1.8492232250255294,
+     "sortino_daily": 4.5959335425556285,
+     "vol_daily_ann": 0.013963830755234464,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 5.4569682106375694e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08637705812388435
+    },
+    "F5-EW3-A2E1-BH": {
+     "net_return": 0.036631533332531996,
+     "final_equity": 10366.31533332532,
+     "max_dd": 0.01243444868828536,
+     "ret_over_dd": 2.945971651082769,
+     "sharpe_daily": 1.9842198182447492,
+     "sortino_daily": 4.425111431134159,
+     "vol_daily_ann": 0.018139706800889402,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 3.637978807091713e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    }
+   }
+  },
+  "validation|fee2": {
+   "sleeves": {
+    "A2m2": {
+     "net_return": 0.047270563888545114,
+     "final_equity": 10472.70563888545,
+     "max_dd": 0.04348991695442761,
+     "ret_over_dd": 1.086931574003215,
+     "sharpe_daily": 0.974964221110749,
+     "sortino_daily": 1.9608177186065452,
+     "vol_daily_ann": 0.04764828318103311,
+     "days": 365.0,
+     "trades": 191,
+     "halted": false,
+     "engine_net": 0.047270563888545114,
+     "engine_mdd": 0.04348991695442739
+    },
+    "E1": {
+     "net_return": 0.04115032596183488,
+     "final_equity": 10411.503259618348,
+     "max_dd": 0.023355644913642837,
+     "ret_over_dd": 1.7619006503133448,
+     "sharpe_daily": 1.2460624310024013,
+     "sortino_daily": 2.4200285366743337,
+     "vol_daily_ann": 0.032793923243455925,
+     "days": 365.0,
+     "trades": 98,
+     "halted": false,
+     "engine_net": 0.04115032596183488,
+     "engine_mdd": 0.023355644913642837
+    },
+    "D1": {
+     "net_return": 0.03227870433311919,
+     "final_equity": 10322.787043331193,
+     "max_dd": 0.01927255501264802,
+     "ret_over_dd": 1.6748534022570236,
+     "sharpe_daily": 1.40352055578045,
+     "sortino_daily": 2.4030557218440487,
+     "vol_daily_ann": 0.022820852237253393,
+     "days": 365.0,
+     "trades": 136,
+     "halted": false,
+     "engine_net": 0.03227870433311919,
+     "engine_mdd": 0.019272555012647796
+    },
+    "B3abs": {
+     "net_return": 0.018311378095457354,
+     "final_equity": 10183.113780954573,
+     "max_dd": 0.013606901512103753,
+     "ret_over_dd": 1.3457419442015381,
+     "sharpe_daily": 1.0088504869897532,
+     "sortino_daily": 1.923471286007204,
+     "vol_daily_ann": 0.018149352554245757,
+     "days": 365.0,
+     "trades": 35,
+     "halted": false,
+     "engine_net": 0.018311378095457354,
+     "engine_mdd": 0.013606901512103753
+    },
+    "B3short": {
+     "net_return": 0.006813909822457331,
+     "final_equity": 10068.139098224574,
+     "max_dd": 0.02033541521900406,
+     "ret_over_dd": 0.33507601143494364,
+     "sharpe_daily": 0.34233793625587094,
+     "sortino_daily": 0.5432013019717643,
+     "vol_daily_ann": 0.020444715560128873,
+     "days": 365.0,
+     "trades": 54,
+     "halted": false,
+     "engine_net": 0.006813909822457331,
+     "engine_mdd": 0.02033541521900406
+    }
+   },
+   "portfolios": {
+    "F1-EW3-A2": {
+     "net_return": 0.031134860477854742,
+     "final_equity": 10311.348604778548,
+     "max_dd": 0.01588940176773368,
+     "ret_over_dd": 1.9594734234160873,
+     "sharpe_daily": 1.4985180108915055,
+     "sortino_daily": 3.1878693420082844,
+     "vol_daily_ann": 0.02040767897194321,
+     "days": 365.0,
+     "trades": 416,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 1.2732925824820995e-11,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F2-EW3-A2E1": {
+     "net_return": 0.030012572158274464,
+     "final_equity": 10300.125721582745,
+     "max_dd": 0.01413976741885048,
+     "ret_over_dd": 2.12256476851685,
+     "sharpe_daily": 1.6190536800354365,
+     "sortino_daily": 3.5192810737767117,
+     "vol_daily_ann": 0.01827910224677139,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F3-IV5": {
+     "net_return": 0.023031913906088386,
+     "final_equity": 10230.319139060884,
+     "max_dd": 0.009115251737458197,
+     "ret_over_dd": 2.5267446878555297,
+     "sharpe_daily": 1.5831255198855072,
+     "sortino_daily": 3.858994495328548,
+     "vol_daily_ann": 0.014397528443244701,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.07790629888451978
+    },
+    "F4-ERC5": {
+     "net_return": 0.021555624142783225,
+     "final_equity": 10215.556241427832,
+     "max_dd": 0.009113450541884283,
+     "ret_over_dd": 2.3652538677547286,
+     "sharpe_daily": 1.5231604105619572,
+     "sortino_daily": 3.681996164737806,
+     "vol_daily_ann": 0.014020627702504097,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 9.094947017729282e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08637705812388435
+    },
+    "F5-EW3-A2E1-BH": {
+     "net_return": 0.029683931072422176,
+     "final_equity": 10296.839310724221,
+     "max_dd": 0.014290781701367994,
+     "ret_over_dd": 2.077138374423609,
+     "sharpe_daily": 1.6028538688898255,
+     "sortino_daily": 3.4718804418202445,
+     "vol_daily_ann": 0.018264574667190336,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 3.637978807091713e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    }
+   }
+  },
+  "validation|exec3": {
+   "sleeves": {
+    "A2m2": {
+     "net_return": 0.06135509238263048,
+     "final_equity": 10613.550923826304,
+     "max_dd": 0.03832076447436383,
+     "ret_over_dd": 1.6010925988618092,
+     "sharpe_daily": 1.271641685631835,
+     "sortino_daily": 2.6286380895274637,
+     "vol_daily_ann": 0.046992890286845404,
+     "days": 365.0,
+     "trades": 191,
+     "halted": false,
+     "engine_net": 0.06135509238263048,
+     "engine_mdd": 0.03832076447436383
+    },
+    "E1": {
+     "net_return": 0.046067810922783003,
+     "final_equity": 10460.67810922783,
+     "max_dd": 0.022209664715627353,
+     "ret_over_dd": 2.0742236099750024,
+     "sharpe_daily": 1.3970717210284496,
+     "sortino_daily": 2.7497247128057882,
+     "vol_daily_ann": 0.03261830074582564,
+     "days": 365.0,
+     "trades": 98,
+     "halted": false,
+     "engine_net": 0.046067810922783003,
+     "engine_mdd": 0.02220966471562713
+    },
+    "D1": {
+     "net_return": 0.039579657616579444,
+     "final_equity": 10395.796576165794,
+     "max_dd": 0.016844267249832123,
+     "ret_over_dd": 2.3497405395876694,
+     "sharpe_daily": 1.7260633623291375,
+     "sortino_daily": 3.0178449457644714,
+     "vol_daily_ann": 0.022637533566113106,
+     "days": 365.0,
+     "trades": 136,
+     "halted": false,
+     "engine_net": 0.039579657616579444,
+     "engine_mdd": 0.0168442672498319
+    },
+    "B3abs": {
+     "net_return": 0.019872453623475117,
+     "final_equity": 10198.724536234751,
+     "max_dd": 0.01319260378813314,
+     "ret_over_dd": 1.506332937956536,
+     "sharpe_daily": 1.094012934767559,
+     "sortino_daily": 2.115811939690583,
+     "vol_daily_ann": 0.01813657969567194,
+     "days": 365.0,
+     "trades": 35,
+     "halted": false,
+     "engine_net": 0.01987245362347534,
+     "engine_mdd": 0.01319260378813314
+    },
+    "B3short": {
+     "net_return": 0.00914072765163887,
+     "final_equity": 10091.40727651639,
+     "max_dd": 0.01969714034445713,
+     "ret_over_dd": 0.46406369106321127,
+     "sharpe_daily": 0.45704432595366695,
+     "sortino_daily": 0.733163134474141,
+     "vol_daily_ann": 0.02036069500403112,
+     "days": 365.0,
+     "trades": 54,
+     "halted": false,
+     "engine_net": 0.00914072765163887,
+     "engine_mdd": 0.01969714034445713
+    }
+   },
+   "portfolios": {
+    "F1-EW3-A2": {
+     "net_return": 0.038826157812825945,
+     "final_equity": 10388.26157812826,
+     "max_dd": 0.01403356779723497,
+     "ret_over_dd": 2.7666633584423095,
+     "sharpe_daily": 1.8808905400838576,
+     "sortino_daily": 4.129748024511602,
+     "vol_daily_ann": 0.020203219122531715,
+     "days": 365.0,
+     "trades": 416,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F2-EW3-A2E1": {
+     "net_return": 0.03620545730276059,
+     "final_equity": 10362.054573027606,
+     "max_dd": 0.012523425646815745,
+     "ret_over_dd": 2.8910186656449173,
+     "sharpe_daily": 1.960405572251772,
+     "sortino_daily": 4.371871032238568,
+     "vol_daily_ann": 0.01815078534453025,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F3-IV5": {
+     "net_return": 0.02744269070102967,
+     "final_equity": 10274.426907010296,
+     "max_dd": 0.00846807770335578,
+     "ret_over_dd": 3.2407225892783806,
+     "sharpe_daily": 1.8893679095676672,
+     "sortino_daily": 4.7235802269064555,
+     "vol_daily_ann": 0.014339273637276634,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 5.4569682106375694e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.07790629888451978
+    },
+    "F4-ERC5": {
+     "net_return": 0.02565531883498262,
+     "final_equity": 10256.553188349826,
+     "max_dd": 0.008505873611471815,
+     "ret_over_dd": 3.0161885782527342,
+     "sharpe_daily": 1.815025755279527,
+     "sortino_daily": 4.4960674803339415,
+     "vol_daily_ann": 0.013971248797603522,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08637705812388435
+    },
+    "F5-EW3-A2E1-BH": {
+     "net_return": 0.03593256663561428,
+     "final_equity": 10359.325666356142,
+     "max_dd": 0.012644083491806901,
+     "ret_over_dd": 2.8418482572420394,
+     "sharpe_daily": 1.9453784766746596,
+     "sortino_daily": 4.323214194935666,
+     "vol_daily_ann": 0.018155631354138297,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 3.637978807091713e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    }
+   }
+  },
+  "validation|all": {
+   "sleeves": {
+    "A2m2": {
+     "net_return": 0.045631152160896526,
+     "final_equity": 10456.311521608965,
+     "max_dd": 0.04438058838080705,
+     "ret_over_dd": 1.028178170360407,
+     "sharpe_daily": 0.9405490832265371,
+     "sortino_daily": 1.8848538858056982,
+     "vol_daily_ann": 0.04773457779095804,
+     "days": 365.0,
+     "trades": 191,
+     "halted": false,
+     "engine_net": 0.045631152160896526,
+     "engine_mdd": 0.04438058838080705
+    },
+    "E1": {
+     "net_return": 0.040611166463141,
+     "final_equity": 10406.11166463141,
+     "max_dd": 0.023516097509718836,
+     "ret_over_dd": 1.7269517804285783,
+     "sharpe_daily": 1.2292150421604109,
+     "sortino_daily": 2.382828341794324,
+     "vol_daily_ann": 0.03282271683417245,
+     "days": 365.0,
+     "trades": 98,
+     "halted": false,
+     "engine_net": 0.040611166463141,
+     "engine_mdd": 0.023516097509718836
+    },
+    "D1": {
+     "net_return": 0.031525505754664396,
+     "final_equity": 10315.255057546645,
+     "max_dd": 0.01954802511954956,
+     "ret_over_dd": 1.6127207511686903,
+     "sharpe_daily": 1.3697891953549175,
+     "sortino_daily": 2.339077489588744,
+     "vol_daily_ann": 0.022850401936598774,
+     "days": 365.0,
+     "trades": 136,
+     "halted": false,
+     "engine_net": 0.031525505754664396,
+     "engine_mdd": 0.01954802511954956
+    },
+    "B3abs": {
+     "net_return": 0.018129671355009203,
+     "final_equity": 10181.296713550091,
+     "max_dd": 0.013644439423587618,
+     "ret_over_dd": 1.3287223309202287,
+     "sharpe_daily": 0.9988134126987023,
+     "sortino_daily": 1.900987071416936,
+     "vol_daily_ann": 0.018153128689069112,
+     "days": 365.0,
+     "trades": 35,
+     "halted": false,
+     "engine_net": 0.018129671355009203,
+     "engine_mdd": 0.013644439423587618
+    },
+    "B3short": {
+     "net_return": 0.0064868648579257115,
+     "final_equity": 10064.868648579257,
+     "max_dd": 0.020404111457410834,
+     "ret_over_dd": 0.31791949732609714,
+     "sharpe_daily": 0.32621824910136515,
+     "sortino_daily": 0.5166906941809,
+     "vol_daily_ann": 0.020459996676637535,
+     "days": 365.0,
+     "trades": 54,
+     "halted": false,
+     "engine_net": 0.0064868648579257115,
+     "engine_mdd": 0.020404111457410945
+    }
+   },
+   "portfolios": {
+    "F1-EW3-A2": {
+     "net_return": 0.030261107886527805,
+     "final_equity": 10302.611078865279,
+     "max_dd": 0.01615421165893982,
+     "ret_over_dd": 1.873264293264423,
+     "sharpe_daily": 1.4550842392356493,
+     "sortino_daily": 3.0827935042078645,
+     "vol_daily_ann": 0.02043552018746875,
+     "days": 365.0,
+     "trades": 416,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 5.4569682106375694e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F2-EW3-A2E1": {
+     "net_return": 0.02931908176820186,
+     "final_equity": 10293.190817682018,
+     "max_dd": 0.014415806698659606,
+     "ret_over_dd": 2.033814852062908,
+     "sharpe_daily": 1.5806130117251889,
+     "sortino_daily": 3.4237547613497714,
+     "vol_daily_ann": 0.018298161307790564,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F3-IV5": {
+     "net_return": 0.022522183164346732,
+     "final_equity": 10225.221831643468,
+     "max_dd": 0.009175270158329418,
+     "ret_over_dd": 2.45466158224244,
+     "sharpe_daily": 1.5475587394452737,
+     "sortino_daily": 3.759272801613825,
+     "vol_daily_ann": 0.01440669193177101,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 1.2732925824820995e-11,
+     "max_per_trade_risk_pct_of_portfolio": 0.07790629888451978
+    },
+    "F4-ERC5": {
+     "net_return": 0.021077882407255943,
+     "final_equity": 10210.778824072559,
+     "max_dd": 0.00916984272494259,
+     "ret_over_dd": 2.298608933599557,
+     "sharpe_daily": 1.4889901384412358,
+     "sortino_daily": 3.5875980965848475,
+     "vol_daily_ann": 0.014028505345210353,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 5.4569682106375694e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08637705812388435
+    },
+    "F5-EW3-A2E1-BH": {
+     "net_return": 0.028984977724383576,
+     "final_equity": 10289.849777243835,
+     "max_dd": 0.01461346797676688,
+     "ret_over_dd": 1.983442791982378,
+     "sharpe_daily": 1.5643000476873044,
+     "sortino_daily": 3.3765602877110807,
+     "vol_daily_ann": 0.018281237356892407,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 3.637978807091713e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    }
+   }
+  },
+  "validation|stopfill": {
+   "sleeves": {
+    "A2m2": {
+     "net_return": 0.048360031741414344,
+     "final_equity": 10483.600317414142,
+     "max_dd": 0.04265057841221098,
+     "ret_over_dd": 1.133865788970607,
+     "sharpe_daily": 0.9854202303679962,
+     "sortino_daily": 1.9312771529268618,
+     "vol_daily_ann": 0.048192435291556174,
+     "days": 365.0,
+     "trades": 191,
+     "halted": false,
+     "engine_net": 0.048360031741414344,
+     "engine_mdd": 0.04265057841221087
+    },
+    "E1": {
+     "net_return": 0.03881128151295954,
+     "final_equity": 10388.112815129596,
+     "max_dd": 0.0248299774773737,
+     "ret_over_dd": 1.5630816237479996,
+     "sharpe_daily": 1.156248115796535,
+     "sortino_daily": 2.1653676117344696,
+     "vol_daily_ann": 0.033413606501217226,
+     "days": 365.0,
+     "trades": 98,
+     "halted": false,
+     "engine_net": 0.03881128151295954,
+     "engine_mdd": 0.02482997747737392
+    },
+    "D1": {
+     "net_return": 0.03585989041092108,
+     "final_equity": 10358.59890410921,
+     "max_dd": 0.01770091841934862,
+     "ret_over_dd": 2.025877390165425,
+     "sharpe_daily": 1.5474858556276387,
+     "sortino_daily": 2.6402330078702367,
+     "vol_daily_ann": 0.02293767376263529,
+     "days": 365.0,
+     "trades": 136,
+     "halted": false,
+     "engine_net": 0.03585989041092108,
+     "engine_mdd": 0.0177009184193484
+    },
+    "B3abs": {
+     "net_return": 0.018075439829749795,
+     "final_equity": 10180.754398297498,
+     "max_dd": 0.01427463424669484,
+     "ret_over_dd": 1.266262905050264,
+     "sharpe_daily": 0.9798204949123356,
+     "sortino_daily": 1.8191015478498775,
+     "vol_daily_ann": 0.01845629684177612,
+     "days": 365.0,
+     "trades": 35,
+     "halted": false,
+     "engine_net": 0.018075439829749795,
+     "engine_mdd": 0.014274634246694728
+    },
+    "B3short": {
+     "net_return": 0.006574983774575216,
+     "final_equity": 10065.749837745752,
+     "max_dd": 0.021116566227758038,
+     "ret_over_dd": 0.3113661427553644,
+     "sharpe_daily": 0.32530720604551805,
+     "sortino_daily": 0.5065255589863636,
+     "vol_daily_ann": 0.020808535490856185,
+     "days": 365.0,
+     "trades": 54,
+     "halted": false,
+     "engine_net": 0.006574983774575216,
+     "engine_mdd": 0.021116566227758038
+    }
+   },
+   "portfolios": {
+    "F1-EW3-A2": {
+     "net_return": 0.03261333931523103,
+     "final_equity": 10326.13339315231,
+     "max_dd": 0.01576688960327932,
+     "ret_over_dd": 2.068470074684093,
+     "sharpe_daily": 1.5554965803370855,
+     "sortino_daily": 3.226080649996769,
+     "vol_daily_ann": 0.02057679985947178,
+     "days": 365.0,
+     "trades": 416,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 1.0913936421275139e-11,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F2-EW3-A2E1": {
+     "net_return": 0.030923907449013077,
+     "final_equity": 10309.239074490131,
+     "max_dd": 0.014165935775887761,
+     "ret_over_dd": 2.1829766799909915,
+     "sharpe_daily": 1.649842255206624,
+     "sortino_daily": 3.4789112676492127,
+     "vol_daily_ann": 0.018473041204336918,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 9.094947017729282e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F3-IV5": {
+     "net_return": 0.02340690785225097,
+     "final_equity": 10234.06907852251,
+     "max_dd": 0.009542815741884536,
+     "ret_over_dd": 2.452830326537199,
+     "sharpe_daily": 1.5941847791043415,
+     "sortino_daily": 3.78377051594187,
+     "vol_daily_ann": 0.014526850508517715,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 1.0913936421275139e-11,
+     "max_per_trade_risk_pct_of_portfolio": 0.07790629888451978
+    },
+    "F4-ERC5": {
+     "net_return": 0.021877449066573407,
+     "final_equity": 10218.774490665734,
+     "max_dd": 0.009566898368854049,
+     "ret_over_dd": 2.2867859804801034,
+     "sharpe_daily": 1.5315251679581852,
+     "sortino_daily": 3.598472594310181,
+     "vol_daily_ann": 0.014149251525569725,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 5.4569682106375694e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08637705812388435
+    },
+    "F5-EW3-A2E1-BH": {
+     "net_return": 0.03059025294675677,
+     "final_equity": 10305.902529467568,
+     "max_dd": 0.014294833801812401,
+     "ret_over_dd": 2.139951633636924,
+     "sharpe_daily": 1.6336545699347922,
+     "sortino_daily": 3.4316752276807376,
+     "vol_daily_ann": 0.01845775786472712,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 3.637978807091713e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    }
+   }
+  },
+  "validation|allsf": {
+   "sleeves": {
+    "A2m2": {
+     "net_return": 0.030999609663930006,
+     "final_equity": 10309.9960966393,
+     "max_dd": 0.05142826507609288,
+     "ret_over_dd": 0.6027737785449929,
+     "sharpe_daily": 0.6293837280017863,
+     "sortino_daily": 1.1963898155480708,
+     "vol_daily_ann": 0.04904253086409387,
+     "days": 365.0,
+     "trades": 191,
+     "halted": false,
+     "engine_net": 0.030999609663930006,
+     "engine_mdd": 0.05142826507609277
+    },
+    "E1": {
+     "net_return": 0.03281772603448152,
+     "final_equity": 10328.177260344815,
+     "max_dd": 0.02705035386843002,
+     "ret_over_dd": 1.2132087511351375,
+     "sharpe_daily": 0.9761424752463419,
+     "sortino_daily": 1.7997746759368685,
+     "vol_daily_ann": 0.03365874185082784,
+     "days": 365.0,
+     "trades": 98,
+     "halted": false,
+     "engine_net": 0.03281772603448152,
+     "engine_mdd": 0.02705035386843002
+    },
+    "D1": {
+     "net_return": 0.027053565920733158,
+     "final_equity": 10270.535659207331,
+     "max_dd": 0.020757354241904835,
+     "ret_over_dd": 1.3033243835150032,
+     "sharpe_daily": 1.1630229834803305,
+     "sortino_daily": 1.9355628536075333,
+     "vol_daily_ann": 0.023183425810404345,
+     "days": 365.0,
+     "trades": 136,
+     "halted": false,
+     "engine_net": 0.027053565920733158,
+     "engine_mdd": 0.020757354241904835
+    },
+    "B3abs": {
+     "net_return": 0.01615212218766149,
+     "final_equity": 10161.521221876616,
+     "max_dd": 0.014765213829939894,
+     "ret_over_dd": 1.0939308007114206,
+     "sharpe_daily": 0.876168069279235,
+     "sortino_daily": 1.5998476075707604,
+     "vol_daily_ann": 0.018481953279072302,
+     "days": 365.0,
+     "trades": 35,
+     "halted": false,
+     "engine_net": 0.01615212218766171,
+     "engine_mdd": 0.014765213829939783
+    },
+    "B3short": {
+     "net_return": 0.003594918823258908,
+     "final_equity": 10035.94918823259,
+     "max_dd": 0.021895653127518844,
+     "ret_over_dd": 0.1641841329108722,
+     "sharpe_daily": 0.18187787328629407,
+     "sortino_daily": 0.2793881220043608,
+     "vol_daily_ann": 0.020929808562470162,
+     "days": 365.0,
+     "trades": 54,
+     "halted": false,
+     "engine_net": 0.003594918823258908,
+     "engine_mdd": 0.021895653127518844
+    }
+   },
+   "portfolios": {
+    "F1-EW3-A2": {
+     "net_return": 0.02315258035728318,
+     "final_equity": 10231.525803572831,
+     "max_dd": 0.018759776226091263,
+     "ret_over_dd": 1.2341607958565288,
+     "sharpe_daily": 1.0946803114021206,
+     "sortino_daily": 2.19037855086975,
+     "vol_daily_ann": 0.02084600956583132,
+     "days": 365.0,
+     "trades": 416,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 9.094947017729282e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F2-EW3-A2E1": {
+     "net_return": 0.02333157370995198,
+     "final_equity": 10233.31573709952,
+     "max_dd": 0.017096085904148017,
+     "ret_over_dd": 1.3647318948187461,
+     "sharpe_daily": 1.238532341872496,
+     "sortino_daily": 2.5348431262076336,
+     "vol_daily_ann": 0.018646567035923822,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 1.0913936421275139e-11,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F3-IV5": {
+     "net_return": 0.017966905300267566,
+     "final_equity": 10179.669053002675,
+     "max_dd": 0.010596200140922218,
+     "ret_over_dd": 1.6955988997300926,
+     "sharpe_daily": 1.220642353170667,
+     "sortino_daily": 2.809427236363468,
+     "vol_daily_ann": 0.014609517702794872,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 5.4569682106375694e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.07790629888451978
+    },
+    "F4-ERC5": {
+     "net_return": 0.016813582559356943,
+     "final_equity": 10168.13582559357,
+     "max_dd": 0.010295477391553343,
+     "ret_over_dd": 1.6331037328245905,
+     "sharpe_daily": 1.1747880083124735,
+     "sortino_daily": 2.680142824895918,
+     "vol_daily_ann": 0.014220246007729165,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 5.4569682106375694e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08637705812388435
+    },
+    "F5-EW3-A2E1-BH": {
+     "net_return": 0.02294525142513293,
+     "final_equity": 10229.452514251328,
+     "max_dd": 0.017304272688602795,
+     "ret_over_dd": 1.3259876238684958,
+     "sharpe_daily": 1.2209012722599564,
+     "sortino_daily": 2.4893962034552968,
+     "vol_daily_ann": 0.018605940864238207,
+     "days": 365.0,
+     "trades": 514,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 3.637978807091713e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    }
+   }
+  },
+  "holdout_pre|base": {
+   "sleeves": {
+    "A2m2": {
+     "net_return": 0.10578743681968761,
+     "final_equity": 11057.874368196875,
+     "max_dd": 0.03574617627187815,
+     "ret_over_dd": 2.9594056722344195,
+     "sharpe_daily": 1.3664384795026558,
+     "sortino_daily": 2.869141703014117,
+     "vol_daily_ann": 0.052873252996557,
+     "days": 518.0,
+     "trades": 238,
+     "halted": false,
+     "engine_net": 0.10578743681968761,
+     "engine_mdd": 0.03574617627187804
+    },
+    "E1": {
+     "net_return": 0.07949281037603884,
+     "final_equity": 10794.928103760389,
+     "max_dd": 0.031105935670191154,
+     "ret_over_dd": 2.555551172576264,
+     "sharpe_daily": 1.3441231885504341,
+     "sortino_daily": 2.568161330878833,
+     "vol_daily_ann": 0.04071380235123518,
+     "days": 518.0,
+     "trades": 111,
+     "halted": false,
+     "engine_net": 0.07949281037603884,
+     "engine_mdd": 0.031105935670191376
+    },
+    "D1": {
+     "net_return": 0.006812017320438457,
+     "final_equity": 10068.120173204385,
+     "max_dd": 0.019960877853972603,
+     "ret_over_dd": 0.34126842367720484,
+     "sharpe_daily": 0.2575203954808213,
+     "sortino_daily": 0.4044406770419468,
+     "vol_daily_ann": 0.01929730392109713,
+     "days": 518.0,
+     "trades": 163,
+     "halted": false,
+     "engine_net": 0.006812017320438235,
+     "engine_mdd": 0.01996087785397238
+    },
+    "B3abs": {
+     "net_return": 0.024579088852099584,
+     "final_equity": 10245.790888520996,
+     "max_dd": 0.010185678978267276,
+     "ret_over_dd": 2.413102641909575,
+     "sharpe_daily": 1.32391382563669,
+     "sortino_daily": 2.207745491028292,
+     "vol_daily_ann": 0.01298750115342599,
+     "days": 518.0,
+     "trades": 32,
+     "halted": false,
+     "engine_net": 0.024579088852099584,
+     "engine_mdd": 0.010185678978267165
+    },
+    "B3short": {
+     "net_return": 0.023386089285873712,
+     "final_equity": 10233.860892858738,
+     "max_dd": 0.010889412511762786,
+     "ret_over_dd": 2.1475988039402463,
+     "sharpe_daily": 1.2624138565784617,
+     "sortino_daily": 2.1482541665797,
+     "vol_daily_ann": 0.012969674429942575,
+     "days": 518.0,
+     "trades": 39,
+     "halted": false,
+     "engine_net": 0.023386089285873712,
+     "engine_mdd": 0.010889412511762897
+    }
+   },
+   "portfolios": {
+    "F1-EW3-A2": {
+     "net_return": 0.045263250442413305,
+     "final_equity": 10452.632504424133,
+     "max_dd": 0.013672349973507303,
+     "ret_over_dd": 3.310568448739185,
+     "sharpe_daily": 1.5159942505317772,
+     "sortino_daily": 2.9698599208303915,
+     "vol_daily_ann": 0.02071798827982369,
+     "days": 518.0,
+     "trades": 472,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F2-EW3-A2E1": {
+     "net_return": 0.040957645130666354,
+     "final_equity": 10409.576451306664,
+     "max_dd": 0.01360169570554659,
+     "ret_over_dd": 3.0112161025602395,
+     "sharpe_daily": 1.5529273267964374,
+     "sortino_daily": 2.9235820210158376,
+     "vol_daily_ann": 0.018322230304418603,
+     "days": 518.0,
+     "trades": 583,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F3-IV5": {
+     "net_return": 0.03474928196309279,
+     "final_equity": 10347.492819630928,
+     "max_dd": 0.011080328486231528,
+     "ret_over_dd": 3.136123807725775,
+     "sharpe_daily": 1.8746392134960141,
+     "sortino_daily": 3.5560179891315102,
+     "vol_daily_ann": 0.012884198256253959,
+     "days": 518.0,
+     "trades": 583,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.07790629888451978
+    },
+    "F4-ERC5": {
+     "net_return": 0.03295309506309496,
+     "final_equity": 10329.53095063095,
+     "max_dd": 0.010370038389630909,
+     "ret_over_dd": 3.1777216076697505,
+     "sharpe_daily": 1.9108745614847369,
+     "sortino_daily": 3.599183243730524,
+     "vol_daily_ann": 0.01199340525622556,
+     "days": 518.0,
+     "trades": 583,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08637705812388435
+    },
+    "F5-EW3-A2E1-BH": {
+     "net_return": 0.04114490999576259,
+     "final_equity": 10411.449099957626,
+     "max_dd": 0.01392875434220564,
+     "ret_over_dd": 2.9539547460528497,
+     "sharpe_daily": 1.5379329619406625,
+     "sortino_daily": 2.891544283882234,
+     "vol_daily_ann": 0.01858644576114626,
+     "days": 518.0,
+     "trades": 583,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 3.637978807091713e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    }
+   }
+  },
+  "holdout_pre|allsf": {
+   "sleeves": {
+    "A2m2": {
+     "net_return": 0.04748414078825913,
+     "final_equity": 10474.841407882592,
+     "max_dd": 0.051411616577585084,
+     "ret_over_dd": 0.923607230218116,
+     "sharpe_daily": 0.6069348720824566,
+     "sortino_daily": 1.1089441001738713,
+     "vol_daily_ann": 0.05646648701905221,
+     "days": 518.0,
+     "trades": 238,
+     "halted": false,
+     "engine_net": 0.04748414078825913,
+     "engine_mdd": 0.051411616577585084
+    },
+    "E1": {
+     "net_return": 0.05734041026045178,
+     "final_equity": 10573.404102604518,
+     "max_dd": 0.035750349980489315,
+     "ret_over_dd": 1.6039118579746827,
+     "sharpe_daily": 0.9448106885667649,
+     "sortino_daily": 1.6630516900452996,
+     "vol_daily_ann": 0.042535710447743534,
+     "days": 518.0,
+     "trades": 111,
+     "halted": false,
+     "engine_net": 0.05734041026045178,
+     "engine_mdd": 0.035750349980489426
+    },
+    "D1": {
+     "net_return": -0.008464210397733929,
+     "final_equity": 9915.35789602266,
+     "max_dd": 0.028517358894625477,
+     "ret_over_dd": -0.29680905686287573,
+     "sharpe_daily": -0.28285093804846634,
+     "sortino_daily": -0.41372342124945954,
+     "vol_daily_ann": 0.020438592967827855,
+     "days": 518.0,
+     "trades": 163,
+     "halted": false,
+     "engine_net": -0.008464210397733929,
+     "engine_mdd": 0.028517358894625255
+    },
+    "B3abs": {
+     "net_return": 0.022566763689093827,
+     "final_equity": 10225.66763689094,
+     "max_dd": 0.010528097223723054,
+     "ret_over_dd": 2.1434797959733825,
+     "sharpe_daily": 1.2061089370332712,
+     "sortino_daily": 1.9696243689575605,
+     "vol_daily_ann": 0.013108732859454311,
+     "days": 518.0,
+     "trades": 32,
+     "halted": false,
+     "engine_net": 0.022566763689093827,
+     "engine_mdd": 0.010528097223722721
+    },
+    "B3short": {
+     "net_return": 0.02154122420331106,
+     "final_equity": 10215.41224203311,
+     "max_dd": 0.011291330881304629,
+     "ret_over_dd": 1.9077666246569274,
+     "sharpe_daily": 1.156249510430334,
+     "sortino_daily": 1.935485000939785,
+     "vol_daily_ann": 0.013061930408573688,
+     "days": 518.0,
+     "trades": 39,
+     "halted": false,
+     "engine_net": 0.02154122420331106,
+     "engine_mdd": 0.011291330881304629
+    }
+   },
+   "portfolios": {
+    "F1-EW3-A2": {
+     "net_return": 0.020633984460746824,
+     "final_equity": 10206.339844607468,
+     "max_dd": 0.019092239092970087,
+     "ret_over_dd": 1.0807524649292926,
+     "sharpe_daily": 0.6617706130492169,
+     "sortino_daily": 1.1435052057042687,
+     "vol_daily_ann": 0.022115502011164564,
+     "days": 518.0,
+     "trades": 472,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F2-EW3-A2E1": {
+     "net_return": 0.022144388050716612,
+     "final_equity": 10221.443880507166,
+     "max_dd": 0.01765759527886268,
+     "ret_over_dd": 1.2540998760587134,
+     "sharpe_daily": 0.8026009634442077,
+     "sortino_daily": 1.3528213152010167,
+     "vol_daily_ann": 0.019464926335652215,
+     "days": 518.0,
+     "trades": 583,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 1.2732925824820995e-11,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    },
+    "F3-IV5": {
+     "net_return": 0.02285366777768827,
+     "final_equity": 10228.536677776883,
+     "max_dd": 0.013673998532848564,
+     "ret_over_dd": 1.6713229654652741,
+     "sharpe_daily": 1.186190350227529,
+     "sortino_daily": 2.0490922520388968,
+     "vol_daily_ann": 0.013499868915064593,
+     "days": 518.0,
+     "trades": 583,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.07790629888451978
+    },
+    "F4-ERC5": {
+     "net_return": 0.02242310483021348,
+     "final_equity": 10224.231048302136,
+     "max_dd": 0.012668516539548924,
+     "ret_over_dd": 1.7699866247332443,
+     "sharpe_daily": 1.2565330732096298,
+     "sortino_daily": 2.175636542036038,
+     "vol_daily_ann": 0.012497676097535644,
+     "days": 518.0,
+     "trades": 583,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 7.275957614183426e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08637705812388435
+    },
+    "F5-EW3-A2E1-BH": {
+     "net_return": 0.02200068635760788,
+     "final_equity": 10220.006863576078,
+     "max_dd": 0.018012978763271792,
+     "ret_over_dd": 1.2213796866549893,
+     "sharpe_daily": 0.7910108036982697,
+     "sortino_daily": 1.3319393464740354,
+     "vol_daily_ann": 0.019628920304586774,
+     "days": 518.0,
+     "trades": 583,
+     "any_sleeve_halted": false,
+     "ref_max_abs_diff": 3.637978807091713e-12,
+     "max_per_trade_risk_pct_of_portfolio": 0.08333333333333333
+    }
+   }
+  }
+ },
+ "correlation": {
+  "validation": {
+   "A2m2": {
+    "A2m2": 1.0,
+    "E1": 0.7225,
+    "D1": 0.3948,
+    "B3abs": 0.101,
+    "B3short": -0.2644,
+    "F1-EW3-A2": 0.8945,
+    "F2-EW3-A2E1": 0.7804,
+    "F3-IV5": 0.5388,
+    "F4-ERC5": 0.4534,
+    "F5-EW3-A2E1-BH": 0.7822
+   },
+   "E1": {
+    "A2m2": 0.7225,
+    "E1": 1.0,
+    "D1": 0.5464,
+    "B3abs": 0.2752,
+    "B3short": -0.0596,
+    "F1-EW3-A2": 0.7972,
+    "F2-EW3-A2E1": 0.875,
+    "F3-IV5": 0.7265,
+    "F4-ERC5": 0.6569,
+    "F5-EW3-A2E1-BH": 0.875
+   },
+   "D1": {
+    "A2m2": 0.3948,
+    "E1": 0.5464,
+    "D1": 1.0,
+    "B3abs": 0.0686,
+    "B3short": -0.0653,
+    "F1-EW3-A2": 0.6804,
+    "F2-EW3-A2E1": 0.7505,
+    "F3-IV5": 0.564,
+    "F4-ERC5": 0.506,
+    "F5-EW3-A2E1-BH": 0.7512
+   },
+   "B3abs": {
+    "A2m2": 0.101,
+    "E1": 0.2752,
+    "D1": 0.0686,
+    "B3abs": 1.0,
+    "B3short": 0.4635,
+    "F1-EW3-A2": 0.3318,
+    "F2-EW3-A2E1": 0.408,
+    "F3-IV5": 0.6943,
+    "F4-ERC5": 0.7384,
+    "F5-EW3-A2E1-BH": 0.4048
+   },
+   "B3short": {
+    "A2m2": -0.2644,
+    "E1": -0.0596,
+    "D1": -0.0653,
+    "B3abs": 0.4635,
+    "B3short": 1.0,
+    "F1-EW3-A2": 0.0077,
+    "F2-EW3-A2E1": 0.1047,
+    "F3-IV5": 0.4938,
+    "F4-ERC5": 0.5828,
+    "F5-EW3-A2E1-BH": 0.1019
+   },
+   "F1-EW3-A2": {
+    "A2m2": 0.8945,
+    "E1": 0.7972,
+    "D1": 0.6804,
+    "B3abs": 0.3318,
+    "B3short": 0.0077,
+    "F1-EW3-A2": 1.0,
+    "F2-EW3-A2E1": 0.9657,
+    "F3-IV5": 0.8165,
+    "F4-ERC5": 0.75,
+    "F5-EW3-A2E1-BH": 0.9663
+   },
+   "F2-EW3-A2E1": {
+    "A2m2": 0.7804,
+    "E1": 0.875,
+    "D1": 0.7505,
+    "B3abs": 0.408,
+    "B3short": 0.1047,
+    "F1-EW3-A2": 0.9657,
+    "F2-EW3-A2E1": 1.0,
+    "F3-IV5": 0.8938,
+    "F4-ERC5": 0.8358,
+    "F5-EW3-A2E1-BH": 1.0
+   },
+   "F3-IV5": {
+    "A2m2": 0.5388,
+    "E1": 0.7265,
+    "D1": 0.564,
+    "B3abs": 0.6943,
+    "B3short": 0.4938,
+    "F1-EW3-A2": 0.8165,
+    "F2-EW3-A2E1": 0.8938,
+    "F3-IV5": 1.0,
+    "F4-ERC5": 0.9931,
+    "F5-EW3-A2E1-BH": 0.8921
+   },
+   "F4-ERC5": {
+    "A2m2": 0.4534,
+    "E1": 0.6569,
+    "D1": 0.506,
+    "B3abs": 0.7384,
+    "B3short": 0.5828,
+    "F1-EW3-A2": 0.75,
+    "F2-EW3-A2E1": 0.8358,
+    "F3-IV5": 0.9931,
+    "F4-ERC5": 1.0,
+    "F5-EW3-A2E1-BH": 0.8337
+   },
+   "F5-EW3-A2E1-BH": {
+    "A2m2": 0.7822,
+    "E1": 0.875,
+    "D1": 0.7512,
+    "B3abs": 0.4048,
+    "B3short": 0.1019,
+    "F1-EW3-A2": 0.9663,
+    "F2-EW3-A2E1": 1.0,
+    "F3-IV5": 0.8921,
+    "F4-ERC5": 0.8337,
+    "F5-EW3-A2E1-BH": 1.0
+   }
+  },
+  "holdout_pre": {
+   "A2m2": {
+    "A2m2": 1.0,
+    "E1": 0.8276,
+    "D1": 0.2806,
+    "B3abs": -0.0035,
+    "B3short": -0.0494,
+    "F1-EW3-A2": 0.9372,
+    "F2-EW3-A2E1": 0.8842,
+    "F3-IV5": 0.7575,
+    "F4-ERC5": 0.6918,
+    "F5-EW3-A2E1-BH": 0.8898
+   },
+   "E1": {
+    "A2m2": 0.8276,
+    "E1": 1.0,
+    "D1": 0.3187,
+    "B3abs": -0.0321,
+    "B3short": -0.0652,
+    "F1-EW3-A2": 0.7987,
+    "F2-EW3-A2E1": 0.8743,
+    "F3-IV5": 0.7523,
+    "F4-ERC5": 0.6843,
+    "F5-EW3-A2E1-BH": 0.8764
+   },
+   "D1": {
+    "A2m2": 0.2806,
+    "E1": 0.3187,
+    "D1": 1.0,
+    "B3abs": -0.0161,
+    "B3short": -0.0571,
+    "F1-EW3-A2": 0.5419,
+    "F2-EW3-A2E1": 0.5959,
+    "F3-IV5": 0.488,
+    "F4-ERC5": 0.4557,
+    "F5-EW3-A2E1-BH": 0.5896
+   },
+   "B3abs": {
+    "A2m2": -0.0035,
+    "E1": -0.0321,
+    "D1": -0.0161,
+    "B3abs": 1.0,
+    "B3short": 0.7154,
+    "F1-EW3-A2": 0.1711,
+    "F2-EW3-A2E1": 0.1832,
+    "F3-IV5": 0.4972,
+    "F4-ERC5": 0.5805,
+    "F5-EW3-A2E1-BH": 0.1764
+   },
+   "B3short": {
+    "A2m2": -0.0494,
+    "E1": -0.0652,
+    "D1": -0.0571,
+    "B3abs": 0.7154,
+    "B3short": 1.0,
+    "F1-EW3-A2": 0.1184,
+    "F2-EW3-A2E1": 0.1336,
+    "F3-IV5": 0.4613,
+    "F4-ERC5": 0.5535,
+    "F5-EW3-A2E1-BH": 0.1282
+   },
+   "F1-EW3-A2": {
+    "A2m2": 0.9372,
+    "E1": 0.7987,
+    "D1": 0.5419,
+    "B3abs": 0.1711,
+    "B3short": 0.1184,
+    "F1-EW3-A2": 1.0,
+    "F2-EW3-A2E1": 0.9749,
+    "F3-IV5": 0.8999,
+    "F4-ERC5": 0.852,
+    "F5-EW3-A2E1-BH": 0.9764
+   },
+   "F2-EW3-A2E1": {
+    "A2m2": 0.8842,
+    "E1": 0.8743,
+    "D1": 0.5959,
+    "B3abs": 0.1832,
+    "B3short": 0.1336,
+    "F1-EW3-A2": 0.9749,
+    "F2-EW3-A2E1": 1.0,
+    "F3-IV5": 0.9311,
+    "F4-ERC5": 0.8833,
+    "F5-EW3-A2E1-BH": 0.9998
+   },
+   "F3-IV5": {
+    "A2m2": 0.7575,
+    "E1": 0.7523,
+    "D1": 0.488,
+    "B3abs": 0.4972,
+    "B3short": 0.4613,
+    "F1-EW3-A2": 0.8999,
+    "F2-EW3-A2E1": 0.9311,
+    "F3-IV5": 1.0,
+    "F4-ERC5": 0.9933,
+    "F5-EW3-A2E1-BH": 0.9285
+   },
+   "F4-ERC5": {
+    "A2m2": 0.6918,
+    "E1": 0.6843,
+    "D1": 0.4557,
+    "B3abs": 0.5805,
+    "B3short": 0.5535,
+    "F1-EW3-A2": 0.852,
+    "F2-EW3-A2E1": 0.8833,
+    "F3-IV5": 0.9933,
+    "F4-ERC5": 1.0,
+    "F5-EW3-A2E1-BH": 0.8799
+   },
+   "F5-EW3-A2E1-BH": {
+    "A2m2": 0.8898,
+    "E1": 0.8764,
+    "D1": 0.5896,
+    "B3abs": 0.1764,
+    "B3short": 0.1282,
+    "F1-EW3-A2": 0.9764,
+    "F2-EW3-A2E1": 0.9998,
+    "F3-IV5": 0.9285,
+    "F4-ERC5": 0.8799,
+    "F5-EW3-A2E1-BH": 1.0
+   }
+  }
+ },
+ "quant_runs": {
+  "A2m2_804|validation|base": {
+   "net_return": 0.06295740879992007,
+   "max_dd": 0.03978854168090151,
+   "trades": 160,
+   "rejects": 238,
+   "final_equity": 854.7134228419278
+  },
+  "A2m2_804|holdout_pre|base": {
+   "net_return": 0.11368509070967359,
+   "max_dd": 0.03432280809336696,
+   "trades": 198,
+   "rejects": 438,
+   "final_equity": 895.5030445887414
+  },
+  "A2m2_944|validation|base": {
+   "net_return": 0.07391470265646616,
+   "max_dd": 0.03377316433112276,
+   "trades": 170,
+   "rejects": 141,
+   "final_equity": 1014.1620886006604
+  },
+  "A2m2_944|holdout_pre|base": {
+   "net_return": 0.12416146584560295,
+   "max_dd": 0.03668327596159515,
+   "trades": 205,
+   "rejects": 312,
+   "final_equity": 1061.6131218859537
+  },
+  "A2m2_1667|validation|base": {
+   "net_return": 0.06289366627885706,
+   "max_dd": 0.0361022797977395,
+   "trades": 190,
+   "rejects": 22,
+   "final_equity": 1771.4929867769827
+  },
+  "A2m2_1667|holdout_pre|base": {
+   "net_return": 0.10985426439066948,
+   "max_dd": 0.03533456058760853,
+   "trades": 232,
+   "rejects": 82,
+   "final_equity": 1849.7608068319973
+  },
+  "A2m2_3333|validation|base": {
+   "net_return": 0.06624622119945967,
+   "max_dd": 0.035568250373071875,
+   "trades": 191,
+   "rejects": 0,
+   "final_equity": 3554.150516510795
+  },
+  "A2m2_3333|holdout_pre|base": {
+   "net_return": 0.10543165877502325,
+   "max_dd": 0.035643652563777994,
+   "trades": 238,
+   "rejects": 0,
+   "final_equity": 3684.768511144548
+  },
+  "B3abs_1667|validation|base": {
+   "net_return": 0.013287153955149122,
+   "max_dd": 0.012841838425856289,
+   "trades": 33,
+   "rejects": 47,
+   "final_equity": 1688.8153008824286
+  },
+  "B3abs_1667|holdout_pre|base": {
+   "net_return": 0.02483775749488415,
+   "max_dd": 0.011510717879151589,
+   "trades": 25,
+   "rejects": 148,
+   "final_equity": 1708.0663452839985
+  },
+  "B3abs_2882|validation|base": {
+   "net_return": 0.01727958477156344,
+   "max_dd": 0.01261636782545128,
+   "trades": 34,
+   "rejects": 19,
+   "final_equity": 2932.1354655746204
+  },
+  "B3abs_2882|holdout_pre|base": {
+   "net_return": 0.0212147918085841,
+   "max_dd": 0.010784736691566765,
+   "trades": 29,
+   "rejects": 79,
+   "final_equity": 2943.4780308736363
+  },
+  "B3abs_3044|validation|base": {
+   "net_return": 0.018697182035665838,
+   "max_dd": 0.013080079236121311,
+   "trades": 34,
+   "rejects": 19,
+   "final_equity": 3101.331887961201
+  },
+  "B3abs_3044|holdout_pre|base": {
+   "net_return": 0.02148112969781124,
+   "max_dd": 0.01051121981880998,
+   "trades": 29,
+   "rejects": 58,
+   "final_equity": 3109.8073660633136
+  },
+  "B3short_1667|validation|base": {
+   "net_return": 0.008945148097327715,
+   "max_dd": 0.01956281772184354,
+   "trades": 48,
+   "rejects": 132,
+   "final_equity": 1681.5786099793734
+  },
+  "B3short_1667|holdout_pre|base": {
+   "net_return": 0.02413592567583689,
+   "max_dd": 0.01081843620503753,
+   "trades": 30,
+   "rejects": 191,
+   "final_equity": 1706.896623246147
+  },
+  "B3short_3116|validation|base": {
+   "net_return": 0.009072727116699042,
+   "max_dd": 0.01882675885172924,
+   "trades": 53,
+   "rejects": 19,
+   "final_equity": 3144.522885877413
+  },
+  "B3short_3116|holdout_pre|base": {
+   "net_return": 0.025165062068018385,
+   "max_dd": 0.010768646564727202,
+   "trades": 35,
+   "rejects": 76,
+   "final_equity": 3194.670624669462
+  },
+  "B3short_3455|validation|base": {
+   "net_return": 0.010410563722486499,
+   "max_dd": 0.01833557879701464,
+   "trades": 53,
+   "rejects": 18,
+   "final_equity": 3491.0493305062882
+  },
+  "B3short_3455|holdout_pre|base": {
+   "net_return": 0.027133916898859578,
+   "max_dd": 0.01083456010369932,
+   "trades": 36,
+   "rejects": 57,
+   "final_equity": 3548.8298535989115
+  },
+  "D1_1717|validation|base": {
+   "net_return": 0.03280842577045551,
+   "max_dd": 0.016283210037891127,
+   "trades": 130,
+   "rejects": 52,
+   "final_equity": 1773.6315814913455
+  },
+  "D1_1717|holdout_pre|base": {
+   "net_return": 0.0077498887344185086,
+   "max_dd": 0.020727201732193334,
+   "trades": 148,
+   "rejects": 131,
+   "final_equity": 1730.5988064247294
+  },
+  "D1_1902|validation|base": {
+   "net_return": 0.03204092652274704,
+   "max_dd": 0.013982349364685231,
+   "trades": 130,
+   "rejects": 30,
+   "final_equity": 1963.447542300261
+  },
+  "D1_1902|holdout_pre|base": {
+   "net_return": 0.0027755529483093344,
+   "max_dd": 0.019711406596380265,
+   "trades": 153,
+   "rejects": 92,
+   "final_equity": 1907.770461728629
+  },
+  "D1_3333|validation|base": {
+   "net_return": 0.03299418390161102,
+   "max_dd": 0.016352725066310803,
+   "trades": 135,
+   "rejects": 1,
+   "final_equity": 3443.310503024757
+  },
+  "D1_3333|holdout_pre|base": {
+   "net_return": 0.0019820777809393952,
+   "max_dd": 0.020663841694717244,
+   "trades": 158,
+   "rejects": 19,
+   "final_equity": 3339.9369193295383
+  },
+  "E1_979|validation|base": {
+   "net_return": 0.03563495495627045,
+   "max_dd": 0.03057352216236975,
+   "trades": 92,
+   "rejects": 340,
+   "final_equity": 1014.0212534463332
+  },
+  "E1_979|holdout_pre|base": {
+   "net_return": 0.08585196990687627,
+   "max_dd": 0.03138495020249532,
+   "trades": 99,
+   "rejects": 529,
+   "final_equity": 1063.1902392949198
+  },
+  "E1_1155|validation|base": {
+   "net_return": 0.04956886031804353,
+   "max_dd": 0.020969707958548356,
+   "trades": 95,
+   "rejects": 204,
+   "final_equity": 1211.8007190574035
+  },
+  "E1_1155|holdout_pre|base": {
+   "net_return": 0.08484352946471874,
+   "max_dd": 0.02818796668952983,
+   "trades": 102,
+   "rejects": 408,
+   "final_equity": 1252.5277938140803
+  },
+  "E1_1667|validation|base": {
+   "net_return": 0.04042144847050766,
+   "max_dd": 0.026443755175615813,
+   "trades": 97,
+   "rejects": 69,
+   "final_equity": 1734.0392155223412
+  },
+  "E1_1667|holdout_pre|base": {
+   "net_return": 0.06644238405176828,
+   "max_dd": 0.03020165304757283,
+   "trades": 108,
+   "rejects": 207,
+   "final_equity": 1777.4075282275608
+  },
+  "A2m2_944|holdout_pre|allsf": {
+   "net_return": 0.0635440799223046,
+   "max_dd": 0.05174880464217302,
+   "trades": 205,
+   "rejects": 312,
+   "final_equity": 1004.3684873154276
+  },
+  "E1_1155|holdout_pre|allsf": {
+   "net_return": 0.06093202336604975,
+   "max_dd": 0.03278300091002795,
+   "trades": 102,
+   "rejects": 408,
+   "final_equity": 1224.9202862177399
+  },
+  "D1_1902|holdout_pre|allsf": {
+   "net_return": -0.012271739819272987,
+   "max_dd": 0.03062406115839278,
+   "trades": 153,
+   "rejects": 92,
+   "final_equity": 1879.1431377112312
+  },
+  "B3abs_2882|holdout_pre|allsf": {
+   "net_return": 0.019334746742032838,
+   "max_dd": 0.011091002582889087,
+   "trades": 29,
+   "rejects": 79,
+   "final_equity": 2938.0591205769633
+  },
+  "B3short_3116|holdout_pre|allsf": {
+   "net_return": 0.02349568461759821,
+   "max_dd": 0.011168034150996875,
+   "trades": 35,
+   "rejects": 76,
+   "final_equity": 3189.4684271895903
+  },
+  "A2m2_944|validation|allsf": {
+   "net_return": 0.043176925917635334,
+   "max_dd": 0.042702152348977784,
+   "trades": 170,
+   "rejects": 141,
+   "final_equity": 985.1345617595782
+  },
+  "E1_1155|validation|allsf": {
+   "net_return": 0.03083343787435755,
+   "max_dd": 0.02562390258883185,
+   "trades": 95,
+   "rejects": 204,
+   "final_equity": 1190.169362366597
+  },
+  "D1_1902|validation|allsf": {
+   "net_return": 0.020380044828678612,
+   "max_dd": 0.01854182690314321,
+   "trades": 130,
+   "rejects": 30,
+   "final_equity": 1941.2628314861126
+  },
+  "B3abs_2882|validation|allsf": {
+   "net_return": 0.013585491730751631,
+   "max_dd": 0.014143803369930708,
+   "trades": 34,
+   "rejects": 19,
+   "final_equity": 2921.4878703802974
+  },
+  "B3short_3116|validation|allsf": {
+   "net_return": 0.003731377066692909,
+   "max_dd": 0.02095031826099003,
+   "trades": 53,
+   "rejects": 19,
+   "final_equity": 3127.877903784082
+  }
+ },
+ "quant_portfolios": {
+  "F1-EW3-A2|validation|base": {
+   "net_return": 0.036995300132419695,
+   "final_equity": 10369.953001324197,
+   "max_dd": 0.012785304855005064,
+   "ret_over_dd": 2.893579820893918,
+   "sharpe_daily": 1.9153340618127657,
+   "sortino_daily": 4.1835037762581635,
+   "vol_daily_ann": 0.018906175320019966,
+   "days": 365.0
+  },
+  "F2-EW3-A2E1|validation|base": {
+   "net_return": 0.03211039805249882,
+   "final_equity": 10321.103980524987,
+   "max_dd": 0.012402727736319785,
+   "ret_over_dd": 2.5889787097775008,
+   "sharpe_daily": 1.9131053964335742,
+   "sortino_daily": 4.181718944023657,
+   "vol_daily_ann": 0.016515055590523145,
+   "days": 365.0
+  },
+  "F3-IV5|validation|base": {
+   "net_return": 0.0267258945865132,
+   "final_equity": 10267.258945865133,
+   "max_dd": 0.008151224063607354,
+   "ret_over_dd": 3.278758426705002,
+   "sharpe_daily": 1.9635762110724178,
+   "sortino_daily": 4.731044809913364,
+   "vol_daily_ann": 0.013435349590550587,
+   "days": 365.0
+  },
+  "F4-ERC5|validation|base": {
+   "net_return": 0.023666420038628067,
+   "final_equity": 10236.664200386282,
+   "max_dd": 0.00862350640089582,
+   "ret_over_dd": 2.74440800973599,
+   "sharpe_daily": 1.799149078300602,
+   "sortino_daily": 4.279960230521011,
+   "vol_daily_ann": 0.013009095770877745,
+   "days": 365.0
+  },
+  "F1-EW3-A2|holdout_pre|base": {
+   "net_return": 0.04364427648957725,
+   "final_equity": 10436.442764895772,
+   "max_dd": 0.013616637614741967,
+   "ret_over_dd": 3.2052168622249337,
+   "sharpe_daily": 1.4885649293079757,
+   "sortino_daily": 2.9307680924875528,
+   "vol_daily_ann": 0.020361033913048353,
+   "days": 518.0
+  },
+  "F2-EW3-A2E1|holdout_pre|base": {
+   "net_return": 0.037988361960663575,
+   "final_equity": 10379.883619606637,
+   "max_dd": 0.01336888345972731,
+   "ret_over_dd": 2.841550835198801,
+   "sharpe_daily": 1.4890871765276512,
+   "sortino_daily": 2.8052307028618038,
+   "vol_daily_ann": 0.01774901896555067,
+   "days": 518.0
+  },
+  "F3-IV5|holdout_pre|base": {
+   "net_return": 0.03575719309496628,
+   "final_equity": 10357.571930949664,
+   "max_dd": 0.010864809939297726,
+   "ret_over_dd": 3.2911015742331093,
+   "sharpe_daily": 1.9735013488774396,
+   "sortino_daily": 3.7472879488195647,
+   "vol_daily_ann": 0.012584480062537227,
+   "days": 518.0
+  },
+  "F4-ERC5|holdout_pre|base": {
+   "net_return": 0.0346536011902574,
+   "final_equity": 10346.536011902574,
+   "max_dd": 0.010327804255089723,
+   "ret_over_dd": 3.355369673392047,
+   "sharpe_daily": 2.103965985549634,
+   "sortino_daily": 3.9313306230932055,
+   "vol_daily_ann": 0.01144056907374042,
+   "days": 518.0
+  },
+  "F3-IV5|holdout_pre|allsf": {
+   "net_return": 0.023665224780843763,
+   "final_equity": 10236.652247808437,
+   "max_dd": 0.01340073070466774,
+   "ret_over_dd": 1.7659652523724467,
+   "sharpe_daily": 1.25186841053287,
+   "sortino_daily": 2.1540256690754203,
+   "vol_daily_ann": 0.013235228894076686,
+   "days": 518.0
+  },
+  "F3-IV5|validation|allsf": {
+   "net_return": 0.01684529960596781,
+   "final_equity": 10168.45299605968,
+   "max_dd": 0.010739800948580625,
+   "ret_over_dd": 1.5684927203603427,
+   "sharpe_daily": 1.2137536632236312,
+   "sortino_daily": 2.6488130501799834,
+   "vol_daily_ann": 0.013774389983916419,
+   "days": 365.0
+  }
+ }
+}

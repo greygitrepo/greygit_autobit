@@ -6,6 +6,8 @@
 3. the truncation check is not vacuous: a window too short for C1's 90-day regime rank must be detected
 4. (round 2) cross-asset D1: the other leg is cut causally (corrupting it after bar t leaves rows <= t unchanged,
    corrupting it before t does change them) and start-truncation holds with BOTH legs truncated to 150 days
+5. (round 3) D4 market-neutral pair: covered by 1-4 (it is cross-asset), plus pair integrity (BTC target == -ETH target
+   on every row, identical % stop distance on both legs at entry) and Team F portfolio math on a hand example
 Data are limited to < 2025-10-01 (the test split is never read).
 """
 import pytest
@@ -29,7 +31,9 @@ def test_candidates_present():
                                         "C1-V5-gate-rel",
                                         # round 2
                                         "A3-ens5-e0.6-m2.5-vs", "B3-abs-favg3", "B3-favg3-short", "C3-R2-V2-er20",
-                                        "C3-R2-V1-control", "D1-relmom-rel360-tr90", "E1-v3-s3-d"}
+                                        "C3-R2-V1-control", "D1-relmom-rel360-tr90", "E1-v3-s3-d",
+                                        # round 3
+                                        "D4-pair-ens-rsexit"}
 
 
 @pytest.mark.parametrize("sym", ["BTCUSDT", "ETHUSDT"])
@@ -83,3 +87,36 @@ def test_cross_asset_both_legs_truncated_150d(cand, sym):
     res = cross_truncation(cand, sym, m1, bars, f, n=10, seed=4, leg_fixed=True)
     bad = [r for r in res if not r["match"]]
     assert not bad, f"{cand['id']} {sym}: {len(bad)}/{len(res)} mismatches, e.g. {bad[0]}"
+
+
+# ------------------------------------------------------------------ round 3
+def test_d4_is_cross_asset_pair():
+    assert "D4-pair-ens-rsexit" in {c["id"] for c in CROSS}
+    c = next(x for x in CANDS if x["id"] == "D4-pair-ens-rsexit")
+    assert c["params"]["mode"] == "pair" and c["params"]["reset_days"] == 30
+
+
+def test_d4_pair_integrity():
+    import numpy as np
+    c = next(x for x in CANDS if x["id"] == "D4-pair-ens-rsexit")
+    sig, bars = {}, {}
+    for sym in ("BTCUSDT", "ETHUSDT"):
+        s = make_strategy(c["strategy"], c["params"])
+        m1, b, f = _data(sym, s.timeframe)
+        sig[sym], bars[sym] = s.compute(b, f), b
+    idx = sig["BTCUSDT"].index.intersection(sig["ETHUSDT"].index)
+    tb = sig["BTCUSDT"].loc[idx, "target"].fillna(0).values
+    te = sig["ETHUSDT"].loc[idx, "target"].fillna(0).values
+    assert (te != 0).sum() > 50                                    # not vacuous
+    assert (tb == -te).all()                                       # always both legs, opposite directions, or flat
+    entry = np.nonzero((te != 0) & (np.r_[0, te[:-1]] == 0))[0]
+    pe = np.abs(sig["ETHUSDT"].loc[idx, "stop"].values[entry] / bars["ETHUSDT"].loc[idx, "close"].values[entry] - 1)
+    pb = np.abs(sig["BTCUSDT"].loc[idx, "stop"].values[entry] / bars["BTCUSDT"].loc[idx, "close"].values[entry] - 1)
+    assert len(entry) > 5 and np.allclose(pe, pb, atol=1e-12)      # same % stop -> equal notional under engine sizing
+
+
+def test_team_f_portfolio_hand_example():
+    from evaluation.r3_portfolio import hand_example
+    h = hand_example()
+    assert h["ok"] and h["ref_ok"]
+    assert abs(h["net_return"] - 0.1025) < 1e-12

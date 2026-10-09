@@ -1,0 +1,28 @@
+{
+ "D4-pair-ens-rsexit|validation": {
+  "key": "D4-pair-ens-rsexit|validation",
+  "balance": 10131.837404677288,
+  "unrealized_end": 0.0,
+  "final_equity": 10131.837404677277,
+  "ledger_vs_equity_diff": -1.0913936421275139e-11,
+  "fee_ok": true,
+  "realized_ok": true,
+  "trips_closed_net": 131.8374046772886,
+  "open_trip_net": 0.0,
+  "trips_vs_equity_diff": -1.1652900866465643e-11,
+  "open_position_at_end": false
+ },
+ "D4-pair-ens-rsexit|holdout_pre": {
+  "key": "D4-pair-ens-rsexit|holdout_pre",
+  "balance": 10016.406701660522,
+  "unrealized_end": -3.938325629161667,
+  "final_equity": 10012.468376031375,
+  "ledger_vs_equity_diff": 1.4551915228366852e-11,
+  "fee_ok": true,
+  "realized_ok": true,
+  "trips_closed_net": 16.677655707176548,
+  "open_trip_net": -0.2709540466537216,
+  "trips_vs_equity_diff": 1.3486101124726702e-11,
+  "open_position_at_end": true
+ }
+}

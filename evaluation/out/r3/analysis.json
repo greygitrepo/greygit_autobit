@@ -1,0 +1,306 @@
+{
+ "D4": {
+  "train": {
+   "result_id": "20261009-194316-d4_relmomx-train-299268-1a4bfc",
+   "summary": {
+    "net_return": 0.004985067045340408,
+    "max_dd": 0.008163750195543162,
+    "ret_over_dd": 0.6106344420070455,
+    "sharpe_daily": 0.253219776155036,
+    "sortino_daily": 0.37702681807085814,
+    "trades": 212,
+    "win_rate": 0.49056603773584906,
+    "payoff": 1.0704481622999518,
+    "profit_factor": 1.0308019340666201,
+    "turnover": 20.442749006872567,
+    "exposure": 0.4255099826388889,
+    "fees": 102.21374503436283,
+    "funding": 0.3315955280358277,
+    "liquidations": 0,
+    "rejects": 0,
+    "partial_fills": 0,
+    "halted": false,
+    "halted_at": null,
+    "daily_blocks": 0,
+    "risk_violations": 0,
+    "warmup_days": 120,
+    "days": 1088.0
+   },
+   "quarter_pnl": {
+    "2021Q4": 24.206300289199135,
+    "2022Q1": 13.139217832025679,
+    "2022Q2": -21.302353485376443,
+    "2022Q3": -14.123861909927655,
+    "2022Q4": 0.640893189009148,
+    "2023Q1": 52.20140001775326,
+    "2023Q2": 9.038534060877282,
+    "2023Q3": -28.81601370363569,
+    "2023Q4": -5.427430203568292,
+    "2024Q1": 35.43486843066603,
+    "2024Q2": -2.589007499640502,
+    "2024Q3": -12.551876563977203
+   },
+   "positive_quarters": "6/12",
+   "best_quarter_share": 1.0471554252524193,
+   "long_short": {
+    "long_pnl": -77.79338548197323,
+    "short_pnl": 127.64405593537933,
+    "long_n": 106,
+    "short_n": 106
+   },
+   "per_symbol": {
+    "BTCUSDT": 126.78982842148199,
+    "ETHUSDT": -76.93915796807585
+   },
+   "pair_time": {
+    "hours_one_leg_only": 193.08333333333334,
+    "hours_both_legs": 5458.916666666667,
+    "one_leg_share": 0.0341619485727766,
+    "entries_same_direction": 0,
+    "long_trades": 106
+   },
+   "pair_round_trips": 106
+  },
+  "validation": {
+   "result_id": "20261009-194312-d4_relmomx-validation-299269-bed517",
+   "summary": {
+    "net_return": 0.013183740467727745,
+    "max_dd": 0.006468733041605557,
+    "ret_over_dd": 2.03807150224513,
+    "sharpe_daily": 1.310523254477033,
+    "sortino_daily": 2.4975536435755865,
+    "trades": 50,
+    "win_rate": 0.5,
+    "payoff": 1.4038344841289463,
+    "profit_factor": 1.4038344841289465,
+    "turnover": 4.769965307946031,
+    "exposure": 0.3624181887366819,
+    "fees": 23.849826539730152,
+    "funding": -0.29655866435695744,
+    "liquidations": 0,
+    "rejects": 0,
+    "partial_fills": 0,
+    "halted": false,
+    "halted_at": null,
+    "daily_blocks": 0,
+    "risk_violations": 0,
+    "warmup_days": 120,
+    "days": 365.0
+   },
+   "quarter_pnl": {
+    "2024Q4": -0.49568284296401544,
+    "2025Q1": 19.89041531584553,
+    "2025Q2": -41.815300699254294,
+    "2025Q3": 154.2579729036479
+   },
+   "positive_quarters": "2/4",
+   "best_quarter_share": 1.1700622693632061,
+   "long_short": {
+    "long_pnl": 189.0462195517549,
+    "short_pnl": -57.208814874466306,
+    "long_n": 25,
+    "short_n": 25
+   },
+   "per_symbol": {
+    "BTCUSDT": 28.291273065270417,
+    "ETHUSDT": 103.54613161201819
+   },
+   "pair_time": {
+    "hours_one_leg_only": 49.21666666666667,
+    "hours_both_legs": 1562.7833333333333,
+    "one_leg_share": 0.030531430934656743,
+    "entries_same_direction": 0,
+    "long_trades": 25
+   },
+   "pair_round_trips": 25,
+   "corr": {
+    "A2-tsmom-L180-m3": 0.2067,
+    "A2-tsmom-L180-m2": 0.1024,
+    "A3-ens5-e0.6-m2.5-vs": 0.146,
+    "B3-abs-favg3": -0.0237,
+    "B3-favg3-short": -0.073,
+    "C3-R2-V2-er20": 0.23,
+    "C3-R2-V1-control": 0.183,
+    "D1-relmom-rel360-tr90": 0.3445,
+    "E1-v3-s3-d": 0.2425,
+    "BTC_hold": -0.0039
+   },
+   "corr_days": 364,
+   "dsr": {
+    "T_days": 365,
+    "sr_daily": 0.06859592225040527,
+    "sr_ann": 1.3105232544770162,
+    "sr0_daily": 0.13151042515416528,
+    "n_trials": 95,
+    "dsr": 0.09559235650240022,
+    "psr0": 0.9229383039110943
+   }
+  },
+  "holdout_pre": {
+   "result_id": "20261009-194313-d4_relmomx-holdout_pre-299270-1794e8",
+   "summary": {
+    "net_return": 0.001246837603137374,
+    "max_dd": 0.007548139692663436,
+    "ret_over_dd": 0.16518475464216203,
+    "sharpe_daily": 0.1114859879686456,
+    "sortino_daily": 0.18761552445434093,
+    "trades": 74,
+    "win_rate": 0.5,
+    "payoff": 1.0295960982043444,
+    "profit_factor": 1.0295960982043442,
+    "turnover": 5.111684992699364,
+    "exposure": 0.3336363148863149,
+    "fees": 25.558424963496815,
+    "funding": -5.071952831844293,
+    "liquidations": 0,
+    "rejects": 0,
+    "partial_fills": 0,
+    "halted": false,
+    "halted_at": null,
+    "daily_blocks": 0,
+    "risk_violations": 0,
+    "warmup_days": 120,
+    "days": 518.0
+   },
+   "quarter_pnl": {
+    "2020Q2": 1.2244219940475887,
+    "2020Q3": -19.452325361166004,
+    "2020Q4": 17.78418389100625,
+    "2021Q1": -26.40204719583562,
+    "2021Q2": 15.711165701548452,
+    "2021Q3": 24.341157001776082
+   },
+   "positive_quarters": "4/6",
+   "best_quarter_share": 1.9522315448717587,
+   "long_short": {
+    "long_pnl": -42.89904031263345,
+    "short_pnl": 59.57669601980997,
+    "long_n": 37,
+    "short_n": 37
+   },
+   "per_symbol": {
+    "BTCUSDT": -39.849080803060005,
+    "ETHUSDT": 56.526736510236546
+   },
+   "pair_time": {
+    "hours_one_leg_only": 68.23333333333333,
+    "hours_both_legs": 2039.7666666666667,
+    "one_leg_share": 0.03236875395319418,
+    "entries_same_direction": 0,
+    "long_trades": 37
+   },
+   "pair_round_trips": 37,
+   "corr": {
+    "A2-tsmom-L180-m3": 0.0632,
+    "A2-tsmom-L180-m2": 0.0475,
+    "A3-ens5-e0.6-m2.5-vs": 0.0709,
+    "B3-abs-favg3": 0.028,
+    "B3-favg3-short": 0.0164,
+    "C3-R2-V2-er20": 0.0748,
+    "C3-R2-V1-control": 0.0903,
+    "D1-relmom-rel360-tr90": 0.0849,
+    "E1-v3-s3-d": 0.0521,
+    "BTC_hold": 0.1008
+   },
+   "corr_days": 517,
+   "dsr": {
+    "T_days": 518,
+    "sr_daily": 0.0058354433136439295,
+    "sr_ann": 0.11148598796873241,
+    "sr0_daily": 0.11039305043196829,
+    "n_trials": 95,
+    "dsr": 0.008189296925148914,
+    "psr0": 0.5532854491081812
+   }
+  },
+  "verdict": {
+   "verdict": "\uc2e4\uc2dc\uac04 \ud22c\uc785",
+   "crit": [],
+   "audits_ok": true,
+   "acct_ok": true
+  }
+ },
+ "reproducibility_vs_r2": {
+  "E1-v3-s3-d|holdout_pre|base": {
+   "r2": 0.07949281037603884,
+   "r3": 0.07949281037603884,
+   "match": true
+  },
+  "A2-tsmom-L180-m2|holdout_pre|base": {
+   "r2": 0.10578743681968761,
+   "r3": 0.10578743681968761,
+   "match": true
+  },
+  "A2-tsmom-L180-m2|holdout_pre|allsf": {
+   "r2": 0.04748414078825913,
+   "r3": 0.04748414078825913,
+   "match": true
+  },
+  "B3-abs-favg3|holdout_pre|base": {
+   "r2": 0.024579088852099584,
+   "r3": 0.024579088852099584,
+   "match": true
+  },
+  "E1-v3-s3-d|holdout_pre|allsf": {
+   "r2": 0.05734041026045178,
+   "r3": 0.05734041026045178,
+   "match": true
+  },
+  "B3-abs-favg3|holdout_pre|allsf": {
+   "r2": 0.022566763689093827,
+   "r3": 0.022566763689093827,
+   "match": true
+  },
+  "B3-favg3-short|holdout_pre|allsf": {
+   "r2": 0.02154122420331106,
+   "r3": 0.02154122420331106,
+   "match": true
+  },
+  "B3-favg3-short|holdout_pre|base": {
+   "r2": 0.023386089285873712,
+   "r3": 0.023386089285873712,
+   "match": true
+  },
+  "D1-relmom-rel360-tr90|holdout_pre|base": {
+   "r2": 0.006812017320438235,
+   "r3": 0.006812017320438235,
+   "match": true
+  },
+  "D1-relmom-rel360-tr90|holdout_pre|allsf": {
+   "r2": -0.008464210397733929,
+   "r3": -0.008464210397733929,
+   "match": true
+  },
+  "D1-relmom-rel360-tr90|validation|base": {
+   "r2": 0.04033287156356535,
+   "r3": 0.04033287156356535,
+   "match": true
+  }
+ },
+ "F_verdicts": {
+  "F3-IV5": {
+   "verdict": "\uc2e4\uc2dc\uac04 \ud22c\uc785",
+   "crit": []
+  },
+  "F2-EW3-A2E1": {
+   "verdict": "\uc2e4\uc2dc\uac04 \ud22c\uc785",
+   "crit": []
+  },
+  "F4-ERC5": {
+   "verdict": "\uc2e4\uc2dc\uac04 \ud22c\uc785",
+   "crit": []
+  },
+  "F1-EW3-A2": {
+   "verdict": "\uc2e4\uc2dc\uac04 \ud22c\uc785",
+   "crit": []
+  },
+  "F5-EW3-A2E1-BH": {
+   "verdict": "\uc2e4\uc2dc\uac04 \ud22c\uc785",
+   "crit": []
+  }
+ },
+ "F_math_ok": {
+  "hand_example": true,
+  "independent_reimplementation": true
+ }
+}
