@@ -58,12 +58,14 @@ def parse_stress(s: str | None) -> dict:
 
 
 def run(strategy_spec, split, params=None, symbols=None, stress=None, team="", note="", final=False,
-        register=True, warmup_days=120):
+        register=True, warmup_days=120, holdout=False):
     exp = load_experiment()
     if split == "test" and not final:
         raise SystemExit("test split is frozen: pass --final only for the single final evaluation")
+    if split == "holdout_pre" and not holdout:
+        raise SystemExit("holdout_pre is reserved for the independent evaluation team (pass --holdout)")
     symbols = symbols or exp["symbols"]
-    lo, hi = exp["splits"][split]
+    lo, hi = {**exp["splits"], **(exp.get("extra_splits") or {})}[split]
     start, end = to_ms(lo), to_ms(hi) + 86_400_000
     strat = load_strategy(strategy_spec, params or {})
     run_dir = ROOT / "experiments" / "running"
@@ -127,7 +129,8 @@ def run(strategy_spec, split, params=None, symbols=None, stress=None, team="", n
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--strategy", required=True)
-    ap.add_argument("--split", default="validation", choices=["train", "validation", "test"])
+    ap.add_argument("--split", default="validation", choices=["train", "validation", "test", "holdout_pre"])
+    ap.add_argument("--holdout", action="store_true", help="evaluation team only")
     ap.add_argument("--params", default="{}")
     ap.add_argument("--symbols", nargs="*")
     ap.add_argument("--stress")
@@ -135,7 +138,8 @@ def main():
     ap.add_argument("--note", default="")
     ap.add_argument("--final", action="store_true")
     a = ap.parse_args()
-    summ, _ = run(a.strategy, a.split, json.loads(a.params), a.symbols, a.stress, a.team, a.note, a.final)
+    summ, _ = run(a.strategy, a.split, json.loads(a.params), a.symbols, a.stress, a.team, a.note, a.final,
+                  holdout=a.holdout)
     print(json.dumps({k: summ[k] for k in ["net_return", "max_dd", "sharpe_daily", "trades", "win_rate",
                                              "profit_factor", "fees", "funding", "halted", "elapsed_s"]},
                      default=float, indent=1))
