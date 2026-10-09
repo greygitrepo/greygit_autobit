@@ -1,11 +1,32 @@
 # 실시간 모의거래(paper trading) 설정. Binance USDⓈ-M 공개 데이터만 사용, API 키·실주문 없음.
+# 2026-10-09 18:40 KST: 팀 A/B/C 제출 후보 전체를 동일 조건으로 투입 (검증 결과가 음성인 후보도 비교용으로 포함).
 venue: binance_usdm
 symbols: [BTCUSDT, ETHUSDT]
 latency_ms: 250          # 결정 → 체결 지연 가정
 stale_sec: 10            # 호가/마크가 이보다 오래되면 신규 진입 차단
-bootstrap_days: 45       # 지표 계산용 과거 1m 데이터 (로컬 parquet + REST)
+bootstrap_days: 150      # 지표·경로의존 상태 계산용 과거 1m (로컬 parquet + REST). C1이 약 92일 필요
 runners:                 # 각 러너 = 독립 모의계좌 (동일 자본·비용·위험 규칙)
   - id: baseline_donchian_smoke
     team: baseline
     strategy: strategies.baseline.donchian:DonchianSmoke
+    params: {}
+  - id: A2-tsmom-L180-m3
+    team: A
+    strategy: strategies.team_a.a2_tsmom:A2TSMom
+    params: {lookback: 180, atr_n: 14, stop_mult: 3.0}
+  - id: A2-tsmom-L180-m2
+    team: A
+    strategy: strategies.team_a.a2_tsmom:A2TSMom
+    params: {lookback: 180, atr_n: 14, stop_mult: 2.0}
+  - id: B2-tp
+    team: B
+    strategy: strategies.team_b.b1_zscore:B2ZScore1h
+    params: {tp_frac: 1.0}
+  - id: C2-V4-trail
+    team: C
+    strategy: strategies.team_c.c2_squeeze:C2Squeeze
+    params: {exit_mode: trail}
+  - id: C1-V5-gate-rel
+    team: C
+    strategy: strategies.team_c.c1_regime:C1Regime
     params: {}

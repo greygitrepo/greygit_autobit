@@ -1,0 +1,33 @@
+{
+  "net_return": 0.018996679079220424,
+  "final_equity": 10189.966790792205,
+  "max_dd": 0.06624250490817263,
+  "ret_over_dd": 0.2867747695464445,
+  "sharpe_daily": 0.2250990672077906,
+  "sortino_daily": 0.44105531741478626,
+  "trades": 96,
+  "win_rate": 0.3229166666666667,
+  "payoff": 2.342346716388432,
+  "profit_factor": 1.117119203200637,
+  "turnover": 83.08757782264385,
+  "exposure": 0.1449410197869102,
+  "fees": 415.4378891132192,
+  "funding": -13.902718592303042,
+  "slippage_est": NaN,
+  "liquidations": 0,
+  "rejects": 0,
+  "partial_fills": 0,
+  "halted": false,
+  "daily_blocks": 0,
+  "risk_violations": 0,
+  "days": 365.0,
+  "elapsed_s": 0.9,
+  "cost_model": "configs/costs.yaml",
+  "split": "validation",
+  "symbols": [
+    "BTCUSDT"
+  ],
+  "strategy": "c2_squeeze({'atr_fast': 14, 'atr_slow': 100, 'comp_window': 720, 'comp_pct': 0.2, 'range_mult': 1.5, 'vol_mult': 2.0, 'vol_n': 20, 'exit_mode': 'trail', 'tp_r': 3.0, 'trail_mult': 2.5, 'max_hold': 48, 'use_volume': True, 'use_funding': True, 'funding_max': 0.0005, 'long_only': False})",
+  "events": 0,
+  "halted_at": null
+}

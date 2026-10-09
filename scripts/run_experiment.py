@@ -58,7 +58,7 @@ def parse_stress(s: str | None) -> dict:
 
 
 def run(strategy_spec, split, params=None, symbols=None, stress=None, team="", note="", final=False,
-        register=True, warmup_days=60):
+        register=True, warmup_days=120):
     exp = load_experiment()
     if split == "test" and not final:
         raise SystemExit("test split is frozen: pass --final only for the single final evaluation")
@@ -79,6 +79,9 @@ def run(strategy_spec, split, params=None, symbols=None, stress=None, team="", n
     if st:
         costs = costs.stressed(st.get("spread", 1), st.get("impact", 1), st.get("latency"), st.get("fee", 1))
     risk = RiskConfig.from_yaml(load_risk())
+    from engine.strategy import TF_MS
+    need_days = int(strat.warmup_bars * TF_MS[strat.timeframe] / 86_400_000) + 5
+    warmup_days = max(warmup_days, need_days)
     warm = start - warmup_days * 86_400_000          # indicator warm-up history (no trading)
     markets, signals = {}, {}
     from engine.strategy import resample
@@ -99,11 +102,12 @@ def run(strategy_spec, split, params=None, symbols=None, stress=None, team="", n
     summ = summarize(res, risk.initial_capital_usdt)
     summ.update({"elapsed_s": round(time.time() - t0, 1), "cost_model": costs.source, "split": split,
                  "symbols": symbols, "strategy": strat.describe(), "events": len(res.events),
+                 "warmup_days": warmup_days,
                  "halted_at": res.halted_at})
     if not register:
         return summ, res
     now = datetime.now(KST)
-    rid = f"{now:%Y%m%d-%H%M%S}-{strat.name}-{split}"
+    rid = f"{now:%Y%m%d-%H%M%S}-{strat.name}-{split}-{os.getpid()}"
     out = ROOT / "experiments" / "results" / rid
     out.mkdir(parents=True, exist_ok=True)
     (out / "summary.json").write_text(json.dumps(summ, indent=2, default=float))

@@ -1,0 +1,33 @@
+{
+  "net_return": -0.09666993136343949,
+  "final_equity": 9033.300686365605,
+  "max_dd": 0.09919787740232866,
+  "ret_over_dd": -0.9745161277127303,
+  "sharpe_daily": -2.9249134739392004,
+  "sortino_daily": -3.855790075996004,
+  "trades": 81,
+  "win_rate": 0.1728395061728395,
+  "payoff": 1.7797337889475298,
+  "profit_factor": 0.37188467231739425,
+  "turnover": 37.40850067821047,
+  "exposure": 0.10794330289193303,
+  "fees": 187.04250339105238,
+  "funding": -4.806149705015695,
+  "slippage_est": NaN,
+  "liquidations": 0,
+  "rejects": 0,
+  "partial_fills": 0,
+  "halted": true,
+  "daily_blocks": 0,
+  "risk_violations": 0,
+  "days": 365.0,
+  "elapsed_s": 0.8,
+  "cost_model": "configs/costs.yaml",
+  "split": "validation",
+  "symbols": [
+    "ETHUSDT"
+  ],
+  "strategy": "c2_squeeze({'atr_fast': 14, 'atr_slow': 100, 'comp_window': 720, 'comp_pct': 0.2, 'range_mult': 1.5, 'vol_mult': 2.0, 'vol_n': 20, 'exit_mode': 'trail', 'tp_r': 3.0, 'trail_mult': 2.5, 'max_hold': 48, 'use_volume': True, 'use_funding': True, 'funding_max': 0.0005, 'long_only': False})",
+  "events": 1,
+  "halted_at": 1752425940000
+}

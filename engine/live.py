@@ -266,18 +266,19 @@ class Runner:
                                    tag="halt", ts=ts)
         self.st["pending_halt"] = False
 
-    def decide(self, sym: str, feed: SymbolFeed, ts: int, fresh: bool) -> str:
+    def decide(self, sym: str, feed: SymbolFeed, ts: int, fresh: bool, funding: pd.DataFrame | None = None) -> str:
         """Called when a 1m bar closing at ts completes a strategy bar."""
         if self.st["halted_at"] is not None:
             return "halted"
         tf = TF_MS[self.strategy.timeframe]
-        need = (self.strategy.warmup_bars + 5) * tf
-        m1 = feed.frame(ts - need)
+        # use the whole bootstrap window so path-dependent strategy state matches the backtest
+        m1 = feed.frame(0)
         bars = resample(m1, self.strategy.timeframe)
         bars = bars[bars.index < ts]                           # only completed strategy bars
         if bars.empty or int(bars.index[-1]) != ts - tf:
             return "no_bar"
-        sig = self.strategy.compute(bars)
+        f = funding[funding.index <= ts] if funding is not None else None
+        sig = self.strategy.compute(bars, f)
         row = sig.iloc[-1]
         complete = bool(bars["complete"].iloc[-1])
         allowed = fresh and complete and not self.st["day_blocked"]
@@ -313,6 +314,7 @@ class PaperEngine:
         self.ws_reconnects = {"market": 0, "public": 0}
         self.started = now_ms()
         self.kline_log = {}
+        self.funding_hist: dict[str, pd.DataFrame] = {}
 
     # ---- bootstrap and restore
     def bootstrap(self):
@@ -329,6 +331,7 @@ class PaperEngine:
             for k in self.rest.klines(s, have, end):
                 f.bars[int(k[0])] = _kline_row(k)
             f.last_bar = max(f.bars)
+            self.refresh_funding(s, start)
             log.info("bootstrap %s: %d bars, last %s", s, len(f.bars), pd.to_datetime(f.last_bar, unit="ms"))
         self.sync_clock()
         for r in self.runners:
@@ -338,6 +341,25 @@ class PaperEngine:
             else:
                 r.event(now_ms(), "started", equity=r.broker.equity(), strategy=r.strategy.describe())
             r.checkpoint()
+
+    def refresh_funding(self, s, start_ms=None):
+        """Settled funding history (REST, ≤1000 rows/call) used as the strategies' `funding` input."""
+        old = self.funding_hist.get(s)
+        t = int(old.index.max()) + 1 if old is not None and len(old) else int(start_ms or now_ms() - 150 * DAY_MS)
+        rows = []
+        while True:
+            chunk = self.rest.funding(s, t, now_ms())
+            if not chunk:
+                break
+            rows += chunk
+            t = int(chunk[-1]["fundingTime"]) + 1
+            if len(chunk) < 1000:
+                break
+        if rows:
+            new = pd.DataFrame({"funding_rate": [float(x["fundingRate"]) for x in rows]},
+                               index=pd.Index([int(x["fundingTime"]) for x in rows], name="funding_time"))
+            self.funding_hist[s] = pd.concat([old, new]) if old is not None else new
+            self.funding_hist[s] = self.funding_hist[s][~self.funding_hist[s].index.duplicated(keep="last")].sort_index()
 
     def replay_gap(self, r: Runner):
         """After downtime: replay missed closed minutes for stops/limits/liquidation and funding.
@@ -470,7 +492,7 @@ class PaperEngine:
                     r.event(ts, "decision_skipped_backfill", symbol=s)
                 else:
                     try:
-                        r.decide(s, f, ts, fresh)
+                        r.decide(s, f, ts, fresh, self.funding_hist.get(s))
                     except Exception as e:                   # a strategy bug must not kill the others
                         r.event(ts, "strategy_error", symbol=s, error=repr(e))
             await self.fill_markets(r, s)
@@ -487,6 +509,10 @@ class PaperEngine:
             return
         if not rows:
             return
+        try:
+            await asyncio.to_thread(self.refresh_funding, s)
+        except Exception:
+            pass
         settled = float(rows[-1]["fundingRate"])
         mp = float(rows[-1].get("markPrice") or mark)
         diff = (-qty * mp * settled) - (-qty * mark * used_rate)
