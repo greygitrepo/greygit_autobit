@@ -224,6 +224,12 @@ class Broker:
             if o.take_profit:
                 self.submit(f"{o.client_id}:tp", o.symbol, -o.side, q, "limit", o.take_profit, True, "tp", ts)
 
+    def fill_now(self, ts: int, o: Order, price: float):
+        """Live paper trading: fill an active market order immediately at an externally computed
+        price (order-book walk after latency). Taker fee applies."""
+        if o.active and o.type == "market":
+            self._apply_fill(ts, o, o.remaining, price, "taker")
+
     # -------------------------------------------------------------- market events
     def on_minute(self, ts: int, symbol: str, o_: float, h: float, l: float, c: float, vol: float,
                   mark_h: float | None = None, mark_l: float | None = None, sigma_1m: float = 0.0):
@@ -303,6 +309,7 @@ class Broker:
             "orders": [vars(o).copy() for o in self.orders.values() if o.active],
             "client_ids": list(self.by_client_id.keys()),
             "last_price": dict(self.last_price),
+            "last_fill_tag": dict(self.last_fill_tag),
             "counters": dict(self.counters),
             "next_id": max(self.orders, default=0) + 1,
         }
@@ -320,5 +327,6 @@ class Broker:
             self.by_client_id[cid] = next((o for o in self.orders.values() if o.client_id == cid),
                                           Order(0, cid, "", 0, 0.0, "market", status="filled"))
         self.last_price = dict(snap["last_price"])
+        self.last_fill_tag = dict(snap.get("last_fill_tag", {}))
         self.counters.update(snap["counters"])
         self._ids = itertools.count(snap["next_id"])

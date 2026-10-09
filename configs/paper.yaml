@@ -1,0 +1,11 @@
+# 실시간 모의거래(paper trading) 설정. Binance USDⓈ-M 공개 데이터만 사용, API 키·실주문 없음.
+venue: binance_usdm
+symbols: [BTCUSDT, ETHUSDT]
+latency_ms: 250          # 결정 → 체결 지연 가정
+stale_sec: 10            # 호가/마크가 이보다 오래되면 신규 진입 차단
+bootstrap_days: 45       # 지표 계산용 과거 1m 데이터 (로컬 parquet + REST)
+runners:                 # 각 러너 = 독립 모의계좌 (동일 자본·비용·위험 규칙)
+  - id: baseline_donchian_smoke
+    team: baseline
+    strategy: strategies.baseline.donchian:DonchianSmoke
+    params: {}
