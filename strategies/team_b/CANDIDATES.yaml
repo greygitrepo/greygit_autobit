@@ -13,3 +13,28 @@
     현금을 이기지 못함 — 기준 동결 경합용 참고 후보로만 제출. B1(15m 원안)은 train·validation 모두 10% 낙폭 중단으로 폐기.
   train_result_ids: [20261009-180651-b2_zscore_1h-train, 20261009-180732-b2_zscore_1h-train, 20261009-180734-b2_zscore_1h-train]
   validation_result_ids: [20261009-180752-b2_zscore_1h-validation, 20261009-180803-b2_zscore_1h-validation, 20261009-180804-b2_zscore_1h-validation, 20261009-180807-b2_zscore_1h-validation]
+
+# ---- 라운드 2 (R2, 2026-10-09 19:08 KST 선언 직후 validation 실행). 선언 규칙(DECLARATIONS.md)을 통과한 2개.
+# 정직한 평가: train에서는 34개 B3 변형 모두 양(+)이었으나 validation은 +2.0% / +0.95%로 약하고 2025Q2 한 분기에 집중.
+# 1라운드 1위 A2-L180-m2(validation +6.30%, MDD 3.79%)를 순수익으로 이기지 못함(수익/MDD는 V5 1.52 < A2 1.66). 권고: 보류(탐색적).
+- id: B3-abs-favg3
+  strategy: strategies.team_b.b3_crowding:B3FundingCrowd
+  params: {p_lo: 1.0, long_only_funding_max: 0.0, f_avg: 3}   # 나머지 기본: f_window 270, max_hold 18(3일), stop_atr 3.0(ATR14 4h 단순평균), 숏 없음
+  timeframe: 4h
+  rationale: >-
+    자체 연구 가설(우승자 근거 없음). 직전 3회 정산 펀딩 평균(24h) < 0 이면(숏이 롱에게 지불 = 숏 쏠림) 4h 종가 다음 봉 롱,
+    3일 시간 청산, 손절 = 신호 종가 − 3×ATR14(4h), 재진입은 조건 해제 후. train +8.74% / MDD 1.62% / 129거래(PF 2.29),
+    validation +2.01% / 1.32% / 35거래(PF 1.68), 결합 스트레스(fee2·spread3·impact3·latency1000·stopfill) +1.62%.
+    validation 이익은 2025Q2(+301 USDT)에 집중, BTC +1.94%(11건) / ETH +0.07%(24건). 롱 전용.
+  train_result_ids: [20261009-190733-b3_funding_crowd-train-236408]
+  validation_result_ids: [20261009-190911-b3_funding_crowd-validation-242936, 20261009-190913-b3_funding_crowd-validation-242936, 20261009-190915-b3_funding_crowd-validation-242936, 20261009-190846-b3_funding_crowd-validation-241847]
+- id: B3-favg3-short
+  strategy: strategies.team_b.b3_crowding:B3FundingCrowd
+  params: {f_avg: 3, enable_short: true, imb_hi: 1.0}
+  timeframe: 4h
+  rationale: >-
+    자체 연구 가설. 24h 평균 펀딩의 90일 백분위 ≤ 5% → 롱, ≥ 95% 이면서 4h 테이커 매수비율 z(30일) ≥ 1 → 숏. 3일 보유, 3×ATR 손절.
+    train +8.19% / 1.32% / 117, validation +0.95% / 1.96% / 54(PF 1.19), 결합 스트레스 +0.36%. 숏 쪽은 validation −27 USDT(22건)로
+    기여 없음, BTC +1.23% / ETH −0.28%. 선언 규칙상 통과했지만 약함.
+  train_result_ids: [20261009-190731-b3_funding_crowd-train-236408]
+  validation_result_ids: [20261009-190907-b3_funding_crowd-validation-242936, 20261009-190909-b3_funding_crowd-validation-242936, 20261009-190917-b3_funding_crowd-validation-242936, 20261009-190848-b3_funding_crowd-validation-241847]

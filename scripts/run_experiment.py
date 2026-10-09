@@ -110,7 +110,7 @@ def run(strategy_spec, split, params=None, symbols=None, stress=None, team="", n
     if not register:
         return summ, res
     now = datetime.now(KST)
-    rid = f"{now:%Y%m%d-%H%M%S}-{strat.name}-{split}-{os.getpid()}"
+    rid = f"{now:%Y%m%d-%H%M%S}-{strat.name}-{split}-{os.getpid()}-{os.urandom(3).hex()}"
     summ["id"] = rid
     out = ROOT / "experiments" / "results" / rid
     out.mkdir(parents=True, exist_ok=True)

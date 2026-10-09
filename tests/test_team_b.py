@@ -142,3 +142,106 @@ def test_closed_htf_uses_only_closed_4h_bars():
     assert v.iloc[15] == bars["close"].iloc[15]   # row 15 closes exactly at 4h boundary
     assert (v.iloc[16:31] == bars["close"].iloc[15]).all()
     assert v.iloc[31] == bars["close"].iloc[31]
+
+
+# ================================================================ round 2 (R2): B3 funding crowding, B4 reversal
+from strategies.team_b.b3_crowding import B3FundingCrowd, B4Reversal, B4Reversal4h, funding_pct, run_trades  # noqa: E402
+
+R2_CASES = [
+    (B3FundingCrowd, {}), (B3FundingCrowd, {"p_lo": 0.10, "ext_lo": 2.0, "f_avg": 3}),
+    (B3FundingCrowd, {"enable_short": True, "imb_hi": 1.0, "tp_atr": 4.0, "p_exit": 0.5}),
+    (B3FundingCrowd, {"p_lo": 1.0, "long_only_funding_max": 0.0, "f_avg": 3}),            # candidate V5
+    (B3FundingCrowd, {"f_avg": 3, "enable_short": True, "imb_hi": 1.0}),                   # candidate V4
+    (B4Reversal, {}), (B4Reversal, {"trend": "none", "imb_min": 1.0, "tp_atr": 2.0}), (B4Reversal4h, {}),
+]
+
+
+@pytest.mark.skipif(not DATA_OK, reason="processed data missing")
+@pytest.mark.parametrize("cls,params", R2_CASES)
+@pytest.mark.parametrize("symbol,start", [("BTCUSDT", "2021-11-01"), ("ETHUSDT", "2022-09-01")])
+def test_r2_causality_real_data(cls, params, symbol, start):
+    st = cls(**params)
+    bars, f = real_slice(symbol, start, 700 if st.timeframe == "1d" else 420, st.timeframe)
+    assert check_causality(st, bars, f, cuts=12, seed=2) == []
+    assert (st.compute(bars, f)["target"] != 0).any(), "slice should contain trades"
+
+
+def _window_last_row(st, symbol, t_open, days=150):
+    """Live-style recompute: 1m bars and settled funding from (bar close − days) only, last row."""
+    step = TF_MS[st.timeframe]
+    close = t_open + step
+    m1 = load_m1(symbol)
+    f = load_funding(symbol)
+    lo = close - days * 86_400_000
+    bars = resample(m1[(m1.index >= lo) & (m1.index < close)], st.timeframe)
+    sig = st.compute(bars, f[(f.index >= lo) & (f.index <= close)])
+    return sig.loc[t_open]
+
+
+@pytest.mark.skipif(not DATA_OK, reason="processed data missing")
+@pytest.mark.parametrize("cls,params", R2_CASES)
+@pytest.mark.parametrize("symbol", ["BTCUSDT", "ETHUSDT"])
+def test_r2_start_truncation_150d(cls, params, symbol):
+    """Row computed from a 150-day live window == same row computed from full history (incl. in-trade rows)."""
+    st = cls(**params)
+    m1 = load_m1(symbol)
+    end = to_ms("2024-09-30")
+    bars = resample(m1[m1.index < end], st.timeframe)
+    f = load_funding(symbol)
+    full = st.compute(bars, f[f.index < end])
+    first_ok = bars.index[0] + 200 * 86_400_000
+    cand = full.index[full.index >= first_ok]
+    active = cand[full.loc[cand, "target"].values != 0]
+    rng = np.random.default_rng(7)
+    pts = list(rng.choice(cand[:-1], 8, replace=False)) + list(active[:: max(1, len(active) // 10)][:10])
+    assert len(active) > 0
+    cols = [c for c in ("target", "stop", "tp") if c in full.columns]
+    for t in pts:
+        a = full.loc[t, cols].astype(float).values
+        b = _window_last_row(st, symbol, int(t))[cols].astype(float).values
+        np.testing.assert_allclose(np.nan_to_num(a, nan=-1), np.nan_to_num(b, nan=-1), rtol=1e-9,
+                                   err_msg=f"{st.describe()} {symbol} t={t}")
+
+
+def test_funding_pct_uses_only_settled_and_full_window():
+    step = TF_MS["4h"]
+    bars = synth(np.full(12, 100.0), start=0)
+    bars.index = pd.Index(np.arange(12, dtype=np.int64) * step, name="open_time")
+    ft = np.arange(1, 13, dtype=np.int64) * step + 7          # settles 7 ms after each bar close
+    f = pd.DataFrame({"funding_rate": np.arange(12, 0, -1) * 1e-5}, index=pd.Index(ft, name="funding_time"))
+    val, pct = funding_pct(bars, f, step, window=3)
+    assert np.isnan(val[0])                                   # first settlement is 7 ms after row 0 closes
+    assert np.isclose(val[1], 12e-5) and np.isnan(pct[2])      # 2 settlements < window
+    assert np.isclose(pct[3], 1 / 3)                           # falling rates → newest is the lowest of 3
+
+
+def test_run_trades_time_stop_and_rearm():
+    n = 40
+    c = np.full(n, 100.0)
+    side = np.zeros(n, int)
+    side[5:20] = 1                                             # condition stays on through the time stop
+    side[25] = 1
+    p = {"max_hold": 4, "stop_atr": 2.0, "tp_atr": 0.0}
+    tgt, stop, _ = run_trades(side, c, c + 0.1, c - 0.1, np.ones(n), p)
+    assert (tgt[5:9] == 1).all() and tgt[9] == 0 and np.isclose(stop[5], 98.0)
+    assert (tgt[10:25] == 0).all() and tgt[25] == 1            # re-entry only after the condition reset
+
+
+def test_run_trades_internal_stop():
+    n = 20
+    c = np.full(n, 100.0)
+    lo = c - 0.1
+    lo[8] = 97.0
+    side = np.zeros(n, int)
+    side[5] = 1
+    tgt, _, _ = run_trades(side, c, c + 0.1, lo, np.ones(n), {"max_hold": 10, "stop_atr": 2.0, "tp_atr": 0.0})
+    assert (tgt[5:8] == 1).all() and tgt[8] == 0
+
+
+def test_b3_short_disabled_by_default():
+    st = B3FundingCrowd()
+    ind = pd.DataFrame({"fpct": [0.01, 0.99, 0.5], "ext": [0.0, 5.0, 0.0], "imbz": [0.0, 3.0, 0.0],
+                        "fval": [-1e-4, 1e-3, 1e-4]})
+    assert list(st.entry_side(ind)) == [1, 0, 0]
+    assert list(B3FundingCrowd(enable_short=True).entry_side(ind)) == [1, -1, 0]
+    assert list(B3FundingCrowd(ext_lo=1.0).entry_side(ind)) == [0, 0, 0]

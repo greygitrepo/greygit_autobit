@@ -13,7 +13,7 @@
 1. 읽기: `CLAUDE.md`, `.claude/rules/*.md`, `research/strategy_evidence.md`, `reports/evaluation_2026-10-09.md`(1라운드 감사 결과·약점), `reports/leaderboard.csv`, `engine/strategy.py`, `engine/execution.py`, `configs/experiment.yaml`.
 2. **train 구간(2021-10-09~2024-09-30)에서만 자유롭게 탐색**한다. 실행은 전부 등록된다:
    `cd /home/grey/workspace/temp_workspace/greygit_autobit && .venv/bin/python scripts/run_experiment.py --strategy strategies.<팀디렉터리>.<모듈>:<클래스> --split train --team <팀키> --params '{...}' --note '...'`
-   24코어 머신이다. 여러 실행을 병렬로 돌려도 된다(`&` + `wait`, 또는 Python ProcessPoolExecutor로 `scripts.run_experiment.run` 호출).
+   24코어·61GB 머신이고 여러 팀이 동시에 쓴다. 팀당 동시 실행은 **최대 4개**로 제한한다(실행 1개가 수 GB 메모리 사용). 병렬 실행 방법은(`&` + `wait`, 또는 Python ProcessPoolExecutor로 `scripts.run_experiment.run` 호출).
 3. validation을 돌리기 **전에** `strategies/<팀디렉터리>/DECLARATIONS.md`에 라운드 번호, 시각, 최대 5개 변형(정확한 클래스·파라미터), 선택 규칙을 적는다. 그다음 그 변형만 validation(`--split validation`)과 스트레스(`--stress fee=2,spread=3,impact=3,latency=1000`, 그리고 최악 손절 체결 `--stress stopfill=1`)를 돌린다. 선언하지 않은 validation 실행은 결과에서 제외된다.
 4. 인과성 테스트를 `tests/test_<팀디렉터리>.py`에 추가한다(`engine.strategy.check_causality`, 실제 데이터 조각, funding 포함). 내부 포지션 상태기계가 있는 전략은 **시작점 절단 검사**도 넣는다: 150일 창으로 계산한 마지막 행 == 전체 이력의 같은 행. 실시간 모의거래가 150일 창을 쓰기 때문이다.
 5. 후보는 `strategies/<팀디렉터리>/CANDIDATES.yaml`에 최대 3개, 형식은 `{id, strategy, params, timeframe, rationale, train_result_ids, validation_result_ids}`.
