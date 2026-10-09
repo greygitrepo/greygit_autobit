@@ -1,0 +1,986 @@
+{
+ "SOLUSDT": {
+  "1m": {
+   "raw_rows": 3191640,
+   "rows_in_period_before_dedup": 3191640,
+   "duplicate_rows": 1020,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3171900,
+    "daily": 18720,
+    "rest": 0
+   },
+   "rows": 3190620,
+   "first": "2020-09-14 07:00:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 370500,
+   "expected_bars": 3190620,
+   "coverage_pct": 100.0,
+   "n_gaps": 0,
+   "missing_bars": 0,
+   "gaps_top": [],
+   "zero_volume_bars": 473,
+   "zero_trade_bars": 473,
+   "bad_ohlc": 0,
+   "sha256": "9bd6ed8ebbcae93024ed3f42aef4a621e2f0068df87c9e83c1cc64e79b340cbf",
+   "content_sha256": "0d7e206953a5246263803bf9d0ebce870d624a56886d3d2242c1d921277bff8c",
+   "bytes": 107879254
+  },
+  "mark_1m": {
+   "raw_rows": 3196740,
+   "rows_in_period_before_dedup": 3196740,
+   "duplicate_rows": 5010,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3168690,
+    "daily": 23040,
+    "rest": 0
+   },
+   "rows": 3191730,
+   "first": "2020-09-13 11:58:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 369358,
+   "expected_bars": 3191762,
+   "coverage_pct": 99.9989974189805,
+   "n_gaps": 3,
+   "missing_bars": 32,
+   "gaps_top": [
+    [
+     1608190320000,
+     24
+    ],
+    [
+     1657631760000,
+     6
+    ],
+    [
+     1723456920000,
+     2
+    ]
+   ],
+   "zero_volume_bars": 3191730,
+   "zero_trade_bars": 157,
+   "bad_ohlc": 0,
+   "sha256": "25e32b9f1359c75ffe8044b7a39f0c8c3cfd00752ad34d536a736904f04583a5",
+   "content_sha256": "e2b7df4ac5cf933b48e2d70cd8eb18666668caaf52e2d083bdfeba3ec00cc823",
+   "bytes": 89261792
+  },
+  "funding": {
+   "archive_rows": 6700,
+   "rest_rows": 6724,
+   "archive_rows_matched_in_rest": 6700,
+   "rate_mismatches_gt_1e-10": 0,
+   "rest_only_rows": 24,
+   "duplicate_rows": 0,
+   "rows": 6724,
+   "first": "2020-09-13 16:00:00",
+   "last": "2026-10-08 16:00:00",
+   "interval_hours_distribution": {
+    "2.0": 98,
+    "4.0": 3,
+    "8.0": 6622
+   },
+   "declared_interval_hours": {
+    "2.0": 99,
+    "4.0": 2,
+    "8.0": 6599,
+    "nan": 24
+   },
+   "mark_price_present": 3221,
+   "rate_min": -0.02,
+   "rate_max": 0.00332469,
+   "rate_mean": 2.022296252230809e-06,
+   "sha256": "b767daaf81744415d9f7d0f3ec38d97b573b88d8b9e4ae349ba65bd5c5bb08a4",
+   "content_sha256": "448b58077e85a8d7d1de1558f590ed48822f335120d5f229efd6456bd39b6134",
+   "bytes": 99103
+  }
+ },
+ "XRPUSDT": {
+  "1m": {
+   "raw_rows": 3554358,
+   "rows_in_period_before_dedup": 3554358,
+   "duplicate_rows": 939,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3534699,
+    "daily": 18720,
+    "rest": 0
+   },
+   "rows": 3553419,
+   "first": "2020-01-06 08:21:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 7701,
+   "expected_bars": 3553419,
+   "coverage_pct": 100.0,
+   "n_gaps": 0,
+   "missing_bars": 0,
+   "gaps_top": [],
+   "zero_volume_bars": 514,
+   "zero_trade_bars": 514,
+   "bad_ohlc": 0,
+   "sha256": "cb585dfca7d797c5d85d75a9551b5958e36edd8c236b0f7cf2581362286bcde6",
+   "content_sha256": "e8ee35c686e31d19020f3c7555a706ef109673e52b21cb1d8e8f91c22063e0bd",
+   "bytes": 131226737
+  },
+  "mark_1m": {
+   "raw_rows": 3560608,
+   "rows_in_period_before_dedup": 3560608,
+   "duplicate_rows": 6944,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3530624,
+    "daily": 23040,
+    "rest": 0
+   },
+   "rows": 3553664,
+   "first": "2020-01-06 03:16:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 7396,
+   "expected_bars": 3553724,
+   "coverage_pct": 99.99831163027855,
+   "n_gaps": 4,
+   "missing_bars": 60,
+   "gaps_top": [
+    [
+     1579439340000,
+     29
+    ],
+    [
+     1608190320000,
+     24
+    ],
+    [
+     1657631820000,
+     5
+    ],
+    [
+     1723456920000,
+     2
+    ]
+   ],
+   "zero_volume_bars": 3553664,
+   "zero_trade_bars": 276,
+   "bad_ohlc": 0,
+   "sha256": "dba772524610739e6ab56d1167b2a17c7d63e7fb31f06586ef3268ad59a7a0f7",
+   "content_sha256": "717f01b0256488bf069433602e62c9cee5113d686f8a75821735329496945134",
+   "bytes": 97544093
+  },
+  "funding": {
+   "archive_rows": 7379,
+   "rest_rows": 7403,
+   "archive_rows_matched_in_rest": 7379,
+   "rate_mismatches_gt_1e-10": 0,
+   "rest_only_rows": 24,
+   "duplicate_rows": 0,
+   "rows": 7403,
+   "first": "2020-01-06 08:00:00",
+   "last": "2026-10-08 16:00:00",
+   "interval_hours_distribution": {
+    "8.0": 7402
+   },
+   "declared_interval_hours": {
+    "8.0": 7379,
+    "nan": 24
+   },
+   "mark_price_present": 3221,
+   "rate_min": -0.005025,
+   "rate_max": 0.00487889,
+   "rate_mean": 0.00013278633121707417,
+   "sha256": "912dfd5cbbe9ac65f0d666d02134badfb4f81de059a8d878c75656d2f93afd36",
+   "content_sha256": "4a82b8fd13bd7005db568ac54383f56c0a5ca4e074afd9e67f75194c903ca029",
+   "bytes": 104561
+  }
+ },
+ "DOGEUSDT": {
+  "1m": {
+   "raw_rows": 3286440,
+   "rows_in_period_before_dedup": 3286440,
+   "duplicate_rows": 900,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3274020,
+    "daily": 11520,
+    "rest": 0
+   },
+   "rows": 3285540,
+   "first": "2020-07-10 09:00:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 275580,
+   "expected_bars": 3285540,
+   "coverage_pct": 100.0,
+   "n_gaps": 0,
+   "missing_bars": 0,
+   "gaps_top": [],
+   "zero_volume_bars": 14218,
+   "zero_trade_bars": 14218,
+   "bad_ohlc": 0,
+   "sha256": "5d5d573b2df4fd5b953256743e748667ec1d2e9e32459e895e7a44f36ed3713f",
+   "content_sha256": "bf4d73d2b1fb6e50560dd355070f9a9bb49f24499ba7a4ad78317341764c39dd",
+   "bytes": 124461605
+  },
+  "mark_1m": {
+   "raw_rows": 3291408,
+   "rows_in_period_before_dedup": 3291408,
+   "duplicate_rows": 5544,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3270024,
+    "daily": 15840,
+    "rest": 0
+   },
+   "rows": 3285864,
+   "first": "2020-07-10 03:05:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 275225,
+   "expected_bars": 3285895,
+   "coverage_pct": 99.99905657362758,
+   "n_gaps": 3,
+   "missing_bars": 31,
+   "gaps_top": [
+    [
+     1608190320000,
+     24
+    ],
+    [
+     1657631820000,
+     5
+    ],
+    [
+     1723456920000,
+     2
+    ]
+   ],
+   "zero_volume_bars": 3285864,
+   "zero_trade_bars": 277,
+   "bad_ohlc": 0,
+   "sha256": "4cd35d7f588f60388555cbfb3f70566f220240440895a8e8f18cbf5a4a6b4b68",
+   "content_sha256": "f983263cf52b83f41badbdce2b143485bf30aaa9584fc0ab3fd61b8ded5c07cb",
+   "bytes": 92803978
+  },
+  "funding": {
+   "archive_rows": 6821,
+   "rest_rows": 6845,
+   "archive_rows_matched_in_rest": 6821,
+   "rate_mismatches_gt_1e-10": 0,
+   "rest_only_rows": 24,
+   "duplicate_rows": 0,
+   "rows": 6845,
+   "first": "2020-07-10 08:00:00",
+   "last": "2026-10-08 16:00:00",
+   "interval_hours_distribution": {
+    "8.0": 6844
+   },
+   "declared_interval_hours": {
+    "8.0": 6821,
+    "nan": 24
+   },
+   "mark_price_present": 3221,
+   "rate_min": -0.0075,
+   "rate_max": 0.00377995,
+   "rate_mean": 0.00011278420891161434,
+   "sha256": "3fe7a45a7857d90fd8ed8899bc1185c54d2a10d7928017baeb294335f652602f",
+   "content_sha256": "4041ecbe0654e84a17a9997879e7220db85aa8a05a9e8a117923e2748d5e8fd3",
+   "bytes": 100388
+  }
+ },
+ "BNBUSDT": {
+  "1m": {
+   "raw_rows": 3503998,
+   "rows_in_period_before_dedup": 3503998,
+   "duplicate_rows": 959,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3491519,
+    "daily": 11520,
+    "rest": 0
+   },
+   "rows": 3503039,
+   "first": "2020-02-10 08:01:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 58081,
+   "expected_bars": 3503039,
+   "coverage_pct": 100.0,
+   "n_gaps": 0,
+   "missing_bars": 0,
+   "gaps_top": [],
+   "zero_volume_bars": 943,
+   "zero_trade_bars": 943,
+   "bad_ohlc": 0,
+   "sha256": "b98a23ac15b7fbeb9dfa4e3842263232f8e9b85b544075216ad9a2cec70e1d9b",
+   "content_sha256": "1dd6aded76ff99abd1aefe38114be012029350f7dde533d1627c829a334a3056",
+   "bytes": 123361797
+  },
+  "mark_1m": {
+   "raw_rows": 3565353,
+   "rows_in_period_before_dedup": 3565353,
+   "duplicate_rows": 4290,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3491970,
+    "daily": 69091,
+    "rest": 2
+   },
+   "rows": 3561063,
+   "first": "2020-01-01 00:00:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 0,
+   "expected_bars": 3561120,
+   "coverage_pct": 99.99839937997035,
+   "n_gaps": 4,
+   "missing_bars": 57,
+   "gaps_top": [
+    [
+     1579439340000,
+     29
+    ],
+    [
+     1608190320000,
+     24
+    ],
+    [
+     1657631940000,
+     3
+    ],
+    [
+     1657631820000,
+     1
+    ]
+   ],
+   "zero_volume_bars": 3561063,
+   "zero_trade_bars": 333,
+   "bad_ohlc": 0,
+   "sha256": "96e0ed2db92929099122940ce53989dcb05774358f22f352b949e4aee4b1be57",
+   "content_sha256": "1f4e85521a87340bad6386645bf21163abb489474fd0f36f15f986ed607d460e",
+   "bytes": 98561683
+  },
+  "funding": {
+   "archive_rows": 7274,
+   "rest_rows": 7298,
+   "archive_rows_matched_in_rest": 7274,
+   "rate_mismatches_gt_1e-10": 0,
+   "rest_only_rows": 24,
+   "duplicate_rows": 0,
+   "rows": 7298,
+   "first": "2020-02-10 08:00:00",
+   "last": "2026-10-08 16:00:00",
+   "interval_hours_distribution": {
+    "8.0": 7297
+   },
+   "declared_interval_hours": {
+    "8.0": 7274,
+    "nan": 24
+   },
+   "mark_price_present": 3221,
+   "rate_min": -0.00584369,
+   "rate_max": 0.00441898,
+   "rate_mean": -2.3694025760482113e-07,
+   "sha256": "d9eae5c6eafd61bec1dff4babe601275150cb01ce58780a9c4fb8fbec4764fce",
+   "content_sha256": "53e429d23ec741df9c72d8ca5f40e6b364ec5f2abf735ed873094fec0e349c78",
+   "bytes": 98389
+  }
+ },
+ "ADAUSDT": {
+  "1m": {
+   "raw_rows": 3518398,
+   "rows_in_period_before_dedup": 3518398,
+   "duplicate_rows": 959,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3505919,
+    "daily": 11520,
+    "rest": 0
+   },
+   "rows": 3517439,
+   "first": "2020-01-31 08:01:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 43681,
+   "expected_bars": 3517439,
+   "coverage_pct": 100.0,
+   "n_gaps": 0,
+   "missing_bars": 0,
+   "gaps_top": [],
+   "zero_volume_bars": 6865,
+   "zero_trade_bars": 6865,
+   "bad_ohlc": 0,
+   "sha256": "1924c5a349d9d3bb2fd7065839f3c563d0d8b1dbe7c80071ef9b534e75495a87",
+   "content_sha256": "b1af7c418f757e5163f857be51427a36bc5c088d99761308d9759d41fce879e3",
+   "bytes": 120423833
+  },
+  "mark_1m": {
+   "raw_rows": 3539738,
+   "rows_in_period_before_dedup": 3539738,
+   "duplicate_rows": 5149,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3518749,
+    "daily": 15840,
+    "rest": 0
+   },
+   "rows": 3534589,
+   "first": "2020-01-19 09:10:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 26470,
+   "expected_bars": 3534650,
+   "coverage_pct": 99.99827422799994,
+   "n_gaps": 4,
+   "missing_bars": 61,
+   "gaps_top": [
+    [
+     1579439340000,
+     29
+    ],
+    [
+     1608190320000,
+     24
+    ],
+    [
+     1657631760000,
+     6
+    ],
+    [
+     1723456920000,
+     2
+    ]
+   ],
+   "zero_volume_bars": 3534589,
+   "zero_trade_bars": 274,
+   "bad_ohlc": 0,
+   "sha256": "5a0ccae6887816e9fe12ac864c4d0b44af694394df04db976b924bfd9487adab",
+   "content_sha256": "40888604a725c2f7f9e4b15758d84cdd1ead750973b7c3e49b7ed019c424fcb6",
+   "bytes": 98615400
+  },
+  "funding": {
+   "archive_rows": 7339,
+   "rest_rows": 7363,
+   "archive_rows_matched_in_rest": 7339,
+   "rate_mismatches_gt_1e-10": 0,
+   "rest_only_rows": 24,
+   "duplicate_rows": 0,
+   "rows": 7363,
+   "first": "2020-01-19 16:00:00",
+   "last": "2026-10-08 16:00:00",
+   "interval_hours_distribution": {
+    "8.0": 7362
+   },
+   "declared_interval_hours": {
+    "8.0": 7339,
+    "nan": 24
+   },
+   "mark_price_present": 3221,
+   "rate_min": -0.004875,
+   "rate_max": 0.00396642,
+   "rate_mean": 0.00012274391280727963,
+   "sha256": "694ac05691c0502f318033be146737bf7ddbc87358eccbdb24391613a2c6be02",
+   "content_sha256": "118539caa5eeead5c8f98e4e96d3e08e952cfad0452d5da390877f254d8f9d35",
+   "bytes": 101593
+  }
+ },
+ "AVAXUSDT": {
+  "1m": {
+   "raw_rows": 3178680,
+   "rows_in_period_before_dedup": 3178680,
+   "duplicate_rows": 1020,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3166140,
+    "daily": 11520,
+    "rest": 0
+   },
+   "rows": 3177660,
+   "first": "2020-09-23 07:00:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 383460,
+   "expected_bars": 3177660,
+   "coverage_pct": 100.0,
+   "n_gaps": 0,
+   "missing_bars": 0,
+   "gaps_top": [],
+   "zero_volume_bars": 570,
+   "zero_trade_bars": 570,
+   "bad_ohlc": 0,
+   "sha256": "19863ce3e3568af76d8ab3adcd10de665b837cd16499273a07e743cb28002cd4",
+   "content_sha256": "d7680d45d68dc46741297e0f729f4deed5b8a27fdbf373e7c29ae8bd1df7819f",
+   "bytes": 96607018
+  },
+  "mark_1m": {
+   "raw_rows": 3184062,
+   "rows_in_period_before_dedup": 3184062,
+   "duplicate_rows": 5151,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3154431,
+    "daily": 24480,
+    "rest": 0
+   },
+   "rows": 3178911,
+   "first": "2020-09-22 09:38:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 382178,
+   "expected_bars": 3178942,
+   "coverage_pct": 99.99902483279028,
+   "n_gaps": 3,
+   "missing_bars": 31,
+   "gaps_top": [
+    [
+     1608190320000,
+     24
+    ],
+    [
+     1657631820000,
+     5
+    ],
+    [
+     1723456920000,
+     2
+    ]
+   ],
+   "zero_volume_bars": 3178911,
+   "zero_trade_bars": 160,
+   "bad_ohlc": 0,
+   "sha256": "4291dd3ab38584547196e8ae0fd211d7dfe187ed17937b7f41d9e72e9fdd09a3",
+   "content_sha256": "f5cc6096c133d72b7acbd16b54b09c4a79ada3e3a9c2d4753f328f3d5b715e99",
+   "bytes": 90293793
+  },
+  "funding": {
+   "archive_rows": 6598,
+   "rest_rows": 6622,
+   "archive_rows_matched_in_rest": 6598,
+   "rate_mismatches_gt_1e-10": 0,
+   "rest_only_rows": 24,
+   "duplicate_rows": 0,
+   "rows": 6622,
+   "first": "2020-09-22 16:00:00",
+   "last": "2026-10-08 16:00:00",
+   "interval_hours_distribution": {
+    "8.0": 6621
+   },
+   "declared_interval_hours": {
+    "8.0": 6598,
+    "nan": 24
+   },
+   "mark_price_present": 3221,
+   "rate_min": -0.0075,
+   "rate_max": 0.00518469,
+   "rate_mean": 6.258935819993959e-05,
+   "sha256": "6396ac241c32bd384808e7c90c723d1b5da2fcdc5c54510a1a47a9b44508dd50",
+   "content_sha256": "b42e90f49909f897e1c7cc001455c7839fb6ac15a83a2a2a19c461ba549f4c08",
+   "bytes": 96216
+  }
+ },
+ "LINKUSDT": {
+  "1m": {
+   "raw_rows": 3538560,
+   "rows_in_period_before_dedup": 3538560,
+   "duplicate_rows": 960,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3526080,
+    "daily": 11520,
+    "rest": 0
+   },
+   "rows": 3537600,
+   "first": "2020-01-17 08:00:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 23520,
+   "expected_bars": 3537600,
+   "coverage_pct": 100.0,
+   "n_gaps": 0,
+   "missing_bars": 0,
+   "gaps_top": [],
+   "zero_volume_bars": 350,
+   "zero_trade_bars": 350,
+   "bad_ohlc": 0,
+   "sha256": "09fc8d4372b9ff5909544df7c8f94357878c2901585d79bc1b75a37500f537e9",
+   "content_sha256": "ed878fc2fc76e7bd077d0a91a2f78269fc685dc2dd071aaeb6de44dc99f57018",
+   "bytes": 132750324
+  },
+  "mark_1m": {
+   "raw_rows": 3544216,
+   "rows_in_period_before_dedup": 3544216,
+   "duplicate_rows": 6668,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3513068,
+    "daily": 24480,
+    "rest": 0
+   },
+   "rows": 3537548,
+   "first": "2020-01-17 07:51:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 23511,
+   "expected_bars": 3537609,
+   "coverage_pct": 99.99827567150581,
+   "n_gaps": 4,
+   "missing_bars": 61,
+   "gaps_top": [
+    [
+     1579439340000,
+     29
+    ],
+    [
+     1608190320000,
+     24
+    ],
+    [
+     1657631760000,
+     6
+    ],
+    [
+     1723456920000,
+     2
+    ]
+   ],
+   "zero_volume_bars": 3537548,
+   "zero_trade_bars": 277,
+   "bad_ohlc": 0,
+   "sha256": "0e368e6b9624da01a73745401ed744ff0e4faf7172f74c1229e4ef67783f651e",
+   "content_sha256": "2163d3e9161463da798bf3bf70a6d7f75de36250660e0ed198db506343667206",
+   "bytes": 99436914
+  },
+  "funding": {
+   "archive_rows": 7346,
+   "rest_rows": 7370,
+   "archive_rows_matched_in_rest": 7346,
+   "rate_mismatches_gt_1e-10": 0,
+   "rest_only_rows": 24,
+   "duplicate_rows": 0,
+   "rows": 7370,
+   "first": "2020-01-17 08:00:00",
+   "last": "2026-10-08 16:00:00",
+   "interval_hours_distribution": {
+    "8.0": 7369
+   },
+   "declared_interval_hours": {
+    "8.0": 7346,
+    "nan": 24
+   },
+   "mark_price_present": 3221,
+   "rate_min": -0.004875,
+   "rate_max": 0.004444,
+   "rate_mean": 0.00012522383446404343,
+   "sha256": "b699b23d97edb57d0cba262e3af74d5ba4609bf4f55d82df22aac15c71d22688",
+   "content_sha256": "06765f4cdc3fefef5b9a12838f13606729a02b9b5a7998b7a166d70cb7db7d58",
+   "bytes": 100239
+  }
+ },
+ "BCHUSDT": {
+  "1m": {
+   "raw_rows": 3561120,
+   "rows_in_period_before_dedup": 3561120,
+   "duplicate_rows": 0,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3549600,
+    "daily": 11520,
+    "rest": 0
+   },
+   "rows": 3561120,
+   "first": "2020-01-01 00:00:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 0,
+   "expected_bars": 3561120,
+   "coverage_pct": 100.0,
+   "n_gaps": 0,
+   "missing_bars": 0,
+   "gaps_top": [],
+   "zero_volume_bars": 451,
+   "zero_trade_bars": 451,
+   "bad_ohlc": 0,
+   "sha256": "fce23ec4b5c2a869012149504c7755012668f65e777fa57df14f95c95f6f193b",
+   "content_sha256": "17b5ecc580001c5caa5a0abbeed92498e4abf8ca384d8e1c34c0c25aa2217cf9",
+   "bytes": 130078821
+  },
+  "mark_1m": {
+   "raw_rows": 3568192,
+   "rows_in_period_before_dedup": 3568192,
+   "duplicate_rows": 7136,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3545216,
+    "daily": 15840,
+    "rest": 0
+   },
+   "rows": 3561056,
+   "first": "2020-01-01 00:00:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 0,
+   "expected_bars": 3561120,
+   "coverage_pct": 99.99820281259828,
+   "n_gaps": 6,
+   "missing_bars": 64,
+   "gaps_top": [
+    [
+     1579439340000,
+     29
+    ],
+    [
+     1608190320000,
+     24
+    ],
+    [
+     1657631700000,
+     7
+    ],
+    [
+     1723456920000,
+     2
+    ],
+    [
+     1657630620000,
+     1
+    ],
+    [
+     1657695540000,
+     1
+    ]
+   ],
+   "zero_volume_bars": 3561056,
+   "zero_trade_bars": 276,
+   "bad_ohlc": 0,
+   "sha256": "a19ba67cbffc7d34a58fe2e2c4efc80f012f78f9ee7c393d66b71077704b8e67",
+   "content_sha256": "d9a803110acf16edd03c9ed927cdae7c1f17ab78887b196723f34a595fc12d95",
+   "bytes": 100422138
+  },
+  "funding": {
+   "archive_rows": 7395,
+   "rest_rows": 7419,
+   "archive_rows_matched_in_rest": 7395,
+   "rate_mismatches_gt_1e-10": 0,
+   "rest_only_rows": 24,
+   "duplicate_rows": 0,
+   "rows": 7419,
+   "first": "2020-01-01 00:00:00",
+   "last": "2026-10-08 16:00:00",
+   "interval_hours_distribution": {
+    "8.0": 7418
+   },
+   "declared_interval_hours": {
+    "8.0": 7395,
+    "nan": 24
+   },
+   "mark_price_present": 3221,
+   "rate_min": -0.005025,
+   "rate_max": 0.00307942,
+   "rate_mean": 4.770315406389002e-05,
+   "sha256": "58a7a60403056c71f9efaf079846ffc20809a0f5435a12e993d2c03679bbe176",
+   "content_sha256": "53afdd9afc145cdd2502d5958d96de414266629a3ce49d4d9f28c39ba88a5264",
+   "bytes": 109032
+  }
+ },
+ "BTCUSDT": {
+  "1m": {
+   "raw_rows": 3561120,
+   "rows_in_period_before_dedup": 3561120,
+   "duplicate_rows": 0,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3549600,
+    "daily": 11520,
+    "rest": 0
+   },
+   "rows": 3561120,
+   "first": "2020-01-01 00:00:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 0,
+   "expected_bars": 3561120,
+   "coverage_pct": 100.0,
+   "n_gaps": 0,
+   "missing_bars": 0,
+   "gaps_top": [],
+   "zero_volume_bars": 369,
+   "zero_trade_bars": 369,
+   "bad_ohlc": 0,
+   "sha256": "39c4bc7dc803e4f0510d1f7da5e13c58249b39177e7f14607d7754ba727a336f",
+   "content_sha256": "9cb2305785764772b9ba658a1da0665ef5c1a82bc8b63825224c5414d4208636",
+   "bytes": 149888088
+  },
+  "mark_1m": {
+   "raw_rows": 3565332,
+   "rows_in_period_before_dedup": 3565332,
+   "duplicate_rows": 4265,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3536585,
+    "daily": 24480,
+    "rest": 2
+   },
+   "rows": 3561067,
+   "first": "2020-01-01 00:00:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 0,
+   "expected_bars": 3561120,
+   "coverage_pct": 99.99851170418296,
+   "n_gaps": 2,
+   "missing_bars": 53,
+   "gaps_top": [
+    [
+     1579439340000,
+     29
+    ],
+    [
+     1608190320000,
+     24
+    ]
+   ],
+   "zero_volume_bars": 3561067,
+   "zero_trade_bars": 275,
+   "bad_ohlc": 0,
+   "sha256": "4912c1132c2acfdd6b8acd554716d310c7079028876439cd4fd53207f931efca",
+   "content_sha256": "b613c4d8c4b4f0547ef02cefddaedf0ebb2d38bfb7beae5e8fdc5ddadab885c2",
+   "bytes": 103923271
+  },
+  "funding": {
+   "archive_rows": 7395,
+   "rest_rows": 7419,
+   "archive_rows_matched_in_rest": 7395,
+   "rate_mismatches_gt_1e-10": 0,
+   "rest_only_rows": 24,
+   "duplicate_rows": 0,
+   "rows": 7419,
+   "first": "2020-01-01 00:00:00",
+   "last": "2026-10-08 16:00:00",
+   "interval_hours_distribution": {
+    "8.0": 7418
+   },
+   "declared_interval_hours": {
+    "8.0": 7395,
+    "nan": 24
+   },
+   "mark_price_present": 3221,
+   "rate_min": -0.003,
+   "rate_max": 0.003,
+   "rate_mean": 0.00010677015770319451,
+   "sha256": "a9e4410a7f21994f011fb67e8e3fe3b23c931fe951e0dd843e560f348a4d1c84",
+   "content_sha256": "e209b71052c7d476f9a8fcb880ad78586a4101aaef621635823e022b9a2a999f",
+   "bytes": 104794
+  }
+ },
+ "ETHUSDT": {
+  "1m": {
+   "raw_rows": 3561120,
+   "rows_in_period_before_dedup": 3561120,
+   "duplicate_rows": 0,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3549600,
+    "daily": 11520,
+    "rest": 0
+   },
+   "rows": 3561120,
+   "first": "2020-01-01 00:00:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 0,
+   "expected_bars": 3561120,
+   "coverage_pct": 100.0,
+   "n_gaps": 0,
+   "missing_bars": 0,
+   "gaps_top": [],
+   "zero_volume_bars": 302,
+   "zero_trade_bars": 302,
+   "bad_ohlc": 0,
+   "sha256": "cd8d87467a93e5c6b9860c502e3944543fca510f418ed2e99dc6a754994b75e4",
+   "content_sha256": "0dbd4da3ca2965e5d6c8b6008fc8f3e897a0a324f346273d189795719e91e238",
+   "bytes": 150845372
+  },
+  "mark_1m": {
+   "raw_rows": 3568190,
+   "rows_in_period_before_dedup": 3568190,
+   "duplicate_rows": 7134,
+   "duplicate_timestamps_with_conflicting_values": 0,
+   "misaligned_open_time": 0,
+   "rows_by_source": {
+    "monthly": 3545214,
+    "daily": 15840,
+    "rest": 2
+   },
+   "rows": 3561056,
+   "first": "2020-01-01 00:00:00",
+   "last": "2026-10-08 23:59:00",
+   "pre_listing_bars": 0,
+   "expected_bars": 3561120,
+   "coverage_pct": 99.99820281259828,
+   "n_gaps": 7,
+   "missing_bars": 64,
+   "gaps_top": [
+    [
+     1579439340000,
+     29
+    ],
+    [
+     1608190320000,
+     24
+    ],
+    [
+     1657631700000,
+     7
+    ],
+    [
+     1657630620000,
+     1
+    ],
+    [
+     1657631220000,
+     1
+    ],
+    [
+     1657633920000,
+     1
+    ],
+    [
+     1657695540000,
+     1
+    ]
+   ],
+   "zero_volume_bars": 3561056,
+   "zero_trade_bars": 276,
+   "bad_ohlc": 0,
+   "sha256": "bbecbce417488dba3e626bdbd3a7526cc253f7ecaccfa9ee73dcf8b1e767041b",
+   "content_sha256": "db9fc5f1057d9d7517615c07ef26b92a345da122f8a46d88ad34720999f55d7b",
+   "bytes": 102264453
+  },
+  "funding": {
+   "archive_rows": 7395,
+   "rest_rows": 7419,
+   "archive_rows_matched_in_rest": 7395,
+   "rate_mismatches_gt_1e-10": 0,
+   "rest_only_rows": 24,
+   "duplicate_rows": 0,
+   "rows": 7419,
+   "first": "2020-01-01 00:00:00",
+   "last": "2026-10-08 16:00:00",
+   "interval_hours_distribution": {
+    "8.0": 7418
+   },
+   "declared_interval_hours": {
+    "8.0": 7395,
+    "nan": 24
+   },
+   "mark_price_present": 3221,
+   "rate_min": -0.00356332,
+   "rate_max": 0.00375,
+   "rate_mean": 0.00012605620434020758,
+   "sha256": "89ed45fb5ea6b3971f55a3bb171b65d83ab095d8fffd595239cd19cb0633d699",
+   "content_sha256": "2a9fd7bcaf45b78796a87d04d6a5b5ab55cace18c133286402e2073b828ff63f",
+   "bytes": 107756
+  }
+ }
+}

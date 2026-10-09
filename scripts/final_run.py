@@ -105,12 +105,13 @@ def cmd_live():
         led = [x for x in led if x["ts"] <= cut_ms]
         start = next((e["ts"] for e in ev if e["event"] == "started"), int(eq["ts"].iloc[0]))
         last_eq = float(eq["equity"].iloc[-1])
+        cap = next((e.get("equity") for e in ev if e["event"] == "started"), None) or float(eq["equity"].iloc[0])
         peak = eq["equity"].cummax()
         rows.append({
             "runner": d.name, "start_kst": datetime.fromtimestamp(start / 1000, KST).isoformat(timespec="minutes"),
             "end_kst": datetime.fromtimestamp(int(eq["ts"].iloc[-1]) / 1000, KST).isoformat(timespec="minutes"),
             "hours": round((int(eq["ts"].iloc[-1]) - start) / 3.6e6, 1),
-            "equity": round(last_eq, 2), "net_return": last_eq / E0 - 1,
+            "capital": cap, "equity": round(last_eq, 2), "net_return": last_eq / cap - 1,
             "max_dd": float((1 - eq["equity"] / peak).max()),
             "fills": len(fills), "entries": int((fills["tag"] == "entry").sum()) if len(fills) else 0,
             "fees": float(fills["fee"].sum()) if len(fills) else 0.0,

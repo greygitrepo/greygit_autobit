@@ -106,7 +106,7 @@ def overview() -> dict:
         ev = [json.loads(x) for x in tail_lines(d / "events.jsonl", 200) if x.strip()]
         started = next((e for e in ev if e.get("event") in ("started",)), None)
         fills = read_csv(d / "fills.csv")
-        runners.append({**r, "id": rid, "pnl": r["equity"] - 10_000, "n_fills": len(fills),
+        runners.append({**r, "id": rid, "pnl": r["equity"] - r.get("capital", 10_000), "n_fills": len(fills),
                         "last_events": ev[-8:], "started_ts": started["ts"] if started else None})
     return {
         "now_kst": now.isoformat(timespec="seconds"),

@@ -29,15 +29,17 @@ OUT = ROOT / "runtime" / "live"
 
 def build():
     cfg = yaml.safe_load((ROOT / "configs" / "paper.yaml").read_text())
-    syms = cfg["symbols"]
-    specs = load_specs(syms)
+    base_syms = cfg["symbols"]
     costs = load_cost_model()
-    risk = RiskConfig.from_yaml(load_risk())
+    risk_raw = load_risk()
     runners = []
     for rc in cfg["runners"]:
         mod, cls = rc["strategy"].split(":")
         strat = getattr(importlib.import_module(mod), cls)(**(rc.get("params") or {}))
-        runners.append(Runner(rc["id"], strat, syms, specs, costs, risk, OUT))
+        rsyms = rc.get("symbols") or base_syms                 # per-runner universe (default: global list)
+        risk = RiskConfig.from_yaml({**risk_raw, **({"initial_capital_usdt": rc["capital"]} if rc.get("capital") else {})})
+        runners.append(Runner(rc["id"], strat, rsyms, load_specs(rsyms), costs, risk, OUT))
+    syms = sorted({s for r in runners for s in r.symbols}, key=lambda x: (x not in base_syms, x))
 
     def hist(sym):
         try:

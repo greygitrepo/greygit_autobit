@@ -58,7 +58,7 @@ def parse_stress(s: str | None) -> dict:
 
 
 def run(strategy_spec, split, params=None, symbols=None, stress=None, team="", note="", final=False,
-        register=True, warmup_days=120, holdout=False):
+        register=True, warmup_days=120, holdout=False, capital=None):
     exp = load_experiment()
     if split == "test" and not final:
         raise SystemExit("test split is frozen: pass --final only for the single final evaluation")
@@ -81,7 +81,7 @@ def run(strategy_spec, split, params=None, symbols=None, stress=None, team="", n
     if st:
         costs = costs.stressed(st.get("spread", 1), st.get("impact", 1), st.get("latency"), st.get("fee", 1),
                                st.get("stopfill"))
-    risk = RiskConfig.from_yaml(load_risk())
+    risk = RiskConfig.from_yaml({**load_risk(), **({"initial_capital_usdt": float(capital)} if capital else {})})
     from engine.strategy import TF_MS
     need_days = int(strat.warmup_bars * TF_MS[strat.timeframe] / 86_400_000) + 5
     warmup_days = max(warmup_days, need_days)
@@ -138,9 +138,10 @@ def main():
     ap.add_argument("--team", default="")
     ap.add_argument("--note", default="")
     ap.add_argument("--final", action="store_true")
+    ap.add_argument("--capital", type=float, help="sub-account capital (portfolio sleeves); default configs/risk.yaml")
     a = ap.parse_args()
     summ, _ = run(a.strategy, a.split, json.loads(a.params), a.symbols, a.stress, a.team, a.note, a.final,
-                  holdout=a.holdout)
+                  holdout=a.holdout, capital=a.capital)
     print(json.dumps({k: summ[k] for k in ["net_return", "max_dd", "sharpe_daily", "trades", "win_rate",
                                              "profit_factor", "fees", "funding", "halted", "elapsed_s"]},
                      default=float, indent=1))

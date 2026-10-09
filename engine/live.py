@@ -372,7 +372,7 @@ class PaperEngine:
     def replay_gap(self, r: Runner):
         """After downtime: replay missed closed minutes for stops/limits/liquidation and funding.
         Decisions inside the gap are NOT taken (logged as missed)."""
-        for s in self.symbols:
+        for s in r.symbols:
             last = r.st["last_minute"].get(s)
             if last is None:
                 continue
@@ -486,6 +486,8 @@ class PaperEngine:
         due_rate = f.funding_sched.pop(ts, None)            # bar closes exactly at a funding time
         fmark = f.mark if not math.isnan(f.mark) else row[3]
         for r in self.runners:
+            if s not in r.symbols:                           # runner trades its own symbol subset
+                continue
             if due_rate is not None:
                 p = r.broker.positions[s]
                 if p.qty != 0:
@@ -501,10 +503,10 @@ class PaperEngine:
                 elif hasattr(r.strategy, "other_provider"):
                     # cross-asset: decide every leg only once ALL symbols' bars closing at ts have arrived
                     done = r.st.setdefault("x_decided", {})
-                    if all(self.feeds[x].last_bar >= t for x in self.symbols) and done.get(str(ts)) is None:
+                    if all(self.feeds[x].last_bar >= t for x in r.symbols) and done.get(str(ts)) is None:
                         done.clear()
                         done[str(ts)] = True
-                        for x in self.symbols:
+                        for x in r.symbols:
                             try:
                                 r.decide(x, self.feeds[x], ts, self.fresh(x), self.funding_hist.get(x), self.feeds)
                             except Exception as e:
@@ -560,8 +562,9 @@ class PaperEngine:
             "rest": self.rest.counts,
             "feeds": {s: {"last_bar": pd.to_datetime(f.last_bar, unit="ms").isoformat(), "fresh": self.fresh(s),
                           "bid": f.bid, "ask": f.ask, "mark": f.mark, **f.counters} for s, f in self.feeds.items()},
-            "runners": {r.id: {"equity": round(r.broker.equity(), 2), "halted": r.st["halted_at"] is not None,
-                               "positions": {s: r.broker.positions[s].qty for s in self.symbols},
+            "runners": {r.id: {"equity": round(r.broker.equity(), 2), "capital": r.risk.initial_capital_usdt,
+                               "symbols": r.symbols, "halted": r.st["halted_at"] is not None,
+                               "positions": {s: r.broker.positions[s].qty for s in r.symbols},
                                "decisions": r.st["decisions"], "missed": r.st["missed_decisions"],
                                "fills": r._nfills} for r in self.runners},
         }

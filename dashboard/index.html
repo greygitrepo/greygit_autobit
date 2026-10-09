@@ -196,7 +196,7 @@ function renderLive(d){
     {h:'전략(러너)', k:'id'},
     {h:'자산', n:1, f:r=>num(r.equity)},
     {h:'손익', n:1, f:r=>`<span class="${cls(r.pnl)}">${num(r.pnl)}</span>`},
-    {h:'수익률', n:1, f:r=>`<span class="${cls(r.pnl)}">${pct(r.pnl/10000,3)}</span>`},
+    {h:'수익률', n:1, f:r=>`<span class="${cls(r.pnl)}">${pct(r.pnl/(r.capital||10000),3)}</span>`},
     {h:'포지션', f:r=>Object.entries(r.positions||{}).map(([s,q])=>`${s.replace('USDT','')} ${q==0?'–':(q>0?'롱 ':'숏 ')+Math.abs(q)}`).join(' · ')},
     {h:'결정', n:1, k:'decisions'}, {h:'놓친 결정', n:1, k:'missed'}, {h:'체결', n:1, k:'n_fills'},
     {h:'상태', f:r=>r.halted?'<span class="neg">낙폭 중단</span>':'운용'},
