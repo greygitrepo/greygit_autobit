@@ -21,9 +21,9 @@ observation_cutoff:   2026-10-12T04:30:00+09:00
 # --- 개정 1 (2026-10-09 19:00 KST, test 결과 확인 전) ---------------------------------------
 # 사용자 지시("마감까지 공격적으로 고도화")로 개선 라운드를 추가한다. 다중검정 위험을 줄이려고
 # 연구 구간 이전의 표본 외 구간을 추가한다. 전략팀은 사용 금지, 독립 평가팀만 사용(--holdout).
-# Binance ETHUSDT 무기한 상장(2019-11-27) 이후 데이터 2019-12-01부터, warm-up 120일 확보.
+# 데이터 2020-01-01부터 (Binance 월별 아카이브 시작), warm-up 120일 확보.
 extra_splits:
-  holdout_pre: [2020-04-01, 2021-09-30]
+  holdout_pre: [2020-05-01, 2021-09-30]   # 2020-01부터 아카이브 존재(2019-12 월별 파일 없음) → warm-up 120일 확보
 round_rules:
   validation_variants_per_team_per_round: 5     # 사전 선언(DECLARATIONS.md)한 것만 validation 실행
   promotion: "validation 비용 차감 수익>0, MDD<10%, 거래≥30, holdout_pre 수익>0, 감사 통과 → 실시간 모의거래 투입"
