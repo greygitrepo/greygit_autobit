@@ -90,7 +90,7 @@ class BacktestResult:
 
 def run_backtest(strategy: Strategy, markets: dict[str, MarketData], specs: dict[str, SymbolSpec],
                  costs: CostModel, risk: RiskConfig, signals: dict[str, pd.DataFrame] | None = None,
-                 snapshot_every_min: int = 60) -> BacktestResult:
+                 snapshot_every_min: int = 60, fast: bool = True) -> BacktestResult:
     syms = list(markets)
     grid = markets[syms[0]].ts
     n = len(grid)
@@ -241,7 +241,11 @@ def run_backtest(strategy: Strategy, markets: dict[str, MarketData], specs: dict
         # jump ahead when nothing can happen
         busy = pending_halt or any(p.qty != 0 for p in broker.positions.values()) or broker.open_orders()
         if busy:
-            i += 1
+            nxt = i + 1
+            if fast and not pending_halt:
+                nxt, peak = _fast_forward(broker, markets, syms, event_idx, i, n, peak, day_start_eq, day_blocked,
+                                          halted_at, risk, snapshot_every_min, eq_ts, eq_val, grid)
+            i = max(nxt, i + 1)
         else:
             j = bisect.bisect_right(event_idx, i)
             nxt = event_idx[j] if j < len(event_idx) else n
@@ -258,6 +262,65 @@ def run_backtest(strategy: Strategy, markets: dict[str, MarketData], specs: dict
     return BacktestResult(strategy.describe(), pd.Series(eq_val, index=eq_ts, name="equity"), fills, ledger,
                           build_trades(fills, ledger), dict(broker.counters), events, broker.equity(), halted_at,
                           violations)
+
+
+def _fast_forward(broker, markets, syms, event_idx, i, n, peak, day_start_eq, day_blocked, halted_at, risk,
+                  snap_every, eq_ts, eq_val, grid) -> tuple[int, float]:
+    """Skip minutes i+1.. where provably nothing happens: no decision/funding/day event, no order
+    trigger, no liquidation, no risk threshold crossing, no missing data. Returns the next minute
+    to simulate step by step. Equity is evaluated on closes exactly like the slow path."""
+    j = bisect.bisect_right(event_idx, i)
+    end = min(event_idx[j] if j < len(event_idx) else n, n)
+    a = i + 1
+    if end - a < 3:
+        return a, peak
+    stop_at = end
+    eq = np.full(end - a, broker.balance, dtype=float)
+    for s in syms:
+        m = markets[s]
+        p = broker.positions[s]
+        o_, h, l, c = m.o[a:end], m.h[a:end], m.l[a:end], m.c[a:end]
+        nanpos = np.nonzero(np.isnan(o_))[0]
+        if len(nanpos):
+            stop_at = min(stop_at, a + nanpos[0])
+        for od in broker.open_orders(s):
+            if od.type == "stop":
+                hit = (l <= od.price) if od.side < 0 else (h >= od.price)
+            elif od.type == "limit":
+                tick = broker.specs[s].tick_size
+                hit = (l <= od.price - tick) if od.side > 0 else (h >= od.price + tick)
+            else:
+                return a, peak
+            k = np.argmax(hit) if hit.any() else -1
+            if k >= 0:
+                stop_at = min(stop_at, a + k)
+        if p.qty != 0:
+            lp = broker.liquidation_price(s)
+            liq = (m.mark_l[a:end] <= lp) if p.dir > 0 else (m.mark_h[a:end] >= lp)
+            if liq.any():
+                stop_at = min(stop_at, a + int(np.argmax(liq)))
+            eq += p.qty * (np.nan_to_num(c, nan=0.0) - p.entry_price)
+    if stop_at <= a:
+        return a, peak
+    seg = eq[: stop_at - a]
+    run_peak = np.maximum.accumulate(np.concatenate([[peak], seg]))[1:]
+    bad = seg <= run_peak * (1 - risk.max_drawdown_halt_frac) if halted_at is None else np.zeros(len(seg), bool)
+    if not day_blocked:
+        bad |= seg <= day_start_eq * (1 - risk.daily_loss_limit_frac)
+    if bad.any():
+        stop_at = a + int(np.argmax(bad))
+    if stop_at <= a:
+        return a, peak
+    # commit skipped minutes: last prices and hourly snapshots
+    for s in syms:
+        cc = markets[s].c[stop_at - 1]
+        if not np.isnan(cc):
+            broker.last_price[s] = cc
+    first = ((a + snap_every - 1) // snap_every) * snap_every
+    for k in range(first, stop_at, snap_every):
+        eq_ts.append(int(grid[k]))
+        eq_val.append(float(eq[k - a]))
+    return stop_at, max(peak, float(seg[: stop_at - a].max()))
 
 
 def build_trades(fills: pd.DataFrame, ledger: pd.DataFrame) -> pd.DataFrame:

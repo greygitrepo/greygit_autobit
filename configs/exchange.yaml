@@ -1,0 +1,205 @@
+# 거래소/상품 명세 (research rule 8). 확인 시각: 2026-10-09 08:38~08:50 UTC.
+# 계정 등급 가정: Regular / VIP0, BNB 할인 없음, one-way 모드, isolated margin.
+# 값 출처: live = 공개 REST 응답(인증 없음), doc = 공식 문서, web = 거래소 웹 백엔드(비문서화 공개 엔드포인트).
+# 'assumption:' 주석이 붙은 값은 공식 확인 불가 → costs.yaml 민감도 분석 대상.
+# 연구용 레버리지 상한은 configs/risk.yaml(3x)을 따른다. 아래 max_leverage는 거래소 한도일 뿐이다.
+
+primary: binance_usdm
+
+binance_usdm:
+  venue: binance_usdm
+  product: USDⓈ-M perpetual (linear, USDT-margined)
+  account_tier: regular_vip0_no_bnb
+  rest_base: https://fapi.binance.com
+  symbols:
+    BTCUSDT:
+      tick_size: 0.10            # live PRICE_FILTER
+      step_size: 0.001           # live LOT_SIZE (MARKET_LOT_SIZE 동일)
+      min_qty: 0.001
+      max_qty_limit: 1000
+      max_qty_market: 120        # MARKET_LOT_SIZE.maxQty
+      min_notional: 50           # USDT, live MIN_NOTIONAL
+      percent_price: [0.95, 1.05]  # PERCENT_PRICE multiplierDown/Up
+      max_leverage: 150          # web brackets tier1 maxOpenPosLeverage (live 비인증 API로는 확인 불가)
+      funding_interval_hours: 8  # live /fapi/v1/fundingInfo + 2021-10-09~2026-10-09 이력 5480건 전부 8h 간격
+      funding_rate_cap: 0.003    # live fundingInfo adjustedFundingRateCap/Floor ±0.3%
+      liquidation_fee_rate: 0.0125  # live exchangeInfo liquidationFee
+      mmr_tiers:                 # web /bapi/futures/v1/friendly/future/common/brackets (updateTime 2025-08-19)
+        - {notional_cap: 300000,   mmr: 0.004,  maint_amount: 0,      max_leverage: 150}
+        - {notional_cap: 800000,   mmr: 0.005,  maint_amount: 300,    max_leverage: 100}
+        - {notional_cap: 3000000,  mmr: 0.0065, maint_amount: 1500,   max_leverage: 75}
+        - {notional_cap: 12000000, mmr: 0.01,   maint_amount: 12000,  max_leverage: 50}
+        - {notional_cap: 70000000, mmr: 0.02,   maint_amount: 132000, max_leverage: 25}
+    ETHUSDT:
+      tick_size: 0.01
+      step_size: 0.001
+      min_qty: 0.001
+      max_qty_limit: 10000
+      max_qty_market: 2000
+      min_notional: 20
+      percent_price: [0.95, 1.05]
+      max_leverage: 150
+      funding_interval_hours: 8
+      funding_rate_cap: 0.003
+      liquidation_fee_rate: 0.0125
+      mmr_tiers:
+        - {notional_cap: 300000,   mmr: 0.004,  maint_amount: 0,      max_leverage: 150}
+        - {notional_cap: 800000,   mmr: 0.005,  maint_amount: 300,    max_leverage: 100}
+        - {notional_cap: 3000000,  mmr: 0.0065, maint_amount: 1500,   max_leverage: 75}
+        - {notional_cap: 12000000, mmr: 0.01,   maint_amount: 12000,  max_leverage: 50}
+        - {notional_cap: 50000000, mmr: 0.02,   maint_amount: 132000, max_leverage: 25}
+  fees:                          # doc FAQ (last updated 2026-05-01): Regular maker 0.02%, taker 0.05%
+    maker: 0.0002
+    taker: 0.0005
+    basis: notional = qty * fill_price
+  funding:
+    times_utc: ["00:00", "08:00", "16:00"]
+    sign_convention: "rate > 0: long pays short; rate < 0: short pays long. 거래소 수수료 없음(트레이더 간 이전)."
+    amount_formula: "funding = position_qty * mark_price(at settlement) * funding_rate"
+    eligibility: "정산 시각에 포지션 보유 시에만. 문서상 정산 처리에 최대 ~15초 지연 가능."
+    rate_formula: "F = P + clamp(I - P, -0.05%, +0.05%), I = 0.01%/8h, 이후 ±cap 적용"
+    history_endpoint: /fapi/v1/fundingRate   # 공개, limit 1000
+  liquidation:
+    trigger_price: mark_price
+    isolated_one_way_formula: "LP = (WB + cum - side*Q*EP) / (Q*MMR - side*Q); side=+1 long, -1 short; WB=isolated wallet balance, cum=maint_amount, MMR=tier by notional"
+    note: "교차마진 공식에서 TMM1=0, UPNL1=0 대입 (doc). 청산 시 liquidation_fee_rate 별도 차감."
+  rate_limits:
+    rest_request_weight_per_min: 2400     # live exchangeInfo rateLimits (IP 기준)
+    orders_per_min: 1200                  # 계정 기준
+    orders_per_10s: 300
+    weight_header: X-MBX-USED-WEIGHT-1M
+    on_429: "즉시 백오프. 반복 위반 시 IP 자동 차단"
+    on_418: "IP 차단 상태. 차단 기간 2분~3일로 반복 시 증가"
+    endpoint_weights:                     # 2026-10-09 응답 헤더로 실측
+      depth: {"5-50": 2, "100": 5, "500": 10, "1000": 20}
+      klines: {"<100": 1, "100-499": 2, "500-1000": 5, ">1000(max 1500)": 10}
+  ws:
+    routed_bases:                         # 2026-03 변경, 레거시 URL 2026-04-23 폐지
+      public: wss://fstream.binance.com/public    # bookTicker, depth
+      market: wss://fstream.binance.com/market    # aggTrade, kline, markPrice, ticker, forceOrder
+    url_formats: ["<base>/ws/<stream>", "<base>/stream?streams=<s1>/<s2>"]
+    unrouted_warning: "경로 없는 연결은 /public 스트림만 수신 (실측: aggTrade 수신 0건)"
+    connection_lifetime_hours: 24
+    ping: "서버가 3분마다 ping frame; 10분 내 pong 없으면 끊김"
+    incoming_msgs_per_sec: 10
+    max_streams_per_conn: 1024
+    streams:
+      aggTrade: "<symbol>@aggTrade"          # /market
+      bookTicker: "<symbol>@bookTicker"      # /public, 실시간
+      kline: "<symbol>@kline_<interval>"     # /market
+      markPrice: "<symbol>@markPrice@1s"     # /market (기본 3s)
+      depth: "<symbol>@depth<5|10|20>@100ms" # /public
+  historical_data:   # https://data.binance.vision  (S3 listing 2026-10-09 확인, prefix data/futures/um/)
+    klines_1m: {monthly: "2020-01..2026-09", daily: "2019-12-31..2026-10-08"}
+    markPriceKlines_1m: {monthly: "2020-01..2026-09"}
+    premiumIndexKlines_1m: {monthly: "2020-01..2026-09"}
+    fundingRate: {monthly: "2020-01..2026-09"}
+    aggTrades: {monthly: "2020-01..2026-09", daily: "2019-12-31..2026-10-08"}
+    trades: {monthly: "BTC 2019-09.., ETH 2019-11..2026-09"}
+    metrics: {daily: "BTC 2020-09-01.., ETH 2021-12-01..2026-10-08"}   # OI, long/short ratio 등
+    bookDepth: {daily: "2023-01-01..2026-10-07"}   # %-band 누적 깊이 스냅샷
+    bookTicker: {monthly: "2023-05..2024-04", daily: "2023-05-16..2024-03-30 (320 files, 결측 있음)"}
+    coverage_note: "2021-10~2026-10 전체 구간 1m klines/mark/premium/funding/aggTrades 확보 가능. 호가(bookTicker) 이력은 약 1년만 존재."
+  sources:
+    - {item: exchangeInfo filters/rateLimits, url: "https://fapi.binance.com/fapi/v1/exchangeInfo", checked_utc: "2026-10-09T08:39Z"}
+    - {item: funding interval/cap, url: "https://fapi.binance.com/fapi/v1/fundingInfo", checked_utc: "2026-10-09T08:39Z"}
+    - {item: funding history 5y interval check, url: "https://fapi.binance.com/fapi/v1/fundingRate", checked_utc: "2026-10-09T08:44Z"}
+    - {item: leverage brackets (web backend), url: "https://www.binance.com/bapi/futures/v1/friendly/future/common/brackets", checked_utc: "2026-10-09T08:42Z"}
+    - {item: fees, url: "https://www.binance.com/en/support/faq/binance-futures-fee-structure-fee-calculations-360033544231", checked_utc: "2026-10-09T08:41Z"}
+    - {item: fee table page, url: "https://www.binance.com/en/fee/futureFee", checked_utc: "2026-10-09T08:40Z", note: "JS 렌더링, 비로그인 수치 미표시"}
+    - {item: funding mechanics, url: "https://www.binance.com/en/support/faq/introduction-to-binance-futures-funding-rates-360033525031", checked_utc: "2026-10-09T08:42Z"}
+    - {item: liquidation price, url: "https://www.binance.com/en/support/faq/how-to-calculate-liquidation-price-of-usd%E2%93%A2-m-futures-contracts-b3c689c1f50a44cabb3a84e663b81d93", checked_utc: "2026-10-09T08:42Z"}
+    - {item: REST limits 429/418, url: "https://developers.binance.com/docs/derivatives/usds-margined-futures/general-info", checked_utc: "2026-10-09T08:40Z"}
+    - {item: WS connect rules, url: "https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Connect", checked_utc: "2026-10-09T08:41Z"}
+    - {item: WS routing change, url: "https://developers.binance.com/docs/derivatives/usds-margined-futures/websocket-market-streams/Important-WebSocket-Change-Notice", checked_utc: "2026-10-09T08:41Z"}
+    - {item: depth weight, url: "https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Order-Book", checked_utc: "2026-10-09T08:41Z"}
+    - {item: historical archive, url: "https://data.binance.vision/?prefix=data/futures/um/", checked_utc: "2026-10-09T08:40Z"}
+  assumptions:
+    - "VIP0 수수료(0.02%/0.05%)는 FAQ 문서 기준. 공식 요율표 페이지는 비로그인 상태에서 수치를 표시하지 않음 → 민감도 분석 필요."
+    - "MMR 티어는 공식 문서화된 공개 API가 아닌 웹 백엔드 응답. 인증 API(/fapi/v1/leverageBracket)로 교차확인하지 않음. 연구 규모(<=30k USDT 명목)에서는 tier1(MMR 0.4%)만 해당."
+    - "과거 구간(2021~2025)의 수수료·MMR·tick/min_notional은 현재 값과 다를 수 있음. 백테스트는 현재 값을 전 기간에 적용(단순화)."
+    - "청산 공식은 one-way isolated 단일 포지션 기준. 청산 수수료/보험기금 처리는 근사."
+    - "Binance 실거래 계정 개설 가능 여부(사용자 거주국 규제)는 확인하지 않음. 본 연구는 공개 데이터 기반 paper trading만 사용."
+
+bybit_linear:
+  venue: bybit_linear
+  product: V5 linear perpetual (USDT)
+  account_tier: non_vip_vip0
+  rest_base: https://api.bybit.com
+  symbols:
+    BTCUSDT:
+      tick_size: 0.10
+      step_size: 0.001
+      min_qty: 0.001
+      max_qty_limit: 1500
+      max_qty_market: 150
+      min_notional: 5
+      max_leverage: 150
+      funding_interval_hours: 8      # live instruments-info fundingInterval=480(min); 5y 이력 5480건 전부 8h
+      funding_rate_cap: 0.00333      # live upperFundingRate/lowerFundingRate
+      mmr_tiers:                     # live /v5/market/risk-limit (notional_cap=riskLimitValue, maint_amount=mmDeduction)
+        - {notional_cap: 300000,  mmr: 0.0033, maint_amount: 0,    max_leverage: 150}
+        - {notional_cap: 2000000, mmr: 0.005,  maint_amount: 510,  max_leverage: 100}
+        - {notional_cap: 2600000, mmr: 0.0056, maint_amount: 1710, max_leverage: 90}
+        - {notional_cap: 3200000, mmr: 0.0063, maint_amount: 3530, max_leverage: 80}
+        - {notional_cap: 3800000, mmr: 0.0067, maint_amount: 4810, max_leverage: 75}
+    ETHUSDT:
+      tick_size: 0.01
+      step_size: 0.01
+      min_qty: 0.01
+      max_qty_limit: 10000
+      max_qty_market: 2000
+      min_notional: 5
+      max_leverage: 150
+      funding_interval_hours: 8
+      funding_rate_cap: 0.00333
+      mmr_tiers:
+        - {notional_cap: 300000,  mmr: 0.0033, maint_amount: 0,    max_leverage: 150}
+        - {notional_cap: 900000,  mmr: 0.005,  maint_amount: 510,  max_leverage: 100}
+        - {notional_cap: 1200000, mmr: 0.0056, maint_amount: 1050, max_leverage: 90}
+        - {notional_cap: 1500000, mmr: 0.0063, maint_amount: 1890, max_leverage: 80}
+        - {notional_cap: 1800000, mmr: 0.0067, maint_amount: 2490, max_leverage: 75}
+  fees: {maker: 0.0002, taker: 0.00055}   # Trading-Fee-Structure (last updated 2026-09-02) VIP0 Perp&Futures
+  funding:
+    times_utc: ["00:00", "08:00", "16:00"]
+    sign_convention: "rate > 0: long pays short; rate < 0: short pays long."
+    amount_formula: "funding = position_qty * mark_price * funding_rate"
+    history_endpoint: /v5/market/funding/history   # 공개, limit 200
+  liquidation:
+    trigger_price: mark_price
+    isolated_formula: "LP_long = EP - (IM - MM)/Q - extra_margin/Q; LP_short = EP + (IM - MM)/Q + extra_margin/Q; IM = Q*EP/lev, MM = Q*EP*MMR - mmDeduction"
+    note: "UTA에서는 MM/IM에 청산 예상 수수료가 포함될 수 있음 → 근사"
+  rate_limits:
+    rest_ip_limit: "600 requests / 5s / IP"
+    on_limit: "HTTP 403 'access too frequent' → 모든 세션 종료 후 10분 이상 대기"
+    ws_new_connections: "500 / 5분 / IP"
+    ws_max_connections: "1000 / IP / market type"
+  ws:
+    public_linear: wss://stream.bybit.com/v5/public/linear
+    ping: "클라이언트가 20초마다 {\"op\":\"ping\"} 전송 권장; 무활동 시 10분 후 종료"
+    streams:
+      publicTrade: "publicTrade.<SYMBOL>"
+      orderbook1: "orderbook.1.<SYMBOL>"   # 10ms push (50:20ms, 200:100ms, 1000:200ms)
+      tickers: "tickers.<SYMBOL>"         # markPrice, fundingRate 포함
+      kline: "kline.<interval>.<SYMBOL>"
+  historical_data:   # https://public.bybit.com (2026-10-09 디렉터리 목록 확인)
+    trading_daily_trades: {BTCUSDT: "2020-03-25..2026-10-08", ETHUSDT: "2020-10-21..2026-10-08"}
+    kline_for_metatrader4: "2020..2024 연도 폴더만 (2025~ 없음)"
+    premium_index: "디렉터리 존재, BTCUSDT 하위 비어 있음"
+    funding: "아카이브 없음. REST /v5/market/funding/history로 2021-10-09부터 5480건 전량 조회 확인"
+    klines: "REST /v5/market/kline, mark-price-kline (페이지당 1000) 수집 필요"
+    orderbook_history: "미확인 (bybit.com history-data 웹페이지는 확인하지 않음)"
+  sources:
+    - {item: instruments-info, url: "https://api.bybit.com/v5/market/instruments-info?category=linear", checked_utc: "2026-10-09T08:39Z"}
+    - {item: risk-limit, url: "https://api.bybit.com/v5/market/risk-limit?category=linear", checked_utc: "2026-10-09T08:39Z"}
+    - {item: funding history 5y check, url: "https://api.bybit.com/v5/market/funding/history", checked_utc: "2026-10-09T08:44Z"}
+    - {item: fees, url: "https://www.bybit.com/en/help-center/article/Trading-Fee-Structure", checked_utc: "2026-10-09T08:43Z"}
+    - {item: funding fee, url: "https://www.bybit.com/en/help-center/article/Funding-fee-calculation", checked_utc: "2026-10-09T08:43Z", note: "본문 JS 렌더링; 공식 검색 요약으로 확인"}
+    - {item: liquidation price, url: "https://www.bybit.com/en/help-center/article?id=000001067", checked_utc: "2026-10-09T08:44Z", note: "공식 검색 요약으로 확인"}
+    - {item: rate limits, url: "https://bybit-exchange.github.io/docs/v5/rate-limit", checked_utc: "2026-10-09T08:40Z"}
+    - {item: ws connect, url: "https://bybit-exchange.github.io/docs/v5/ws/connect", checked_utc: "2026-10-09T08:40Z"}
+    - {item: ws orderbook, url: "https://bybit-exchange.github.io/docs/v5/websocket/public/orderbook", checked_utc: "2026-10-09T08:48Z"}
+    - {item: historical archive, url: "https://public.bybit.com/", checked_utc: "2026-10-09T08:41Z"}
+  assumptions:
+    - "청산·펀딩 공식은 help-center 본문을 직접 렌더링하지 못해 공식 도메인 검색 요약으로 확인 → 중간 신뢰도."
+    - "UTA 계정 청산은 수수료 포함 MM 등 세부 차이 가능."

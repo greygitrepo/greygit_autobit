@@ -308,3 +308,38 @@ def test_trade_pnl_reconciles_with_ledger():
     assert abs(open_funding_and_fees) < 50
     assert res.ledger["balance"].iloc[-1] == pytest.approx(10_000 + res.ledger["amount"].sum())
     assert -res.ledger[res.ledger.kind == "fee"]["amount"].sum() == pytest.approx(res.fills["fee"].sum())
+
+
+class BracketMomentum(Strategy):
+    """Momentum with stop and take-profit so fast-forward must handle stops, limits and funding."""
+    name, timeframe, warmup_bars = "bracket_mom", "15m", 4
+
+    def compute(self, bars, funding=None):
+        c = bars["close"]
+        d = np.sign(c - c.shift(4)).replace(0, np.nan)
+        return pd.DataFrame({"target": d, "stop": c * (1 - 0.004 * d), "tp": c * (1 + 0.006 * d)}, index=bars.index)
+
+
+def test_fast_forward_matches_minute_by_minute():
+    rng = np.random.default_rng(7)
+    n = 20_000
+    p = 100 * np.exp(np.cumsum(rng.normal(0, 0.0015, n)))
+    m1 = _m1(p)
+    m1["high"] = np.maximum(m1["open"], m1["close"]) * (1 + np.abs(rng.normal(0, 0.0008, n)))
+    m1["low"] = np.minimum(m1["open"], m1["close"]) * (1 - np.abs(rng.normal(0, 0.0008, n)))
+    m1["volume"] = rng.uniform(50, 500, n)
+    m1.loc[m1.index[5000:5003], ["open", "high", "low", "close"]] = np.nan      # data gap
+    f = pd.DataFrame({"funding_rate": rng.normal(0, 2e-4, n // 480 + 1)},
+                     index=pd.Index(np.arange(0, 60_000 * n, 480 * 60_000) + 7, name="t"))
+    mk = prepare_market(S, m1.dropna(), None, f, 0, 60_000 * n)
+    out = []
+    for fast in (True, False):
+        r = run_backtest(BracketMomentum(), {S: mk}, {S: SPEC}, zero_cost(spread=1.0, k=1.0, latency=250),
+                         RiskConfig(daily_loss_limit_frac=0.01), fast=fast)
+        out.append(r)
+    a, b = out
+    assert len(a.fills) == len(b.fills) > 50
+    assert np.allclose(a.fills[["ts", "qty", "price", "fee"]].values, b.fills[["ts", "qty", "price", "fee"]].values)
+    assert a.final_equity == pytest.approx(b.final_equity, abs=1e-9)
+    assert [e["ts"] for e in a.events] == [e["ts"] for e in b.events]
+    assert (a.fills.tag == "tp").any() and (a.fills.tag == "stop").any()

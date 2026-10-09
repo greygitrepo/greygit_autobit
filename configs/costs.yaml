@@ -1,0 +1,63 @@
+# 비용 모델 (primary venue: Binance USDⓈ-M). engine/costs.py 스키마 준수.
+# 측정: 2026-10-09 08:38~08:46 UTC, 공개 REST 호가 스냅샷 (depth limit=1000, 약 6초 간격 10회 + limit=500 12회).
+# 금요일 아시아/유럽 시간대 평온장 1분 표본 → 대표성 낮음. 스트레스 배수로 보완. 상세: research/exchange_spec_notes.md
+#
+# 시장가 체결가 모델 (bps, mid 기준, 불리한 방향):
+#   cost_bps = spread_mult*spread_bps/2 + impact_mult*impact_k_bps*sqrt(order_notional/depth_10bps_usdt) + latency_drift
+#   latency_drift: 지연 동안의 가격 이동은 엔진이 지연 후 시점의 실제 가격(다음 이벤트)으로 체결해 반영하는 것을 원칙으로 함.
+#                  이벤트 해상도가 부족할 때(1m bar) 대체값으로 latency_drift_sd_bps 사용.
+#   fee = notional * (maker|taker)
+# 지정가: 가격 접촉만으로 체결 금지(simulation.md). 가격이 limit을 1 tick 이상 관통했을 때만 체결(보수적) 권장.
+
+fees:                 # VIP0, BNB 할인 없음 (configs/exchange.yaml 출처)
+  maker: 0.0002
+  taker: 0.0005
+
+latency_ms:           # 주문 전송 → 체결 확인
+  base: 250
+  stress: [500, 1000]
+
+symbols:
+  BTCUSDT:
+    spread_bps: 0.0121          # 중앙값 = 1 tick(0.1)/mid 82,532. 22회 전부 1 tick
+    depth_10bps_usdt: 24050000  # mid±10bps 내 한쪽(작은 쪽) 잔량 명목 중앙값
+    impact_k_bps: 1.5           # 실측 book-walk에 최소제곱 적합 (1k~2M USDT 주문)
+    depth_1bps_usdt: 1030000
+    depth_5bps_usdt: 11230000
+    latency_drift_sd_bps: {250: 0.28, 1000: 0.56}   # 1m 수익률 sd 4.31bps(최근 7일) * sqrt(latency/60s)
+  ETHUSDT:
+    spread_bps: 0.0400          # 1 tick(0.01)/mid 2,496.9
+    depth_10bps_usdt: 12760000
+    impact_k_bps: 2.4
+    depth_1bps_usdt: 440000
+    depth_5bps_usdt: 5860000
+    latency_drift_sd_bps: {250: 0.35, 1000: 0.69}   # 1m sd 5.35bps
+
+stress_grid:
+  spread_mult: [1, 2, 3]
+  impact_mult: [1, 2, 3]
+  latency_ms: [250, 1000]
+  # 추가 권장(엔진 선택): 수수료 민감도
+  fee_taker: [0.0005, 0.00055, 0.0007]
+  fee_maker: [0.0002, 0.0]
+
+# 참고 계산: 10,000 USDT × 3x = 30,000 USDT 주문 시 BTC impact = 1.5*sqrt(30000/24.05e6) ≈ 0.05bps,
+#            half-spread 0.006bps → 체결 비용은 taker 수수료 5bps가 지배적. 스프레드·충격 3배에도 < 0.2bps.
+# 따라서 결과 민감도는 fee_taker와 latency(지연 후 가격)에 집중될 것.
+
+model_validity:
+  - "적합 구간 1k~2M USDT. 소규모(<100k) 주문은 실측 슬리피지가 half-spread와 동일(0.006bps)이라 모델이 과대(보수적)."
+  - "1M 이상에서 모델은 실측 대비 과소 가능(BTC 2M 실측 중앙값 0.56bps vs 모델 0.44bps)."
+  - "스냅샷 호가는 변동성 급등·청산 연쇄 구간에서 크게 얇아짐. 과거 스프레드 이력은 data.binance.vision bookTicker(2023-05~2024-03)로만 확인 가능 → 엔진팀 후속 보정 권장."
+
+alt_venue:
+  venue: bybit_linear
+  fees: {maker: 0.0002, taker: 0.00055}
+  symbols:
+    BTCUSDT: {spread_bps: 0.0121, depth_10bps_usdt: 25100000, impact_k_bps: 2.3, depth_1bps_usdt: 800000, depth_5bps_usdt: 11170000, note: "limit=500 호가가 mid±8.9bps까지만 도달 → 10bps 깊이는 하한"}
+    ETHUSDT: {spread_bps: 0.0400, depth_10bps_usdt: 10860000, impact_k_bps: 3.3, depth_1bps_usdt: 290000, depth_5bps_usdt: 3840000}
+
+sources:
+  - {item: order book samples, url: "https://fapi.binance.com/fapi/v1/depth?symbol=BTCUSDT&limit=1000", checked_utc: "2026-10-09T08:45Z"}
+  - {item: order book samples, url: "https://api.bybit.com/v5/market/orderbook?category=linear&symbol=BTCUSDT&limit=500", checked_utc: "2026-10-09T08:45Z"}
+  - {item: 1m volatility, url: "https://fapi.binance.com/fapi/v1/klines?symbol=BTCUSDT&interval=1m", checked_utc: "2026-10-09T08:48Z"}
