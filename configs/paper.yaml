@@ -1,5 +1,6 @@
 # 실시간 모의거래(paper trading) 설정. Binance USDⓈ-M 공개 데이터만 사용, API 키·실주문 없음.
-# 2026-10-09 18:40 KST: 팀 A/B/C 제출 후보 전체를 동일 조건으로 투입 (검증 결과가 음성인 후보도 비교용으로 포함).
+# 2026-10-09 18:40 KST: 팀 A/B/C R1 후보 전체 투입 (B2·C1·C2는 이후 폐기 판정, 실시간 비교용으로 유지).
+# 2026-10-09 19:25 KST: R2 승격 후보 7개 추가.
 venue: binance_usdm
 symbols: [BTCUSDT, ETHUSDT]
 latency_ms: 250          # 결정 → 체결 지연 가정
@@ -30,3 +31,36 @@ runners:                 # 각 러너 = 독립 모의계좌 (동일 자본·비�
     team: C
     strategy: strategies.team_c.c1_regime:C1Regime
     params: {}
+  # --- R2 승격 (독립 평가 2026-10-09 19:20 KST, validation+holdout_pre 통과) ---
+  - id: A3-ens5-e0.6-m2.5-vs
+    team: A
+    strategy: strategies.team_a.a3_ensemble:A3TrendEnsemble
+    params: {atr_n: 14, entry_thr: 0.6, exit_score: 0.0, funding_max: null, funding_n: 3, funding_sym: false,
+  lookbacks: [60, 120, 180, 240, 360], size_floor: 0.0, size_mode: none, stop_mult: 2.5,
+  trail: true, tstat_min: 0.0, vol_long: 360, vol_scale: true, vol_short: 42}
+  - id: B3-abs-favg3
+    team: B
+    strategy: strategies.team_b.b3_crowding:B3FundingCrowd
+    params: {f_avg: 3, long_only_funding_max: 0.0, p_lo: 1.0}
+  - id: B3-favg3-short
+    team: B
+    strategy: strategies.team_b.b3_crowding:B3FundingCrowd
+    params: {enable_short: true, f_avg: 3, imb_hi: 1.0}
+  - id: C3-R2-V2-er20
+    team: C
+    strategy: strategies.team_c.c3_regime_trend:C3RegimeTrend
+    params: {er_min: 0.2, n: 60}
+  - id: C3-R2-V1-control
+    team: C
+    strategy: strategies.team_c.c3_regime_trend:C3RegimeTrend
+    params: {n: 60}
+  - id: D1-relmom-rel360-tr90
+    team: D
+    strategy: strategies.team_d.d_relval:D1RelMom
+    params: {atr_n: 14, leg: auto, lookback: 360, max_hold: 0, mode: leader, rel_thresh: 0.0,
+  stop_mult: 3.0, tf: 4h, trail: true, trend_lookback: 90}
+  - id: E1-v3-s3-d
+    team: E
+    strategy: strategies.team_e.e1_composite:E1Composite
+    params: {atr_n: 14, comps: {m180: 1, m360: 1, m90: 1}, decide_every: 6, enter_th: 0.3, exit_th: 0.0,
+  max_hold: 0, mode: sign, size: one, stop_mult: 3.0, trail: true}
