@@ -76,7 +76,31 @@ def cmd_test():
             b = buy_and_hold(sym, "test", halt=halt)
             base[f"bh_{sym}_{'halt' if halt else 'nohalt'}"] = {k: v for k, v in b.items()
                                                                  if k not in ("equity", "equity_ts")}
-    (OUT / "test_diagnostics.json").write_text(json.dumps({"diag": diag, "baselines": base}, indent=1, default=float))
+    # portfolios (team F, kind=portfolio): combine the sleeves' test equity curves with the DECLARED weights
+    import yaml
+    from strategies.team_f import portfolio as PF
+    port = {}
+    for pc in yaml.safe_load((ROOT / "strategies" / "team_f" / "CANDIDATES.yaml").read_text()) or []:
+        if pc.get("kind") != "portfolio":
+            continue
+        for key in ["base"] + list(STRESS):
+            ids = {}
+            for sl in pc["sleeves"]:
+                hit = [r for r in rows if r["candidate"] == sl["candidate_id"] and r["stress_key"] == key]
+                if hit:
+                    ids[sl["candidate_id"]] = hit[0]["id"]
+            if len(ids) != len(pc["sleeves"]):
+                continue
+            eq = PF.align({k: PF.load_equity(v) for k, v in ids.items()})
+            pe = PF.combine(eq, {sl["candidate_id"]: sl["weight"] for sl in pc["sleeves"]}, pc.get("rebalance", "none"))
+            m = PF.metrics(pe)
+            port.setdefault(pc["id"], {})[key] = {k: m.get(k) for k in ("net_return", "max_dd", "sharpe_daily")}
+            rows.append({"candidate": pc["id"], "team": "F", "stress_key": key, "kind": "portfolio",
+                         "net_return": m.get("net_return"), "max_dd": m.get("max_dd"),
+                         "sharpe_daily": m.get("sharpe_daily"), "trades": None, "halted": None, "id": "|".join(ids.values())})
+    df = pd.DataFrame(rows)
+    df.to_csv(OUT / "test_runs.csv", index=False)
+    (OUT / "test_diagnostics.json").write_text(json.dumps({"diag": diag, "baselines": base, "portfolios": port}, indent=1, default=float))
     done.write_text(json.dumps({"started": json.loads(done.read_text())["started"],
                                 "finished": datetime.now(KST).isoformat(timespec="seconds"), "runs": len(rows)}))
     print(df[["candidate", "stress_key", "net_return", "max_dd", "trades", "halted"]].to_string(index=False))
@@ -179,8 +203,10 @@ def cmd_report():
         lines = ["| 후보 | test 순수익률 | MDD | 거래 | 낙폭중단 | fee×2 | 실행×3 | 둘 다 |", "|---|---|---|---|---|---|---|---|"]
         for c in base.index:
             b = base.loc[c]
-            lines.append(f"| {c} | {_fmt_pct(b.net_return)} | {b.max_dd * 100:.2f}% | {int(b.trades)} | "
-                         f"{'예' if b.halted else '아니오'} | {_fmt_pct(piv.loc[c].get('fee2'))} | "
+            tr = int(b.trades) if pd.notna(b.trades) else "포트폴리오"
+            hl = "–" if pd.isna(b.halted) else ("예" if b.halted else "아니오")
+            lines.append(f"| {c} | {_fmt_pct(b.net_return)} | {b.max_dd * 100:.2f}% | {tr} | "
+                         f"{hl} | {_fmt_pct(piv.loc[c].get('fee2'))} | "
                          f"{_fmt_pct(piv.loc[c].get('exec3'))} | {_fmt_pct(piv.loc[c].get('all'))} |")
         dg = json.loads((OUT / "test_diagnostics.json").read_text())
         lines += ["", "| 기준선 (test) | 순수익률 | MDD |", "|---|---|---|"]
