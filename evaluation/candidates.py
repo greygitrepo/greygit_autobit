@@ -7,7 +7,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-TEAM_DIRS = {"A": "team_a", "B": "team_b", "C": "team_c"}
+TEAM_DIRS = {"A": "team_a", "B": "team_b", "C": "team_c", "D": "team_d", "E": "team_e"}
 
 STRESS = {
     "fee2": "fee=2",
@@ -20,11 +20,16 @@ AUDIT_END = "2025-10-01"
 
 
 def load_candidates() -> list[dict]:
-    out = []
+    """All candidates of all rounds: strategies/<team>/CANDIDATES*.yaml (archived rounds included), deduped by id."""
+    out, seen = [], set()
     for team, d in TEAM_DIRS.items():
-        for c in yaml.safe_load((ROOT / "strategies" / d / "CANDIDATES.yaml").read_text()):
-            out.append({"id": c["id"], "team": team, "strategy": c["strategy"].strip(),
-                        "params": dict(c.get("params") or {})})
+        for f in sorted((ROOT / "strategies" / d).glob("CANDIDATES*.yaml")):
+            for c in yaml.safe_load(f.read_text()) or []:
+                if c["id"] in seen:
+                    continue
+                seen.add(c["id"])
+                out.append({"id": c["id"], "team": team, "strategy": c["strategy"].strip(),
+                            "params": dict(c.get("params") or {})})
     return out
 
 

@@ -1,0 +1,17 @@
+# Team D candidates (R2). Selection by the rule in strategies/team_d/DECLARATIONS.md (fixed before validation).
+# test / holdout_pre NOT used. All rules are own hypotheses (자체 가설), no contest evidence.
+- id: D1-relmom-rel360-tr90
+  strategy: 'strategies.team_d.d_relval:D1RelMom'
+  params: {tf: 4h, lookback: 360, trend_lookback: 90, mode: leader, rel_thresh: 0.0, atr_n: 14, stop_mult: 3.0,
+           trail: true, max_hold: 0, leg: auto}
+  timeframe: 4h
+  rationale: >-
+    Declared R2-D-V2. Trade a leg only when its own 15-day trend agrees with its 60-day ETH/BTC relative strength
+    (uptrend: long the leader; downtrend: short the laggard); 3xATR chandelier stop. Train +9.22% / MDD 1.98% / 389
+    trades / PF 1.54; validation +4.03% / MDD 1.66% / 136 trades / PF 1.64 / Sharpe 1.76 (ret/MDD 2.43 > A2-m2 1.66);
+    combined stress (fee2, exec3) +3.15%, +stopfill +2.71% (< A2's +4.56% → per rule 3 a diversifier, NOT 'beats A2').
+    Caveats: it is a filtered trend-follower (daily-return corr with A2-m2 on validation 0.39); validation P&L is
+    long-side (+452 vs short -49 USDT); 55 train configs tried; live needs an engine change (other-leg feed).
+  train_result_ids: [20261009-190727-d1_relmom-train-236398]
+  validation_result_ids: [20261009-190845-d1_relmom-validation-241372, 20261009-190845-d1_relmom-validation-241373,
+                          20261009-190845-d1_relmom-validation-241374]

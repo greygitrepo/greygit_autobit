@@ -266,7 +266,8 @@ class Runner:
                                    tag="halt", ts=ts)
         self.st["pending_halt"] = False
 
-    def decide(self, sym: str, feed: SymbolFeed, ts: int, fresh: bool, funding: pd.DataFrame | None = None) -> str:
+    def decide(self, sym: str, feed: SymbolFeed, ts: int, fresh: bool, funding: pd.DataFrame | None = None,
+               feeds: dict | None = None) -> str:
         """Called when a 1m bar closing at ts completes a strategy bar."""
         if self.st["halted_at"] is not None:
             return "halted"
@@ -278,6 +279,13 @@ class Runner:
         if bars.empty or int(bars.index[-1]) != ts - tf:
             return "no_bar"
         f = funding[funding.index <= ts] if funding is not None else None
+        if hasattr(self.strategy, "other_provider") and feeds is not None:
+            # cross-asset strategies (team D): give the other leg's LIVE completed bars and fix the leg
+            def other(symbol, timeframe, _ts=ts):
+                ob = resample(feeds[symbol].frame(0), timeframe)
+                return ob[ob.index < _ts - TF_MS[timeframe] + 1]
+            self.strategy.other_provider = other
+            self.strategy.params["leg"] = sym
         sig = self.strategy.compute(bars, f)
         row = sig.iloc[-1]
         complete = bool(bars["complete"].iloc[-1])
@@ -490,9 +498,21 @@ class PaperEngine:
                 if backfilled:
                     r.st["missed_decisions"] += 1
                     r.event(ts, "decision_skipped_backfill", symbol=s)
+                elif hasattr(r.strategy, "other_provider"):
+                    # cross-asset: decide every leg only once ALL symbols' bars closing at ts have arrived
+                    done = r.st.setdefault("x_decided", {})
+                    if all(self.feeds[x].last_bar >= t for x in self.symbols) and done.get(str(ts)) is None:
+                        done.clear()
+                        done[str(ts)] = True
+                        for x in self.symbols:
+                            try:
+                                r.decide(x, self.feeds[x], ts, self.fresh(x), self.funding_hist.get(x), self.feeds)
+                            except Exception as e:
+                                r.event(ts, "strategy_error", symbol=x, error=repr(e))
+                            await self.fill_markets(r, x)
                 else:
                     try:
-                        r.decide(s, f, ts, fresh, self.funding_hist.get(s))
+                        r.decide(s, f, ts, fresh, self.funding_hist.get(s), self.feeds)
                     except Exception as e:                   # a strategy bug must not kill the others
                         r.event(ts, "strategy_error", symbol=s, error=repr(e))
             await self.fill_markets(r, s)

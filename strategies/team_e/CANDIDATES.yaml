@@ -1,0 +1,20 @@
+# Team E (round 2) candidates. Selected by the rule pre-declared in strategies/team_e/DECLARATIONS.md
+# (19:11 KST, before any Team E validation run). test / holdout_pre NOT used.
+- id: E1-v3-s3-d
+  strategy: 'strategies.team_e.e1_composite:E1Composite'
+  params: {comps: {m90: 1, m180: 1, m360: 1}, mode: sign, enter_th: 0.3, exit_th: 0.0, atr_n: 14,
+           stop_mult: 3.0, decide_every: 6, trail: true, size: one, max_hold: 0}
+  timeframe: 4h
+  rationale: >-
+    Own hypothesis on top of the A2 trend family (P3 trend label, P6 fees eat gross P&L; all numbers own
+    assumptions). Majority vote of sign(15d/30d/60d return) on 4h bars; entries and signal exits only once a
+    day (bar closing 00:00 UTC); 3xATR chandelier stop, checked every 4h (smaller notional per trade under
+    the common 0.25% risk sizing). Train +22.13% / MDD 2.79% / 263 trades (A2-L180-m2 same data +19.33% /
+    3.41% / 561). Validation +4.66% / MDD 2.20% / 98 trades, ret/MDD 2.11 vs A2 1.66 (A2 +6.30% / 3.79% / 191);
+    fees 55 vs 157 USDT. Stress fee2+spread3+impact3+1000ms: +4.06% / 2.35% (A2 +4.56% / 4.44%);
+    + worst-case stop fill: +3.28% / 2.71% (A2 +3.10% / 5.14%). Caveats: LOWER absolute return than A2;
+    the ret/MDD edge comes from execution (wide stop + daily decisions), not from signal blending (V1 pure
+    blend val ret/MDD 1.63 < A2 1.66); 1-year validation, 98 trades, best of 5 declared slots -> exploratory.
+  train_result_ids: [20261009-190827-e1_composite-train-240272, 20261009-191004-e1_composite-train-244600]
+  validation_result_ids: [20261009-191118-e1_composite-validation-247806, 20261009-191120-e1_composite-validation-247806,
+                          20261009-191122-e1_composite-validation-247804]
