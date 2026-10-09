@@ -45,7 +45,7 @@
   "key": "D",
   "name": "전략 D (신규)",
   "role": "상대가치·교차자산 (ETH/BTC 모멘텀·회귀, 선행-후행)",
-  "status": "R3 진행 중 – D1 견고화 (lookback 앙상블, 시장중립 페어)",
+  "status": "R3 완료 – D1 유지. 시장중립 페어 D4 (val +1.32%, MDD 0.65%, BTC 상관 0.01; 탐색적) 추가",
   "members": "subagent"
  },
  {

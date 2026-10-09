@@ -15,3 +15,21 @@
   train_result_ids: [20261009-190727-d1_relmom-train-236398]
   validation_result_ids: [20261009-190845-d1_relmom-validation-241372, 20261009-190845-d1_relmom-validation-241373,
                           20261009-190845-d1_relmom-validation-241374]
+# --- R3 (selection rule fixed in DECLARATIONS.md R3 before validation). V1-V4 (trend-filtered ensemble) all
+# qualified but none reached D1's validation ret/MDD 2.43 → not added (rule 2). V5 added under rule 3.
+- id: D4-pair-ens-rsexit
+  strategy: 'strategies.team_d.d_relmom_r3:D4RelMomX'
+  params: {tf: 4h, lookbacks: [180, 360, 540], ens_thresh: 1.0, trend_lookback: 90, mode: pair, exit_rule: rs,
+           short_filter: own, sides: both, short_size: 1.0, vol_n: 0, vol_floor: 0.25, atr_n: 14, stop_mult: 3.0,
+           trail: true, reset_days: 30, leg: auto}
+  timeframe: 4h
+  rationale: >-
+    Declared R3-D-V5, market-neutral diversifier (rule 3). Long ETH/BTC leader + short laggard together when all three
+    ratio-momentum look-backs (30/60/90 d) agree; exit both legs on rs sign flip or either leg's stop (same % stop =
+    3x max ATR% of the two legs → equal risk and equal notional); 30-day epoch reset for 150-day-window invariance.
+    Validation +1.32% / MDD 0.65% / 50 leg-trades / PF 1.40; combined stress (fee2, exec3, lat1000, stopfill) +0.81%.
+    Daily-return corr with BTC 0.01, with D1 0.34; mean |net|/gross notional 0.08; in market 18% of the time.
+    WEAK EVIDENCE: train only +0.50% (PF 1.03) and all 9 other pair configs were -1.5..+0.5% in train → validation gain
+    may be noise; only ~25 pair round-trips. Small gross exposure (~9% of capital) → low absolute return.
+  train_result_ids: [20261009-193048-d4_relmomx-train-276894-10c324]
+  validation_result_ids: [20261009-193407-d4_relmomx-validation-285371-587559, 20261009-193407-d4_relmomx-validation-285374-e83395]

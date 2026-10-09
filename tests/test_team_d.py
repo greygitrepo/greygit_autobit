@@ -151,3 +151,126 @@ def test_simulate_max_hold_rearm_and_stop():
     assert tg[2] == 1 and tg[3] == 0 and (tg[4:] == 0).all()   # no re-entry while desired stays +1
     tg, _ = simulate(c, hi, lo, a, np.array([np.nan] * 3 + [1] * 7), 2.0)
     assert (tg[:3] == 0).all() and tg[3] == 1                  # missing other-leg data → no entry
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# Round 3: D4RelMomX (ensemble relative strength, rs-flip exit, vol size_mult, market-neutral pair, epoch reset)
+from strategies.team_d.d_relmom_r3 import D4RelMomX, sim_pair  # noqa: E402
+
+R3_VARIANTS = [
+    {"exit_rule": "rs"},
+    {"exit_rule": "rs", "vol_n": 180, "ens_thresh": 0.33},
+    {"exit_rule": "rs", "vol_n": 180, "ens_thresh": 0.33, "stop_mult": 2.5},
+    {"exit_rule": "rs", "stop_mult": 2.5},
+    {"mode": "pair", "exit_rule": "rs"},
+]
+_COLS = ("target", "stop", "size_mult")
+
+
+def _eq(a, b):
+    return np.allclose(np.nan_to_num(np.asarray(a, float), nan=-9), np.nan_to_num(np.asarray(b, float), nan=-9))
+
+
+@pytest.fixture(autouse=True)
+def _no_provider_r3():
+    yield
+    D4RelMomX.other_provider = None
+
+
+@pytest.mark.parametrize("params", R3_VARIANTS)
+@pytest.mark.parametrize("sym", ["BTCUSDT", "ETHUSDT"])
+def test_r3_causality_real(params, sym):
+    s = D4RelMomX(**params)
+    for start in (T0, T0 + 500 * DAY):
+        bars = _bars(sym, "4h", start, 300)
+        f = _funding(sym, bars.index[-1] + TF_MS["4h"])
+        assert check_causality(s, bars, f, cuts=10, seed=start % 97) == []
+    assert (s.compute(bars, f)["target"] != 0).any()
+
+
+@pytest.mark.parametrize("params", R3_VARIANTS)
+@pytest.mark.parametrize("me,other", [("ETHUSDT", "BTCUSDT"), ("BTCUSDT", "ETHUSDT")])
+def test_r3_other_leg_cut_and_poisoned_future(params, me, other):
+    s = D4RelMomX(**params)
+    bars = _bars(me, "4h", T0 + 200 * DAY, 300)
+    full = s.compute(bars)
+    ob = full_bars(other, "4h")
+    rng = np.random.default_rng(3)
+    for i in rng.integers(len(bars) // 2, len(bars) - 1, size=6):
+        t = bars.index[i]
+        poisoned = ob.copy()
+        after = poisoned.index > t
+        for c in ("open", "high", "low", "close"):
+            poisoned.loc[after, c] = poisoned.loc[after, c] * rng.uniform(0.3, 3.0, after.sum())
+        D4RelMomX.other_provider = staticmethod(lambda sym, tf_, p=poisoned: p)
+        a = s.compute(bars)
+        trunc = ob[ob.index <= t]
+        D4RelMomX.other_provider = staticmethod(lambda sym, tf_, p=trunc: p)
+        b = s.compute(bars.iloc[: i + 1])
+        D4RelMomX.other_provider = None
+        for col in (c for c in _COLS if c in full):
+            assert _eq(a.loc[:t, col], full.loc[:t, col]), (t, col, "poisoned")
+            assert _eq([b[col].iloc[-1]], [full.loc[t, col]]), (t, col, "truncated")
+
+
+@pytest.mark.parametrize("params", R3_VARIANTS)
+@pytest.mark.parametrize("sym", ["BTCUSDT", "ETHUSDT"])
+def test_r3_start_point_150d(params, sym):
+    """150-day live window (own leg AND other leg cut to the same window): last row == full-history row."""
+    s = D4RelMomX(**params)
+    other = "ETHUSDT" if sym == "BTCUSDT" else "BTCUSDT"
+    tf = TF_MS["4h"]
+    m, mo = load_m1(sym), load_m1(other)
+    lo_, hi_ = T0 - 120 * DAY, T0 + 900 * DAY
+    full = s.compute(resample(m[(m.index >= lo_) & (m.index < hi_)], "4h"))
+    rng = np.random.default_rng(11)
+    held = 0
+    for k in rng.integers(400, 900, size=40):
+        t_end = T0 + int(k) * DAY + int(rng.integers(0, 6)) * tf
+        t = t_end - tf
+        w0 = t_end - 150 * DAY - 37 * 60_000
+        win = m[(m.index >= w0) & (m.index < t_end)]
+        owin = resample(mo[(mo.index >= w0) & (mo.index < t_end)], "4h")
+        D4RelMomX.other_provider = staticmethod(lambda sym_, tf_, p=owin: p)
+        last = s.compute(resample(win, "4h")).iloc[-1]
+        D4RelMomX.other_provider = None
+        assert last.name == t
+        for col in (c for c in _COLS if c in full):
+            assert _eq([last[col]], [full.loc[t, col]]), (t, col)
+        held += full.loc[t, "target"] != 0
+    assert held > 0
+
+
+def test_r3_pair_legs_opposite_equal_pct_stop():
+    s = D4RelMomX(mode="pair", exit_rule="rs")
+    e, b = _bars("ETHUSDT", "4h", T0 + 300 * DAY, 300), _bars("BTCUSDT", "4h", T0 + 300 * DAY, 300)
+    se, sb = s.compute(e), s.compute(b)
+    assert (se["target"] != 0).sum() > 100
+    assert (se["target"] == -sb["target"]).all()                          # always both legs, opposite sides
+    ent = se["target"].diff().fillna(se["target"]).ne(0) & se["target"].ne(0)
+    pe = (se.loc[ent, "stop"] / e.loc[ent, "close"] - 1).abs()
+    pb = (sb.loc[ent, "stop"] / b.loc[ent, "close"] - 1).abs()
+    assert np.allclose(pe.values, pb.values)                              # equal % stop → equal notional
+    L, S = se["target"] == 1, se["target"] == -1
+    assert (se.loc[L, "stop"] < e.loc[L, "close"]).all() and (se.loc[S, "stop"] > e.loc[S, "close"]).all()
+    L, S = sb["target"] == 1, sb["target"] == -1
+    assert (sb.loc[L, "stop"] < b.loc[L, "close"]).all() and (sb.loc[S, "stop"] > b.loc[S, "close"]).all()
+
+
+def test_r3_sim_pair_one_leg_stop_exits_both_and_rearms():
+    n = 8
+    c = np.full(n, 100.0); hi = c + 0.5; lo = c - 0.5
+    frac = np.full(n, 0.02); ent = np.ones(n); ep = np.zeros(n, bool)
+    hB = hi.copy(); hB[3] = 103.0                                          # short leg B stopped at row 3
+    tA, sA, sB = sim_pair(c, hi, lo, c, hB, lo, frac, ent, ent, False, ep)
+    assert list(tA) == [1, 1, 1, 0, 0, 0, 0, 0]                            # both out, blocked while signal stays
+    assert sA[0] == pytest.approx(98.0) and sB[0] == pytest.approx(102.0)
+    ep[6] = True                                                           # epoch reset clears the block
+    tA, _, _ = sim_pair(c, hi, lo, c, hB, lo, frac, ent, ent, False, ep)
+    assert tA[6] == 1
+
+
+def test_r3_size_mult_only_down():
+    s = D4RelMomX(exit_rule="rs", vol_n=180, ens_thresh=0.33)
+    out = s.compute(_bars("ETHUSDT", "4h", T0, 400))
+    assert out["size_mult"].between(0.25, 1.0).all() and (out["size_mult"] < 1).any()
