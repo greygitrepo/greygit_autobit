@@ -1,0 +1,180 @@
+{
+ "bh_btc|validation": {
+  "net_return": 0.6892781514862116,
+  "max_dd": 0.3303632939577006,
+  "ret_over_dd": 2.0864247454030598,
+  "sharpe_daily": 1.4940884974816966,
+  "symbol": "BTCUSDT",
+  "split": "validation",
+  "halt_rule": false,
+  "fees": 14.002334344832452,
+  "funding": -1097.8848404579467,
+  "trades": 1,
+  "price_return": 0.8005149346854319,
+  "halted_at": null,
+  "quarter_pnl": {
+   "2024Q4": 4312.453906883746,
+   "2025Q1": -1944.4444995721115,
+   "2025Q2": 3763.6700237367113,
+   "2025Q3": 749.8428211468054
+  }
+ },
+ "bh_btc_halt|validation": {
+  "net_return": 0.43323505415708397,
+  "max_dd": 0.10635181412096761,
+  "ret_over_dd": 4.073602859884552,
+  "sharpe_daily": 1.932270921752158,
+  "symbol": "BTCUSDT",
+  "split": "validation",
+  "halt_rule": true,
+  "fees": 12.327367491487175,
+  "funding": -310.0570739120209,
+  "trades": 1,
+  "price_return": 0.8005149346854319,
+  "halted_at": 1733437740000,
+  "quarter_pnl": {
+   "2024Q4": 4332.350541570839,
+   "2025Q1": 0.0,
+   "2025Q2": 0.0,
+   "2025Q3": 0.0
+  }
+ },
+ "bh_eth|validation": {
+  "net_return": 0.5005259031158527,
+  "max_dd": 0.683010824825049,
+  "ret_over_dd": 0.7328227971263277,
+  "sharpe_daily": 0.9781369630603197,
+  "symbol": "ETHUSDT",
+  "split": "validation",
+  "halt_rule": false,
+  "fees": 12.961732672072412,
+  "funding": -905.2445803142201,
+  "trades": 1,
+  "price_return": 0.5924527866722533,
+  "halted_at": null,
+  "quarter_pnl": {
+   "2024Q4": 2381.1076761656786,
+   "2025Q1": -5958.018752973869,
+   "2025Q2": 2463.1930124514674,
+   "2025Q3": 6100.416940021818
+  }
+ },
+ "bh_eth_halt|validation": {
+  "net_return": -0.08327128408929652,
+  "max_dd": 0.10026180070797053,
+  "ret_over_dd": -0.8305384852585904,
+  "sharpe_daily": -1.0013726842426114,
+  "symbol": "ETHUSDT",
+  "split": "validation",
+  "halt_rule": true,
+  "fees": 9.590624841350163,
+  "funding": -4.371898751940988,
+  "trades": 1,
+  "price_return": 0.5924527866722533,
+  "halted_at": 1727895600000,
+  "quarter_pnl": {
+   "2024Q4": -832.7128408929657,
+   "2025Q1": 0.0,
+   "2025Q2": 0.0,
+   "2025Q3": 0.0
+  }
+ },
+ "cash|validation": {
+  "net_return": 0.0,
+  "max_dd": 0.0,
+  "trades": 0
+ },
+ "bh_btc|holdout_pre": {
+  "net_return": 2.4552916841750934,
+  "max_dd": 0.6971038695324772,
+  "ret_over_dd": 3.522131767568254,
+  "sharpe_daily": 1.4038476921980407,
+  "symbol": "BTCUSDT",
+  "split": "holdout_pre",
+  "halt_rule": false,
+  "fees": 30.39198937641277,
+  "funding": -16200.66992169819,
+  "trades": 1,
+  "price_return": 4.078681665798894,
+  "halted_at": null,
+  "quarter_pnl": {
+   "2020Q2": 398.44688916102496,
+   "2020Q3": 1220.6792704731724,
+   "2020Q4": 20209.008572910003,
+   "2021Q1": 25957.78679933445,
+   "2021Q2": -32272.834885843113,
+   "2021Q3": 8986.08723024492
+  }
+ },
+ "bh_btc_halt|holdout_pre": {
+  "net_return": 0.0261923762560341,
+  "max_dd": 0.11450297676794519,
+  "ret_over_dd": 0.22874843078635654,
+  "sharpe_daily": 0.060017229921630416,
+  "symbol": "BTCUSDT",
+  "split": "holdout_pre",
+  "halt_rule": true,
+  "fees": 10.16743696597026,
+  "funding": -62.78273241421041,
+  "trades": 1,
+  "price_return": 4.078681665798894,
+  "halted_at": 1589069880000,
+  "quarter_pnl": {
+   "2020Q2": 261.92376256034004,
+   "2020Q3": 0.0,
+   "2020Q4": 0.0,
+   "2021Q1": 0.0,
+   "2021Q2": 0.0,
+   "2021Q3": 0.0
+  }
+ },
+ "bh_eth|holdout_pre": {
+  "net_return": 9.997708456777668,
+  "max_dd": 0.70728622355162,
+  "ret_over_dd": 14.135307777627036,
+  "sharpe_daily": 2.0192119147613083,
+  "symbol": "ETHUSDT",
+  "split": "holdout_pre",
+  "halt_rule": false,
+  "fees": 77.72098467516567,
+  "funding": -35387.1637978795,
+  "trades": 1,
+  "price_return": 13.545608845351824,
+  "halted_at": null,
+  "quarter_pnl": {
+   "2020Q2": 669.6986222893174,
+   "2020Q3": 5173.028157968953,
+   "2020Q4": 16450.909713779336,
+   "2021Q1": 41151.98867415033,
+   "2021Q2": 6501.43214772566,
+   "2021Q3": 30285.327568505556
+  }
+ },
+ "bh_eth_halt|holdout_pre": {
+  "net_return": -0.04662608280667968,
+  "max_dd": 0.09746554850122935,
+  "ret_over_dd": -0.47838527073072984,
+  "sharpe_daily": -0.933621841897795,
+  "symbol": "ETHUSDT",
+  "split": "holdout_pre",
+  "halt_rule": true,
+  "fees": 9.78522703429918,
+  "funding": -26.929669630860882,
+  "trades": 1,
+  "price_return": 13.545608845351824,
+  "halted_at": 1588569240000,
+  "quarter_pnl": {
+   "2020Q2": -466.26082806679733,
+   "2020Q3": 0.0,
+   "2020Q4": 0.0,
+   "2021Q1": 0.0,
+   "2021Q2": 0.0,
+   "2021Q3": 0.0
+  }
+ },
+ "cash|holdout_pre": {
+  "net_return": 0.0,
+  "max_dd": 0.0,
+  "trades": 0
+ }
+}

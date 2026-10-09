@@ -1,0 +1,3982 @@
+{
+ "registry": {
+  "runs": {
+   "A|R1|train": 11,
+   "A|R1|validation": 9,
+   "A|R2|train": 49,
+   "A|R2|validation": 16,
+   "B|R1|train": 13,
+   "B|R1|validation": 7,
+   "B|R2|train": 42,
+   "B|R2|validation": 20,
+   "C|R1|train": 12,
+   "C|R1|validation": 14,
+   "C|R2|train": 46,
+   "C|R2|validation": 15,
+   "D|R2|train": 55,
+   "D|R2|validation": 15,
+   "E|R2|train": 57,
+   "E|R2|validation": 18
+  },
+  "runs_total": {
+   "A": 85,
+   "B": 82,
+   "C": 87,
+   "D": 70,
+   "E": 75
+  },
+  "train_configs": {
+   "A": 57,
+   "B": 49,
+   "C": 58,
+   "D": 55,
+   "E": 38
+  },
+  "validation_configs_by_round": {
+   "A|R1": 5,
+   "A|R2": 6,
+   "B|R1": 4,
+   "B|R2": 5,
+   "C|R1": 10,
+   "C|R2": 5,
+   "D|R2": 5,
+   "E|R2": 6
+  },
+  "team_test_runs": 0,
+  "team_holdout_runs": 0,
+  "any_test_runs": 0,
+  "eval_runs": 141
+ },
+ "candidates": {
+  "A2-tsmom-L180-m3": {
+   "validation": {
+    "result_id": "20261009-191551-a2_tsmom-validation-254395-569fa9",
+    "summary": {
+     "net_return": 0.050588762873940984,
+     "max_dd": 0.03140530319241597,
+     "ret_over_dd": 1.6108350415848751,
+     "sharpe_daily": 1.328528503069113,
+     "sortino_daily": 2.5578493041387524,
+     "trades": 173,
+     "win_rate": 0.28901734104046245,
+     "payoff": 3.4324806295575554,
+     "profit_factor": 1.395317329088437,
+     "turnover": 18.6281538744421,
+     "exposure": 0.8965258751902587,
+     "fees": 93.14076937221049,
+     "funding": -15.645055799620582,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 365.0
+    },
+    "quarter_pnl": {
+     "2024Q4": 64.76944802680009,
+     "2025Q1": 0.32926957820563985,
+     "2025Q2": -21.780587108951295,
+     "2025Q3": 460.73689824335634
+    },
+    "quarterly_ret": {
+     "2024Q4": 0.006476944802680018,
+     "2025Q1": 3.2715064155919293e-05,
+     "2025Q2": -0.0021639715337172793,
+     "2025Q3": 0.04587496803913349
+    },
+    "long_short": {
+     "long_pnl": 425.21072492127433,
+     "short_pnl": 25.71921596273325,
+     "long_n": 90,
+     "short_n": 83
+    },
+    "per_symbol": {
+     "BTCUSDT": -26.227580637854363,
+     "ETHUSDT": 477.15752152186207
+    },
+    "total_pnl": 505.8876287394105,
+    "best_quarter": "2025Q3",
+    "best_quarter_share": 0.9107494867811604,
+    "positive_quarters": "3/4",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 198.16200547827066,
+      "hours": 2735
+     },
+     "range": {
+      "pnl_usdt": 268.0825481391821,
+      "hours": 5404
+     },
+     "bear": {
+      "pnl_usdt": 39.643075121957736,
+      "hours": 621
+     }
+    },
+    "reconcile": {
+     "key": "A2-tsmom-L180-m3|validation",
+     "balance": 10449.93047175573,
+     "unrealized_end": 55.957156983661584,
+     "final_equity": 10505.88762873941,
+     "ledger_vs_equity_diff": 2.000888343900442e-11,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 450.92994088400775,
+     "open_trip_net": -0.9994691282780268,
+     "trips_vs_equity_diff": 1.91562321560923e-11,
+     "open_position_at_end": true
+    },
+    "rerun_matches_registered": true
+   },
+   "holdout_pre": {
+    "result_id": "20261009-191552-a2_tsmom-holdout_pre-254396-75f1fd",
+    "summary": {
+     "net_return": 0.0505315909762909,
+     "max_dd": 0.03670209357513399,
+     "ret_over_dd": 1.3768040472363279,
+     "sharpe_daily": 0.8873793277691837,
+     "sortino_daily": 1.5512154614776388,
+     "trades": 212,
+     "win_rate": 0.35377358490566035,
+     "payoff": 2.497950277426766,
+     "profit_factor": 1.3674910277883754,
+     "turnover": 17.38968077029528,
+     "exposure": 0.9099595130845131,
+     "fees": 86.9484038514764,
+     "funding": -168.54447231097075,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 518.0
+    },
+    "quarter_pnl": {
+     "2020Q2": -102.85440840492811,
+     "2020Q3": 352.0097370521089,
+     "2020Q4": 144.821032027643,
+     "2021Q1": 14.531907149552353,
+     "2021Q2": 40.92171781002435,
+     "2021Q3": 55.88592412850812
+    },
+    "quarterly_ret": {
+     "2020Q2": -0.010285440840492766,
+     "2020Q3": 0.03556679385933714,
+     "2020Q4": 0.014130045587547713,
+     "2021Q1": 0.0013981085433802942,
+     "2021Q2": 0.003931564135518428,
+     "2021Q3": 0.005348227052129895
+    },
+    "long_short": {
+     "long_pnl": 770.0116037072712,
+     "short_pnl": -264.69569394439753,
+     "long_n": 126,
+     "short_n": 86
+    },
+    "per_symbol": {
+     "BTCUSDT": 180.64669836836222,
+     "ETHUSDT": 324.6692113945116
+    },
+    "total_pnl": 505.31590976290863,
+    "best_quarter": "2020Q3",
+    "best_quarter_share": 0.696613208195384,
+    "positive_quarters": "5/6",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 259.73333020444625,
+      "hours": 6436
+     },
+     "range": {
+      "pnl_usdt": 286.1091385099644,
+      "hours": 4251
+     },
+     "bear": {
+      "pnl_usdt": -40.52655895150201,
+      "hours": 1745
+     }
+    },
+    "reconcile": {
+     "key": "A2-tsmom-L180-m3|holdout_pre",
+     "balance": 10505.315909762874,
+     "unrealized_end": 0.0,
+     "final_equity": 10505.315909762909,
+     "ledger_vs_equity_diff": 3.456079866737127e-11,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 505.31590976287384,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": 3.4788172342814505e-11,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "train": {
+    "result_id": "20261009-191558-a2_tsmom-train-254394-3deb0a",
+    "summary": {
+     "net_return": 0.17857514460895918,
+     "max_dd": 0.035569005993089875,
+     "ret_over_dd": 5.020526709226894,
+     "sharpe_daily": 1.32207618486005,
+     "sortino_daily": 2.7948238729512407,
+     "trades": 494,
+     "win_rate": 0.3562753036437247,
+     "payoff": 2.950909027416028,
+     "profit_factor": 1.6332075120289966,
+     "turnover": 58.7121304794387,
+     "exposure": 0.9514131433823529,
+     "fees": 293.5606523971935,
+     "funding": -96.35187724924768,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 1088.0
+    },
+    "quarter_pnl": {
+     "2021Q4": -68.25698385508076,
+     "2022Q1": 165.236797063244,
+     "2022Q2": 338.1151347097493,
+     "2022Q3": 98.15357465009583,
+     "2022Q4": -78.86819576753805,
+     "2023Q1": 764.5749000830983,
+     "2023Q2": -135.5804112535534,
+     "2023Q3": 49.26908713260309,
+     "2023Q4": 337.61868875664004,
+     "2024Q1": 206.3988625558195,
+     "2024Q2": 162.22224301487768,
+     "2024Q3": -53.132251000362885
+    },
+    "quarterly_ret": {
+     "2021Q4": -0.006825698385508061,
+     "2022Q1": 0.016637240491889305,
+     "2022Q2": 0.03348675950282187,
+     "2022Q3": 0.00940610268904929,
+     "2022Q4": -0.007487547227102764,
+     "2023Q1": 0.07313440645765112,
+     "2023Q2": -0.012084940933596688,
+     "2023Q3": 0.004445314532097511,
+     "2023Q4": 0.030326909915160183,
+     "2024Q1": 0.01799425783926023,
+     "2024Q2": 0.013892861727036188,
+     "2024Q3": -0.004487944333250171
+    },
+    "long_short": {
+     "long_pnl": 1434.9992937099391,
+     "short_pnl": 350.7521523797493,
+     "long_n": 252,
+     "short_n": 242
+    },
+    "per_symbol": {
+     "BTCUSDT": 934.8773311780412,
+     "ETHUSDT": 850.874114911647
+    },
+    "total_pnl": 1785.7514460895927,
+    "best_quarter": "2023Q1",
+    "best_quarter_share": 0.42815303426316753,
+    "positive_quarters": "8/12"
+   }
+  },
+  "A2-tsmom-L180-m2": {
+   "validation": {
+    "result_id": "20261009-191553-a2_tsmom-validation-254396-b5b824",
+    "summary": {
+     "net_return": 0.06299452418653528,
+     "max_dd": 0.037923808068871856,
+     "ret_over_dd": 1.6610811886858392,
+     "sharpe_daily": 1.3065993396662419,
+     "sortino_daily": 2.710830411291665,
+     "trades": 191,
+     "win_rate": 0.33507853403141363,
+     "payoff": 2.779544534066945,
+     "profit_factor": 1.4007153557502716,
+     "turnover": 31.447920595978946,
+     "exposure": 0.7354585235920852,
+     "fees": 157.23960297989473,
+     "funding": -16.630007008860193,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 365.0
+    },
+    "quarter_pnl": {
+     "2024Q4": 126.10111962974952,
+     "2025Q1": 113.68484423297377,
+     "2025Q2": -79.52106228755474,
+     "2025Q3": 469.6803402901842
+    },
+    "quarterly_ret": {
+     "2024Q4": 0.012610111962974901,
+     "2025Q1": 0.011226911808394968,
+     "2025Q2": -0.007765891061414121,
+     "2025Q3": 0.04622717466917314
+    },
+    "long_short": {
+     "long_pnl": 411.5089229144535,
+     "short_pnl": 218.43631895087935,
+     "long_n": 104,
+     "short_n": 87
+    },
+    "per_symbol": {
+     "BTCUSDT": 55.38580603279539,
+     "ETHUSDT": 574.5594358325374
+    },
+    "total_pnl": 629.9452418653527,
+    "best_quarter": "2025Q3",
+    "best_quarter_share": 0.7455891545420638,
+    "positive_quarters": "3/4",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 208.73743202552396,
+      "hours": 2735
+     },
+     "range": {
+      "pnl_usdt": 319.96858455055735,
+      "hours": 5404
+     },
+     "bear": {
+      "pnl_usdt": 101.23922528927142,
+      "hours": 621
+     }
+    },
+    "reconcile": {
+     "key": "A2-tsmom-L180-m2|validation",
+     "balance": 10629.945241865333,
+     "unrealized_end": 0.0,
+     "final_equity": 10629.945241865353,
+     "ledger_vs_equity_diff": 2.000888343900442e-11,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 629.9452418653328,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": 1.9895196601282805e-11,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "holdout_pre": {
+    "result_id": "20261009-191554-a2_tsmom-holdout_pre-254399-2c1d6a",
+    "summary": {
+     "net_return": 0.10578743681968761,
+     "max_dd": 0.03574617627187804,
+     "ret_over_dd": 2.9594056722344284,
+     "sharpe_daily": 1.3664384795026592,
+     "sortino_daily": 2.869141703014116,
+     "trades": 238,
+     "win_rate": 0.35294117647058826,
+     "payoff": 2.8592565397282304,
+     "profit_factor": 1.5595944762153986,
+     "turnover": 29.25051478177849,
+     "exposure": 0.7443693693693694,
+     "fees": 146.2525739088925,
+     "funding": -218.19286071874228,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 518.0
+    },
+    "quarter_pnl": {
+     "2020Q2": -111.76723992784355,
+     "2020Q3": 718.5072646592071,
+     "2020Q4": 263.9772877523519,
+     "2021Q1": 99.70161288902091,
+     "2021Q2": 67.27502634175653,
+     "2021Q3": 20.180416482382498
+    },
+    "quarterly_ret": {
+     "2020Q2": -0.011176723992784354,
+     "2020Q3": 0.07266285918758686,
+     "2020Q4": 0.024887692838406972,
+     "2021Q1": 0.009171576265213588,
+     "2021Q2": 0.006132402672988313,
+     "2021Q3": 0.0018283181768459222
+    },
+    "long_short": {
+     "long_pnl": 1402.6443335522888,
+     "short_pnl": -344.76996535541764,
+     "long_n": 147,
+     "short_n": 91
+    },
+    "per_symbol": {
+     "BTCUSDT": 348.5008946731171,
+     "ETHUSDT": 709.3734735237541
+    },
+    "total_pnl": 1057.8743681968754,
+    "best_quarter": "2020Q3",
+    "best_quarter_share": 0.6791990488283477,
+    "positive_quarters": "5/6",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 645.6556630538635,
+      "hours": 6436
+     },
+     "range": {
+      "pnl_usdt": 520.0019169329917,
+      "hours": 4251
+     },
+     "bear": {
+      "pnl_usdt": -107.78321178997976,
+      "hours": 1745
+     }
+    },
+    "reconcile": {
+     "key": "A2-tsmom-L180-m2|holdout_pre",
+     "balance": 11057.874368196872,
+     "unrealized_end": 0.0,
+     "final_equity": 11057.874368196875,
+     "ledger_vs_equity_diff": 3.637978807091713e-12,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 1057.8743681968708,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": 4.547473508864641e-12,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "train": {
+    "result_id": "20261009-191559-a2_tsmom-train-254398-808dab",
+    "summary": {
+     "net_return": 0.19334550224143499,
+     "max_dd": 0.03406940512095091,
+     "ret_over_dd": 5.675047790092981,
+     "sharpe_daily": 1.188547070305179,
+     "sortino_daily": 2.581903598839807,
+     "trades": 561,
+     "win_rate": 0.37433155080213903,
+     "payoff": 2.414892783351228,
+     "profit_factor": 1.444807648158854,
+     "turnover": 99.5232251103332,
+     "exposure": 0.7325878267973857,
+     "fees": 497.61612555166596,
+     "funding": -90.23692171165058,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 1088.0
+    },
+    "quarter_pnl": {
+     "2021Q4": -66.617364935164,
+     "2022Q1": 309.9442089361946,
+     "2022Q2": 474.80483098904733,
+     "2022Q3": 36.289631697160075,
+     "2022Q4": -175.46647228276925,
+     "2023Q1": 723.2019161614426,
+     "2023Q2": -45.90407129369123,
+     "2023Q3": 44.720295073499074,
+     "2023Q4": 472.11541904576916,
+     "2024Q1": 46.22985165866339,
+     "2024Q2": 254.25406794400442,
+     "2024Q3": -140.11729057980665
+    },
+    "quarterly_ret": {
+     "2021Q4": -0.006661736493516424,
+     "2022Q1": 0.031202282276139526,
+     "2022Q2": 0.04635259991407148,
+     "2022Q3": 0.0033858169313070174,
+     "2022Q4": -0.01631575212453895,
+     "2023Q1": 0.06836232193840863,
+     "2023Q2": -0.004061531998429624,
+     "2023Q3": 0.003972929210788623,
+     "2023Q4": 0.041776528456223705,
+     "2024Q1": 0.003926739536298074,
+     "2024Q2": 0.021511737197742686,
+     "2024Q3": -0.011605288554822013
+    },
+    "long_short": {
+     "long_pnl": 1287.0072619246648,
+     "short_pnl": 646.4477604896603,
+     "long_n": 294,
+     "short_n": 267
+    },
+    "per_symbol": {
+     "BTCUSDT": 1070.8300982824874,
+     "ETHUSDT": 862.6249241318377
+    },
+    "total_pnl": 1933.4550224143495,
+    "best_quarter": "2023Q1",
+    "best_quarter_share": 0.3740464131709481,
+    "positive_quarters": "8/12"
+   }
+  },
+  "A3-ens5-e0.6-m2.5-vs": {
+   "validation": {
+    "result_id": "20261009-191556-a3_ens-validation-254395-548be1",
+    "summary": {
+     "net_return": 0.0416599805675657,
+     "max_dd": 0.027782542246370223,
+     "ret_over_dd": 1.4995021045278374,
+     "sharpe_daily": 1.1238842428719122,
+     "sortino_daily": 2.2392564537885025,
+     "trades": 92,
+     "win_rate": 0.31521739130434784,
+     "payoff": 3.2446718625871096,
+     "profit_factor": 1.4935791113496217,
+     "turnover": 11.609863237668474,
+     "exposure": 0.6090924657534247,
+     "fees": 58.049316188342374,
+     "funding": -12.621851030331374,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 365.0
+    },
+    "quarter_pnl": {
+     "2024Q4": -26.536797903660045,
+     "2025Q1": -12.677032190216778,
+     "2025Q2": 135.5810687170615,
+     "2025Q3": 318.92356705247585
+    },
+    "quarterly_ret": {
+     "2024Q4": -0.0026536797903660148,
+     "2025Q1": -0.0012710762483739702,
+     "2025Q2": 0.013611482708732803,
+     "2025Q3": 0.03158795233125522
+    },
+    "long_short": {
+     "long_pnl": 284.6347586568157,
+     "short_pnl": 135.77763021139432,
+     "long_n": 49,
+     "short_n": 43
+    },
+    "per_symbol": {
+     "BTCUSDT": 160.27431860198982,
+     "ETHUSDT": 260.1380702662202
+    },
+    "total_pnl": 416.599805675658,
+    "best_quarter": "2025Q3",
+    "best_quarter_share": 0.7655394042616823,
+    "positive_quarters": "2/4",
+    "regime": {
+     "bull": {
+      "pnl_usdt": -6.375247101135756,
+      "hours": 2735
+     },
+     "range": {
+      "pnl_usdt": 368.62695697166237,
+      "hours": 5404
+     },
+     "bear": {
+      "pnl_usdt": 54.34809580513138,
+      "hours": 621
+     }
+    },
+    "reconcile": {
+     "key": "A3-ens5-e0.6-m2.5-vs|validation",
+     "balance": 10419.84082435887,
+     "unrealized_end": -3.241018683218572,
+     "final_equity": 10416.599805675658,
+     "ledger_vs_equity_diff": 7.275957614183426e-12,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 420.41238886821,
+     "open_trip_net": -0.5715645093416093,
+     "trips_vs_equity_diff": 8.185452315956354e-12,
+     "open_position_at_end": true
+    },
+    "rerun_matches_registered": true
+   },
+   "holdout_pre": {
+    "result_id": "20261009-191557-a3_ens-holdout_pre-254396-43c947",
+    "summary": {
+     "net_return": 0.060535086352138556,
+     "max_dd": 0.027988616441300684,
+     "ret_over_dd": 2.1628466872986087,
+     "sharpe_daily": 1.1299506420047583,
+     "sortino_daily": 2.220587283126625,
+     "trades": 89,
+     "win_rate": 0.4157303370786517,
+     "payoff": 2.538387717772865,
+     "profit_factor": 1.8061604914922307,
+     "turnover": 7.062491538557715,
+     "exposure": 0.5213280244530245,
+     "fees": 35.31245769278858,
+     "funding": -151.02072870771812,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 518.0
+    },
+    "quarter_pnl": {
+     "2020Q2": -26.501787251057976,
+     "2020Q3": 392.838779159536,
+     "2020Q4": 168.62023859895635,
+     "2021Q1": 27.090663733155452,
+     "2021Q2": 9.174707688760463,
+     "2021Q3": 34.128261592035415
+    },
+    "quarterly_ret": {
+     "2020Q2": -0.0026501787251057563,
+     "2020Q3": 0.03938826385484062,
+     "2020Q4": 0.016266135157536832,
+     "2021Q1": 0.002571502013762883,
+     "2021Q2": 0.0008686485595055249,
+     "2021Q3": 0.0032284119706085246
+    },
+    "long_short": {
+     "long_pnl": 620.1646793024383,
+     "short_pnl": -14.813815781085152,
+     "long_n": 71,
+     "short_n": 18
+    },
+    "per_symbol": {
+     "BTCUSDT": 458.09519569048257,
+     "ETHUSDT": 147.25566783087072
+    },
+    "total_pnl": 605.3508635213857,
+    "best_quarter": "2020Q3",
+    "best_quarter_share": 0.6489439477699827,
+    "positive_quarters": "5/6",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 352.34551329287933,
+      "hours": 6436
+     },
+     "range": {
+      "pnl_usdt": 335.658498637129,
+      "hours": 4251
+     },
+     "bear": {
+      "pnl_usdt": -82.65314840862266,
+      "hours": 1745
+     }
+    },
+    "reconcile": {
+     "key": "A3-ens5-e0.6-m2.5-vs|holdout_pre",
+     "balance": 10605.350863521353,
+     "unrealized_end": 0.0,
+     "final_equity": 10605.350863521386,
+     "ledger_vs_equity_diff": 3.2741809263825417e-11,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 605.3508635213534,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": 3.228706191293895e-11,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "train": {
+    "result_id": "20261009-191559-a3_ens-train-254397-5361d8",
+    "summary": {
+     "net_return": 0.14496124358449003,
+     "max_dd": 0.029103963994944304,
+     "ret_over_dd": 4.980807549434554,
+     "sharpe_daily": 1.211886648370703,
+     "sortino_daily": 2.654549450787508,
+     "trades": 218,
+     "win_rate": 0.3440366972477064,
+     "payoff": 3.270828078015455,
+     "profit_factor": 1.7154692716864275,
+     "turnover": 28.031516033177404,
+     "exposure": 0.5898992800245098,
+     "fees": 140.15758016588703,
+     "funding": -78.30639236316532,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 1088.0
+    },
+    "quarter_pnl": {
+     "2021Q4": -127.17171325064737,
+     "2022Q1": 188.36596998567074,
+     "2022Q2": 193.19713577667062,
+     "2022Q3": -72.5395716412786,
+     "2022Q4": -126.89918151000347,
+     "2023Q1": 650.6413989713565,
+     "2023Q2": -43.10371445390592,
+     "2023Q3": 51.662871280906984,
+     "2023Q4": 321.63899894864335,
+     "2024Q1": 362.8979593030781,
+     "2024Q2": -42.772370574874,
+     "2024Q3": 93.69465300928277
+    },
+    "quarterly_ret": {
+     "2021Q4": -0.01271717132506478,
+     "2022Q1": 0.01907923084598595,
+     "2022Q2": 0.019202207098560242,
+     "2022Q3": -0.007074000675871495,
+     "2022Q4": -0.012463271293134515,
+     "2023Q1": 0.06470854933959624,
+     "2023Q2": -0.004026279559973145,
+     "2023Q3": 0.0048452912698275785,
+     "2023Q4": 0.030020011202936514,
+     "2024Q1": 0.032883725329374114,
+     "2024Q2": -0.003752393476725624,
+     "2024Q3": 0.008250733652801046
+    },
+    "long_short": {
+     "long_pnl": 787.272052141957,
+     "short_pnl": 662.3403837029226,
+     "long_n": 118,
+     "short_n": 100
+    },
+    "per_symbol": {
+     "BTCUSDT": 952.165787345907,
+     "ETHUSDT": 497.4466484989728
+    },
+    "total_pnl": 1449.6124358448997,
+    "best_quarter": "2023Q1",
+    "best_quarter_share": 0.4488381741786957,
+    "positive_quarters": "7/12"
+   }
+  },
+  "B2-tp": {
+   "validation": {
+    "result_id": "20261009-191559-b2_zscore_1h-validation-254399-840347",
+    "summary": {
+     "net_return": -0.011080360483959328,
+     "max_dd": 0.017020375332813198,
+     "ret_over_dd": -0.6510056486590957,
+     "sharpe_daily": -0.46053760993378784,
+     "sortino_daily": -0.7092667876689646,
+     "trades": 42,
+     "win_rate": 0.3333333333333333,
+     "payoff": 1.70468699482479,
+     "profit_factor": 0.8523434974123951,
+     "turnover": 15.682769605729295,
+     "exposure": 0.04789573820395738,
+     "fees": 74.62828728847981,
+     "funding": 5.624730440494034,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 365.0
+    },
+    "quarter_pnl": {
+     "2024Q4": -37.304047841646025,
+     "2025Q1": 0.5355711958691245,
+     "2025Q2": 72.104531657993,
+     "2025Q3": -146.13965985180766
+    },
+    "quarterly_ret": {
+     "2024Q4": -0.0037304047841646426,
+     "2025Q1": 5.37576574093368e-05,
+     "2025Q2": 0.007237062743044476,
+     "2025Q3": -0.014562507827410198
+    },
+    "long_short": {
+     "long_pnl": -101.70327968224167,
+     "short_pnl": -9.10032515735189,
+     "long_n": 12,
+     "short_n": 30
+    },
+    "per_symbol": {
+     "BTCUSDT": -11.84799268700722,
+     "ETHUSDT": -98.95561215258641
+    },
+    "total_pnl": -110.80360483959157,
+    "best_quarter": "2025Q2",
+    "best_quarter_share": null,
+    "positive_quarters": "2/4",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 64.96755182095694,
+      "hours": 2735
+     },
+     "range": {
+      "pnl_usdt": -70.63169982898216,
+      "hours": 5404
+     },
+     "bear": {
+      "pnl_usdt": -105.13945683156635,
+      "hours": 621
+     }
+    },
+    "reconcile": {
+     "key": "B2-tp|validation",
+     "balance": 9889.196395160407,
+     "unrealized_end": 0.0,
+     "final_equity": 9889.196395160407,
+     "ledger_vs_equity_diff": 0.0,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": -110.80360483959362,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": 2.2737367544323206e-13,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "holdout_pre": {
+    "result_id": "20261009-191541-b2_zscore_1h-holdout_pre-254157-ccae4d",
+    "summary": {
+     "net_return": -0.025220618735883216,
+     "max_dd": 0.03379069498814846,
+     "ret_over_dd": -0.7463776268800905,
+     "sharpe_daily": -0.7092894642794828,
+     "sortino_daily": -1.06155641475872,
+     "trades": 73,
+     "win_rate": 0.3698630136986301,
+     "payoff": 1.3162672263157216,
+     "profit_factor": 0.7725916328374888,
+     "turnover": 19.630216924016395,
+     "exposure": 0.07717583655083655,
+     "fees": 92.58851873445698,
+     "funding": 27.110191960660792,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 518.0
+    },
+    "quarter_pnl": {
+     "2020Q2": -54.42662604348334,
+     "2020Q3": 1.276263059788107,
+     "2020Q4": -192.1266818213826,
+     "2021Q1": -38.12188806137783,
+     "2021Q2": 17.63755039471107,
+     "2021Q3": 13.55519511291277
+    },
+    "quarterly_ret": {
+     "2020Q2": -0.005442662604348336,
+     "2020Q3": 0.00012832473421098278,
+     "2020Q4": -0.01931532986146689,
+     "2021Q1": -0.003908044158350554,
+     "2021Q2": 0.0018151975441669244,
+     "2021Q3": 0.0013925275150441507
+    },
+    "long_short": {
+     "long_pnl": -257.37753011413383,
+     "short_pnl": 5.1713427553040106,
+     "long_n": 29,
+     "short_n": 44
+    },
+    "per_symbol": {
+     "BTCUSDT": -68.36708236811604,
+     "ETHUSDT": -183.83910499071365
+    },
+    "total_pnl": -252.2061873588318,
+    "best_quarter": "2021Q2",
+    "best_quarter_share": null,
+    "positive_quarters": "3/6",
+    "regime": {
+     "bull": {
+      "pnl_usdt": -253.6620021056533,
+      "hours": 6436
+     },
+     "range": {
+      "pnl_usdt": 63.844750602356726,
+      "hours": 4251
+     },
+     "bear": {
+      "pnl_usdt": -62.38893585553524,
+      "hours": 1745
+     }
+    },
+    "reconcile": {
+     "key": "B2-tp|holdout_pre",
+     "balance": 9747.79381264117,
+     "unrealized_end": 0.0,
+     "final_equity": 9747.793812641168,
+     "ledger_vs_equity_diff": -1.8189894035458565e-12,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": -252.20618735882965,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": -2.1600499167107046e-12,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "train": {
+    "result_id": "20261009-191603-b2_zscore_1h-train-254395-bca6e3",
+    "summary": {
+     "net_return": 0.007695253571837535,
+     "max_dd": 0.03170763569024815,
+     "ret_over_dd": 0.242694020046542,
+     "sharpe_daily": 0.11600237034357964,
+     "sortino_daily": 0.174256965336358,
+     "trades": 166,
+     "win_rate": 0.46987951807228917,
+     "payoff": 1.1664389288947248,
+     "profit_factor": 1.0338890506112333,
+     "turnover": 56.666466101109314,
+     "exposure": 0.08263633578431373,
+     "fees": 268.5285136960466,
+     "funding": 8.48454584436285,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 1088.0
+    },
+    "quarter_pnl": {
+     "2021Q4": -69.1202983061994,
+     "2022Q1": -58.6157266037917,
+     "2022Q2": 9.177577337703042,
+     "2022Q3": 40.55893854496753,
+     "2022Q4": 33.41715765758818,
+     "2023Q1": -26.95768928043617,
+     "2023Q2": 51.384020660309034,
+     "2023Q3": 123.04974689477604,
+     "2023Q4": 77.74611162668407,
+     "2024Q1": -46.58223161839123,
+     "2024Q2": -34.71379174341928,
+     "2024Q3": -22.391279451414448
+    },
+    "quarterly_ret": {
+     "2021Q4": -0.006912029830619892,
+     "2022Q1": -0.0059023700180150795,
+     "2022Q2": 0.0009296324896559405,
+     "2022Q3": 0.004104556843227192,
+     "2022Q4": 0.0033679858903445936,
+     "2023Q1": -0.0027078411204722874,
+     "2023Q2": 0.00517542709248886,
+     "2023Q3": 0.012329826712847103,
+     "2023Q4": 0.0076954300152281,
+     "2024Q1": -0.004575570136769569,
+     "2024Q2": -0.0034254583001125383,
+     "2024Q3": -0.0022171024039979725
+    },
+    "long_short": {
+     "long_pnl": 81.14513804321209,
+     "short_pnl": -4.192602324823742,
+     "long_n": 89,
+     "short_n": 77
+    },
+    "per_symbol": {
+     "BTCUSDT": 199.29596589175665,
+     "ETHUSDT": -122.34343017336835
+    },
+    "total_pnl": 76.95253571837566,
+    "best_quarter": "2023Q3",
+    "best_quarter_share": 1.599034336504557,
+    "positive_quarters": "6/12"
+   }
+  },
+  "B3-abs-favg3": {
+   "validation": {
+    "result_id": "20261009-191600-b3_funding_crowd-validation-254396-140e70",
+    "summary": {
+     "net_return": 0.02005415697626023,
+     "max_dd": 0.01315517469020977,
+     "ret_over_dd": 1.52443106598841,
+     "sharpe_daily": 1.104040281765547,
+     "sortino_daily": 2.1390428181770753,
+     "trades": 35,
+     "win_rate": 0.5714285714285714,
+     "payoff": 1.2623073802601346,
+     "profit_factor": 1.6830765070135127,
+     "turnover": 3.4855577616071294,
+     "exposure": 0.24226407914764078,
+     "fees": 17.427788808035647,
+     "funding": -2.626994368367372,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 365.0
+    },
+    "quarter_pnl": {
+     "2024Q4": 0.0,
+     "2025Q1": -25.99853479516787,
+     "2025Q2": 321.32843135030635,
+     "2025Q3": -94.78832679253901
+    },
+    "quarterly_ret": {
+     "2024Q4": 0.0,
+     "2025Q1": -0.002599853479516745,
+     "2025Q2": 0.03221660157874329,
+     "2025Q3": -0.009206924668266891
+    },
+    "long_short": {
+     "long_pnl": 200.54156976260785,
+     "short_pnl": 0.0,
+     "long_n": 35,
+     "short_n": 0
+    },
+    "per_symbol": {
+     "BTCUSDT": 193.58749849731666,
+     "ETHUSDT": 6.954071265291219
+    },
+    "total_pnl": 200.54156976259947,
+    "best_quarter": "2025Q2",
+    "best_quarter_share": 1.6023033614960431,
+    "positive_quarters": "1/4",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 135.47456045863328,
+      "hours": 2735
+     },
+     "range": {
+      "pnl_usdt": 28.74837664736515,
+      "hours": 5404
+     },
+     "bear": {
+      "pnl_usdt": 36.31863265660104,
+      "hours": 621
+     }
+    },
+    "reconcile": {
+     "key": "B3-abs-favg3|validation",
+     "balance": 10200.541569762609,
+     "unrealized_end": 0.0,
+     "final_equity": 10200.541569762601,
+     "ledger_vs_equity_diff": -7.275957614183426e-12,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 200.54156976260785,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": -6.565414878423326e-12,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "holdout_pre": {
+    "result_id": "20261009-191601-b3_funding_crowd-holdout_pre-254397-126991",
+    "summary": {
+     "net_return": 0.024579088852099584,
+     "max_dd": 0.010185678978267165,
+     "ret_over_dd": 2.4131026419096013,
+     "sharpe_daily": 1.3239138256366847,
+     "sortino_daily": 2.2077454910282612,
+     "trades": 32,
+     "win_rate": 0.5,
+     "payoff": 2.019150110256408,
+     "profit_factor": 2.019150110256408,
+     "turnover": 2.3466995999065867,
+     "exposure": 0.16880764693264694,
+     "fees": 11.733497999532936,
+     "funding": -0.24683547087127278,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 518.0
+    },
+    "quarter_pnl": {
+     "2020Q2": 8.38790482665172,
+     "2020Q3": -45.559865943820114,
+     "2020Q4": 189.04019679471276,
+     "2021Q1": 0.0,
+     "2021Q2": -4.854423429247618,
+     "2021Q3": 99.10607627269928
+    },
+    "quarterly_ret": {
+     "2020Q2": 0.0008387904826652193,
+     "2020Q3": -0.004552168278954105,
+     "2020Q4": 0.018974551809679774,
+     "2021Q1": 0.0,
+     "2021Q2": -0.000478180303029041,
+     "2021Q3": 0.009767018958136253
+    },
+    "long_short": {
+     "long_pnl": 227.55500819754468,
+     "short_pnl": 0.0,
+     "long_n": 32,
+     "short_n": 0
+    },
+    "per_symbol": {
+     "BTCUSDT": 115.77211843380708,
+     "ETHUSDT": 111.78288976373759
+    },
+    "total_pnl": 245.7908885209963,
+    "best_quarter": "2020Q4",
+    "best_quarter_share": 0.769109863804265,
+    "positive_quarters": "3/6",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 111.29767754294699,
+      "hours": 6436
+     },
+     "range": {
+      "pnl_usdt": 105.09092591106491,
+      "hours": 4251
+     },
+     "bear": {
+      "pnl_usdt": 29.402285066984405,
+      "hours": 1745
+     }
+    },
+    "reconcile": {
+     "key": "B3-abs-favg3|holdout_pre",
+     "balance": 10227.380566910902,
+     "unrealized_end": 18.41032161008773,
+     "final_equity": 10245.790888520996,
+     "ledger_vs_equity_diff": 5.4569682106375694e-12,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 227.55500819754468,
+     "open_trip_net": -0.1744412866419502,
+     "trips_vs_equity_diff": 5.8548721426632255e-12,
+     "open_position_at_end": true
+    },
+    "rerun_matches_registered": true
+   },
+   "train": {
+    "result_id": "20261009-191602-b3_funding_crowd-train-254398-f0c56a",
+    "summary": {
+     "net_return": 0.08873108453699241,
+     "max_dd": 0.016151329845085494,
+     "ret_over_dd": 5.493732428725762,
+     "sharpe_daily": 1.7217309830309104,
+     "sortino_daily": 3.2262061515154032,
+     "trades": 130,
+     "win_rate": 0.5615384615384615,
+     "payoff": 1.8010928785609617,
+     "profit_factor": 2.306662809385091,
+     "turnover": 10.580718837532173,
+     "exposure": 0.3332056781045752,
+     "fees": 52.90359418766086,
+     "funding": -4.999887379224255,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 1088.0
+    },
+    "quarter_pnl": {
+     "2021Q4": 13.617859494508593,
+     "2022Q1": 181.6894656390159,
+     "2022Q2": -79.36990249773407,
+     "2022Q3": 223.23267726441554,
+     "2022Q4": 81.30012078674008,
+     "2023Q1": 175.05954871496397,
+     "2023Q2": 114.52004870600649,
+     "2023Q3": 53.76333159524438,
+     "2023Q4": 4.028507160875961,
+     "2024Q1": 0.0,
+     "2024Q2": 41.60008271647166,
+     "2024Q3": 77.8691057894157
+    },
+    "quarterly_ret": {
+     "2021Q4": 0.0013617859494508,
+     "2022Q1": 0.018144237995535883,
+     "2022Q2": -0.007784944579558806,
+     "2022Q3": 0.022067423703600708,
+     "2022Q4": 0.00786331204547297,
+     "2023Q1": 0.016799582457174722,
+     "2023Q2": 0.010808336269954255,
+     "2023Q3": 0.00501989556615734,
+     "2023Q4": 0.00037426394390616124,
+     "2024Q1": 0.0,
+     "2024Q2": 0.003863363155043542,
+     "2024Q3": 0.007203804568767458
+    },
+    "long_short": {
+     "long_pnl": 887.3108453699334,
+     "short_pnl": 0.0,
+     "long_n": 130,
+     "short_n": 0
+    },
+    "per_symbol": {
+     "BTCUSDT": 456.7888516073201,
+     "ETHUSDT": 430.5219937626133
+    },
+    "total_pnl": 887.3108453699242,
+    "best_quarter": "2022Q3",
+    "best_quarter_share": 0.2515833976664049,
+    "positive_quarters": "10/12"
+   }
+  },
+  "B3-favg3-short": {
+   "validation": {
+    "result_id": "20261009-191602-b3_funding_crowd-validation-254397-85093a",
+    "summary": {
+     "net_return": 0.00946777960189693,
+     "max_dd": 0.01962875423420063,
+     "ret_over_dd": 0.48234235799847747,
+     "sharpe_daily": 0.47328745996102184,
+     "sortino_daily": 0.7606259375622616,
+     "trades": 54,
+     "win_rate": 0.48148148148148145,
+     "payoff": 1.2805705357734074,
+     "profit_factor": 1.1891012117895927,
+     "turnover": 5.30773955888179,
+     "exposure": 0.36480403348554036,
+     "fees": 26.538697794408957,
+     "funding": 6.065389200997451,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 365.0
+    },
+    "quarter_pnl": {
+     "2024Q4": -26.086646466503225,
+     "2025Q1": 5.524738124786381,
+     "2025Q2": 288.1138056793661,
+     "2025Q3": -172.8741013186809
+    },
+    "quarterly_ret": {
+     "2024Q4": -0.002608664646650327,
+     "2025Q1": 0.0005539188008716334,
+     "2025Q2": 0.028870744327799125,
+     "2025Q3": -0.016836934748146404
+    },
+    "long_short": {
+     "long_pnl": 121.90716363156764,
+     "short_pnl": -27.229367612590767,
+     "long_n": 32,
+     "short_n": 22
+    },
+    "per_symbol": {
+     "BTCUSDT": 122.70447687209781,
+     "ETHUSDT": -28.026680853120954
+    },
+    "total_pnl": 94.67779601896837,
+    "best_quarter": "2025Q2",
+    "best_quarter_share": 3.043097936306455,
+    "positive_quarters": "2/4",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 1.1638302193423442,
+      "hours": 2735
+     },
+     "range": {
+      "pnl_usdt": 21.094133105325454,
+      "hours": 5404
+     },
+     "bear": {
+      "pnl_usdt": 72.41983269430057,
+      "hours": 621
+     }
+    },
+    "reconcile": {
+     "key": "B3-favg3-short|validation",
+     "balance": 10094.677796018977,
+     "unrealized_end": 0.0,
+     "final_equity": 10094.677796018968,
+     "ledger_vs_equity_diff": -9.094947017729282e-12,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 94.67779601897684,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": -8.469669410260394e-12,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "holdout_pre": {
+    "result_id": "20261009-191602-b3_funding_crowd-holdout_pre-254396-745a64",
+    "summary": {
+     "net_return": 0.023386089285873712,
+     "max_dd": 0.010889412511762897,
+     "ret_over_dd": 2.1475988039402245,
+     "sharpe_daily": 1.262413856578484,
+     "sortino_daily": 2.1482541665797603,
+     "trades": 39,
+     "win_rate": 0.5897435897435898,
+     "payoff": 1.3523134367389482,
+     "profit_factor": 1.943950565312238,
+     "turnover": 2.4712677013098583,
+     "exposure": 0.20595640283140282,
+     "fees": 12.356338506549292,
+     "funding": 7.473678016816635,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 518.0
+    },
+    "quarter_pnl": {
+     "2020Q2": 0.0,
+     "2020Q3": -30.641688703419277,
+     "2020Q4": 63.297486199819105,
+     "2021Q1": 67.66533841660384,
+     "2021Q2": 20.539356858547762,
+     "2021Q3": 113.35040008718897
+    },
+    "quarterly_ret": {
+     "2020Q2": 0.0,
+     "2020Q3": -0.003064168870341888,
+     "2020Q4": 0.0063492036521644035,
+     "2021Q1": 0.0067445091092919185,
+     "2021Q2": 0.002033535031427558,
+     "2021Q3": 0.01119968012286554
+    },
+    "long_short": {
+     "long_pnl": 228.9494657158989,
+     "short_pnl": -1.6640057209062196,
+     "long_n": 31,
+     "short_n": 8
+    },
+    "per_symbol": {
+     "BTCUSDT": 75.16342444791786,
+     "ETHUSDT": 152.1220355470748
+    },
+    "total_pnl": 233.86089285873823,
+    "best_quarter": "2021Q3",
+    "best_quarter_share": 0.48469155617077614,
+    "positive_quarters": "4/6",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 123.64403817188759,
+      "hours": 6436
+     },
+     "range": {
+      "pnl_usdt": 40.35073020945492,
+      "hours": 4251
+     },
+     "bear": {
+      "pnl_usdt": 69.86612447739572,
+      "hours": 1745
+     }
+    },
+    "reconcile": {
+     "key": "B3-favg3-short|holdout_pre",
+     "balance": 10227.08730527782,
+     "unrealized_end": 6.77358758091209,
+     "final_equity": 10233.860892858738,
+     "ledger_vs_equity_diff": 5.4569682106375694e-12,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 227.28545999499266,
+     "open_trip_net": -0.19815471717196964,
+     "trips_vs_equity_diff": 5.4569682106375694e-12,
+     "open_position_at_end": true
+    },
+    "rerun_matches_registered": true
+   },
+   "train": {
+    "result_id": "20261009-191603-b3_funding_crowd-train-254399-113382",
+    "summary": {
+     "net_return": 0.08297578959170315,
+     "max_dd": 0.013999883633395993,
+     "ret_over_dd": 5.926891377423218,
+     "sharpe_daily": 1.7446604516531619,
+     "sortino_daily": 3.4356604830858153,
+     "trades": 120,
+     "win_rate": 0.6083333333333333,
+     "payoff": 1.5406052399183958,
+     "profit_factor": 2.3928549471072955,
+     "turnover": 11.196512070128241,
+     "exposure": 0.3028052236519608,
+     "fees": 55.9825603506412,
+     "funding": 12.509474946422895,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 1088.0
+    },
+    "quarter_pnl": {
+     "2021Q4": -2.899711895317523,
+     "2022Q1": 117.86673841798802,
+     "2022Q2": 94.75835121655837,
+     "2022Q3": 29.804833005511682,
+     "2022Q4": 78.548227489704,
+     "2023Q1": 60.49430989086977,
+     "2023Q2": 156.5170279706199,
+     "2023Q3": -80.25973954786787,
+     "2023Q4": 26.268365441390415,
+     "2024Q1": 230.45763444629847,
+     "2024Q2": 37.688083426530284,
+     "2024Q3": 80.5137760547459
+    },
+    "quarterly_ret": {
+     "2021Q4": -0.00028997118953177914,
+     "2022Q1": 0.011790092628983118,
+     "2022Q2": 0.00936813248803392,
+     "2022Q3": 0.0029192590302671295,
+     "2022Q4": 0.007671077273377236,
+     "2023Q1": 0.0058629434010408765,
+     "2023Q2": 0.015080785361252236,
+     "2023Q3": -0.007618325164155393,
+     "2023Q4": 0.0025125578655569303,
+     "2024Q1": 0.02198792775407532,
+     "2024Q2": 0.0035184508486285626,
+     "2024Q3": 0.007490180254253742
+    },
+    "long_short": {
+     "long_pnl": 780.4999530324759,
+     "short_pnl": 49.257942884542615,
+     "long_n": 91,
+     "short_n": 29
+    },
+    "per_symbol": {
+     "BTCUSDT": 432.284846586329,
+     "ETHUSDT": 397.47304933068955
+    },
+    "total_pnl": 829.7578959170314,
+    "best_quarter": "2024Q1",
+    "best_quarter_share": 0.2777408152188795,
+    "positive_quarters": "10/12"
+   }
+  },
+  "C3-R2-V2-er20": {
+   "validation": {
+    "result_id": "20261009-191603-c3_regime_trend-validation-254396-567e73",
+    "summary": {
+     "net_return": 0.004601939664848231,
+     "max_dd": 0.02559632218278307,
+     "ret_over_dd": 0.1797890975111904,
+     "sharpe_daily": 0.1952617021910247,
+     "sortino_daily": 0.31944420397674556,
+     "trades": 38,
+     "win_rate": 0.3157894736842105,
+     "payoff": 2.3619283687091084,
+     "profit_factor": 1.09012078555805,
+     "turnover": 4.3422535491317955,
+     "exposure": 0.5290353881278539,
+     "fees": 21.711267745658976,
+     "funding": -18.070743669635153,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 365.0
+    },
+    "quarter_pnl": {
+     "2024Q4": 74.70911646774948,
+     "2025Q1": -129.7142659004312,
+     "2025Q2": -22.143132190705728,
+     "2025Q3": 123.16767827186959
+    },
+    "quarterly_ret": {
+     "2024Q4": 0.007470911646775047,
+     "2025Q1": -0.012875236833230774,
+     "2025Q2": -0.0022265604480873336,
+     "2025Q3": 0.01241252835047102
+    },
+    "long_short": {
+     "long_pnl": 262.70914342329,
+     "short_pnl": -216.6897467747912,
+     "long_n": 22,
+     "short_n": 16
+    },
+    "per_symbol": {
+     "BTCUSDT": 30.901762366714607,
+     "ETHUSDT": 15.117634281784216
+    },
+    "total_pnl": 46.01939664848214,
+    "best_quarter": "2025Q3",
+    "best_quarter_share": 2.6764296631849045,
+    "positive_quarters": "2/4",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 128.4271511521747,
+      "hours": 2735
+     },
+     "range": {
+      "pnl_usdt": -105.75654766066509,
+      "hours": 5404
+     },
+     "bear": {
+      "pnl_usdt": 23.348793156972533,
+      "hours": 621
+     }
+    },
+    "reconcile": {
+     "key": "C3-R2-V2-er20|validation",
+     "balance": 10046.019396648499,
+     "unrealized_end": 0.0,
+     "final_equity": 10046.019396648482,
+     "ledger_vs_equity_diff": -1.6370904631912708e-11,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 46.01939664849889,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": -1.674749228186556e-11,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "holdout_pre": {
+    "result_id": "20261009-191603-c3_regime_trend-holdout_pre-254394-ae6445",
+    "summary": {
+     "net_return": 0.060719238918979235,
+     "max_dd": 0.02317146494546951,
+     "ret_over_dd": 2.6204315981692416,
+     "sharpe_daily": 1.1437995030353585,
+     "sortino_daily": 1.8202102806176577,
+     "trades": 41,
+     "win_rate": 0.34146341463414637,
+     "payoff": 4.005153727571544,
+     "profit_factor": 2.076746377259319,
+     "turnover": 3.2333470006481537,
+     "exposure": 0.514075235950236,
+     "fees": 16.16673500324077,
+     "funding": -163.84129657383966,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 518.0
+    },
+    "quarter_pnl": {
+     "2020Q2": -143.1345242329353,
+     "2020Q3": 213.469599670143,
+     "2020Q4": 423.33050136562997,
+     "2021Q1": 86.68971992304614,
+     "2021Q2": 19.451069059958172,
+     "2021Q3": 7.386023403949366
+    },
+    "quarterly_ret": {
+     "2020Q2": -0.014313452423293516,
+     "2020Q3": 0.021656945627893,
+     "2020Q4": 0.042037379907862826,
+     "2021Q1": 0.00826114757408325,
+     "2021Q2": 0.0018384135990194839,
+     "2021Q3": 0.0006968073895943228
+    },
+    "long_short": {
+     "long_pnl": 731.1306734698463,
+     "short_pnl": -123.93828428005284,
+     "long_n": 31,
+     "short_n": 10
+    },
+    "per_symbol": {
+     "BTCUSDT": 444.4705153607707,
+     "ETHUSDT": 162.72187382902277
+    },
+    "total_pnl": 607.1923891897914,
+    "best_quarter": "2020Q4",
+    "best_quarter_share": 0.6971933589788601,
+    "positive_quarters": "5/6",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 423.6628865130133,
+      "hours": 6436
+     },
+     "range": {
+      "pnl_usdt": 273.4125858170246,
+      "hours": 4251
+     },
+     "bear": {
+      "pnl_usdt": -89.88308314024653,
+      "hours": 1745
+     }
+    },
+    "reconcile": {
+     "key": "C3-R2-V2-er20|holdout_pre",
+     "balance": 10607.192389189793,
+     "unrealized_end": 0.0,
+     "final_equity": 10607.192389189791,
+     "ledger_vs_equity_diff": -1.8189894035458565e-12,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 607.1923891897934,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": -2.0463630789890885e-12,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "train": {
+    "result_id": "20261009-191606-c3_regime_trend-train-254398-d74c38",
+    "summary": {
+     "net_return": 0.15352248682267144,
+     "max_dd": 0.03592245194174737,
+     "ret_over_dd": 4.2737195966363,
+     "sharpe_daily": 1.4044000508427557,
+     "sortino_daily": 2.839471759318841,
+     "trades": 91,
+     "win_rate": 0.43956043956043955,
+     "payoff": 3.534664989059788,
+     "profit_factor": 2.7722862659292455,
+     "turnover": 9.6505195679955,
+     "exposure": 0.6151628880718955,
+     "fees": 48.25259783997751,
+     "funding": -98.79748517864377,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 1088.0
+    },
+    "quarter_pnl": {
+     "2021Q4": 23.893513667895604,
+     "2022Q1": 42.797691222442154,
+     "2022Q2": 192.88301375845913,
+     "2022Q3": -47.29551048887697,
+     "2022Q4": 27.898124746763642,
+     "2023Q1": 691.0954098045568,
+     "2023Q2": -93.5142944279196,
+     "2023Q3": -45.539467317667004,
+     "2023Q4": 225.25019737089679,
+     "2024Q1": 533.1395250182959,
+     "2024Q2": -23.776325969365644,
+     "2024Q3": 8.392990841235587
+    },
+    "quarterly_ret": {
+     "2021Q4": 0.0023893513667896382,
+     "2022Q1": 0.004269567625003745,
+     "2022Q2": 0.019160517575502745,
+     "2022Q3": -0.004609890184614884,
+     "2022Q4": 0.002731821716192684,
+     "2023Q1": 0.06748862066363248,
+     "2023Q2": -0.008554749378808402,
+     "2023Q3": -0.004201926960813895,
+     "2023Q4": 0.02087153792968266,
+     "2024Q1": 0.04839038263540507,
+     "2024Q2": -0.002058447966615251,
+     "2024Q3": 0.0007281264210767802
+    },
+    "long_short": {
+     "long_pnl": 1435.9761564526489,
+     "short_pnl": 99.24871177402771,
+     "long_n": 45,
+     "short_n": 46
+    },
+    "per_symbol": {
+     "BTCUSDT": 969.8716082069418,
+     "ETHUSDT": 565.353260019735
+    },
+    "total_pnl": 1535.2248682267164,
+    "best_quarter": "2023Q1",
+    "best_quarter_share": 0.45015907708869807,
+    "positive_quarters": "8/12"
+   }
+  },
+  "C3-R2-V1-control": {
+   "validation": {
+    "result_id": "20261009-191604-c3_regime_trend-validation-254394-3bbf23",
+    "summary": {
+     "net_return": 0.013135898306880112,
+     "max_dd": 0.030111382706770384,
+     "ret_over_dd": 0.4362436104246576,
+     "sharpe_daily": 0.3502811974689984,
+     "sortino_daily": 0.5735771834474755,
+     "trades": 64,
+     "win_rate": 0.3125,
+     "payoff": 2.5874520276947233,
+     "profit_factor": 1.176114558043056,
+     "turnover": 7.441593506058943,
+     "exposure": 0.9238489345509894,
+     "fees": 37.20796753029472,
+     "funding": -22.6931872500019,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 365.0
+    },
+    "quarter_pnl": {
+     "2024Q4": 54.910395870738284,
+     "2025Q1": -122.4739584585841,
+     "2025Q2": 53.37670344712933,
+     "2025Q3": 145.545842209518
+    },
+    "quarterly_ret": {
+     "2024Q4": 0.005491039587073754,
+     "2025Q1": -0.012180512171334756,
+     "2025Q2": 0.005373978860421014,
+     "2025Q3": 0.014575261939759665
+    },
+    "long_short": {
+     "long_pnl": 489.4991827393156,
+     "short_pnl": -358.1401996705231,
+     "long_n": 31,
+     "short_n": 33
+    },
+    "per_symbol": {
+     "BTCUSDT": -57.54420507267776,
+     "ETHUSDT": 188.90318814147025
+    },
+    "total_pnl": 131.35898306880154,
+    "best_quarter": "2025Q3",
+    "best_quarter_share": 1.108000677298833,
+    "positive_quarters": "3/4",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 130.92565705598463,
+      "hours": 2735
+     },
+     "range": {
+      "pnl_usdt": -22.352123516451684,
+      "hours": 5404
+     },
+     "bear": {
+      "pnl_usdt": 22.78544952926859,
+      "hours": 621
+     }
+    },
+    "reconcile": {
+     "key": "C3-R2-V1-control|validation",
+     "balance": 10131.358983068792,
+     "unrealized_end": 0.0,
+     "final_equity": 10131.358983068802,
+     "ledger_vs_equity_diff": 9.094947017729282e-12,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 131.35898306879253,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": 9.00968188943807e-12,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "holdout_pre": {
+    "result_id": "20261009-191605-c3_regime_trend-holdout_pre-254396-1a25c5",
+    "summary": {
+     "net_return": 0.09548697993156252,
+     "max_dd": 0.03305621996381214,
+     "ret_over_dd": 2.8886236852276403,
+     "sharpe_daily": 1.365621170537594,
+     "sortino_daily": 2.2548126072081263,
+     "trades": 73,
+     "win_rate": 0.3835616438356164,
+     "payoff": 3.277111765634545,
+     "profit_factor": 2.039091765283717,
+     "turnover": 6.270636905826299,
+     "exposure": 0.9339379558129558,
+     "fees": 31.353184529131497,
+     "funding": -229.69383899026542,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 518.0
+    },
+    "quarter_pnl": {
+     "2020Q2": -167.07318941933772,
+     "2020Q3": 192.29779788501583,
+     "2020Q4": 682.4362446832984,
+     "2021Q1": 104.50713650923717,
+     "2021Q2": 6.741844967576981,
+     "2021Q3": 135.64846468983524
+    },
+    "quarterly_ret": {
+     "2020Q2": -0.01670731894193378,
+     "2020Q3": 0.019556516751258135,
+     "2020Q4": 0.06807191572615978,
+     "2021Q1": 0.009760034235535509,
+     "2021Q2": 0.0006235423805869278,
+     "2021Q3": 0.012538089952066622
+    },
+    "long_short": {
+     "long_pnl": 1220.2111306207382,
+     "short_pnl": -269.42678330513354,
+     "long_n": 47,
+     "short_n": 26
+    },
+    "per_symbol": {
+     "BTCUSDT": 674.1116596948007,
+     "ETHUSDT": 276.6726876208039
+    },
+    "total_pnl": 954.8697993156256,
+    "best_quarter": "2020Q4",
+    "best_quarter_share": 0.7146903642490464,
+    "positive_quarters": "5/6",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 679.9953881694,
+      "hours": 6436
+     },
+     "range": {
+      "pnl_usdt": 351.02872427481816,
+      "hours": 4251
+     },
+     "bear": {
+      "pnl_usdt": -76.15431312859255,
+      "hours": 1745
+     }
+    },
+    "reconcile": {
+     "key": "C3-R2-V1-control|holdout_pre",
+     "balance": 10951.043777405563,
+     "unrealized_end": 3.826021910068843,
+     "final_equity": 10954.869799315626,
+     "ledger_vs_equity_diff": -5.4569682106375694e-12,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 950.7843473156046,
+     "open_trip_net": 0.25943008995895156,
+     "trips_vs_equity_diff": -6.707523425575346e-12,
+     "open_position_at_end": true
+    },
+    "rerun_matches_registered": true
+   },
+   "train": {
+    "result_id": "20261009-191609-c3_regime_trend-train-254397-c84dff",
+    "summary": {
+     "net_return": 0.12623888451622522,
+     "max_dd": 0.041618576765394155,
+     "ret_over_dd": 3.03323405862338,
+     "sharpe_daily": 0.9650457239518887,
+     "sortino_daily": 1.7756507274253737,
+     "trades": 169,
+     "win_rate": 0.378698224852071,
+     "payoff": 2.6691072959524407,
+     "profit_factor": 1.6268844470567256,
+     "turnover": 18.37334855249681,
+     "exposure": 0.9651341656454249,
+     "fees": 91.86674276248405,
+     "funding": -116.12525604284664,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 1088.0
+    },
+    "quarter_pnl": {
+     "2021Q4": -151.86759295883166,
+     "2022Q1": 178.2485462538989,
+     "2022Q2": 183.006827851239,
+     "2022Q3": -167.7530873135147,
+     "2022Q4": -69.8177297039856,
+     "2023Q1": 754.5951608741198,
+     "2023Q2": -135.4316129911058,
+     "2023Q3": -105.33258626017232,
+     "2023Q4": 222.51824828980534,
+     "2024Q1": 588.5394752189513,
+     "2024Q2": -112.07362739904602,
+     "2024Q3": 77.7568233008933
+    },
+    "quarterly_ret": {
+     "2021Q4": -0.015186759295883201,
+     "2022Q1": 0.0180997308816091,
+     "2022Q2": 0.01825253086868761,
+     "2022Q3": -0.016431258260490855,
+     "2022Q4": -0.006952825095984161,
+     "2023Q1": 0.07567278496873664,
+     "2023Q2": -0.012625993800426394,
+     "2023Q3": -0.009945499015951209,
+     "2023Q4": 0.021221220649925154,
+     "2024Q1": 0.0549617428094904,
+     "2024Q2": -0.009920912421612305,
+     "2024Q3": 0.006952112787341758
+    },
+    "long_short": {
+     "long_pnl": 1275.4377998730586,
+     "short_pnl": -13.04895471086656,
+     "long_n": 88,
+     "short_n": 81
+    },
+    "per_symbol": {
+     "BTCUSDT": 855.5318219909927,
+     "ETHUSDT": 406.8570231711991
+    },
+    "total_pnl": 1262.3888451622515,
+    "best_quarter": "2023Q1",
+    "best_quarter_share": 0.5977517654452449,
+    "positive_quarters": "6/12"
+   }
+  },
+  "C2-V4-trail": {
+   "validation": {
+    "result_id": "20261009-191608-c2_squeeze-validation-254398-c87bd2",
+    "summary": {
+     "net_return": -0.047094366223715545,
+     "max_dd": 0.09769603950041739,
+     "ret_over_dd": -0.4820499015573128,
+     "sharpe_daily": -1.4102346751336334,
+     "sortino_daily": -2.049315128898109,
+     "trades": 72,
+     "win_rate": 0.20833333333333334,
+     "payoff": 2.387344568075243,
+     "profit_factor": 0.6282485705461166,
+     "turnover": 40.64553597843085,
+     "exposure": 0.10883751902587518,
+     "fees": 203.22767989215424,
+     "funding": -11.675879750763617,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": true,
+     "halted_at": 1737928800000,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 365.0
+    },
+    "quarter_pnl": {
+     "2024Q4": -205.32087172347565,
+     "2025Q1": -265.62279051368023,
+     "2025Q2": 0.0,
+     "2025Q3": 0.0
+    },
+    "quarterly_ret": {
+     "2024Q4": -0.020532087172347557,
+     "2025Q1": -0.027119090583258232,
+     "2025Q2": 0.0,
+     "2025Q3": 0.0
+    },
+    "long_short": {
+     "long_pnl": 40.12278817751617,
+     "short_pnl": -511.066450414664,
+     "long_n": 36,
+     "short_n": 36
+    },
+    "per_symbol": {
+     "BTCUSDT": 88.07934201095145,
+     "ETHUSDT": -559.0230042480994
+    },
+    "total_pnl": -470.9436622371559,
+    "best_quarter": "2025Q2",
+    "best_quarter_share": null,
+    "positive_quarters": "0/4",
+    "regime": {
+     "bull": {
+      "pnl_usdt": -357.69014618816436,
+      "hours": 2735
+     },
+     "range": {
+      "pnl_usdt": -113.25351604899151,
+      "hours": 5404
+     },
+     "bear": {
+      "pnl_usdt": 0.0,
+      "hours": 621
+     }
+    },
+    "reconcile": {
+     "key": "C2-V4-trail|validation",
+     "balance": 9529.056337762851,
+     "unrealized_end": 0.0,
+     "final_equity": 9529.056337762844,
+     "ledger_vs_equity_diff": -7.275957614183426e-12,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": -470.9436622371478,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": -8.071765478234738e-12,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "holdout_pre": {
+    "result_id": "20261009-191610-c2_squeeze-holdout_pre-254395-6a6135",
+    "summary": {
+     "net_return": -0.07997372207915665,
+     "max_dd": 0.0973368096638817,
+     "ret_over_dd": -0.8216184848806701,
+     "sharpe_daily": -1.5931395182981432,
+     "sortino_daily": -2.3865765405453336,
+     "trades": 106,
+     "win_rate": 0.2358490566037736,
+     "payoff": 1.7969439035651604,
+     "profit_factor": 0.5546123159151729,
+     "turnover": 50.68633595703555,
+     "exposure": 0.11353764478764479,
+     "fees": 253.43167978517772,
+     "funding": -22.42255842150697,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": true,
+     "halted_at": 1605447600000,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 518.0
+    },
+    "quarter_pnl": {
+     "2020Q2": -220.61164165918854,
+     "2020Q3": -323.208698466995,
+     "2020Q4": -255.91688066538518,
+     "2021Q1": 0.0,
+     "2021Q2": 0.0,
+     "2021Q3": 0.0
+    },
+    "quarterly_ret": {
+     "2020Q2": -0.022061164165918856,
+     "2020Q3": -0.03304999112662621,
+     "2020Q4": -0.02706345372765473,
+     "2021Q1": 0.0,
+     "2021Q2": 0.0,
+     "2021Q3": 0.0
+    },
+    "long_short": {
+     "long_pnl": -316.9594203704457,
+     "short_pnl": -482.77780042113534,
+     "long_n": 65,
+     "short_n": 41
+    },
+    "per_symbol": {
+     "BTCUSDT": -225.38957067095134,
+     "ETHUSDT": -574.3476501206295
+    },
+    "total_pnl": -799.7372207915687,
+    "best_quarter": "2021Q1",
+    "best_quarter_share": null,
+    "positive_quarters": "0/6",
+    "regime": {
+     "bull": {
+      "pnl_usdt": -425.13668664556644,
+      "hours": 6436
+     },
+     "range": {
+      "pnl_usdt": -389.33404278734815,
+      "hours": 4251
+     },
+     "bear": {
+      "pnl_usdt": 14.733508641345907,
+      "hours": 1745
+     }
+    },
+    "reconcile": {
+     "key": "C2-V4-trail|holdout_pre",
+     "balance": 9200.262779208419,
+     "unrealized_end": 0.0,
+     "final_equity": 9200.262779208433,
+     "ledger_vs_equity_diff": 1.4551915228366852e-11,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": -799.7372207915809,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": 1.3983481039758772e-11,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "train": {
+    "result_id": "20261009-191631-c2_squeeze-train-254394-33623a",
+    "summary": {
+     "net_return": 0.05492317050856865,
+     "max_dd": 0.09989930601994435,
+     "ret_over_dd": 0.5497853057918495,
+     "sharpe_daily": 0.2515295694000961,
+     "sortino_daily": 0.5790946507159215,
+     "trades": 486,
+     "win_rate": 0.28600823045267487,
+     "payoff": 2.6623927190450747,
+     "profit_factor": 1.066491607917191,
+     "turnover": 294.8502648001374,
+     "exposure": 0.2365451388888889,
+     "fees": 1474.2513240006867,
+     "funding": -1.5977561346659366,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": true,
+     "halted_at": 1701357660000,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 1088.0
+    },
+    "quarter_pnl": {
+     "2021Q4": -176.04353637757958,
+     "2022Q1": 257.8253277899057,
+     "2022Q2": 747.2801708938896,
+     "2022Q3": 137.9802964298342,
+     "2022Q4": -39.981196055065084,
+     "2023Q1": 537.4006813617616,
+     "2023Q2": -67.88860261756963,
+     "2023Q3": -712.4534077523313,
+     "2023Q4": -134.88802858715826,
+     "2024Q1": 0.0,
+     "2024Q2": 0.0,
+     "2024Q3": 0.0
+    },
+    "quarterly_ret": {
+     "2021Q4": -0.01760435363775792,
+     "2022Q1": 0.02624455113829338,
+     "2022Q2": 0.07412183544087658,
+     "2022Q3": 0.012741666536779883,
+     "2022Q4": -0.003645576912336357,
+     "2023Q1": 0.049180715498803096,
+     "2023Q2": -0.005921656344036075,
+     "2023Q3": -0.06251470498290834,
+     "2023Q4": -0.012625095183278034,
+     "2024Q1": 0.0,
+     "2024Q2": 0.0,
+     "2024Q3": 0.0
+    },
+    "long_short": {
+     "long_pnl": -423.2643630416551,
+     "short_pnl": 972.4960681273351,
+     "long_n": 226,
+     "short_n": 260
+    },
+    "per_symbol": {
+     "BTCUSDT": 98.28631138974022,
+     "ETHUSDT": 450.9453936959395
+    },
+    "total_pnl": 549.2317050856873,
+    "best_quarter": "2022Q2",
+    "best_quarter_share": 1.3605918303228766,
+    "positive_quarters": "4/12"
+   }
+  },
+  "C1-V5-gate-rel": {
+   "validation": {
+    "result_id": "20261009-191620-c1_regime-validation-254398-8ff16d",
+    "summary": {
+     "net_return": -0.06014298419442343,
+     "max_dd": 0.09872998735464378,
+     "ret_over_dd": -0.6091663313840645,
+     "sharpe_daily": -0.6413404089248461,
+     "sortino_daily": -1.0369455237523557,
+     "trades": 413,
+     "win_rate": 0.28329297820823246,
+     "payoff": 2.257368556993827,
+     "profit_factor": 0.89227067962256,
+     "turnover": 146.20184360010302,
+     "exposure": 0.8838375190258752,
+     "fees": 731.0092180005151,
+     "funding": -20.717821445195753,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": true,
+     "halted_at": 1751977620000,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 365.0
+    },
+    "quarter_pnl": {
+     "2024Q4": -277.6492074670423,
+     "2025Q1": 369.640486868906,
+     "2025Q2": -620.5611287627944,
+     "2025Q3": -72.85999258330594
+    },
+    "quarterly_ret": {
+     "2024Q4": -0.027764920746704225,
+     "2025Q1": 0.038019661577403774,
+     "2025Q2": -0.06149045431989053,
+     "2025Q3": -0.007692607285752939
+    },
+    "long_short": {
+     "long_pnl": -208.01701042865858,
+     "short_pnl": -393.4128315155552,
+     "long_n": 216,
+     "short_n": 197
+    },
+    "per_symbol": {
+     "BTCUSDT": -352.1899009774981,
+     "ETHUSDT": -249.23994096671598
+    },
+    "total_pnl": -601.4298419442366,
+    "best_quarter": "2025Q1",
+    "best_quarter_share": null,
+    "positive_quarters": "1/4",
+    "regime": {
+     "bull": {
+      "pnl_usdt": -859.0134047858537,
+      "hours": 2735
+     },
+     "range": {
+      "pnl_usdt": 72.2748296071968,
+      "hours": 5404
+     },
+     "bear": {
+      "pnl_usdt": 185.3087332344203,
+      "hours": 621
+     }
+    },
+    "reconcile": {
+     "key": "C1-V5-gate-rel|validation",
+     "balance": 9398.570158055785,
+     "unrealized_end": 0.0,
+     "final_equity": 9398.570158055765,
+     "ledger_vs_equity_diff": -2.000888343900442e-11,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": -601.429841944214,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": -2.0804691303055733e-11,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "holdout_pre": {
+    "result_id": "20261009-191630-c1_regime-holdout_pre-254396-735be0",
+    "summary": {
+     "net_return": 0.1414417224483544,
+     "max_dd": 0.0576784335198276,
+     "ret_over_dd": 2.4522462524876345,
+     "sharpe_daily": 0.903738711227564,
+     "sortino_daily": 1.7902825797079833,
+     "trades": 650,
+     "win_rate": 0.32461538461538464,
+     "payoff": 2.4413912958153974,
+     "profit_factor": 1.1734249736151454,
+     "turnover": 154.17741140152336,
+     "exposure": 1.1677820677820678,
+     "fees": 770.8870570076169,
+     "funding": -294.06256132106876,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 518.0
+    },
+    "quarter_pnl": {
+     "2020Q2": -157.33832253157016,
+     "2020Q3": 307.0877851087025,
+     "2020Q4": 965.6132756269217,
+     "2021Q1": 190.52457326246258,
+     "2021Q2": 33.10683452948251,
+     "2021Q3": 74.77091848754571
+    },
+    "quarterly_ret": {
+     "2020Q2": -0.015733832253157054,
+     "2020Q3": 0.031199668867180508,
+     "2020Q4": 0.09513666117446617,
+     "2021Q1": 0.01714065278388266,
+     "2021Q2": 0.0029282827271686074,
+     "2021Q3": 0.006594140320104858
+    },
+    "long_short": {
+     "long_pnl": 2131.2252939520763,
+     "short_pnl": -744.0543280696487,
+     "long_n": 365,
+     "short_n": 285
+    },
+    "per_symbol": {
+     "BTCUSDT": 525.193336089125,
+     "ETHUSDT": 861.9776297933023
+    },
+    "total_pnl": 1414.4172244835445,
+    "best_quarter": "2020Q4",
+    "best_quarter_share": 0.6826933799392202,
+    "positive_quarters": "5/6",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 429.4702250563096,
+      "hours": 6436
+     },
+     "range": {
+      "pnl_usdt": 1229.1577169106786,
+      "hours": 4251
+     },
+     "bear": {
+      "pnl_usdt": -244.21071748344366,
+      "hours": 1745
+     }
+    },
+    "reconcile": {
+     "key": "C1-V5-gate-rel|holdout_pre",
+     "balance": 11385.981280023218,
+     "unrealized_end": 28.435944460351315,
+     "final_equity": 11414.417224483544,
+     "ledger_vs_equity_diff": -2.3646862246096134e-11,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 1387.1709658824275,
+     "open_trip_net": -1.189685859210328,
+     "trips_vs_equity_diff": -2.3874235921539366e-11,
+     "open_position_at_end": true
+    },
+    "rerun_matches_registered": true
+   },
+   "train": {
+    "result_id": "20261009-191701-c1_regime-train-254395-6e85c0",
+    "summary": {
+     "net_return": -0.05366625089395116,
+     "max_dd": 0.09931477523467869,
+     "ret_over_dd": -0.540365225286358,
+     "sharpe_daily": -0.21406849089063548,
+     "sortino_daily": -0.38113548138403086,
+     "trades": 602,
+     "win_rate": 0.2956810631229236,
+     "payoff": 2.2271959666913665,
+     "profit_factor": 0.9350020803562812,
+     "turnover": 171.00692122293464,
+     "exposure": 0.474789368872549,
+     "fees": 855.034606114673,
+     "funding": -48.077374147195414,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": true,
+     "halted_at": 1673222580000,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 1088.0
+    },
+    "quarter_pnl": {
+     "2021Q4": -337.6022707747288,
+     "2022Q1": 73.72124149070805,
+     "2022Q2": 435.3127856776682,
+     "2022Q3": -83.52098319161632,
+     "2022Q4": -446.6305498189049,
+     "2023Q1": -177.9427323226373,
+     "2023Q2": 0.0,
+     "2023Q3": 0.0,
+     "2023Q4": 0.0,
+     "2024Q1": 0.0,
+     "2024Q2": 0.0,
+     "2024Q3": 0.0
+    },
+    "quarterly_ret": {
+     "2021Q4": -0.03376022707747284,
+     "2022Q1": 0.007629704712705854,
+     "2022Q2": 0.04471112020991019,
+     "2022Q3": -0.008211330045951093,
+     "2022Q4": -0.04427384022917347,
+     "2023Q1": -0.01845633859817397,
+     "2023Q2": 0.0,
+     "2023Q3": 0.0,
+     "2023Q4": 0.0,
+     "2024Q1": 0.0,
+     "2024Q2": 0.0,
+     "2024Q3": 0.0
+    },
+    "long_short": {
+     "long_pnl": -241.53616278753447,
+     "short_pnl": -295.12634615194503,
+     "long_n": 289,
+     "short_n": 313
+    },
+    "per_symbol": {
+     "BTCUSDT": -150.38276071226517,
+     "ETHUSDT": -386.27974822721455
+    },
+    "total_pnl": -536.6625089395111,
+    "best_quarter": "2022Q2",
+    "best_quarter_share": null,
+    "positive_quarters": "2/12"
+   }
+  },
+  "D1-relmom-rel360-tr90": {
+   "validation": {
+    "result_id": "20261009-191630-d1_relmom-validation-254398-8482ed",
+    "summary": {
+     "net_return": 0.04033287156356535,
+     "max_dd": 0.016569302504631067,
+     "ret_over_dd": 2.4341924804796364,
+     "sharpe_daily": 1.760187944420745,
+     "sortino_daily": 3.0859730826662175,
+     "trades": 136,
+     "win_rate": 0.35294117647058826,
+     "payoff": 3.0101186295991855,
+     "profit_factor": 1.641882888872283,
+     "turnover": 16.108334460890188,
+     "exposure": 0.580220700152207,
+     "fees": 80.54167230445094,
+     "funding": -13.070833283192743,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 365.0
+    },
+    "quarter_pnl": {
+     "2024Q4": 178.69808008561267,
+     "2025Q1": -87.38707754424468,
+     "2025Q2": 94.46422412681568,
+     "2025Q3": 217.55348896747273
+    },
+    "quarterly_ret": {
+     "2024Q4": 0.017869808008561305,
+     "2025Q1": -0.008585290265679002,
+     "2025Q2": 0.00936094667016274,
+     "2025Q3": 0.021358559768517082
+    },
+    "long_short": {
+     "long_pnl": 452.20385307589635,
+     "short_pnl": -48.875137440240565,
+     "long_n": 75,
+     "short_n": 61
+    },
+    "per_symbol": {
+     "BTCUSDT": 164.5579607205526,
+     "ETHUSDT": 238.7707549151031
+    },
+    "total_pnl": 403.3287156356564,
+    "best_quarter": "2025Q3",
+    "best_quarter_share": 0.5393949910672808,
+    "positive_quarters": "3/4",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 181.6016110258479,
+      "hours": 2735
+     },
+     "range": {
+      "pnl_usdt": 190.2115797124061,
+      "hours": 5404
+     },
+     "bear": {
+      "pnl_usdt": 31.51552489740243,
+      "hours": 621
+     }
+    },
+    "reconcile": {
+     "key": "D1-relmom-rel360-tr90|validation",
+     "balance": 10403.328715635656,
+     "unrealized_end": 0.0,
+     "final_equity": 10403.328715635655,
+     "ledger_vs_equity_diff": -1.8189894035458565e-12,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 403.3287156356557,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": -1.1368683772161603e-12,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "holdout_pre": {
+    "result_id": "20261009-191632-d1_relmom-holdout_pre-254396-6dbd19",
+    "summary": {
+     "net_return": 0.006812017320438235,
+     "max_dd": 0.01996087785397238,
+     "ret_over_dd": 0.3412684236771975,
+     "sharpe_daily": 0.25752039548081757,
+     "sortino_daily": 0.4044406770419386,
+     "trades": 163,
+     "win_rate": 0.3558282208588957,
+     "payoff": 1.9570957112113054,
+     "profit_factor": 1.0810623928595782,
+     "turnover": 13.858479279240827,
+     "exposure": 0.49926131488631487,
+     "fees": 69.29239639620411,
+     "funding": -23.17569782786232,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 518.0
+    },
+    "quarter_pnl": {
+     "2020Q2": -22.58247049923557,
+     "2020Q3": -25.491793150144076,
+     "2020Q4": 66.95760537748174,
+     "2021Q1": -113.06750339755854,
+     "2021Q2": 76.96770383398507,
+     "2021Q3": 85.336631039856
+    },
+    "quarterly_ret": {
+     "2020Q2": -0.002258247049923612,
+     "2020Q3": -0.0025549490211039805,
+     "2020Q4": 0.006728105409077756,
+     "2021Q1": -0.011285439658393681,
+     "2021Q2": 0.007769951015660803,
+     "2021Q3": 0.008548380387035204
+    },
+    "long_short": {
+     "long_pnl": 138.3085235210984,
+     "short_pnl": -70.18835031672569,
+     "long_n": 76,
+     "short_n": 87
+    },
+    "per_symbol": {
+     "BTCUSDT": 288.0764856343633,
+     "ETHUSDT": -219.95631242999056
+    },
+    "total_pnl": 68.12017320438463,
+    "best_quarter": "2021Q3",
+    "best_quarter_share": 1.252736554028069,
+    "positive_quarters": "3/6",
+    "regime": {
+     "bull": {
+      "pnl_usdt": -81.29890993504341,
+      "hours": 6436
+     },
+     "range": {
+      "pnl_usdt": 120.28628551052316,
+      "hours": 4251
+     },
+     "bear": {
+      "pnl_usdt": 29.132797628904882,
+      "hours": 1745
+     }
+    },
+    "reconcile": {
+     "key": "D1-relmom-rel360-tr90|holdout_pre",
+     "balance": 10068.120173204372,
+     "unrealized_end": 0.0,
+     "final_equity": 10068.120173204383,
+     "ledger_vs_equity_diff": 1.0913936421275139e-11,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 68.12017320437272,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": 1.0089706847793423e-11,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "train": {
+    "result_id": "20261009-191634-d1_relmom-train-254399-3b94c9",
+    "summary": {
+     "net_return": 0.0806320396728073,
+     "max_dd": 0.023528432469835603,
+     "ret_over_dd": 3.42700431812365,
+     "sharpe_daily": 1.0404928423720274,
+     "sortino_daily": 2.0626879344743485,
+     "trades": 416,
+     "win_rate": 0.37740384615384615,
+     "payoff": 2.378100679212072,
+     "profit_factor": 1.441551376974113,
+     "turnover": 47.30308125637365,
+     "exposure": 0.5871183108660131,
+     "fees": 236.5154062818683,
+     "funding": -36.96682660517675,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 1088.0
+    },
+    "quarter_pnl": {
+     "2021Q4": -166.0654618564513,
+     "2022Q1": 76.40719977550543,
+     "2022Q2": 24.863741585046228,
+     "2022Q3": -34.557464202604024,
+     "2022Q4": -90.28876244185267,
+     "2023Q1": 176.84556582045298,
+     "2023Q2": 39.84252462682707,
+     "2023Q3": 1.0440707592570106,
+     "2023Q4": 410.8280550461368,
+     "2024Q1": 86.26795011767899,
+     "2024Q2": 110.94433482912791,
+     "2024Q3": 170.18864266894707
+    },
+    "quarterly_ret": {
+     "2021Q4": -0.016606546185645166,
+     "2022Q1": 0.007769748667650678,
+     "2022Q2": 0.0025088682350793423,
+     "2022Q3": -0.003478283793314052,
+     "2022Q4": -0.009119480088809473,
+     "2023Q1": 0.0180264107829593,
+     "2023Q2": 0.003989356917193154,
+     "2023Q3": 0.00010412544426197101,
+     "2023Q4": 0.04096772138214422,
+     "2024Q1": 0.008264068936726376,
+     "2024Q2": 0.01054084173612213,
+     "2024Q3": 0.016000990454447583
+    },
+    "long_short": {
+     "long_pnl": 695.4738329467955,
+     "short_pnl": 110.84656378127599,
+     "long_n": 220,
+     "short_n": 196
+    },
+    "per_symbol": {
+     "BTCUSDT": 549.8056695116546,
+     "ETHUSDT": 256.51472721641676
+    },
+    "total_pnl": 806.3203967280715,
+    "best_quarter": "2023Q4",
+    "best_quarter_share": 0.5095096895889228,
+    "positive_quarters": "9/12"
+   }
+  },
+  "E1-v3-s3-d": {
+   "validation": {
+    "result_id": "20261009-191634-e1_composite-validation-254396-d177dc",
+    "summary": {
+     "net_return": 0.04660699610336949,
+     "max_dd": 0.022049440873013637,
+     "ret_over_dd": 2.1137495672469364,
+     "sharpe_daily": 1.4140609224342866,
+     "sortino_daily": 2.7884698924383238,
+     "trades": 98,
+     "win_rate": 0.30612244897959184,
+     "payoff": 3.559785988758467,
+     "profit_factor": 1.570493818569912,
+     "turnover": 10.913340283071395,
+     "exposure": 0.8281088280060883,
+     "fees": 54.566701415356974,
+     "funding": -17.702990144279696,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 365.0
+    },
+    "quarter_pnl": {
+     "2024Q4": 29.940983216743916,
+     "2025Q1": -26.584456727063298,
+     "2025Q2": 232.04475755673047,
+     "2025Q3": 230.66867698728493
+    },
+    "quarterly_ret": {
+     "2024Q4": 0.002994098321674299,
+     "2025Q1": -0.0026505097858050553,
+     "2025Q2": 0.02319668972531952,
+     "2025Q3": 0.022536358916071197
+    },
+    "long_short": {
+     "long_pnl": 557.6139658339359,
+     "short_pnl": -91.54400480023929,
+     "long_n": 52,
+     "short_n": 46
+    },
+    "per_symbol": {
+     "BTCUSDT": 153.6050199682344,
+     "ETHUSDT": 312.4649410654623
+    },
+    "total_pnl": 466.069961033696,
+    "best_quarter": "2025Q2",
+    "best_quarter_share": 0.4978753769972188,
+    "positive_quarters": "3/4",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 153.39154888788107,
+      "hours": 2735
+     },
+     "range": {
+      "pnl_usdt": 277.2821972039601,
+      "hours": 5404
+     },
+     "bear": {
+      "pnl_usdt": 35.39621494185485,
+      "hours": 621
+     }
+    },
+    "reconcile": {
+     "key": "E1-v3-s3-d|validation",
+     "balance": 10466.069961033696,
+     "unrealized_end": 0.0,
+     "final_equity": 10466.069961033696,
+     "ledger_vs_equity_diff": 0.0,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 466.0699610336967,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": -6.821210263296962e-13,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "holdout_pre": {
+    "result_id": "20261009-191635-e1_composite-holdout_pre-254397-11718f",
+    "summary": {
+     "net_return": 0.07949281037603884,
+     "max_dd": 0.031105935670191376,
+     "ret_over_dd": 2.5555511725762456,
+     "sharpe_daily": 1.3441231885504128,
+     "sortino_daily": 2.568161330878787,
+     "trades": 111,
+     "win_rate": 0.43243243243243246,
+     "payoff": 2.479738664823825,
+     "profit_factor": 1.8893246970086288,
+     "turnover": 8.922090899402116,
+     "exposure": 0.7971605534105534,
+     "fees": 44.610454497010586,
+     "funding": -150.02798622611607,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 518.0
+    },
+    "quarter_pnl": {
+     "2020Q2": 17.838149484159658,
+     "2020Q3": 358.97892345906075,
+     "2020Q4": 182.88243394630445,
+     "2021Q1": 54.76400756644398,
+     "2021Q2": 97.72997446726731,
+     "2021Q3": 82.73461483715255
+    },
+    "quarterly_ret": {
+     "2020Q2": 0.0017838149484159516,
+     "2020Q3": 0.03583397117246756,
+     "2020Q4": 0.01762413586562661,
+     "2021Q1": 0.00518613314050409,
+     "2021Q2": 0.009207245786295948,
+     "2021Q3": 0.007723405567935604
+    },
+    "long_short": {
+     "long_pnl": 738.8149187157787,
+     "short_pnl": 56.11318504459858,
+     "long_n": 76,
+     "short_n": 35
+    },
+    "per_symbol": {
+     "BTCUSDT": 556.326623049918,
+     "ETHUSDT": 238.6014807104594
+    },
+    "total_pnl": 794.9281037603887,
+    "best_quarter": "2020Q3",
+    "best_quarter_share": 0.4515866551464458,
+    "positive_quarters": "6/6",
+    "regime": {
+     "bull": {
+      "pnl_usdt": 302.3397680148064,
+      "hours": 6436
+     },
+     "range": {
+      "pnl_usdt": 460.0539801091054,
+      "hours": 4251
+     },
+     "bear": {
+      "pnl_usdt": 32.5343556364769,
+      "hours": 1745
+     }
+    },
+    "reconcile": {
+     "key": "E1-v3-s3-d|holdout_pre",
+     "balance": 10794.928103760378,
+     "unrealized_end": 0.0,
+     "final_equity": 10794.928103760389,
+     "ledger_vs_equity_diff": 1.0913936421275139e-11,
+     "fee_ok": true,
+     "realized_ok": true,
+     "trips_closed_net": 794.9281037603774,
+     "open_trip_net": 0.0,
+     "trips_vs_equity_diff": 1.1254996934439987e-11,
+     "open_position_at_end": false
+    },
+    "rerun_matches_registered": true
+   },
+   "train": {
+    "result_id": "20261009-191639-e1_composite-train-254394-4d06fe",
+    "summary": {
+     "net_return": 0.2213036912154609,
+     "max_dd": 0.02789140105438115,
+     "ret_over_dd": 7.934477396240329,
+     "sharpe_daily": 1.632018142296529,
+     "sortino_daily": 3.6879619749823993,
+     "trades": 263,
+     "win_rate": 0.41064638783269963,
+     "payoff": 3.0261090464235996,
+     "profit_factor": 2.1085146904112824,
+     "turnover": 30.91521336323664,
+     "exposure": 0.8296166513480392,
+     "fees": 154.5760668161832,
+     "funding": -89.5049476367634,
+     "liquidations": 0,
+     "rejects": 0,
+     "partial_fills": 0,
+     "halted": false,
+     "halted_at": null,
+     "daily_blocks": 0,
+     "risk_violations": 0,
+     "warmup_days": 120,
+     "days": 1088.0
+    },
+    "quarter_pnl": {
+     "2021Q4": -210.50211352132465,
+     "2022Q1": 170.31478746432913,
+     "2022Q2": 284.8709204726347,
+     "2022Q3": -54.292701952084826,
+     "2022Q4": 70.1502233061783,
+     "2023Q1": 915.1251460157109,
+     "2023Q2": 19.203234345992314,
+     "2023Q3": 60.29725280605271,
+     "2023Q4": 600.7936327542266,
+     "2024Q1": 321.4853466912391,
+     "2024Q2": 163.935696183833,
+     "2024Q3": -128.34451241217903
+    },
+    "quarterly_ret": {
+     "2021Q4": -0.021050211352132475,
+     "2022Q1": 0.017397704094667565,
+     "2022Q2": 0.02860203598185307,
+     "2022Q3": -0.005299597732982164,
+     "2022Q4": 0.006883958039142435,
+     "2023Q1": 0.08918878017156695,
+     "2023Q2": 0.0017183077855194018,
+     "2023Q3": 0.005386150577895377,
+     "2023Q4": 0.05337936310991953,
+     "2024Q1": 0.02711592619588088,
+     "2024Q2": 0.013462239934417086,
+     "2024Q3": -0.010399525628200457
+    },
+    "long_short": {
+     "long_pnl": 1649.006947734332,
+     "short_pnl": 564.0299644202988,
+     "long_n": 134,
+     "short_n": 129
+    },
+    "per_symbol": {
+     "BTCUSDT": 1338.125531707335,
+     "ETHUSDT": 874.9113804472963
+    },
+    "total_pnl": 2213.036912154608,
+    "best_quarter": "2023Q1",
+    "best_quarter_share": 0.4135155364962923,
+    "positive_quarters": "9/12"
+   }
+  }
+ },
+ "baselines": {
+  "bh_btc|validation": {
+   "net_return": 0.6892781514862116,
+   "max_dd": 0.3303632939577006,
+   "ret_over_dd": 2.0864247454030598,
+   "sharpe_daily": 1.4940884974816966,
+   "symbol": "BTCUSDT",
+   "split": "validation",
+   "halt_rule": false,
+   "fees": 14.002334344832452,
+   "funding": -1097.8848404579467,
+   "trades": 1,
+   "price_return": 0.8005149346854319,
+   "halted_at": null,
+   "quarter_pnl": {
+    "2024Q4": 4312.453906883746,
+    "2025Q1": -1944.4444995721115,
+    "2025Q2": 3763.6700237367113,
+    "2025Q3": 749.8428211468054
+   }
+  },
+  "bh_btc_halt|validation": {
+   "net_return": 0.43323505415708397,
+   "max_dd": 0.10635181412096761,
+   "ret_over_dd": 4.073602859884552,
+   "sharpe_daily": 1.932270921752158,
+   "symbol": "BTCUSDT",
+   "split": "validation",
+   "halt_rule": true,
+   "fees": 12.327367491487175,
+   "funding": -310.0570739120209,
+   "trades": 1,
+   "price_return": 0.8005149346854319,
+   "halted_at": 1733437740000,
+   "quarter_pnl": {
+    "2024Q4": 4332.350541570839,
+    "2025Q1": 0.0,
+    "2025Q2": 0.0,
+    "2025Q3": 0.0
+   }
+  },
+  "bh_eth|validation": {
+   "net_return": 0.5005259031158527,
+   "max_dd": 0.683010824825049,
+   "ret_over_dd": 0.7328227971263277,
+   "sharpe_daily": 0.9781369630603197,
+   "symbol": "ETHUSDT",
+   "split": "validation",
+   "halt_rule": false,
+   "fees": 12.961732672072412,
+   "funding": -905.2445803142201,
+   "trades": 1,
+   "price_return": 0.5924527866722533,
+   "halted_at": null,
+   "quarter_pnl": {
+    "2024Q4": 2381.1076761656786,
+    "2025Q1": -5958.018752973869,
+    "2025Q2": 2463.1930124514674,
+    "2025Q3": 6100.416940021818
+   }
+  },
+  "bh_eth_halt|validation": {
+   "net_return": -0.08327128408929652,
+   "max_dd": 0.10026180070797053,
+   "ret_over_dd": -0.8305384852585904,
+   "sharpe_daily": -1.0013726842426114,
+   "symbol": "ETHUSDT",
+   "split": "validation",
+   "halt_rule": true,
+   "fees": 9.590624841350163,
+   "funding": -4.371898751940988,
+   "trades": 1,
+   "price_return": 0.5924527866722533,
+   "halted_at": 1727895600000,
+   "quarter_pnl": {
+    "2024Q4": -832.7128408929657,
+    "2025Q1": 0.0,
+    "2025Q2": 0.0,
+    "2025Q3": 0.0
+   }
+  },
+  "cash|validation": {
+   "net_return": 0.0,
+   "max_dd": 0.0,
+   "trades": 0
+  },
+  "bh_btc|holdout_pre": {
+   "net_return": 2.4552916841750934,
+   "max_dd": 0.6971038695324772,
+   "ret_over_dd": 3.522131767568254,
+   "sharpe_daily": 1.4038476921980407,
+   "symbol": "BTCUSDT",
+   "split": "holdout_pre",
+   "halt_rule": false,
+   "fees": 30.39198937641277,
+   "funding": -16200.66992169819,
+   "trades": 1,
+   "price_return": 4.078681665798894,
+   "halted_at": null,
+   "quarter_pnl": {
+    "2020Q2": 398.44688916102496,
+    "2020Q3": 1220.6792704731724,
+    "2020Q4": 20209.008572910003,
+    "2021Q1": 25957.78679933445,
+    "2021Q2": -32272.834885843113,
+    "2021Q3": 8986.08723024492
+   }
+  },
+  "bh_btc_halt|holdout_pre": {
+   "net_return": 0.0261923762560341,
+   "max_dd": 0.11450297676794519,
+   "ret_over_dd": 0.22874843078635654,
+   "sharpe_daily": 0.060017229921630416,
+   "symbol": "BTCUSDT",
+   "split": "holdout_pre",
+   "halt_rule": true,
+   "fees": 10.16743696597026,
+   "funding": -62.78273241421041,
+   "trades": 1,
+   "price_return": 4.078681665798894,
+   "halted_at": 1589069880000,
+   "quarter_pnl": {
+    "2020Q2": 261.92376256034004,
+    "2020Q3": 0.0,
+    "2020Q4": 0.0,
+    "2021Q1": 0.0,
+    "2021Q2": 0.0,
+    "2021Q3": 0.0
+   }
+  },
+  "bh_eth|holdout_pre": {
+   "net_return": 9.997708456777668,
+   "max_dd": 0.70728622355162,
+   "ret_over_dd": 14.135307777627036,
+   "sharpe_daily": 2.0192119147613083,
+   "symbol": "ETHUSDT",
+   "split": "holdout_pre",
+   "halt_rule": false,
+   "fees": 77.72098467516567,
+   "funding": -35387.1637978795,
+   "trades": 1,
+   "price_return": 13.545608845351824,
+   "halted_at": null,
+   "quarter_pnl": {
+    "2020Q2": 669.6986222893174,
+    "2020Q3": 5173.028157968953,
+    "2020Q4": 16450.909713779336,
+    "2021Q1": 41151.98867415033,
+    "2021Q2": 6501.43214772566,
+    "2021Q3": 30285.327568505556
+   }
+  },
+  "bh_eth_halt|holdout_pre": {
+   "net_return": -0.04662608280667968,
+   "max_dd": 0.09746554850122935,
+   "ret_over_dd": -0.47838527073072984,
+   "sharpe_daily": -0.933621841897795,
+   "symbol": "ETHUSDT",
+   "split": "holdout_pre",
+   "halt_rule": true,
+   "fees": 9.78522703429918,
+   "funding": -26.929669630860882,
+   "trades": 1,
+   "price_return": 13.545608845351824,
+   "halted_at": 1588569240000,
+   "quarter_pnl": {
+    "2020Q2": -466.26082806679733,
+    "2020Q3": 0.0,
+    "2020Q4": 0.0,
+    "2021Q1": 0.0,
+    "2021Q2": 0.0,
+    "2021Q3": 0.0
+   }
+  },
+  "cash|holdout_pre": {
+   "net_return": 0.0,
+   "max_dd": 0.0,
+   "trades": 0
+  }
+ },
+ "verdict_inputs": {
+  "A2-tsmom-L180-m3": {
+   "fails": [],
+   "crit": [],
+   "promoted": true,
+   "acct_ok": true
+  },
+  "A2-tsmom-L180-m2": {
+   "fails": [],
+   "crit": [],
+   "promoted": true,
+   "acct_ok": true
+  },
+  "A3-ens5-e0.6-m2.5-vs": {
+   "fails": [],
+   "crit": [],
+   "promoted": true,
+   "acct_ok": true
+  },
+  "B2-tp": {
+   "fails": [],
+   "crit": [
+    "val_net<=0",
+    "holdout_net<=0"
+   ],
+   "promoted": false,
+   "acct_ok": true
+  },
+  "B3-abs-favg3": {
+   "fails": [],
+   "crit": [],
+   "promoted": true,
+   "acct_ok": true
+  },
+  "B3-favg3-short": {
+   "fails": [],
+   "crit": [],
+   "promoted": true,
+   "acct_ok": true
+  },
+  "C3-R2-V2-er20": {
+   "fails": [],
+   "crit": [],
+   "promoted": true,
+   "acct_ok": true
+  },
+  "C3-R2-V1-control": {
+   "fails": [],
+   "crit": [],
+   "promoted": true,
+   "acct_ok": true
+  },
+  "C2-V4-trail": {
+   "fails": [],
+   "crit": [
+    "val_net<=0",
+    "val_halted",
+    "holdout_net<=0"
+   ],
+   "promoted": false,
+   "acct_ok": true
+  },
+  "C1-V5-gate-rel": {
+   "fails": [],
+   "crit": [
+    "val_net<=0",
+    "val_halted"
+   ],
+   "promoted": false,
+   "acct_ok": true
+  },
+  "D1-relmom-rel360-tr90": {
+   "fails": [],
+   "crit": [],
+   "promoted": true,
+   "acct_ok": true
+  },
+  "E1-v3-s3-d": {
+   "fails": [],
+   "crit": [],
+   "promoted": true,
+   "acct_ok": true
+  }
+ },
+ "correlation": {
+  "validation": {
+   "all": {
+    "A2-tsmom-L180-m3": {
+     "A2-tsmom-L180-m3": 1.0,
+     "A2-tsmom-L180-m2": 0.909,
+     "A3-ens5-e0.6-m2.5-vs": 0.8045,
+     "B2-tp": -0.2407,
+     "B3-abs-favg3": 0.1668,
+     "B3-favg3-short": -0.1802,
+     "C3-R2-V2-er20": 0.6459,
+     "C3-R2-V1-control": 0.7319,
+     "C2-V4-trail": 0.142,
+     "C1-V5-gate-rel": 0.3264,
+     "D1-relmom-rel360-tr90": 0.5196,
+     "E1-v3-s3-d": 0.8478
+    },
+    "A2-tsmom-L180-m2": {
+     "A2-tsmom-L180-m3": 0.909,
+     "A2-tsmom-L180-m2": 1.0,
+     "A3-ens5-e0.6-m2.5-vs": 0.8053,
+     "B2-tp": -0.2733,
+     "B3-abs-favg3": 0.101,
+     "B3-favg3-short": -0.2644,
+     "C3-R2-V2-er20": 0.5097,
+     "C3-R2-V1-control": 0.6345,
+     "C2-V4-trail": 0.1553,
+     "C1-V5-gate-rel": 0.4006,
+     "D1-relmom-rel360-tr90": 0.3948,
+     "E1-v3-s3-d": 0.7225
+    },
+    "A3-ens5-e0.6-m2.5-vs": {
+     "A2-tsmom-L180-m3": 0.8045,
+     "A2-tsmom-L180-m2": 0.8053,
+     "A3-ens5-e0.6-m2.5-vs": 1.0,
+     "B2-tp": -0.2485,
+     "B3-abs-favg3": 0.1093,
+     "B3-favg3-short": -0.2029,
+     "C3-R2-V2-er20": 0.6233,
+     "C3-R2-V1-control": 0.7799,
+     "C2-V4-trail": 0.1494,
+     "C1-V5-gate-rel": 0.3108,
+     "D1-relmom-rel360-tr90": 0.51,
+     "E1-v3-s3-d": 0.759
+    },
+    "B2-tp": {
+     "A2-tsmom-L180-m3": -0.2407,
+     "A2-tsmom-L180-m2": -0.2733,
+     "A3-ens5-e0.6-m2.5-vs": -0.2485,
+     "B2-tp": 1.0,
+     "B3-abs-favg3": -0.1414,
+     "B3-favg3-short": 0.0573,
+     "C3-R2-V2-er20": -0.1427,
+     "C3-R2-V1-control": -0.1908,
+     "C2-V4-trail": -0.0573,
+     "C1-V5-gate-rel": -0.3187,
+     "D1-relmom-rel360-tr90": -0.2327,
+     "E1-v3-s3-d": -0.2112
+    },
+    "B3-abs-favg3": {
+     "A2-tsmom-L180-m3": 0.1668,
+     "A2-tsmom-L180-m2": 0.101,
+     "A3-ens5-e0.6-m2.5-vs": 0.1093,
+     "B2-tp": -0.1414,
+     "B3-abs-favg3": 1.0,
+     "B3-favg3-short": 0.4635,
+     "C3-R2-V2-er20": 0.1395,
+     "C3-R2-V1-control": 0.1596,
+     "C2-V4-trail": 0.0043,
+     "C1-V5-gate-rel": 0.2274,
+     "D1-relmom-rel360-tr90": 0.0686,
+     "E1-v3-s3-d": 0.2752
+    },
+    "B3-favg3-short": {
+     "A2-tsmom-L180-m3": -0.1802,
+     "A2-tsmom-L180-m2": -0.2644,
+     "A3-ens5-e0.6-m2.5-vs": -0.2029,
+     "B2-tp": 0.0573,
+     "B3-abs-favg3": 0.4635,
+     "B3-favg3-short": 1.0,
+     "C3-R2-V2-er20": -0.0754,
+     "C3-R2-V1-control": -0.1445,
+     "C2-V4-trail": -0.1441,
+     "C1-V5-gate-rel": -0.0336,
+     "D1-relmom-rel360-tr90": -0.0653,
+     "E1-v3-s3-d": -0.0596
+    },
+    "C3-R2-V2-er20": {
+     "A2-tsmom-L180-m3": 0.6459,
+     "A2-tsmom-L180-m2": 0.5097,
+     "A3-ens5-e0.6-m2.5-vs": 0.6233,
+     "B2-tp": -0.1427,
+     "B3-abs-favg3": 0.1395,
+     "B3-favg3-short": -0.0754,
+     "C3-R2-V2-er20": 1.0,
+     "C3-R2-V1-control": 0.8207,
+     "C2-V4-trail": 0.1445,
+     "C1-V5-gate-rel": 0.1483,
+     "D1-relmom-rel360-tr90": 0.6347,
+     "E1-v3-s3-d": 0.7007
+    },
+    "C3-R2-V1-control": {
+     "A2-tsmom-L180-m3": 0.7319,
+     "A2-tsmom-L180-m2": 0.6345,
+     "A3-ens5-e0.6-m2.5-vs": 0.7799,
+     "B2-tp": -0.1908,
+     "B3-abs-favg3": 0.1596,
+     "B3-favg3-short": -0.1445,
+     "C3-R2-V2-er20": 0.8207,
+     "C3-R2-V1-control": 1.0,
+     "C2-V4-trail": 0.1394,
+     "C1-V5-gate-rel": 0.2097,
+     "D1-relmom-rel360-tr90": 0.6012,
+     "E1-v3-s3-d": 0.7544
+    },
+    "C2-V4-trail": {
+     "A2-tsmom-L180-m3": 0.142,
+     "A2-tsmom-L180-m2": 0.1553,
+     "A3-ens5-e0.6-m2.5-vs": 0.1494,
+     "B2-tp": -0.0573,
+     "B3-abs-favg3": 0.0043,
+     "B3-favg3-short": -0.1441,
+     "C3-R2-V2-er20": 0.1445,
+     "C3-R2-V1-control": 0.1394,
+     "C2-V4-trail": 1.0,
+     "C1-V5-gate-rel": 0.3226,
+     "D1-relmom-rel360-tr90": 0.0847,
+     "E1-v3-s3-d": 0.1361
+    },
+    "C1-V5-gate-rel": {
+     "A2-tsmom-L180-m3": 0.3264,
+     "A2-tsmom-L180-m2": 0.4006,
+     "A3-ens5-e0.6-m2.5-vs": 0.3108,
+     "B2-tp": -0.3187,
+     "B3-abs-favg3": 0.2274,
+     "B3-favg3-short": -0.0336,
+     "C3-R2-V2-er20": 0.1483,
+     "C3-R2-V1-control": 0.2097,
+     "C2-V4-trail": 0.3226,
+     "C1-V5-gate-rel": 1.0,
+     "D1-relmom-rel360-tr90": 0.2067,
+     "E1-v3-s3-d": 0.2695
+    },
+    "D1-relmom-rel360-tr90": {
+     "A2-tsmom-L180-m3": 0.5196,
+     "A2-tsmom-L180-m2": 0.3948,
+     "A3-ens5-e0.6-m2.5-vs": 0.51,
+     "B2-tp": -0.2327,
+     "B3-abs-favg3": 0.0686,
+     "B3-favg3-short": -0.0653,
+     "C3-R2-V2-er20": 0.6347,
+     "C3-R2-V1-control": 0.6012,
+     "C2-V4-trail": 0.0847,
+     "C1-V5-gate-rel": 0.2067,
+     "D1-relmom-rel360-tr90": 1.0,
+     "E1-v3-s3-d": 0.5464
+    },
+    "E1-v3-s3-d": {
+     "A2-tsmom-L180-m3": 0.8478,
+     "A2-tsmom-L180-m2": 0.7225,
+     "A3-ens5-e0.6-m2.5-vs": 0.759,
+     "B2-tp": -0.2112,
+     "B3-abs-favg3": 0.2752,
+     "B3-favg3-short": -0.0596,
+     "C3-R2-V2-er20": 0.7007,
+     "C3-R2-V1-control": 0.7544,
+     "C2-V4-trail": 0.1361,
+     "C1-V5-gate-rel": 0.2695,
+     "D1-relmom-rel360-tr90": 0.5464,
+     "E1-v3-s3-d": 1.0
+    }
+   },
+   "promoted": {
+    "A2-tsmom-L180-m3": {
+     "A2-tsmom-L180-m3": 1.0,
+     "A2-tsmom-L180-m2": 0.909,
+     "A3-ens5-e0.6-m2.5-vs": 0.8045,
+     "B3-abs-favg3": 0.1668,
+     "B3-favg3-short": -0.1802,
+     "C3-R2-V2-er20": 0.6459,
+     "C3-R2-V1-control": 0.7319,
+     "D1-relmom-rel360-tr90": 0.5196,
+     "E1-v3-s3-d": 0.8478
+    },
+    "A2-tsmom-L180-m2": {
+     "A2-tsmom-L180-m3": 0.909,
+     "A2-tsmom-L180-m2": 1.0,
+     "A3-ens5-e0.6-m2.5-vs": 0.8053,
+     "B3-abs-favg3": 0.101,
+     "B3-favg3-short": -0.2644,
+     "C3-R2-V2-er20": 0.5097,
+     "C3-R2-V1-control": 0.6345,
+     "D1-relmom-rel360-tr90": 0.3948,
+     "E1-v3-s3-d": 0.7225
+    },
+    "A3-ens5-e0.6-m2.5-vs": {
+     "A2-tsmom-L180-m3": 0.8045,
+     "A2-tsmom-L180-m2": 0.8053,
+     "A3-ens5-e0.6-m2.5-vs": 1.0,
+     "B3-abs-favg3": 0.1093,
+     "B3-favg3-short": -0.2029,
+     "C3-R2-V2-er20": 0.6233,
+     "C3-R2-V1-control": 0.7799,
+     "D1-relmom-rel360-tr90": 0.51,
+     "E1-v3-s3-d": 0.759
+    },
+    "B3-abs-favg3": {
+     "A2-tsmom-L180-m3": 0.1668,
+     "A2-tsmom-L180-m2": 0.101,
+     "A3-ens5-e0.6-m2.5-vs": 0.1093,
+     "B3-abs-favg3": 1.0,
+     "B3-favg3-short": 0.4635,
+     "C3-R2-V2-er20": 0.1395,
+     "C3-R2-V1-control": 0.1596,
+     "D1-relmom-rel360-tr90": 0.0686,
+     "E1-v3-s3-d": 0.2752
+    },
+    "B3-favg3-short": {
+     "A2-tsmom-L180-m3": -0.1802,
+     "A2-tsmom-L180-m2": -0.2644,
+     "A3-ens5-e0.6-m2.5-vs": -0.2029,
+     "B3-abs-favg3": 0.4635,
+     "B3-favg3-short": 1.0,
+     "C3-R2-V2-er20": -0.0754,
+     "C3-R2-V1-control": -0.1445,
+     "D1-relmom-rel360-tr90": -0.0653,
+     "E1-v3-s3-d": -0.0596
+    },
+    "C3-R2-V2-er20": {
+     "A2-tsmom-L180-m3": 0.6459,
+     "A2-tsmom-L180-m2": 0.5097,
+     "A3-ens5-e0.6-m2.5-vs": 0.6233,
+     "B3-abs-favg3": 0.1395,
+     "B3-favg3-short": -0.0754,
+     "C3-R2-V2-er20": 1.0,
+     "C3-R2-V1-control": 0.8207,
+     "D1-relmom-rel360-tr90": 0.6347,
+     "E1-v3-s3-d": 0.7007
+    },
+    "C3-R2-V1-control": {
+     "A2-tsmom-L180-m3": 0.7319,
+     "A2-tsmom-L180-m2": 0.6345,
+     "A3-ens5-e0.6-m2.5-vs": 0.7799,
+     "B3-abs-favg3": 0.1596,
+     "B3-favg3-short": -0.1445,
+     "C3-R2-V2-er20": 0.8207,
+     "C3-R2-V1-control": 1.0,
+     "D1-relmom-rel360-tr90": 0.6012,
+     "E1-v3-s3-d": 0.7544
+    },
+    "D1-relmom-rel360-tr90": {
+     "A2-tsmom-L180-m3": 0.5196,
+     "A2-tsmom-L180-m2": 0.3948,
+     "A3-ens5-e0.6-m2.5-vs": 0.51,
+     "B3-abs-favg3": 0.0686,
+     "B3-favg3-short": -0.0653,
+     "C3-R2-V2-er20": 0.6347,
+     "C3-R2-V1-control": 0.6012,
+     "D1-relmom-rel360-tr90": 1.0,
+     "E1-v3-s3-d": 0.5464
+    },
+    "E1-v3-s3-d": {
+     "A2-tsmom-L180-m3": 0.8478,
+     "A2-tsmom-L180-m2": 0.7225,
+     "A3-ens5-e0.6-m2.5-vs": 0.759,
+     "B3-abs-favg3": 0.2752,
+     "B3-favg3-short": -0.0596,
+     "C3-R2-V2-er20": 0.7007,
+     "C3-R2-V1-control": 0.7544,
+     "D1-relmom-rel360-tr90": 0.5464,
+     "E1-v3-s3-d": 1.0
+    }
+   },
+   "days": 365
+  },
+  "holdout_pre": {
+   "all": {
+    "A2-tsmom-L180-m3": {
+     "A2-tsmom-L180-m3": 1.0,
+     "A2-tsmom-L180-m2": 0.9421,
+     "A3-ens5-e0.6-m2.5-vs": 0.8854,
+     "B2-tp": -0.1442,
+     "B3-abs-favg3": -0.0544,
+     "B3-favg3-short": -0.0797,
+     "C3-R2-V2-er20": 0.6856,
+     "C3-R2-V1-control": 0.7744,
+     "C2-V4-trail": 0.0019,
+     "C1-V5-gate-rel": 0.5291,
+     "D1-relmom-rel360-tr90": 0.3413,
+     "E1-v3-s3-d": 0.885
+    },
+    "A2-tsmom-L180-m2": {
+     "A2-tsmom-L180-m3": 0.9421,
+     "A2-tsmom-L180-m2": 1.0,
+     "A3-ens5-e0.6-m2.5-vs": 0.8802,
+     "B2-tp": -0.1461,
+     "B3-abs-favg3": -0.0035,
+     "B3-favg3-short": -0.0494,
+     "C3-R2-V2-er20": 0.6099,
+     "C3-R2-V1-control": 0.6863,
+     "C2-V4-trail": 0.007,
+     "C1-V5-gate-rel": 0.5933,
+     "D1-relmom-rel360-tr90": 0.2806,
+     "E1-v3-s3-d": 0.8276
+    },
+    "A3-ens5-e0.6-m2.5-vs": {
+     "A2-tsmom-L180-m3": 0.8854,
+     "A2-tsmom-L180-m2": 0.8802,
+     "A3-ens5-e0.6-m2.5-vs": 1.0,
+     "B2-tp": -0.1185,
+     "B3-abs-favg3": -0.04,
+     "B3-favg3-short": -0.1193,
+     "C3-R2-V2-er20": 0.6755,
+     "C3-R2-V1-control": 0.7582,
+     "C2-V4-trail": -0.0086,
+     "C1-V5-gate-rel": 0.5734,
+     "D1-relmom-rel360-tr90": 0.2735,
+     "E1-v3-s3-d": 0.8767
+    },
+    "B2-tp": {
+     "A2-tsmom-L180-m3": -0.1442,
+     "A2-tsmom-L180-m2": -0.1461,
+     "A3-ens5-e0.6-m2.5-vs": -0.1185,
+     "B2-tp": 1.0,
+     "B3-abs-favg3": -0.0117,
+     "B3-favg3-short": 0.0359,
+     "C3-R2-V2-er20": -0.0735,
+     "C3-R2-V1-control": -0.102,
+     "C2-V4-trail": -0.1556,
+     "C1-V5-gate-rel": -0.254,
+     "D1-relmom-rel360-tr90": -0.0933,
+     "E1-v3-s3-d": -0.0686
+    },
+    "B3-abs-favg3": {
+     "A2-tsmom-L180-m3": -0.0544,
+     "A2-tsmom-L180-m2": -0.0035,
+     "A3-ens5-e0.6-m2.5-vs": -0.04,
+     "B2-tp": -0.0117,
+     "B3-abs-favg3": 1.0,
+     "B3-favg3-short": 0.7154,
+     "C3-R2-V2-er20": -0.0208,
+     "C3-R2-V1-control": -0.0727,
+     "C2-V4-trail": 0.0349,
+     "C1-V5-gate-rel": 0.0334,
+     "D1-relmom-rel360-tr90": -0.0161,
+     "E1-v3-s3-d": -0.0321
+    },
+    "B3-favg3-short": {
+     "A2-tsmom-L180-m3": -0.0797,
+     "A2-tsmom-L180-m2": -0.0494,
+     "A3-ens5-e0.6-m2.5-vs": -0.1193,
+     "B2-tp": 0.0359,
+     "B3-abs-favg3": 0.7154,
+     "B3-favg3-short": 1.0,
+     "C3-R2-V2-er20": -0.0729,
+     "C3-R2-V1-control": -0.1036,
+     "C2-V4-trail": -0.0696,
+     "C1-V5-gate-rel": -0.0298,
+     "D1-relmom-rel360-tr90": -0.0571,
+     "E1-v3-s3-d": -0.0652
+    },
+    "C3-R2-V2-er20": {
+     "A2-tsmom-L180-m3": 0.6856,
+     "A2-tsmom-L180-m2": 0.6099,
+     "A3-ens5-e0.6-m2.5-vs": 0.6755,
+     "B2-tp": -0.0735,
+     "B3-abs-favg3": -0.0208,
+     "B3-favg3-short": -0.0729,
+     "C3-R2-V2-er20": 1.0,
+     "C3-R2-V1-control": 0.8922,
+     "C2-V4-trail": -0.024,
+     "C1-V5-gate-rel": 0.3341,
+     "D1-relmom-rel360-tr90": 0.1634,
+     "E1-v3-s3-d": 0.6806
+    },
+    "C3-R2-V1-control": {
+     "A2-tsmom-L180-m3": 0.7744,
+     "A2-tsmom-L180-m2": 0.6863,
+     "A3-ens5-e0.6-m2.5-vs": 0.7582,
+     "B2-tp": -0.102,
+     "B3-abs-favg3": -0.0727,
+     "B3-favg3-short": -0.1036,
+     "C3-R2-V2-er20": 0.8922,
+     "C3-R2-V1-control": 1.0,
+     "C2-V4-trail": -0.0232,
+     "C1-V5-gate-rel": 0.4136,
+     "D1-relmom-rel360-tr90": 0.335,
+     "E1-v3-s3-d": 0.7618
+    },
+    "C2-V4-trail": {
+     "A2-tsmom-L180-m3": 0.0019,
+     "A2-tsmom-L180-m2": 0.007,
+     "A3-ens5-e0.6-m2.5-vs": -0.0086,
+     "B2-tp": -0.1556,
+     "B3-abs-favg3": 0.0349,
+     "B3-favg3-short": -0.0696,
+     "C3-R2-V2-er20": -0.024,
+     "C3-R2-V1-control": -0.0232,
+     "C2-V4-trail": 1.0,
+     "C1-V5-gate-rel": 0.1678,
+     "D1-relmom-rel360-tr90": -0.0284,
+     "E1-v3-s3-d": -0.0107
+    },
+    "C1-V5-gate-rel": {
+     "A2-tsmom-L180-m3": 0.5291,
+     "A2-tsmom-L180-m2": 0.5933,
+     "A3-ens5-e0.6-m2.5-vs": 0.5734,
+     "B2-tp": -0.254,
+     "B3-abs-favg3": 0.0334,
+     "B3-favg3-short": -0.0298,
+     "C3-R2-V2-er20": 0.3341,
+     "C3-R2-V1-control": 0.4136,
+     "C2-V4-trail": 0.1678,
+     "C1-V5-gate-rel": 1.0,
+     "D1-relmom-rel360-tr90": 0.238,
+     "E1-v3-s3-d": 0.4918
+    },
+    "D1-relmom-rel360-tr90": {
+     "A2-tsmom-L180-m3": 0.3413,
+     "A2-tsmom-L180-m2": 0.2806,
+     "A3-ens5-e0.6-m2.5-vs": 0.2735,
+     "B2-tp": -0.0933,
+     "B3-abs-favg3": -0.0161,
+     "B3-favg3-short": -0.0571,
+     "C3-R2-V2-er20": 0.1634,
+     "C3-R2-V1-control": 0.335,
+     "C2-V4-trail": -0.0284,
+     "C1-V5-gate-rel": 0.238,
+     "D1-relmom-rel360-tr90": 1.0,
+     "E1-v3-s3-d": 0.3187
+    },
+    "E1-v3-s3-d": {
+     "A2-tsmom-L180-m3": 0.885,
+     "A2-tsmom-L180-m2": 0.8276,
+     "A3-ens5-e0.6-m2.5-vs": 0.8767,
+     "B2-tp": -0.0686,
+     "B3-abs-favg3": -0.0321,
+     "B3-favg3-short": -0.0652,
+     "C3-R2-V2-er20": 0.6806,
+     "C3-R2-V1-control": 0.7618,
+     "C2-V4-trail": -0.0107,
+     "C1-V5-gate-rel": 0.4918,
+     "D1-relmom-rel360-tr90": 0.3187,
+     "E1-v3-s3-d": 1.0
+    }
+   },
+   "promoted": {
+    "A2-tsmom-L180-m3": {
+     "A2-tsmom-L180-m3": 1.0,
+     "A2-tsmom-L180-m2": 0.9421,
+     "A3-ens5-e0.6-m2.5-vs": 0.8854,
+     "B3-abs-favg3": -0.0544,
+     "B3-favg3-short": -0.0797,
+     "C3-R2-V2-er20": 0.6856,
+     "C3-R2-V1-control": 0.7744,
+     "D1-relmom-rel360-tr90": 0.3413,
+     "E1-v3-s3-d": 0.885
+    },
+    "A2-tsmom-L180-m2": {
+     "A2-tsmom-L180-m3": 0.9421,
+     "A2-tsmom-L180-m2": 1.0,
+     "A3-ens5-e0.6-m2.5-vs": 0.8802,
+     "B3-abs-favg3": -0.0035,
+     "B3-favg3-short": -0.0494,
+     "C3-R2-V2-er20": 0.6099,
+     "C3-R2-V1-control": 0.6863,
+     "D1-relmom-rel360-tr90": 0.2806,
+     "E1-v3-s3-d": 0.8276
+    },
+    "A3-ens5-e0.6-m2.5-vs": {
+     "A2-tsmom-L180-m3": 0.8854,
+     "A2-tsmom-L180-m2": 0.8802,
+     "A3-ens5-e0.6-m2.5-vs": 1.0,
+     "B3-abs-favg3": -0.04,
+     "B3-favg3-short": -0.1193,
+     "C3-R2-V2-er20": 0.6755,
+     "C3-R2-V1-control": 0.7582,
+     "D1-relmom-rel360-tr90": 0.2735,
+     "E1-v3-s3-d": 0.8767
+    },
+    "B3-abs-favg3": {
+     "A2-tsmom-L180-m3": -0.0544,
+     "A2-tsmom-L180-m2": -0.0035,
+     "A3-ens5-e0.6-m2.5-vs": -0.04,
+     "B3-abs-favg3": 1.0,
+     "B3-favg3-short": 0.7154,
+     "C3-R2-V2-er20": -0.0208,
+     "C3-R2-V1-control": -0.0727,
+     "D1-relmom-rel360-tr90": -0.0161,
+     "E1-v3-s3-d": -0.0321
+    },
+    "B3-favg3-short": {
+     "A2-tsmom-L180-m3": -0.0797,
+     "A2-tsmom-L180-m2": -0.0494,
+     "A3-ens5-e0.6-m2.5-vs": -0.1193,
+     "B3-abs-favg3": 0.7154,
+     "B3-favg3-short": 1.0,
+     "C3-R2-V2-er20": -0.0729,
+     "C3-R2-V1-control": -0.1036,
+     "D1-relmom-rel360-tr90": -0.0571,
+     "E1-v3-s3-d": -0.0652
+    },
+    "C3-R2-V2-er20": {
+     "A2-tsmom-L180-m3": 0.6856,
+     "A2-tsmom-L180-m2": 0.6099,
+     "A3-ens5-e0.6-m2.5-vs": 0.6755,
+     "B3-abs-favg3": -0.0208,
+     "B3-favg3-short": -0.0729,
+     "C3-R2-V2-er20": 1.0,
+     "C3-R2-V1-control": 0.8922,
+     "D1-relmom-rel360-tr90": 0.1634,
+     "E1-v3-s3-d": 0.6806
+    },
+    "C3-R2-V1-control": {
+     "A2-tsmom-L180-m3": 0.7744,
+     "A2-tsmom-L180-m2": 0.6863,
+     "A3-ens5-e0.6-m2.5-vs": 0.7582,
+     "B3-abs-favg3": -0.0727,
+     "B3-favg3-short": -0.1036,
+     "C3-R2-V2-er20": 0.8922,
+     "C3-R2-V1-control": 1.0,
+     "D1-relmom-rel360-tr90": 0.335,
+     "E1-v3-s3-d": 0.7618
+    },
+    "D1-relmom-rel360-tr90": {
+     "A2-tsmom-L180-m3": 0.3413,
+     "A2-tsmom-L180-m2": 0.2806,
+     "A3-ens5-e0.6-m2.5-vs": 0.2735,
+     "B3-abs-favg3": -0.0161,
+     "B3-favg3-short": -0.0571,
+     "C3-R2-V2-er20": 0.1634,
+     "C3-R2-V1-control": 0.335,
+     "D1-relmom-rel360-tr90": 1.0,
+     "E1-v3-s3-d": 0.3187
+    },
+    "E1-v3-s3-d": {
+     "A2-tsmom-L180-m3": 0.885,
+     "A2-tsmom-L180-m2": 0.8276,
+     "A3-ens5-e0.6-m2.5-vs": 0.8767,
+     "B3-abs-favg3": -0.0321,
+     "B3-favg3-short": -0.0652,
+     "C3-R2-V2-er20": 0.6806,
+     "C3-R2-V1-control": 0.7618,
+     "D1-relmom-rel360-tr90": 0.3187,
+     "E1-v3-s3-d": 1.0
+    }
+   },
+   "days": 518
+  }
+ },
+ "dsr": {
+  "A2-tsmom-L180-m3": {
+   "validation": {
+    "T_days": 365,
+    "sr_daily": 0.06953836003493429,
+    "sr_ann": 1.3285285030691185,
+    "sr0_daily": 0.12175266304373994,
+    "n_trials": 57,
+    "dsr": 0.14255762341175293,
+    "psr0": 0.9227110630724757
+   },
+   "holdout_pre": {
+    "T_days": 518,
+    "sr_daily": 0.04644755685664169,
+    "sr_ann": 0.8873793277691909,
+    "sr0_daily": 0.10220214751688318,
+    "n_trials": 57,
+    "dsr": 0.09008678491720518,
+    "psr0": 0.8678958440686195
+   },
+   "n_trials_all_teams": 257,
+   "validation_all_teams": {
+    "T_days": 365,
+    "sr_daily": 0.06953836003493429,
+    "sr_ann": 1.3285285030691185,
+    "sr0_daily": 0.14899257506188443,
+    "n_trials": 257,
+    "dsr": 0.05191768584945994,
+    "psr0": 0.9227110630724757
+   }
+  },
+  "A2-tsmom-L180-m2": {
+   "validation": {
+    "T_days": 365,
+    "sr_daily": 0.06839053516219047,
+    "sr_ann": 1.306599339666275,
+    "sr0_daily": 0.12175266304373994,
+    "n_trials": 57,
+    "dsr": 0.1311524468813806,
+    "psr0": 0.9245922046986061
+   },
+   "holdout_pre": {
+    "T_days": 518,
+    "sr_daily": 0.07152265889194875,
+    "sr_ann": 1.3664384795026558,
+    "sr0_daily": 0.10220214751688318,
+    "n_trials": 57,
+    "dsr": 0.21205355631172318,
+    "psr0": 0.9687994184356337
+   },
+   "n_trials_all_teams": 257,
+   "validation_all_teams": {
+    "T_days": 365,
+    "sr_daily": 0.06839053516219047,
+    "sr_ann": 1.306599339666275,
+    "sr0_daily": 0.14899257506188443,
+    "n_trials": 257,
+    "dsr": 0.04521065131834767,
+    "psr0": 0.9245922046986061
+   }
+  },
+  "A3-ens5-e0.6-m2.5-vs": {
+   "validation": {
+    "T_days": 365,
+    "sr_daily": 0.05882678989413421,
+    "sr_ann": 1.1238842428718996,
+    "sr0_daily": 0.12175266304373994,
+    "n_trials": 57,
+    "dsr": 0.09726931464890026,
+    "psr0": 0.8873897870390607
+   },
+   "holdout_pre": {
+    "T_days": 518,
+    "sr_daily": 0.05914431973714544,
+    "sr_ann": 1.1299506420047458,
+    "sr0_daily": 0.10220214751688318,
+    "n_trials": 57,
+    "dsr": 0.13481780438537855,
+    "psr0": 0.9352810451507487
+   },
+   "n_trials_all_teams": 257,
+   "validation_all_teams": {
+    "T_days": 365,
+    "sr_daily": 0.05882678989413421,
+    "sr_ann": 1.1238842428718996,
+    "sr0_daily": 0.14899257506188443,
+    "n_trials": 257,
+    "dsr": 0.03152473860066718,
+    "psr0": 0.8873897870390607
+   }
+  },
+  "B3-abs-favg3": {
+   "validation": {
+    "T_days": 365,
+    "sr_daily": 0.05778810949793366,
+    "sr_ann": 1.1040402817655643,
+    "sr0_daily": 0.11874137733737361,
+    "n_trials": 49,
+    "dsr": 0.09422732114243798,
+    "psr0": 0.8937776136727069
+   },
+   "holdout_pre": {
+    "T_days": 518,
+    "sr_daily": 0.06929681677861725,
+    "sr_ann": 1.32391382563669,
+    "sr0_daily": 0.09967440103246361,
+    "n_trials": 49,
+    "dsr": 0.23862382220485817,
+    "psr0": 0.947525415785474
+   },
+   "n_trials_all_teams": 257,
+   "validation_all_teams": {
+    "T_days": 365,
+    "sr_daily": 0.05778810949793366,
+    "sr_ann": 1.1040402817655643,
+    "sr0_daily": 0.14899257506188443,
+    "n_trials": 257,
+    "dsr": 0.02454077839438168,
+    "psr0": 0.8937776136727069
+   }
+  },
+  "B3-favg3-short": {
+   "validation": {
+    "T_days": 365,
+    "sr_daily": 0.024772997880555356,
+    "sr_ann": 0.4732874599610157,
+    "sr0_daily": 0.11874137733737361,
+    "n_trials": 49,
+    "dsr": 0.03327515994706448,
+    "psr0": 0.6856948855442427
+   },
+   "holdout_pre": {
+    "T_days": 518,
+    "sr_daily": 0.0660777612742538,
+    "sr_ann": 1.2624138565784617,
+    "sr0_daily": 0.09967440103246361,
+    "n_trials": 49,
+    "dsr": 0.2079964572879882,
+    "psr0": 0.9451761020058751
+   },
+   "n_trials_all_teams": 257,
+   "validation_all_teams": {
+    "T_days": 365,
+    "sr_daily": 0.024772997880555356,
+    "sr_ann": 0.4732874599610157,
+    "sr0_daily": 0.14899257506188443,
+    "n_trials": 257,
+    "dsr": 0.00764697215845378,
+    "psr0": 0.6856948855442427
+   }
+  },
+  "C3-R2-V2-er20": {
+   "validation": {
+    "T_days": 365,
+    "sr_daily": 0.010220464609247087,
+    "sr_ann": 0.19526170219102965,
+    "sr0_daily": 0.12209515980341325,
+    "n_trials": 58,
+    "dsr": 0.01573687735802859,
+    "psr0": 0.5778946354040905
+   },
+   "holdout_pre": {
+    "T_days": 518,
+    "sr_daily": 0.05986920225354924,
+    "sr_ann": 1.1437995030353356,
+    "sr0_daily": 0.10248964762966191,
+    "n_trials": 58,
+    "dsr": 0.1613601636319396,
+    "psr0": 0.9175973414590848
+   },
+   "n_trials_all_teams": 257,
+   "validation_all_teams": {
+    "T_days": 365,
+    "sr_daily": 0.010220464609247087,
+    "sr_ann": 0.19526170219102965,
+    "sr0_daily": 0.14899257506188443,
+    "n_trials": 257,
+    "dsr": 0.0038130391202014224,
+    "psr0": 0.5778946354040905
+   }
+  },
+  "C3-R2-V1-control": {
+   "validation": {
+    "T_days": 365,
+    "sr_daily": 0.018334555838880783,
+    "sr_ann": 0.3502811974689744,
+    "sr0_daily": 0.12209515980341325,
+    "n_trials": 58,
+    "dsr": 0.022723803060884284,
+    "psr0": 0.6381384302912376
+   },
+   "holdout_pre": {
+    "T_days": 518,
+    "sr_daily": 0.07147987898550302,
+    "sr_ann": 1.365621170537601,
+    "sr0_daily": 0.10248964762966191,
+    "n_trials": 58,
+    "dsr": 0.2331198186413676,
+    "psr0": 0.9534730601862753
+   },
+   "n_trials_all_teams": 257,
+   "validation_all_teams": {
+    "T_days": 365,
+    "sr_daily": 0.018334555838880783,
+    "sr_ann": 0.3502811974689744,
+    "sr0_daily": 0.14899257506188443,
+    "n_trials": 257,
+    "dsr": 0.005883333821617043,
+    "psr0": 0.6381384302912376
+   }
+  },
+  "D1-relmom-rel360-tr90": {
+   "validation": {
+    "T_days": 365,
+    "sr_daily": 0.09213244783647548,
+    "sr_ann": 1.7601879444208277,
+    "sr0_daily": 0.12104683901300808,
+    "n_trials": 55,
+    "dsr": 0.28257077681690707,
+    "psr0": 0.966589658902576
+   },
+   "holdout_pre": {
+    "T_days": 518,
+    "sr_daily": 0.013479233554955464,
+    "sr_ann": 0.2575203954808213,
+    "sr0_daily": 0.10160966165327705,
+    "n_trials": 55,
+    "dsr": 0.021908757622507657,
+    "psr0": 0.6210784203197058
+   },
+   "n_trials_all_teams": 257,
+   "validation_all_teams": {
+    "T_days": 365,
+    "sr_daily": 0.09213244783647548,
+    "sr_ann": 1.7601879444208277,
+    "sr0_daily": 0.14899257506188443,
+    "n_trials": 257,
+    "dsr": 0.12899125188803534,
+    "psr0": 0.966589658902576
+   }
+  },
+  "E1-v3-s3-d": {
+   "validation": {
+    "T_days": 365,
+    "sr_daily": 0.07401533148021062,
+    "sr_ann": 1.4140609224343172,
+    "sr0_daily": 0.11353784907043767,
+    "n_trials": 38,
+    "dsr": 0.20716170308053744,
+    "psr0": 0.9368346986170437
+   },
+   "holdout_pre": {
+    "T_days": 518,
+    "sr_daily": 0.07035462317955336,
+    "sr_ann": 1.3441231885504341,
+    "sr0_daily": 0.09530643280695873,
+    "n_trials": 38,
+    "dsr": 0.25754855491856943,
+    "psr0": 0.9667731913647135
+   },
+   "n_trials_all_teams": 257,
+   "validation_all_teams": {
+    "T_days": 365,
+    "sr_daily": 0.07401533148021062,
+    "sr_ann": 1.4140609224343172,
+    "sr0_daily": 0.14899257506188443,
+    "n_trials": 257,
+    "dsr": 0.06073885899815229,
+    "psr0": 0.9368346986170437
+   }
+  }
+ }
+}

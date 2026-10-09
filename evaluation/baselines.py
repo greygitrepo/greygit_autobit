@@ -54,7 +54,8 @@ def buy_and_hold(symbol: str, split: str, halt: bool = False, costs=None) -> dic
     exp = load_experiment()
     risk = load_risk()
     costs = costs or load_cost_model()
-    lo, hi = exp["splits"][split]
+    lo, hi = {**exp["splits"], **(exp.get("extra_splits") or {})}[split]     # holdout_pre: eval team only
+    assert split != "test"
     start, end = to_ms(lo), to_ms(hi) + 86_400_000
     m = prepare_market(symbol, load_m1(symbol), load_m1(symbol, mark=True), load_funding(symbol), start, end)
     o, c, sig, mk = m.o, m.c, m.sigma, m.mark_c

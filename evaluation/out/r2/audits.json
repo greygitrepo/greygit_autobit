@@ -1,0 +1,12174 @@
+{
+ "D1-relmom-rel360-tr90": {
+  "id": "D1-relmom-rel360-tr90",
+  "causality": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "causality_ext": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "truncation": {
+   "BTCUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      1.0,
+      26950.72857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      26950.72857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      1.0,
+      29836.52857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      29836.52857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      1.0,
+      95023.67142857144,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      95023.67142857144,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      1.0,
+      101212.63571428572,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      101212.63571428572,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      1.0,
+      95409.6,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      95409.6,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      1.0,
+      103734.98571428572,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      103734.98571428572,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      -1.0,
+      1987.2507142857144,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      1987.2507142857144,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      -1.0,
+      1603.4471428571428,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      1603.4471428571428,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      1.0,
+      2294.081428571428,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2294.081428571428,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      3086.3757142857144,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      3086.3757142857144,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      1.0,
+      3241.46,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      3241.46,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      -1.0,
+      3520.75,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      3520.75,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      -1.0,
+      2838.175714285714,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      2838.175714285714,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      1.0,
+      2364.1992857142855,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2364.1992857142855,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      2757.9278571428567,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2757.9278571428567,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "nonvacuous": {
+   "BTCUSDT": 3671,
+   "ETHUSDT": 3265
+  },
+  "cross_corruption": {
+   "BTCUSDT": {
+    "problems": [],
+    "cuts": 10,
+    "past_corruption_changed": 10
+   },
+   "ETHUSDT": {
+    "problems": [],
+    "cuts": 10,
+    "past_corruption_changed": 10
+   }
+  },
+  "cross_truncation_fixedleg": {
+   "BTCUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      1.0,
+      26950.72857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      26950.72857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      1.0,
+      29836.52857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      29836.52857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      1.0,
+      95023.67142857144,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      95023.67142857144,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      1.0,
+      101212.63571428572,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      101212.63571428572,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      1.0,
+      95409.6,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      95409.6,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      1.0,
+      103734.98571428572,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      103734.98571428572,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      -1.0,
+      1987.2507142857144,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      1987.2507142857144,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      -1.0,
+      1603.4471428571428,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      1603.4471428571428,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      1.0,
+      2294.081428571428,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2294.081428571428,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      3086.3757142857144,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      3086.3757142857144,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      1.0,
+      3241.46,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      3241.46,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      -1.0,
+      3520.75,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      3520.75,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      -1.0,
+      2838.175714285714,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      2838.175714285714,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      1.0,
+      2364.1992857142855,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2364.1992857142855,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      2757.9278571428567,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2757.9278571428567,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "cross_truncation_auto": {
+   "BTCUSDT": [
+    {
+     "t": 1597219200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1646553600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1657454400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1663862400000,
+     "full": [
+      1.0,
+      17641.17857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      17641.17857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1666641600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1667894400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1674662400000,
+     "full": [
+      1.0,
+      22094.928571428572,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      22094.928571428572,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1705348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1708459200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1713758400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1597219200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1646553600000,
+     "full": [
+      -1.0,
+      2760.780714285714,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      2760.780714285714,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1657454400000,
+     "full": [
+      -1.0,
+      1245.8378571428573,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      1245.8378571428573,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1663862400000,
+     "full": [
+      -1.0,
+      1385.67,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      1385.67,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1666641600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1667894400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1674662400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1705348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1708459200000,
+     "full": [
+      1.0,
+      2831.822857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2831.822857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1713758400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "trunc_n": 52,
+  "trunc_mismatch": 0,
+  "trunc_target_mismatch": 0,
+  "causality_ok": true,
+  "cross_trunc_n": 72,
+  "cross_trunc_mismatch": 0,
+  "cross_corruption_ok": true,
+  "cross_used": 20,
+  "truncation_ok": true
+ },
+ "A2-tsmom-L180-m3": {
+  "id": "A2-tsmom-L180-m3",
+  "causality": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "causality_ext": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "truncation": {
+   "BTCUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      -1.0,
+      33553.89642857143,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      33553.89642857143,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      -1.0,
+      36119.799999999996,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      36119.799999999996,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      1.0,
+      16353.950000000003,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      16353.950000000003,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      1.0,
+      29836.52857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      29836.52857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      -1.0,
+      27864.278571428575,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      27864.278571428575,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      54343.642857142855,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      54343.642857142855,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      1.0,
+      95023.67142857144,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      95023.67142857144,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      1.0,
+      101212.63571428572,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      101212.63571428572,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      1.0,
+      79065.27142857143,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      79065.27142857143,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      1.0,
+      102982.22142857143,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      102982.22142857143,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      1.0,
+      106781.3,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      106781.3,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      1.0,
+      105016.23571428572,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      105016.23571428572,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      111962.5,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      111962.5,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      1.0,
+      2673.4157142857143,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2673.4157142857143,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      -1.0,
+      2679.963571428572,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      2679.963571428572,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      1.0,
+      1160.8092857142858,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      1160.8092857142858,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      1.0,
+      1829.462142857143,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      1829.462142857143,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      1.0,
+      1837.2071428571428,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      1837.2071428571428,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      1.0,
+      2294.081428571428,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2294.081428571428,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      3086.3757142857144,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      3086.3757142857144,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      2757.9278571428567,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2757.9278571428567,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "nonvacuous": {
+   "BTCUSDT": 5791,
+   "ETHUSDT": 5942
+  },
+  "trunc_n": 52,
+  "trunc_mismatch": 0,
+  "trunc_target_mismatch": 0,
+  "causality_ok": true,
+  "truncation_ok": true
+ },
+ "A2-tsmom-L180-m2": {
+  "id": "A2-tsmom-L180-m2",
+  "causality": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "causality_ext": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "truncation": {
+   "BTCUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      -1.0,
+      32873.92428571429,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      32873.92428571429,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      -1.0,
+      35533.4,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      35533.4,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      1.0,
+      16539.600000000002,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      16539.600000000002,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      -1.0,
+      27580.285714285714,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      27580.285714285714,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      55359.32857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      55359.32857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      1.0,
+      96433.3142857143,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      96433.3142857143,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      1.0,
+      80605.31428571428,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      80605.31428571428,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      1.0,
+      104312.21428571429,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      104312.21428571429,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      1.0,
+      105813.35714285714,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      105813.35714285714,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      113301.4,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      113301.4,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      1.0,
+      2736.227142857143,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2736.227142857143,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      -1.0,
+      2625.0957142857146,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      2625.0957142857146,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      1.0,
+      1179.3528571428571,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      1179.3528571428571,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      1.0,
+      1857.6114285714286,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      1857.6114285714286,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      1.0,
+      1864.0314285714285,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      1864.0314285714285,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      1.0,
+      2322.0042857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2322.0042857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      3143.877142857143,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      3143.877142857143,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      2822.158571428571,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2822.158571428571,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "nonvacuous": {
+   "BTCUSDT": 4677,
+   "ETHUSDT": 4769
+  },
+  "trunc_n": 52,
+  "trunc_mismatch": 0,
+  "trunc_target_mismatch": 0,
+  "causality_ok": true,
+  "truncation_ok": true
+ },
+ "A3-ens5-e0.6-m2.5-vs": {
+  "id": "A3-ens5-e0.6-m2.5-vs",
+  "causality": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "causality_ext": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "truncation": {
+   "BTCUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      -1.0,
+      35826.6,
+      NaN,
+      0.8389987945665158
+     ],
+     "window": [
+      -1.0,
+      35826.6,
+      NaN,
+      0.8389987945665166
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      1.0,
+      30069.257142857143,
+      NaN,
+      0.9635554236861225
+     ],
+     "window": [
+      1.0,
+      30069.257142857143,
+      NaN,
+      0.963555423686125
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      54851.48571428571,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      54851.48571428571,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      1.0,
+      95728.49285714286,
+      NaN,
+      0.6324243285896478
+     ],
+     "window": [
+      1.0,
+      95728.49285714286,
+      NaN,
+      0.6324243285896487
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      1.0,
+      101972.34642857143,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      101972.34642857143,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      1.0,
+      103647.21785714285,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      103647.21785714285,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      1.0,
+      105816.49642857144,
+      NaN,
+      0.7760106784463315
+     ],
+     "window": [
+      1.0,
+      105816.49642857144,
+      NaN,
+      0.7760106784463395
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      112631.95,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      112631.95,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      1.0,
+      2704.8214285714284,
+      NaN,
+      0.6589094101764343
+     ],
+     "window": [
+      1.0,
+      2704.8214285714284,
+      NaN,
+      0.658909410176434
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      -1.0,
+      2652.5296428571432,
+      NaN,
+      0.8684736135432569
+     ],
+     "window": [
+      -1.0,
+      2652.5296428571432,
+      NaN,
+      0.8684736135432568
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      1.0,
+      1843.5367857142858,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      1843.5367857142858,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      1.0,
+      1850.6192857142858,
+      NaN,
+      0.8564278371363184
+     ],
+     "window": [
+      1.0,
+      1850.6192857142858,
+      NaN,
+      0.8564278371363117
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      1.0,
+      2308.042857142857,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      2308.042857142857,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      3115.1264285714287,
+      NaN,
+      0.9179894992201045
+     ],
+     "window": [
+      1.0,
+      3115.1264285714287,
+      NaN,
+      0.9179894992200979
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      2790.043214285714,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      2790.043214285714,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "nonvacuous": {
+   "BTCUSDT": 3690,
+   "ETHUSDT": 3612
+  },
+  "trunc_n": 52,
+  "trunc_mismatch": 0,
+  "trunc_target_mismatch": 0,
+  "causality_ok": true,
+  "truncation_ok": true
+ },
+ "B2-tp": {
+  "id": "B2-tp",
+  "causality": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "causality_ext": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "truncation": {
+   "BTCUSDT": [
+    {
+     "t": 1619874000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626411600000,
+     "full": [
+      1.0,
+      30608.55161868883,
+      32551.715,
+      NaN
+     ],
+     "window": [
+      1.0,
+      30608.55161868883,
+      32551.715,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628082000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642363200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642482000000,
+     "full": [
+      1.0,
+      41114.49295171463,
+      42916.08916666667,
+      NaN
+     ],
+     "window": [
+      1.0,
+      41114.49295171463,
+      42916.089166666665,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652065200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660788000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1662069600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671796800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680922800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687694400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689562800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695754800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1696021200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700503200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707282000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709082000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721332800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737352800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740114000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744642800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747832400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748138400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751288400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752242400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1619874000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626411600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628082000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642363200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642482000000,
+     "full": [
+      1.0,
+      3102.536035148269,
+      3304.0041666666666,
+      NaN
+     ],
+     "window": [
+      1.0,
+      3102.536035148269,
+      3304.0041666666666,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652065200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660788000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1662069600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671796800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680922800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687694400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689562800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695754800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1696021200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700503200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707282000000,
+     "full": [
+      -1.0,
+      2411.5294674237416,
+      2308.836111111111,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      2411.5294674237416,
+      2308.8361111111108,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709082000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721332800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737352800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740114000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744642800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747832400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748138400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751288400000,
+     "full": [
+      -1.0,
+      2534.369812215959,
+      2432.6486111111108,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      2534.369812215959,
+      2432.648611111111,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752242400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "nonvacuous": {
+   "BTCUSDT": 1856,
+   "ETHUSDT": 1825
+  },
+  "trunc_n": 52,
+  "trunc_mismatch": 0,
+  "trunc_target_mismatch": 0,
+  "causality_ok": true,
+  "truncation_ok": true
+ },
+ "B3-abs-favg3": {
+  "id": "B3-abs-favg3",
+  "causality": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "causality_ext": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "truncation": {
+   "BTCUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      1.0,
+      30758.523571428574,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      30758.523571428574,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      1.0,
+      32951.828571428574,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      32951.828571428574,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      1.0,
+      22657.535714285714,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      22657.535714285714,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      1.0,
+      18755.792857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      18755.792857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      1.0,
+      26690.714285714286,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      26690.714285714286,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      1.0,
+      28927.57857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      28927.57857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      1.0,
+      25656.6,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      25656.6,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      1.0,
+      2479.977142857143,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2479.977142857143,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      1.0,
+      1741.6864285714287,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      1741.6864285714287,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      1.0,
+      1346.2542857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      1346.2542857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "nonvacuous": {
+   "BTCUSDT": 1590,
+   "ETHUSDT": 1717
+  },
+  "trunc_n": 52,
+  "trunc_mismatch": 0,
+  "trunc_target_mismatch": 0,
+  "causality_ok": true,
+  "truncation_ok": true
+ },
+ "B3-favg3-short": {
+  "id": "B3-favg3-short",
+  "causality": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "causality_ext": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "truncation": {
+   "BTCUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      1.0,
+      41202.24857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      41202.24857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      1.0,
+      41202.24857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      41202.24857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      1.0,
+      26690.714285714286,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      26690.714285714286,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      -1.0,
+      33054.77857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      33054.77857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      1.0,
+      28927.57857142857,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      28927.57857142857,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      1.0,
+      41299.864285714284,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      41299.864285714284,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      -1.0,
+      116383.33571428573,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      116383.33571428573,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      -1.0,
+      1967.3635714285715,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      1967.3635714285715,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      1.0,
+      2210.514285714286,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2210.514285714286,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "nonvacuous": {
+   "BTCUSDT": 1710,
+   "ETHUSDT": 1744
+  },
+  "trunc_n": 52,
+  "trunc_mismatch": 0,
+  "trunc_target_mismatch": 0,
+  "causality_ok": true,
+  "truncation_ok": true
+ },
+ "C3-R2-V2-er20": {
+  "id": "C3-R2-V2-er20",
+  "causality": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "causality_ext": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "truncation": {
+   "BTCUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      -1.0,
+      36795.689999999995,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      36795.689999999995,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      -1.0,
+      20684.76,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      20684.76,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      1.0,
+      29178.8,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      29178.8,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      54130.24,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      54130.24,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      1.0,
+      61220.02,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      61220.02,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      1.0,
+      93687.04000000001,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      93687.04000000001,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      111195.99999999999,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      111195.99999999999,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      1.0,
+      2393.9480000000003,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2393.9480000000003,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      -1.0,
+      2721.8065,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      2721.8065,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      1.0,
+      1820.3210000000001,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      1820.3210000000001,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      1.0,
+      1830.419,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      1830.419,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      3055.324,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      3055.324,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      1.0,
+      3292.276,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      3292.276,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      2725.8059999999996,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2725.8059999999996,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "nonvacuous": {
+   "BTCUSDT": 3683,
+   "ETHUSDT": 3388
+  },
+  "trunc_n": 52,
+  "trunc_mismatch": 0,
+  "trunc_target_mismatch": 0,
+  "causality_ok": true,
+  "truncation_ok": true
+ },
+ "C3-R2-V1-control": {
+  "id": "C3-R2-V1-control",
+  "causality": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "causality_ext": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "truncation": {
+   "BTCUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      1.0,
+      53504.933000000005,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      53504.933000000005,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      -1.0,
+      34039.076,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      34039.076,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      -1.0,
+      37569.02,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      37569.02,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      1.0,
+      23439.66,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      23439.66,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      -1.0,
+      20684.76,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      20684.76,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      1.0,
+      29178.8,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      29178.8,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      1.0,
+      42028.96,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      42028.96,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      54130.24,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      54130.24,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      1.0,
+      61220.02,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      61220.02,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      1.0,
+      93687.04000000001,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      93687.04000000001,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      1.0,
+      99782.23999999999,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      99782.23999999999,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      1.0,
+      105459.06,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      105459.06,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      111195.99999999999,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      111195.99999999999,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      1.0,
+      2577.494,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2577.494,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      -1.0,
+      2080.49,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      2080.49,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      1.0,
+      2393.9480000000003,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2393.9480000000003,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      -1.0,
+      2762.5080000000003,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      2762.5080000000003,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      -1.0,
+      1233.476,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      1233.476,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      1.0,
+      1790.97,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      1790.97,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      1.0,
+      1804.316,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      1804.316,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      3055.324,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      3055.324,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      1.0,
+      3292.276,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      3292.276,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      2725.8059999999996,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2725.8059999999996,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "nonvacuous": {
+   "BTCUSDT": 5866,
+   "ETHUSDT": 5892
+  },
+  "trunc_n": 52,
+  "trunc_mismatch": 0,
+  "trunc_target_mismatch": 0,
+  "causality_ok": true,
+  "truncation_ok": true
+ },
+ "C2-V4-trail": {
+  "id": "C2-V4-trail",
+  "causality": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "causality_ext": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "truncation": {
+   "BTCUSDT": [
+    {
+     "t": 1619874000000,
+     "full": [
+      1.0,
+      57157.71214285714,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      57157.71214285714,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626411600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628082000000,
+     "full": [
+      1.0,
+      38143.22,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      38143.22,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642363200000,
+     "full": [
+      1.0,
+      42693.2425,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      42693.2425,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642482000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652065200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660788000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1662069600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671796800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680922800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687694400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689562800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695754800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1696021200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700503200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707282000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709082000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721332800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732406400000,
+     "full": [
+      -1.0,
+      98504.4,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      98504.4,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737352800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740114000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744642800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747832400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748138400000,
+     "full": [
+      -1.0,
+      108366.0,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      108366.0,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751288400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752242400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1619874000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626411600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628082000000,
+     "full": [
+      1.0,
+      2522.2971428571423,
+      NaN,
+      NaN
+     ],
+     "window": [
+      1.0,
+      2522.2971428571423,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642363200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642482000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652065200000,
+     "full": [
+      -1.0,
+      2530.4464285714284,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      2530.4464285714284,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660788000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1662069600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671796800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680922800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687694400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689562800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695754800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1696021200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700503200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707282000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709082000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721332800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737352800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740114000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744642800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747832400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748138400000,
+     "full": [
+      -1.0,
+      2538.38,
+      NaN,
+      NaN
+     ],
+     "window": [
+      -1.0,
+      2538.38,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751288400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752242400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "nonvacuous": {
+   "BTCUSDT": 8183,
+   "ETHUSDT": 8536
+  },
+  "trunc_n": 52,
+  "trunc_mismatch": 0,
+  "trunc_target_mismatch": 0,
+  "causality_ok": true,
+  "truncation_ok": true
+ },
+ "C1-V5-gate-rel": {
+  "id": "C1-V5-gate-rel",
+  "causality": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "causality_ext": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "truncation": {
+   "BTCUSDT": [
+    {
+     "t": 1619874000000,
+     "full": [
+      1.0,
+      56900.33857142857,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      56900.33857142857,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626411600000,
+     "full": [
+      -1.0,
+      32079.007142857143,
+      NaN,
+      1.0
+     ],
+     "window": [
+      -1.0,
+      32079.007142857143,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628082000000,
+     "full": [
+      1.0,
+      38252.33142857143,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      38252.33142857143,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642363200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642482000000,
+     "full": [
+      -1.0,
+      42586.93,
+      NaN,
+      1.0
+     ],
+     "window": [
+      -1.0,
+      42586.93,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652065200000,
+     "full": [
+      -1.0,
+      34755.00714285715,
+      NaN,
+      0.8007503919650614
+     ],
+     "window": [
+      -1.0,
+      34755.00714285715,
+      NaN,
+      0.8007503919650647
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660788000000,
+     "full": [
+      -1.0,
+      23783.45,
+      NaN,
+      0.9108481025116699
+     ],
+     "window": [
+      -1.0,
+      23783.45,
+      NaN,
+      0.9108481025116687
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1662069600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671796800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680922800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687694400000,
+     "full": [
+      1.0,
+      30530.899999999998,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      30530.899999999998,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689562800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695754800000,
+     "full": [
+      -1.0,
+      26312.942857142858,
+      NaN,
+      1.0
+     ],
+     "window": [
+      -1.0,
+      26312.942857142858,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1696021200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      0.9559956305972365
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      0.9559956305972366
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700503200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      0.7724632757374621
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      0.7724632757374686
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707282000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709082000000,
+     "full": [
+      1.0,
+      55659.72142857142,
+      NaN,
+      0.786353506839568
+     ],
+     "window": [
+      1.0,
+      55659.72142857142,
+      NaN,
+      0.7863535068395726
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721332800000,
+     "full": [
+      -1.0,
+      64453.21428571428,
+      NaN,
+      0.9880763749822882
+     ],
+     "window": [
+      -1.0,
+      64453.21428571428,
+      NaN,
+      0.9880763749822864
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732406400000,
+     "full": [
+      -1.0,
+      98468.5142857143,
+      NaN,
+      1.0
+     ],
+     "window": [
+      -1.0,
+      98468.5142857143,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737352800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      0.3570812885574269
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      0.35708128855742965
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740114000000,
+     "full": [
+      1.0,
+      97212.62857142858,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      97212.62857142858,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744642800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      0.750422256963827
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      0.7504222569638304
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747832400000,
+     "full": [
+      1.0,
+      105803.1142857143,
+      NaN,
+      0.7789391441563858
+     ],
+     "window": [
+      1.0,
+      105803.1142857143,
+      NaN,
+      0.778939144156391
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748138400000,
+     "full": [
+      -1.0,
+      108361.75714285714,
+      NaN,
+      1.0
+     ],
+     "window": [
+      -1.0,
+      108361.75714285714,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751288400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752242400000,
+     "full": [
+      1.0,
+      116256.15714285715,
+      NaN,
+      0.4895971673260433
+     ],
+     "window": [
+      1.0,
+      116256.15714285715,
+      NaN,
+      0.48959716732604147
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1619874000000,
+     "full": [
+      1.0,
+      2787.86,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      2787.86,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626411600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628082000000,
+     "full": [
+      1.0,
+      2539.385714285714,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      2539.385714285714,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642363200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642482000000,
+     "full": [
+      -1.0,
+      3256.969285714286,
+      NaN,
+      1.0
+     ],
+     "window": [
+      -1.0,
+      3256.969285714286,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652065200000,
+     "full": [
+      -1.0,
+      2548.3157142857144,
+      NaN,
+      0.8347178786943026
+     ],
+     "window": [
+      -1.0,
+      2548.3157142857144,
+      NaN,
+      0.8347178786943056
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660788000000,
+     "full": [
+      -1.0,
+      1886.6171428571429,
+      NaN,
+      0.92849359298735
+     ],
+     "window": [
+      -1.0,
+      1886.6171428571429,
+      NaN,
+      0.9284935929873507
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1662069600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671796800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      0.9372500351325718
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      0.9372500351325759
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680922800000,
+     "full": [
+      -1.0,
+      1874.2228571428573,
+      NaN,
+      1.0
+     ],
+     "window": [
+      -1.0,
+      1874.2228571428573,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687694400000,
+     "full": [
+      1.0,
+      1883.8907142857142,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      1883.8907142857142,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689562800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695754800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1696021200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      0.5914689870262122
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      0.5914689870262816
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700503200000,
+     "full": [
+      1.0,
+      2011.0285714285712,
+      NaN,
+      0.5237128615272477
+     ],
+     "window": [
+      1.0,
+      2011.0285714285712,
+      NaN,
+      0.5237128615272848
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707282000000,
+     "full": [
+      1.0,
+      2340.7485714285713,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      2340.7485714285713,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709082000000,
+     "full": [
+      1.0,
+      3179.1757142857145,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      3179.1757142857145,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721332800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      0.8997477362395054
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      0.8997477362395132
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732406400000,
+     "full": [
+      1.0,
+      3364.3985714285714,
+      NaN,
+      0.9201462637432013
+     ],
+     "window": [
+      1.0,
+      3364.3985714285714,
+      NaN,
+      0.9201462637432062
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737352800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      0.3761933712482646
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      0.37619337124827074
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740114000000,
+     "full": [
+      1.0,
+      2696.7364285714284,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      2696.7364285714284,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744642800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      0.617942524732025
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      0.6179425247320306
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747832400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      0.8601206917884046
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      0.8601206917884066
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748138400000,
+     "full": [
+      -1.0,
+      2527.622857142857,
+      NaN,
+      1.0
+     ],
+     "window": [
+      -1.0,
+      2527.622857142857,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751288400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      0.8524178224643466
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      0.8524178224643484
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752242400000,
+     "full": [
+      1.0,
+      2915.037142857143,
+      NaN,
+      0.4831129484324198
+     ],
+     "window": [
+      1.0,
+      2915.037142857143,
+      NaN,
+      0.48311294843242286
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "nonvacuous": {
+   "BTCUSDT": 27845,
+   "ETHUSDT": 28513
+  },
+  "trunc_n": 52,
+  "trunc_mismatch": 0,
+  "trunc_target_mismatch": 0,
+  "causality_ok": true,
+  "truncation_ok": true
+ },
+ "E1-v3-s3-d": {
+  "id": "E1-v3-s3-d",
+  "causality": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "causality_ext": {
+   "BTCUSDT": [],
+   "ETHUSDT": []
+  },
+  "truncation": {
+   "BTCUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      -1.0,
+      33553.89642857143,
+      NaN,
+      1.0
+     ],
+     "window": [
+      -1.0,
+      33553.89642857143,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      -1.0,
+      36119.799999999996,
+      NaN,
+      1.0
+     ],
+     "window": [
+      -1.0,
+      36119.799999999996,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      1.0,
+      29836.52857142857,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      29836.52857142857,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      54343.642857142855,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      54343.642857142855,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      1.0,
+      95023.67142857144,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      95023.67142857144,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      1.0,
+      101212.63571428572,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      101212.63571428572,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      1.0,
+      95292.5,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      95292.5,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      1.0,
+      102810.12142857144,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      102810.12142857144,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      1.0,
+      106781.3,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      106781.3,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      1.0,
+      105041.63571428572,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      105041.63571428572,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      111962.5,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      111962.5,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ],
+   "ETHUSDT": [
+    {
+     "t": 1619856000000,
+     "full": [
+      1.0,
+      2673.4157142857143,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      2673.4157142857143,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1626364800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1628035200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642320000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1642406400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1652025600000,
+     "full": [
+      -1.0,
+      2679.963571428572,
+      NaN,
+      1.0
+     ],
+     "window": [
+      -1.0,
+      2679.963571428572,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1660723200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1661961600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1671667200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1680811200000,
+     "full": [
+      1.0,
+      1829.462142857143,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      1829.462142857143,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1687636800000,
+     "full": [
+      1.0,
+      1837.2071428571428,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      1837.2071428571428,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1689537600000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695614400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1695916800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1700323200000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1707278400000,
+     "full": [
+      1.0,
+      2287.971428571428,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      2287.971428571428,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1709049600000,
+     "full": [
+      1.0,
+      3086.3757142857144,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      3086.3757142857144,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1721275200000,
+     "full": [
+      -1.0,
+      3576.44,
+      NaN,
+      1.0
+     ],
+     "window": [
+      -1.0,
+      3576.44,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1732348800000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1737244800000,
+     "full": [
+      -1.0,
+      3541.0299999999997,
+      NaN,
+      1.0
+     ],
+     "window": [
+      -1.0,
+      3541.0299999999997,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1740096000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1744430400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1747814400000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1748016000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1751112000000,
+     "full": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "window": [
+      0.0,
+      NaN,
+      NaN,
+      NaN
+     ],
+     "match": true,
+     "target_match": true
+    },
+    {
+     "t": 1752177600000,
+     "full": [
+      1.0,
+      2757.9278571428567,
+      NaN,
+      1.0
+     ],
+     "window": [
+      1.0,
+      2757.9278571428567,
+      NaN,
+      1.0
+     ],
+     "match": true,
+     "target_match": true
+    }
+   ]
+  },
+  "nonvacuous": {
+   "BTCUSDT": 5036,
+   "ETHUSDT": 5188
+  },
+  "trunc_n": 52,
+  "trunc_mismatch": 0,
+  "trunc_target_mismatch": 0,
+  "causality_ok": true,
+  "truncation_ok": true
+ }
+}

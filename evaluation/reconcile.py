@@ -24,14 +24,14 @@ def _one(args):
     import numpy as np
     from engine.data import load_experiment, load_m1, to_ms
     from scripts.run_experiment import run
-    summ, res = run(spec, split, params, None, None, register=False)
+    summ, res = run(spec, split, params, None, None, register=False, holdout=split == "holdout_pre")
     led, fills, t = res.ledger, res.fills, res.trades
     B = E0 + float(led["amount"].sum())
     fee_ok = abs(float(fills["fee"].sum()) + float(led[led["kind"] == "fee"]["amount"].sum())) < 1e-6
     rp = float(fills[fills["tag"] != "liquidation"]["realized_pnl"].sum())
     rp_ok = abs(rp - float(led[led["kind"] == "realized_pnl"]["amount"].sum())) < 1e-6
     exp = load_experiment()
-    end = to_ms(exp["splits"][split][1]) + 86_400_000
+    end = to_ms({**exp["splits"], **(exp.get("extra_splits") or {})}[split][1]) + 86_400_000
     U, open_trip = 0.0, 0.0
     for s, g in fills.groupby("symbol"):
         q, ep = 0.0, 0.0
