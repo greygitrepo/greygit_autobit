@@ -32,6 +32,65 @@ symbols:
     depth_1bps_usdt: 440000
     depth_5bps_usdt: 5860000
     latency_drift_sd_bps: {250: 0.35, 1000: 0.69}   # 1m sd 5.35bps
+  # --- R3 universe (2026-10-09 10:28:50~10:31:08 UTC, /fapi/v1/depth limit=500, ~14s 간격 10회/심볼).
+  #     depth = 표본별 bid/ask 중 작은 쪽, 중앙값. impact_k_bps = 1k~1M book-walk 최소제곱 적합값과 3 중 큰 값(보수).
+  #     latency_drift_sd = 최근 7일 1m 로그수익률 sd * sqrt(latency/60s). 금요일 단일 2분 표본 → 대표성 낮음.
+  SOLUSDT:
+    spread_bps: 0.9068          # 1 tick / mid 110.275 (10회 전부 동일)
+    depth_10bps_usdt: 2161000   # 표본 최솟값 1710000
+    impact_k_bps: 3.0           # 적합값 2.95
+    depth_1bps_usdt: 69000
+    depth_5bps_usdt: 822000
+    latency_drift_sd_bps: {250: 0.42, 1000: 0.85}   # 1m sd 6.56bps
+  XRPUSDT:
+    spread_bps: 0.7140          # 1 tick / mid 1.4006 (10회 전부 동일)
+    depth_10bps_usdt: 1210000   # 표본 최솟값 980000
+    impact_k_bps: 3.6           # 적합값 3.56
+    depth_1bps_usdt: 37000
+    depth_5bps_usdt: 464000
+    latency_drift_sd_bps: {250: 0.47, 1000: 0.94}   # 1m sd 7.28bps
+  DOGEUSDT:
+    spread_bps: 1.1776          # 1 tick / mid 0.08492 (10회 전부 동일)
+    depth_10bps_usdt: 323000   # 표본 최솟값 284000
+    impact_k_bps: 5.0           # 적합값 5.03
+    depth_1bps_usdt: 29000
+    depth_5bps_usdt: 166000
+    latency_drift_sd_bps: {250: 0.52, 1000: 1.04}   # 1m sd 8.04bps
+  BNBUSDT:
+    spread_bps: 0.1346          # 1 tick / mid 743.055 (10회 전부 동일)
+    depth_10bps_usdt: 498000   # 표본 최솟값 450000
+    impact_k_bps: 4.7           # 적합값 4.70
+    depth_1bps_usdt: 23000
+    depth_5bps_usdt: 207000
+    latency_drift_sd_bps: {250: 0.30, 1000: 0.60}   # 1m sd 4.65bps
+  ADAUSDT:
+    spread_bps: 4.1867          # max 4.190
+    depth_10bps_usdt: 141000   # 표본 최솟값 77000
+    impact_k_bps: 4.3           # 적합값 4.30
+    depth_1bps_usdt: 0
+    depth_5bps_usdt: 20000
+    latency_drift_sd_bps: {250: 0.77, 1000: 1.54}   # 1m sd 11.96bps
+  AVAXUSDT:
+    spread_bps: 0.9628          # 1 tick / mid 10.3865 (10회 전부 동일)
+    depth_10bps_usdt: 90000   # 표본 최솟값 79000
+    impact_k_bps: 6.5           # 적합값 6.54
+    depth_1bps_usdt: 1000
+    depth_5bps_usdt: 31000
+    latency_drift_sd_bps: {250: 0.69, 1000: 1.38}   # 1m sd 10.69bps
+  LINKUSDT:
+    spread_bps: 0.7772          # 1 tick / mid 12.867 (10회 전부 동일)
+    depth_10bps_usdt: 89000   # 표본 최솟값 68000
+    impact_k_bps: 6.3           # 적합값 6.27
+    depth_1bps_usdt: 2000
+    depth_5bps_usdt: 36000
+    latency_drift_sd_bps: {250: 0.55, 1000: 1.10}   # 1m sd 8.51bps
+  BCHUSDT:
+    spread_bps: 0.3609          # 1 tick / mid 277.105 (10회 전부 동일)
+    depth_10bps_usdt: 52000   # 표본 최솟값 39000
+    impact_k_bps: 10.0           # 적합값 10.04
+    depth_1bps_usdt: 1000
+    depth_5bps_usdt: 19000
+    latency_drift_sd_bps: {250: 0.57, 1000: 1.13}   # 1m sd 8.76bps
 
 stress_grid:
   spread_mult: [1, 2, 3]

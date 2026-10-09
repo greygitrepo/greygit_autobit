@@ -154,6 +154,18 @@ def plan_series(kind: str, sym: str, start: dt.date, end: dt.date) -> tuple[list
     stem = f"{sym}-fundingRate" if kind == "fundingRate" else f"{sym}-1m"
     keys: list[str] = []
     covered_until: dt.date | None = None
+    # Symbols listed after `start`: skip the months before the first archived file
+    # (pre-listing months are not gaps; otherwise the plan would stop at month 1).
+    first = None
+    for k in list(monthly) + list(daily):
+        mt = re.search(r"-(\d{4})-(\d{2})(?:-\d{2})?\.zip$", k)
+        if mt:
+            d0 = dt.date(int(mt.group(1)), int(mt.group(2)), 1)
+            first = d0 if first is None or d0 < first else first
+    if first is not None and first > start:
+        log.info("%s %s: first archive month %s is after start %s (listed later) -> starting there",
+                 kind, sym, first, start)
+        start = first
     for y, m in month_iter(start, end):
         mk = f"{mprefix}{stem}-{y:04d}-{m:02d}.zip"
         if mk in monthly and f"{mk}.CHECKSUM" in monthly:
@@ -398,6 +410,21 @@ def last_funding_time_in_zip(p: Path) -> int | None:
     return t // 1000 if t > 10 ** 14 else t
 
 
+def listing_start(keys: list[str], start: dt.date) -> dt.date:
+    """First UTC date with data in the earliest downloaded kline zip if later than `start`
+    (symbol listed after `start`); pre-listing minutes are not treated as gaps."""
+    if not keys:
+        return start
+    p = RAW / keys[0].removeprefix("data/")
+    if not p.exists():
+        return start
+    t = zip_open_times(p)
+    if not t:
+        return start
+    d = dt.datetime.fromtimestamp(min(t) / 1000, UTC).date()
+    return max(start, d)
+
+
 # ----------------------------------------------------------------------------- main
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -452,14 +479,15 @@ def main() -> int:
     for sym in symbols:
         for kind in ("klines", "markPriceKlines"):
             keys, cov = plans[(kind, sym)]
-            _, remaining[(kind, sym)] = repair_gaps(kind, sym, keys, start, end, cov, args.workers)
+            _, remaining[(kind, sym)] = repair_gaps(kind, sym, keys, listing_start(keys, start), end, cov,
+                                                    args.workers)
 
     if not args.no_rest:
         pacer = WeightPacer()
         for sym in symbols:
             for kind in ("klines", "markPriceKlines"):
                 _, cov = plans[(kind, sym)]
-                s_ms = ms(cov + dt.timedelta(days=1)) if cov else ms(start)
+                s_ms = ms(cov + dt.timedelta(days=1)) if cov else ms(listing_start(plans[(kind, sym)][0], start))
                 rest_klines(kind, sym, s_ms, end_excl_ms, pacer)
                 # REST attempt for holes the archive cannot fill (often genuine exchange gaps)
                 rest_klines(kind, sym, 0, 0, pacer, ranges=remaining[(kind, sym)], tag="gapfill")

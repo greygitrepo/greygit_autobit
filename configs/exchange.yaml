@@ -48,6 +48,152 @@ binance_usdm:
         - {notional_cap: 3000000,  mmr: 0.0065, maint_amount: 1500,   max_leverage: 75}
         - {notional_cap: 12000000, mmr: 0.01,   maint_amount: 12000,  max_leverage: 50}
         - {notional_cap: 50000000, mmr: 0.02,   maint_amount: 132000, max_leverage: 25}
+    # --- R3 universe expansion (2026-10-09 10:28 UTC live exchangeInfo/fundingInfo; mmr_tiers = web brackets,
+    #     first 4 tiers only; same caveats as BTC/ETH). onboard_date = exchangeInfo onboardDate (UTC).
+    SOLUSDT:
+      tick_size: 0.01
+      step_size: 0.01
+      min_qty: 0.01
+      max_qty_limit: 1000000
+      max_qty_market: 80000
+      min_notional: 5
+      percent_price: [0.95, 1.05]
+      max_leverage: 100
+      funding_interval_hours: 8
+      funding_rate_cap: 0.00375
+      liquidation_fee_rate: 0.015
+      onboard_date: '2020-09-14'
+      mmr_tiers:                 # brackets updateTime 2025-06-23
+        - {notional_cap: 50000, mmr: 0.005, maint_amount: 0, max_leverage: 100}
+        - {notional_cap: 400000, mmr: 0.0065, maint_amount: 75, max_leverage: 75}
+        - {notional_cap: 1000000, mmr: 0.01, maint_amount: 1475, max_leverage: 50}
+        - {notional_cap: 4000000, mmr: 0.02, maint_amount: 11475, max_leverage: 25}
+    XRPUSDT:
+      tick_size: 0.0001
+      step_size: 0.1
+      min_qty: 0.1
+      max_qty_limit: 10000000
+      max_qty_market: 2000000
+      min_notional: 5
+      percent_price: [0.95, 1.05]
+      max_leverage: 100
+      funding_interval_hours: 8
+      funding_rate_cap: 0.00375
+      liquidation_fee_rate: 0.0125
+      onboard_date: '2020-01-06'
+      mmr_tiers:                 # brackets updateTime 2025-07-17
+        - {notional_cap: 40000, mmr: 0.005, maint_amount: 0, max_leverage: 100}
+        - {notional_cap: 80000, mmr: 0.006, maint_amount: 40, max_leverage: 75}
+        - {notional_cap: 150000, mmr: 0.01, maint_amount: 360, max_leverage: 50}
+        - {notional_cap: 400000, mmr: 0.0125, maint_amount: 735, max_leverage: 40}
+    DOGEUSDT:
+      tick_size: 0.00001
+      step_size: 1
+      min_qty: 1
+      max_qty_limit: 300000000
+      max_qty_market: 30000000
+      min_notional: 5
+      percent_price: [0.9, 1.1]
+      max_leverage: 75
+      funding_interval_hours: 8
+      funding_rate_cap: 0.004875
+      liquidation_fee_rate: 0.015
+      onboard_date: '2020-07-10'
+      mmr_tiers:                 # brackets updateTime 2025-06-24
+        - {notional_cap: 80000, mmr: 0.0065, maint_amount: 0, max_leverage: 75}
+        - {notional_cap: 150000, mmr: 0.01, maint_amount: 280, max_leverage: 50}
+        - {notional_cap: 750000, mmr: 0.0125, maint_amount: 655, max_leverage: 40}
+        - {notional_cap: 2000000, mmr: 0.02, maint_amount: 6280, max_leverage: 25}
+    BNBUSDT:
+      tick_size: 0.01
+      step_size: 0.01
+      min_qty: 0.01
+      max_qty_limit: 100000
+      max_qty_market: 2000
+      min_notional: 5
+      percent_price: [0.95, 1.05]
+      max_leverage: 75
+      funding_interval_hours: 8
+      funding_rate_cap: 0.00375
+      liquidation_fee_rate: 0.0125
+      onboard_date: '2020-02-10'
+      mmr_tiers:                 # brackets updateTime 2025-08-21
+        - {notional_cap: 10000, mmr: 0.005, maint_amount: 0, max_leverage: 75}
+        - {notional_cap: 200000, mmr: 0.006, maint_amount: 10, max_leverage: 50}
+        - {notional_cap: 400000, mmr: 0.01, maint_amount: 810, max_leverage: 40}
+        - {notional_cap: 1500000, mmr: 0.02, maint_amount: 4810, max_leverage: 25}
+    ADAUSDT:
+      tick_size: 0.0001
+      step_size: 1
+      min_qty: 1
+      max_qty_limit: 30000000
+      max_qty_market: 3000000
+      min_notional: 5
+      percent_price: [0.95, 1.05]
+      max_leverage: 75
+      funding_interval_hours: 8
+      funding_rate_cap: 0.00375
+      liquidation_fee_rate: 0.0125
+      onboard_date: '2020-01-31'
+      mmr_tiers:                 # brackets updateTime 2024-11-19
+        - {notional_cap: 10000, mmr: 0.005, maint_amount: 0, max_leverage: 75}
+        - {notional_cap: 50000, mmr: 0.01, maint_amount: 50, max_leverage: 50}
+        - {notional_cap: 200000, mmr: 0.015, maint_amount: 300, max_leverage: 40}
+        - {notional_cap: 1000000, mmr: 0.02, maint_amount: 1300, max_leverage: 25}
+    AVAXUSDT:
+      tick_size: 0.001
+      step_size: 1
+      min_qty: 1
+      max_qty_limit: 500000
+      max_qty_market: 50000
+      min_notional: 5
+      percent_price: [0.9, 1.1]
+      max_leverage: 75
+      funding_interval_hours: 8
+      funding_rate_cap: 0.00375
+      liquidation_fee_rate: 0.015
+      onboard_date: '2020-09-23'
+      mmr_tiers:                 # brackets updateTime 2024-12-05
+        - {notional_cap: 25000, mmr: 0.005, maint_amount: 0, max_leverage: 75}
+        - {notional_cap: 80000, mmr: 0.01, maint_amount: 125, max_leverage: 50}
+        - {notional_cap: 160000, mmr: 0.015, maint_amount: 525, max_leverage: 40}
+        - {notional_cap: 800000, mmr: 0.02, maint_amount: 1325, max_leverage: 25}
+    LINKUSDT:
+      tick_size: 0.001
+      step_size: 0.01
+      min_qty: 0.01
+      max_qty_limit: 700000
+      max_qty_market: 50000
+      min_notional: 20
+      percent_price: [0.9, 1.1]
+      max_leverage: 75
+      funding_interval_hours: 8
+      funding_rate_cap: 0.00375
+      liquidation_fee_rate: 0.0125
+      onboard_date: '2020-01-17'
+      mmr_tiers:                 # brackets updateTime 2025-08-21
+        - {notional_cap: 10000, mmr: 0.005, maint_amount: 0, max_leverage: 75}
+        - {notional_cap: 200000, mmr: 0.01, maint_amount: 50, max_leverage: 50}
+        - {notional_cap: 400000, mmr: 0.015, maint_amount: 1050, max_leverage: 40}
+        - {notional_cap: 800000, mmr: 0.02, maint_amount: 3050, max_leverage: 25}
+    BCHUSDT:
+      tick_size: 0.01
+      step_size: 0.001
+      min_qty: 0.001
+      max_qty_limit: 20000
+      max_qty_market: 2000
+      min_notional: 20
+      percent_price: [0.95, 1.05]
+      max_leverage: 75
+      funding_interval_hours: 8
+      funding_rate_cap: 0.00375
+      liquidation_fee_rate: 0.0125
+      onboard_date: '2019-12-19'
+      mmr_tiers:                 # brackets updateTime 2024-12-12
+        - {notional_cap: 10000, mmr: 0.005, maint_amount: 0, max_leverage: 75}
+        - {notional_cap: 100000, mmr: 0.01, maint_amount: 50, max_leverage: 50}
+        - {notional_cap: 160000, mmr: 0.015, maint_amount: 550, max_leverage: 40}
+        - {notional_cap: 800000, mmr: 0.02, maint_amount: 1350, max_leverage: 25}
   fees:                          # doc FAQ (last updated 2026-05-01): Regular maker 0.02%, taker 0.05%
     maker: 0.0002
     taker: 0.0005

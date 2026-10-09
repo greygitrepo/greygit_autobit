@@ -217,6 +217,19 @@ def write_parquet(df: pd.DataFrame, path: Path) -> str:
     return h
 
 
+STATS = OUT / "quality_stats.json"
+
+
+def keep_or_write(df: pd.DataFrame, path: Path, manifest: dict, no_write: bool) -> str:
+    """--no-write: verify df equals the existing file's manifest content hash and return its sha256."""
+    if not no_write:
+        return write_parquet(df, path)
+    ent = manifest["files"].get(path.relative_to(ROOT).as_posix())
+    if not ent or ent["content_sha256"] != content_hash(df):
+        raise SystemExit(f"--no-write: recomputed content of {path.name} does not match manifest")
+    return ent["sha256"]
+
+
 def content_hash(df: pd.DataFrame) -> str:
     """Library-version-independent hash of the data values (column names + raw arrays)."""
     h = hashlib.sha256()
@@ -237,6 +250,8 @@ def main() -> int:
     ap.add_argument("--start", default="2021-10-01")
     ap.add_argument("--end", default="2026-10-08", help="inclusive UTC date")
     ap.add_argument("--workers", type=int, default=16)
+    ap.add_argument("--no-write", action="store_true",
+                    help="recompute quality stats only; never rewrite parquet (content hash must match manifest)")
     args = ap.parse_args()
     setup_logging()
     t0 = time.time()
@@ -249,15 +264,28 @@ def main() -> int:
     symbols = [s.strip().upper() for s in args.symbols.split(",") if s.strip()]
     log.info("=== process_history start: %s %s..%s", symbols, start, end)
 
-    report: dict = {}
+    # Merge with the existing manifest/stats: symbols not passed via --symbols keep their entries
+    # (their parquet files are never touched).
+    mpath = OUT / "manifest.json"
+    old_manifest = json.loads(mpath.read_text()) if mpath.exists() else {}
+    period = {"start": f"{start}T00:00:00Z", "end_exclusive": iso(end_ms).replace(" ", "T") + "Z"}
+    if old_manifest.get("period_utc") not in (None, period):
+        log.error("requested period %s differs from manifest period %s; refusing to mix", period,
+                  old_manifest["period_utc"])
+        return 2
+    report: dict = json.loads(STATS.read_text()) if STATS.exists() else {}
     manifest = {"generated_utc": dt.datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
                 "source": "https://data.binance.vision (USD-M futures archive, sha256 verified) + fapi.binance.com public REST",
-                "period_utc": {"start": f"{start}T00:00:00Z", "end_exclusive": iso(end_ms).replace(" ", "T") + "Z"},
+                "period_utc": period,
                 "pyarrow_version": pa.__version__, "pandas_version": pd.__version__,
-                "files": {}}
+                "files": dict(old_manifest.get("files", {}))}
+    if args.no_write:
+        manifest["generated_utc"] = old_manifest.get("generated_utc", manifest["generated_utc"])
+        manifest["pyarrow_version"] = old_manifest.get("pyarrow_version", pa.__version__)
+        manifest["pandas_version"] = old_manifest.get("pandas_version", pd.__version__)
     with ProcessPoolExecutor(max_workers=args.workers) as pool:
         for sym in symbols:
-            rep = report.setdefault(sym, {})
+            rep = report[sym] = {}
             for kind, suffix in (("klines", "1m"), ("markPriceKlines", "mark_1m")):
                 raw = load_klines(kind, sym, pool)
                 df, st = finalize_klines(raw, start_ms, end_ms)
@@ -267,10 +295,14 @@ def main() -> int:
                     # the number of mark-price samples. Keep schema identical to trade klines.
                     pass
                 path = OUT / f"{sym}_{suffix}.parquet"
-                fh = write_parquet(df, path)
-                g = gap_stats(df.open_time.to_numpy(), start_ms, end_ms)
+                fh = keep_or_write(df, path, manifest, args.no_write)
+                # symbol listed after the period start: bars before its first bar are not gaps
+                sym_start = int(df.open_time.iloc[0]) if int(df.open_time.iloc[0]) > start_ms else start_ms
+                sym_expected = (end_ms - sym_start) // MIN
+                g = gap_stats(df.open_time.to_numpy(), sym_start, end_ms)
                 st.update(rows=int(len(df)), first=iso(df.open_time.iloc[0]), last=iso(df.open_time.iloc[-1]),
-                          expected_bars=int(expected_bars), coverage_pct=100.0 * len(df) / expected_bars,
+                          pre_listing_bars=int((sym_start - start_ms) // MIN),
+                          expected_bars=int(sym_expected), coverage_pct=100.0 * len(df) / sym_expected,
                           n_gaps=g["n_gaps"], missing_bars=g["missing_bars"], gaps_top=g["gaps"][:20],
                           zero_volume_bars=int((df.volume == 0).sum()),
                           zero_trade_bars=int((df.trades == 0).sum()),
@@ -285,7 +317,7 @@ def main() -> int:
                          sym, suffix, st["rows"], g["n_gaps"], g["missing_bars"], st["duplicate_rows"], path.name, fh[:16])
             fdf, fst = load_funding(sym, start_ms, end_ms)
             path = OUT / f"{sym}_funding.parquet"
-            fh = write_parquet(fdf, path)
+            fh = keep_or_write(fdf, path, manifest, args.no_write)
             iv_h = (np.diff(fdf.funding_time.to_numpy()) / 3_600_000).round(2)
             vc = pd.Series(iv_h).value_counts().sort_index()
             fst.update(rows=int(len(fdf)), first=iso(fdf.funding_time.iloc[0]), last=iso(fdf.funding_time.iloc[-1]),
@@ -302,8 +334,11 @@ def main() -> int:
                 "first_funding_time": fst["first"], "last_funding_time": fst["last"], "bytes": fst["bytes"]}
             log.info("%s funding: %d rows, intervals %s -> %s", sym, fst["rows"], fst["interval_hours_distribution"], path.name)
 
-    (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    write_report(report, manifest, start, end, symbols)
+    if not args.no_write:
+        mpath.write_text(json.dumps(manifest, indent=2) + "\n")
+    STATS.write_text(json.dumps(report, indent=1, default=int) + "\n")
+    order = [s for s in dict.fromkeys(p.split("/")[-1].split("_")[0] for p in manifest["files"]) if s in report]
+    write_report(report, manifest, start, end, order)
     log.info("=== process_history done in %.1fs", time.time() - t0)
     return 0
 
@@ -341,6 +376,9 @@ def write_report(report: dict, manifest: dict, start, end, symbols) -> None:
             L.append(f"### {title} (`data/processed/{sym}_{suf}.parquet`)\n")
             L.append(f"- rows: {s['rows']:,} of {s['expected_bars']:,} expected ({s['coverage_pct']:.4f}%)")
             L.append(f"- first/last open_time: {s['first']} / {s['last']} UTC")
+            if s.get("pre_listing_bars"):
+                L.append(f"- listed after the period start: {s['pre_listing_bars']:,} pre-listing minutes are not "
+                         "counted as gaps (expected bars counted from the first bar)")
             L.append(f"- rows by source: {s['rows_by_source']}")
             L.append(f"- duplicate rows removed: {s['duplicate_rows']} "
                      f"(timestamps with conflicting values: {s['duplicate_timestamps_with_conflicting_values']})")
@@ -381,7 +419,14 @@ def write_report(report: dict, manifest: dict, start, end, symbols) -> None:
              "and those daily files are 80-180 MB each; skipped. Spread calibration needs another source "
              "(e.g. live public depth/bookTicker stream recording).\n")
     L.append("## Re-run / resume\n")
-    L.append("```\ncd <repo> && .venv/bin/python scripts/fetch_history.py && .venv/bin/python scripts/process_history.py\n```\n")
+    L.append("Symbols not passed via `--symbols` keep their manifest entries and parquet files untouched; "
+             "`--no-write` recomputes the report statistics of existing files and aborts if their content hash differs.\n")
+    L.append("```\ncd <repo>   # same --start/--end for every call (manifest period check)\n"
+             ".venv/bin/python scripts/fetch_history.py --symbols BTCUSDT,ETHUSDT --start 2020-01-01 --end 2026-10-08 --workers 16\n"
+             ".venv/bin/python scripts/process_history.py --symbols BTCUSDT,ETHUSDT --start 2020-01-01 --end 2026-10-08 --workers 4\n"
+             "# R3 universe\n"
+             ".venv/bin/python scripts/fetch_history.py --symbols SOLUSDT,XRPUSDT,DOGEUSDT,BNBUSDT,ADAUSDT,AVAXUSDT,LINKUSDT,BCHUSDT --start 2020-01-01 --end 2026-10-08 --workers 16\n"
+             ".venv/bin/python scripts/process_history.py --symbols SOLUSDT,XRPUSDT,DOGEUSDT,BNBUSDT,ADAUSDT,AVAXUSDT,LINKUSDT,BCHUSDT --start 2020-01-01 --end 2026-10-08 --workers 4\n```\n")
     (OUT / "DATA_QUALITY.md").write_text("\n".join(L))
 
 

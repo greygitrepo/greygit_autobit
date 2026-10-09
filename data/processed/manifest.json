@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-09T10:07:46Z",
+  "generated_utc": "2026-10-09T10:33:43Z",
   "source": "https://data.binance.vision (USD-M futures archive, sha256 verified) + fapi.binance.com public REST",
   "period_utc": {
     "start": "2020-01-01T00:00:00Z",
@@ -55,6 +55,198 @@
       "first_funding_time": "2020-01-01 00:00:00",
       "last_funding_time": "2026-10-08 16:00:00",
       "bytes": 107756
+    },
+    "data/processed/SOLUSDT_1m.parquet": {
+      "sha256": "9bd6ed8ebbcae93024ed3f42aef4a621e2f0068df87c9e83c1cc64e79b340cbf",
+      "content_sha256": "0d7e206953a5246263803bf9d0ebce870d624a56886d3d2242c1d921277bff8c",
+      "rows": 3190620,
+      "first_open_time": "2020-09-14 07:00:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 107879254
+    },
+    "data/processed/SOLUSDT_mark_1m.parquet": {
+      "sha256": "25e32b9f1359c75ffe8044b7a39f0c8c3cfd00752ad34d536a736904f04583a5",
+      "content_sha256": "e2b7df4ac5cf933b48e2d70cd8eb18666668caaf52e2d083bdfeba3ec00cc823",
+      "rows": 3191730,
+      "first_open_time": "2020-09-13 11:58:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 89261792
+    },
+    "data/processed/SOLUSDT_funding.parquet": {
+      "sha256": "b767daaf81744415d9f7d0f3ec38d97b573b88d8b9e4ae349ba65bd5c5bb08a4",
+      "content_sha256": "448b58077e85a8d7d1de1558f590ed48822f335120d5f229efd6456bd39b6134",
+      "rows": 6724,
+      "first_funding_time": "2020-09-13 16:00:00",
+      "last_funding_time": "2026-10-08 16:00:00",
+      "bytes": 99103
+    },
+    "data/processed/XRPUSDT_1m.parquet": {
+      "sha256": "cb585dfca7d797c5d85d75a9551b5958e36edd8c236b0f7cf2581362286bcde6",
+      "content_sha256": "e8ee35c686e31d19020f3c7555a706ef109673e52b21cb1d8e8f91c22063e0bd",
+      "rows": 3553419,
+      "first_open_time": "2020-01-06 08:21:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 131226737
+    },
+    "data/processed/XRPUSDT_mark_1m.parquet": {
+      "sha256": "dba772524610739e6ab56d1167b2a17c7d63e7fb31f06586ef3268ad59a7a0f7",
+      "content_sha256": "717f01b0256488bf069433602e62c9cee5113d686f8a75821735329496945134",
+      "rows": 3553664,
+      "first_open_time": "2020-01-06 03:16:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 97544093
+    },
+    "data/processed/XRPUSDT_funding.parquet": {
+      "sha256": "912dfd5cbbe9ac65f0d666d02134badfb4f81de059a8d878c75656d2f93afd36",
+      "content_sha256": "4a82b8fd13bd7005db568ac54383f56c0a5ca4e074afd9e67f75194c903ca029",
+      "rows": 7403,
+      "first_funding_time": "2020-01-06 08:00:00",
+      "last_funding_time": "2026-10-08 16:00:00",
+      "bytes": 104561
+    },
+    "data/processed/DOGEUSDT_1m.parquet": {
+      "sha256": "5d5d573b2df4fd5b953256743e748667ec1d2e9e32459e895e7a44f36ed3713f",
+      "content_sha256": "bf4d73d2b1fb6e50560dd355070f9a9bb49f24499ba7a4ad78317341764c39dd",
+      "rows": 3285540,
+      "first_open_time": "2020-07-10 09:00:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 124461605
+    },
+    "data/processed/DOGEUSDT_mark_1m.parquet": {
+      "sha256": "4cd35d7f588f60388555cbfb3f70566f220240440895a8e8f18cbf5a4a6b4b68",
+      "content_sha256": "f983263cf52b83f41badbdce2b143485bf30aaa9584fc0ab3fd61b8ded5c07cb",
+      "rows": 3285864,
+      "first_open_time": "2020-07-10 03:05:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 92803978
+    },
+    "data/processed/DOGEUSDT_funding.parquet": {
+      "sha256": "3fe7a45a7857d90fd8ed8899bc1185c54d2a10d7928017baeb294335f652602f",
+      "content_sha256": "4041ecbe0654e84a17a9997879e7220db85aa8a05a9e8a117923e2748d5e8fd3",
+      "rows": 6845,
+      "first_funding_time": "2020-07-10 08:00:00",
+      "last_funding_time": "2026-10-08 16:00:00",
+      "bytes": 100388
+    },
+    "data/processed/BNBUSDT_1m.parquet": {
+      "sha256": "b98a23ac15b7fbeb9dfa4e3842263232f8e9b85b544075216ad9a2cec70e1d9b",
+      "content_sha256": "1dd6aded76ff99abd1aefe38114be012029350f7dde533d1627c829a334a3056",
+      "rows": 3503039,
+      "first_open_time": "2020-02-10 08:01:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 123361797
+    },
+    "data/processed/BNBUSDT_mark_1m.parquet": {
+      "sha256": "96e0ed2db92929099122940ce53989dcb05774358f22f352b949e4aee4b1be57",
+      "content_sha256": "1f4e85521a87340bad6386645bf21163abb489474fd0f36f15f986ed607d460e",
+      "rows": 3561063,
+      "first_open_time": "2020-01-01 00:00:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 98561683
+    },
+    "data/processed/BNBUSDT_funding.parquet": {
+      "sha256": "d9eae5c6eafd61bec1dff4babe601275150cb01ce58780a9c4fb8fbec4764fce",
+      "content_sha256": "53e429d23ec741df9c72d8ca5f40e6b364ec5f2abf735ed873094fec0e349c78",
+      "rows": 7298,
+      "first_funding_time": "2020-02-10 08:00:00",
+      "last_funding_time": "2026-10-08 16:00:00",
+      "bytes": 98389
+    },
+    "data/processed/ADAUSDT_1m.parquet": {
+      "sha256": "1924c5a349d9d3bb2fd7065839f3c563d0d8b1dbe7c80071ef9b534e75495a87",
+      "content_sha256": "b1af7c418f757e5163f857be51427a36bc5c088d99761308d9759d41fce879e3",
+      "rows": 3517439,
+      "first_open_time": "2020-01-31 08:01:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 120423833
+    },
+    "data/processed/ADAUSDT_mark_1m.parquet": {
+      "sha256": "5a0ccae6887816e9fe12ac864c4d0b44af694394df04db976b924bfd9487adab",
+      "content_sha256": "40888604a725c2f7f9e4b15758d84cdd1ead750973b7c3e49b7ed019c424fcb6",
+      "rows": 3534589,
+      "first_open_time": "2020-01-19 09:10:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 98615400
+    },
+    "data/processed/ADAUSDT_funding.parquet": {
+      "sha256": "694ac05691c0502f318033be146737bf7ddbc87358eccbdb24391613a2c6be02",
+      "content_sha256": "118539caa5eeead5c8f98e4e96d3e08e952cfad0452d5da390877f254d8f9d35",
+      "rows": 7363,
+      "first_funding_time": "2020-01-19 16:00:00",
+      "last_funding_time": "2026-10-08 16:00:00",
+      "bytes": 101593
+    },
+    "data/processed/AVAXUSDT_1m.parquet": {
+      "sha256": "19863ce3e3568af76d8ab3adcd10de665b837cd16499273a07e743cb28002cd4",
+      "content_sha256": "d7680d45d68dc46741297e0f729f4deed5b8a27fdbf373e7c29ae8bd1df7819f",
+      "rows": 3177660,
+      "first_open_time": "2020-09-23 07:00:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 96607018
+    },
+    "data/processed/AVAXUSDT_mark_1m.parquet": {
+      "sha256": "4291dd3ab38584547196e8ae0fd211d7dfe187ed17937b7f41d9e72e9fdd09a3",
+      "content_sha256": "f5cc6096c133d72b7acbd16b54b09c4a79ada3e3a9c2d4753f328f3d5b715e99",
+      "rows": 3178911,
+      "first_open_time": "2020-09-22 09:38:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 90293793
+    },
+    "data/processed/AVAXUSDT_funding.parquet": {
+      "sha256": "6396ac241c32bd384808e7c90c723d1b5da2fcdc5c54510a1a47a9b44508dd50",
+      "content_sha256": "b42e90f49909f897e1c7cc001455c7839fb6ac15a83a2a2a19c461ba549f4c08",
+      "rows": 6622,
+      "first_funding_time": "2020-09-22 16:00:00",
+      "last_funding_time": "2026-10-08 16:00:00",
+      "bytes": 96216
+    },
+    "data/processed/LINKUSDT_1m.parquet": {
+      "sha256": "09fc8d4372b9ff5909544df7c8f94357878c2901585d79bc1b75a37500f537e9",
+      "content_sha256": "ed878fc2fc76e7bd077d0a91a2f78269fc685dc2dd071aaeb6de44dc99f57018",
+      "rows": 3537600,
+      "first_open_time": "2020-01-17 08:00:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 132750324
+    },
+    "data/processed/LINKUSDT_mark_1m.parquet": {
+      "sha256": "0e368e6b9624da01a73745401ed744ff0e4faf7172f74c1229e4ef67783f651e",
+      "content_sha256": "2163d3e9161463da798bf3bf70a6d7f75de36250660e0ed198db506343667206",
+      "rows": 3537548,
+      "first_open_time": "2020-01-17 07:51:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 99436914
+    },
+    "data/processed/LINKUSDT_funding.parquet": {
+      "sha256": "b699b23d97edb57d0cba262e3af74d5ba4609bf4f55d82df22aac15c71d22688",
+      "content_sha256": "06765f4cdc3fefef5b9a12838f13606729a02b9b5a7998b7a166d70cb7db7d58",
+      "rows": 7370,
+      "first_funding_time": "2020-01-17 08:00:00",
+      "last_funding_time": "2026-10-08 16:00:00",
+      "bytes": 100239
+    },
+    "data/processed/BCHUSDT_1m.parquet": {
+      "sha256": "fce23ec4b5c2a869012149504c7755012668f65e777fa57df14f95c95f6f193b",
+      "content_sha256": "17b5ecc580001c5caa5a0abbeed92498e4abf8ca384d8e1c34c0c25aa2217cf9",
+      "rows": 3561120,
+      "first_open_time": "2020-01-01 00:00:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 130078821
+    },
+    "data/processed/BCHUSDT_mark_1m.parquet": {
+      "sha256": "a19ba67cbffc7d34a58fe2e2c4efc80f012f78f9ee7c393d66b71077704b8e67",
+      "content_sha256": "d9a803110acf16edd03c9ed927cdae7c1f17ab78887b196723f34a595fc12d95",
+      "rows": 3561056,
+      "first_open_time": "2020-01-01 00:00:00",
+      "last_open_time": "2026-10-08 23:59:00",
+      "bytes": 100422138
+    },
+    "data/processed/BCHUSDT_funding.parquet": {
+      "sha256": "58a7a60403056c71f9efaf079846ffc20809a0f5435a12e993d2c03679bbe176",
+      "content_sha256": "53afdd9afc145cdd2502d5958d96de414266629a3ce49d4d9f28c39ba88a5264",
+      "rows": 7419,
+      "first_funding_time": "2020-01-01 00:00:00",
+      "last_funding_time": "2026-10-08 16:00:00",
+      "bytes": 109032
     }
   }
 }
