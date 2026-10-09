@@ -12,3 +12,8 @@
 3. **10/12 04:30 이후**: `.venv/bin/python scripts/final_run.py live && .venv/bin/python scripts/final_run.py report`
 4. 1장 결론 문장(AUTO:VERDICT)을 test_plan_frozen.md 기준 4개로 판정해 작성 → 커밋·푸시 → 10/12 06:00 전 사용자에게 경로 보고.
 금지: test 결과를 보고 파라미터·코드 변경, 실거래, API_config.txt 사용.
+
+## 갱신 2026-10-09 19:55 KST (라운드 2·3)
+- 실시간 러너 19개 (configs/paper.yaml). F3 포트폴리오는 `F3:<sleeve>` 실제 배분 자본 하위계좌 5개, 합산은 final_run live에서 계산.
+- 동결 전 할 일: test 계획 개정 2 — R3 후보(D4, F3 포트폴리오, 팀 G 결과) 추가. **final_run test는 아직 포트폴리오(team_f, kind=portfolio)를 실행하지 않음** → 슬리브 test 결과를 F3 가중치로 합산하는 단계 추가 필요(evaluation/r3_portfolio.py 재사용).
+- 서비스: autobit-paper, autobit-dashboard, autobit-decl-watch (systemd --user). 재부팅 시 scripts/paper.sh start, scripts/dashboard.sh start, `systemd-run --user --unit=autobit-decl-watch scripts/watch_declarations.sh`.

@@ -17,7 +17,7 @@
   "key": "engine",
   "name": "공통 엔진",
   "role": "데이터·체결·비용·모의거래·리스크",
-  "status": "가동 중 + R3 유니버스 확장 (SOL·BNB·XRP 등 추가 종목 데이터·명세)",
+  "status": "가동 중 – 10종목 유니버스, 러너별 종목·자본 지원. 실시간 19개 러너",
   "members": "총괄 + subagent 2"
  },
  {
@@ -66,7 +66,7 @@
   "key": "eval",
   "name": "독립 평가",
   "role": "누수·과최적화·체결 가정 감사, 동일 조건 경합",
-  "status": "R2 완료 (9/12 승격). R3 후보 대기",
+  "status": "R3 완료 – D4 승격(최약), F3 포트폴리오 검증 통과(val 수익/MDD 3.32, holdout 3.14; F의 holdout 열람 오염 기록)",
   "members": "subagent"
  },
  {
