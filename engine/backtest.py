@@ -112,7 +112,8 @@ def run_backtest(strategy: Strategy, markets: dict[str, MarketData], specs: dict
             i = (act - start_ms) // 60_000
             tp = row.get("tp", np.nan)
             ok = bool(row.get("complete_", True))
-            decisions.setdefault(i, []).append((s, row["target"], row.get("stop", np.nan), tp, ok))
+            decisions.setdefault(i, []).append((s, row["target"], row.get("stop", np.nan), tp, ok,
+                                                row.get("size_mult", np.nan)))
 
     funding_at: dict[int, list[tuple[str, float]]] = {}
     for s in syms:
@@ -159,11 +160,12 @@ def run_backtest(strategy: Strategy, markets: dict[str, MarketData], specs: dict
             flat_all(i, "halt")
             pending_halt = False
         # 3) decisions
-        for s, tgt, stop, tp, complete in decisions.get(i, ()):
+        for s, tgt, stop, tp, complete, smult in decisions.get(i, ()):
             if halted_at is not None:
                 continue
             ref = markets[s].c[i - 1] if i > 0 else np.nan
-            execu.apply(broker, s, tgt, stop, tp, ref, ts, entries_allowed=(not day_blocked) and complete)
+            execu.apply(broker, s, tgt, stop, tp, ref, ts, entries_allowed=(not day_blocked) and complete,
+                        size_mult=smult)
         # 4) market
         for s in syms:
             m = markets[s]

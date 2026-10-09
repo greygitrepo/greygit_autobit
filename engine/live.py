@@ -286,7 +286,7 @@ class Runner:
         self.st["decisions"] += 1
         ref = float(bars["close"].iloc[-1])
         act = self.execu.apply(self.broker, sym, row.get("target"), row.get("stop"), row.get("tp"), ref, ts,
-                               entries_allowed=allowed)
+                               entries_allowed=allowed, size_mult=row.get("size_mult"))
         if act not in ("keep", "hold"):
             self.event(ts, "decision", symbol=sym, action=act, target=row.get("target"), stop=row.get("stop"),
                        ref=ref, fresh=fresh)

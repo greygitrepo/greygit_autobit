@@ -9,6 +9,7 @@ Signal frame columns (index = bar open_time, UTC ms int64):
   target : -1 / 0 / +1 desired direction (NaN = keep current)
   stop   : absolute stop-loss price, required when target != 0 (used for sizing and the stop order)
   tp     : optional absolute take-profit price
+  size_mult : optional in [0, 1]; scales the common risk budget DOWN for this entry (e.g. vol regime)
 Position size is NOT chosen by strategies: the common risk module sizes every entry from the
 stop distance so all teams take identical risk.
 """

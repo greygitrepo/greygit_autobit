@@ -3,7 +3,7 @@
 Rules
 - target != current direction: close the position (market, reduce-only), then open the new side if
   entries are allowed (not halted, daily limit not hit, TF bar complete, data fresh, not locked).
-- Entry size = risk_per_trade_frac × initial capital / |ref − stop|, capped so gross notional across
+- Entry size = risk_per_trade_frac × initial capital / |ref − stop| (× optional size_mult in [0,1]), capped so gross notional across
   symbols ≤ max_leverage × equity. Stop must be on the loss side and ≥ min_stop_frac away.
 - same direction with a new stop: cancel/replace the stop; a stop already crossed exits at market.
 - after a stop / take-profit / liquidation exit, the same direction is locked until the strategy's
@@ -30,7 +30,8 @@ class SignalExecutor:
         self.seq += 1
         return f"{kind}-{s}-{ts}-{self.seq}"
 
-    def apply(self, broker, s: str, tgt, stop, tp, ref: float, ts: int, *, entries_allowed: bool) -> str:
+    def apply(self, broker, s: str, tgt, stop, tp, ref: float, ts: int, *, entries_allowed: bool,
+              size_mult=None) -> str:
         """Returns a short action label for logs."""
         if _nan(tgt):
             return "keep"
@@ -63,6 +64,8 @@ class SignalExecutor:
                 return (action + "+" if action else "") + "bad_stop"
             dist = abs(ref - stop)
             qty = risk.risk_per_trade_frac * risk.initial_capital_usdt / dist
+            if not _nan(size_mult):                 # strategies may only scale risk DOWN
+                qty *= min(max(float(size_mult), 0.0), 1.0)
             other = sum(abs(p.qty) * broker.last_price.get(k, p.entry_price)
                         for k, p in broker.positions.items() if k != s)
             cap = max(risk.max_leverage * broker.equity() - other, 0.0)
